@@ -5,8 +5,6 @@ This is the Twitter Bootstrap extension for Yii 2. It encapsulates [Bootstrap](h
 and plugins in terms of Yii widgets, and thus makes using Bootstrap components/plugins
 in Yii applications extremely easy.
 
-This repository is a git submodule of <https://github.com/yiisoft/yii2>.
-Please submit issue reports and pull requests to the main repository.
 For license information check the [LICENSE](LICENSE.md)-file.
 
 Installation
