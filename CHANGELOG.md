@@ -4,6 +4,7 @@ Yii Framework 2 bootstrap extension Change Log
 2.0.4 under development
 -----------------------
 
+- Bug #18: `label` option ignored by `yii\bootstrap\Activefield::checkbox()` and `yii\bootstrap\Activefield::radio()` (mikehaertl)
 - Bug #5984: `yii\bootstrap\Activefield::checkbox()` caused browser to link label to the wrong input (cebe)
 - Enh #7633: Added `ActionColumn::$buttonOptions` for defining HTML options to be added to the default buttons (cebe)
 - Enh: Added `Nav::$dropDownCaret` to allow customization of the dropdown caret symbol (cebe)
