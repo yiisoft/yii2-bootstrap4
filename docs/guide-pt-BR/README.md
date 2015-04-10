@@ -2,7 +2,7 @@ Extenção Twitter Bootstrap para Yii 2
 =====================================
 
 A extensão inclui suporte para ao framework [Bootstrap 3](http://getbootstrap.com/) marcação e componentes
-(também conhecido como "Bootstrap Twitter"). Bootstrap é um excelente quadro, ágil, que pode acelerar bastante o
+(também conhecido como "Bootstrap Twitter"). Bootstrap é um excelente framework ágil, que pode acelerar bastante o
 do lado do cliente do seu processo de desenvolvimento.
 
 O núcleo de bootstrap é representado por duas partes:
