@@ -11,6 +11,7 @@ Yii Framework 2 bootstrap extension Change Log
 - Enh #2546: Added `visible` option to `yii\bootstrap\ButtonGroup::$buttons` (samdark, lukBarros)
 - Enh #7633: Added `ActionColumn::$buttonOptions` for defining HTML options to be added to the default buttons (cebe)
 - Enh: Added `Nav::$dropDownCaret` to allow customization of the dropdown caret symbol (cebe)
+- Enh: Added support for using external URLs for `Tabs`. (dynasource, qiangxue)
 
 
 2.0.3 March 01, 2015
