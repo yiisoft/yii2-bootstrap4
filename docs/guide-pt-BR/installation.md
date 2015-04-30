@@ -1,4 +1,4 @@
-Installation
+Instalação
 ============
 
 ## Instalando através do composer
