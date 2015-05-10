@@ -1,8 +1,13 @@
 Yii Framework 2 bootstrap extension Change Log
 ==============================================
 
-2.0.4 under development
+2.0.5 under development
 -----------------------
+
+
+
+2.0.4 May 10, 2015
+------------------
 
 - Bug #18: `label` option ignored by `yii\bootstrap\Activefield::checkbox()` and `yii\bootstrap\Activefield::radio()` (mikehaertl)
 - Bug #5984: `yii\bootstrap\Activefield::checkbox()` caused browser to link label to the wrong input (cebe)
