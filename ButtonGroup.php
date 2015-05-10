@@ -38,7 +38,7 @@ use yii\helpers\Html;
  *
  * @see http://getbootstrap.com/javascript/#buttons
  * @see http://getbootstrap.com/components/#btn-groups
- * 
+ *
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  * @since 2.0
  */
