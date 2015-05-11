@@ -108,4 +108,39 @@ class CollapseTest extends TestCase
 HTML
         , $output);
     }
+
+    /**
+     * @see https://github.com/yiisoft/yii2/issues/8357
+     */
+    public function testRenderObject()
+    {
+        $template = ['template' => '{input}'];
+        ob_start();
+        $form = \yii\widgets\ActiveForm::begin(['action' => '/something']);
+        ob_end_clean();
+        $model = new data\Singer;
+
+        Collapse::$counter = 0;
+        $output = Collapse::widget([
+            'items' => [
+                [
+                    'label' => 'Collapsible Group Item #1',
+                    'content' => $form->field($model, 'firstName', $template)
+                ],
+            ]
+        ]);
+
+        $this->assertEqualsWithoutLE(<<<HTML
+<div id="w0" class="panel-group">
+<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title"><a class="collapse-toggle" href="#w0-collapse1" data-toggle="collapse" data-parent="#w0">Collapsible Group Item #1</a>
+</h4></div>
+<div id="w0-collapse1" class="panel-collapse collapse"><div class="panel-body"><div class="form-group field-singer-firstname">
+<input type="text" id="singer-firstname" class="form-control" name="Singer[firstName]">
+</div></div>
+</div></div>
+</div>
+
+HTML
+        , $output);
+    }
 }
