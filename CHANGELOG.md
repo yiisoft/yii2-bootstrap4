@@ -4,7 +4,7 @@ Yii Framework 2 bootstrap extension Change Log
 2.0.5 under development
 -----------------------
 
-- Enh #38: Added support to object for content option in Collapse class (pana1990, ItsReddi)
+- Enh #38: Added object support for `content` option in `Collapse` class (pana1990, ItsReddi)
 
 2.0.4 May 10, 2015
 ------------------
