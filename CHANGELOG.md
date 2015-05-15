@@ -5,6 +5,7 @@ Yii Framework 2 bootstrap extension Change Log
 -----------------------
 
 - Enh #38: Added object support for `content` option in `Collapse` class (pana1990, ItsReddi)
+- Enh #40: Added `visible` option to `yii\bootstrap\Tab` widget items (klimov-paul)
 
 2.0.4 May 10, 2015
 ------------------

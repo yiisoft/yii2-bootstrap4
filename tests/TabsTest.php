@@ -76,4 +76,34 @@ class TabsTest extends TestCase
             $this->assertContains($string, $out);
         }
     }
+
+    public function testVisible()
+    {
+        Tabs::$counter = 0;
+        $html = Tabs::widget([
+            'items' => [
+                [
+                    'label' => 'Page1', 'content' => 'Page1',
+                ],
+                [
+                    'label' => 'InvisiblePage',
+                    'content' => 'Invisible Page Content',
+                    'visible' => false
+                ],
+                [
+                    'label' => 'Dropdown1',
+                    'items' => [
+                        ['label' => 'Page2', 'content' => 'Page2'],
+                        ['label' => 'InvisibleItem', 'content' => 'Invisible Item Content', 'visible' => false],
+                        ['label' => 'Page3', 'content' => 'Page3'],
+                    ]
+                ],
+            ]
+        ]);
+
+        $this->assertNotContains('InvisiblePage', $html);
+        $this->assertNotContains('Invisible Page Content', $html);
+        $this->assertNotContains('InvisibleItem', $html);
+        $this->assertNotContains('Invisible Item Content', $html);
+    }
 }

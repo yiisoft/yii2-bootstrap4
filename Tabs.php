@@ -70,7 +70,9 @@ class Tabs extends Widget
      * - url: string, optional, an external URL. When this is specified, clicking on this tab will bring
      *   the browser to this URL. This option is available since version 2.0.4.
      * - options: array, optional, the HTML attributes of the tab pane container.
-     * - active: boolean, optional, whether the item tab header and pane should be visible or not.
+     * - active: boolean, optional, whether this item tab header and pane should be active. If no item is marked as
+     *   'active' explicitly - the first one will be activated.
+     * - visible: boolean, optional, whether the item tab header and pane should be visible or not. Defaults to true.
      * - items: array, optional, can be used instead of `content` to specify a dropdown items
      *   configuration array. Each item can hold three extra keys, besides the above ones:
      *     * active: boolean, optional, whether the item tab header and pane should be visible or not.
@@ -148,6 +150,9 @@ class Tabs extends Widget
         }
 
         foreach ($this->items as $n => $item) {
+            if (!ArrayHelper::remove($item, 'visible', true)) {
+                continue;
+            }
             if (!array_key_exists('label', $item)) {
                 throw new InvalidConfigException("The 'label' option is required.");
             }
@@ -226,6 +231,9 @@ class Tabs extends Widget
 
         foreach ($items as $n => &$item) {
             if (is_string($item)) {
+                continue;
+            }
+            if (isset($item['visible']) && !$item['visible']) {
                 continue;
             }
             if (!array_key_exists('content', $item)) {
