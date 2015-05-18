@@ -16,7 +16,7 @@ use yii\helpers\Html;
  * Do not use BaseHtml. Use [[Html]] instead.
  *
  * @author Paul Klimov <klimov.paul@gmail.com>
- * @since 2.0.4
+ * @since 2.0.5
  */
 class BaseHtml extends \yii\helpers\Html
 {

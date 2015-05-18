@@ -8,7 +8,6 @@
 namespace yii\bootstrap;
 
 use Yii;
-use yii\helpers\Html;
 use yii\base\InvalidConfigException;
 
 /**

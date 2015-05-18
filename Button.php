@@ -7,8 +7,6 @@
 
 namespace yii\bootstrap;
 
-use yii\helpers\Html;
-
 /**
  * Button renders a bootstrap button.
  *

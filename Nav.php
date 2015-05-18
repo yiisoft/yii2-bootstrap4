@@ -10,7 +10,6 @@ namespace yii\bootstrap;
 use Yii;
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
-use yii\helpers\Html;
 
 /**
  * Nav renders a nav HTML component.
