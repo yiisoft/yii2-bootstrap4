@@ -1,18 +1,28 @@
 Yii Framework 2 bootstrap extension Change Log
 ==============================================
 
-2.0.4 under development
+2.0.5 under development
 -----------------------
+
+- Enh #38: Added object support for `content` option in `Collapse` class (pana1990, ItsReddi)
+- Enh #40: Added `visible` option to `yii\bootstrap\Tab` widget items (klimov-paul)
+- Enh #41: Added `submenuOptions` support at `yii\bootstrap\Dropdown` (spikyjt, klimov-paul)
+
+2.0.4 May 10, 2015
+------------------
 
 - Bug #18: `label` option ignored by `yii\bootstrap\Activefield::checkbox()` and `yii\bootstrap\Activefield::radio()` (mikehaertl)
 - Bug #5984: `yii\bootstrap\Activefield::checkbox()` caused browser to link label to the wrong input (cebe)
 - Bug #7894: Fixed incorrect URL config processing at `yii\bootstrap\Nav::items` if route element is not a first one (nkovacs, klimov-paul)
+- Bug #8231: Configuration of Alert, ButtonDropdown, Modal widget where not preserved when used multiple times (cebe, idMolotov)
+- Bug (CVE-2015-3397): Using `Json::htmlEncode()` for safer JSON data encoding in HTML code (samdark, Tomasz Tokarski)
 - Enh #29: Added support to list-groups for Collapse class (pana1990, skullcrasher)
 - Enh #1344: Added support for the static form controls via `yii\bootstrap\Html` (klimov-paul)
 - Enh #2546: Added `visible` option to `yii\bootstrap\ButtonGroup::$buttons` (samdark, lukBarros)
 - Enh #5207: Added support for the glyphicons via `yii\bootstrap\Html::icon()` (klimov-paul)
 - Enh #7633: Added `ActionColumn::$buttonOptions` for defining HTML options to be added to the default buttons (cebe)
 - Enh: Added `Nav::$dropDownCaret` to allow customization of the dropdown caret symbol (cebe)
+- Enh: Added support for using external URLs for `Tabs`. (dynasource, qiangxue)
 
 
 2.0.3 March 01, 2015

@@ -2,6 +2,7 @@
 namespace yiiunit\extensions\bootstrap;
 
 use yii\bootstrap\Tabs;
+use yii\helpers\Html;
 
 /**
  * Tests for Tabs widget
@@ -36,7 +37,10 @@ class TabsTest extends TestCase
                         ['label' => 'Page4', 'content' => 'Page4'],
                         ['label' => 'Page5', 'content' => 'Page5'],
                     ]
-                ]
+                ],
+                [
+                    'label' => $extAnchor = 'External link', 'url' => $extUrl = ['//other/route'],
+                ],
             ]
         ]);
 
@@ -65,10 +69,41 @@ class TabsTest extends TestCase
             "id=\"$page3\"",
             "id=\"$page4\"",
             "id=\"$page5\"",
+            Html::a($extAnchor,$extUrl),
         ];
 
         foreach ($shouldContain as $string) {
             $this->assertContains($string, $out);
         }
+    }
+
+    public function testVisible()
+    {
+        Tabs::$counter = 0;
+        $html = Tabs::widget([
+            'items' => [
+                [
+                    'label' => 'Page1', 'content' => 'Page1',
+                ],
+                [
+                    'label' => 'InvisiblePage',
+                    'content' => 'Invisible Page Content',
+                    'visible' => false
+                ],
+                [
+                    'label' => 'Dropdown1',
+                    'items' => [
+                        ['label' => 'Page2', 'content' => 'Page2'],
+                        ['label' => 'InvisibleItem', 'content' => 'Invisible Item Content', 'visible' => false],
+                        ['label' => 'Page3', 'content' => 'Page3'],
+                    ]
+                ],
+            ]
+        ]);
+
+        $this->assertNotContains('InvisiblePage', $html);
+        $this->assertNotContains('Invisible Page Content', $html);
+        $this->assertNotContains('InvisibleItem', $html);
+        $this->assertNotContains('Invisible Item Content', $html);
     }
 }
