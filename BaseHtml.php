@@ -8,7 +8,6 @@
 namespace yii\bootstrap;
 
 use yii\helpers\ArrayHelper;
-use yii\helpers\Html;
 
 /**
  * BaseHtml provides concrete implementation for [[Html]].
