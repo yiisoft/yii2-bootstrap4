@@ -25,8 +25,10 @@ class BaseHtml extends \yii\helpers\Html
      * @param string $name icon short name, for example: 'star'
      * @param array $options the tag options in terms of name-value pairs. These will be rendered as
      * the attributes of the resulting tag. There are also a special options:
+     *
      * - tag: string, tag to be rendered, by default 'span' is used.
      * - prefix: string, prefix which should be used to compose tag class, by default 'glyphicon glyphicon-' is used.
+     *
      * @return string icon HTML.
      */
     public static function icon($name, $options = [])
@@ -45,7 +47,9 @@ class BaseHtml extends \yii\helpers\Html
      * @param string $value static control value.
      * @param array $options the tag options in terms of name-value pairs. These will be rendered as
      * the attributes of the resulting tag. There are also a special options:
+     *
      * - encode: boolean, whether value should be HTML-encoded or not.
+     *
      * @return string generated HTML
      */
     public static function staticControl($value, $options = [])

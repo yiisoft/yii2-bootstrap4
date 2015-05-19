@@ -293,7 +293,9 @@ class ActiveField extends \yii\widgets\ActiveField
      * Renders Bootstrap static form control.
      * @param array $options the tag options in terms of name-value pairs. These will be rendered as
      * the attributes of the resulting tag. There are also a special options:
+     *
      * - encode: boolean, whether value should be HTML-encoded or not.
+     *
      * @return $this the field object itself
      */
     public function staticControl($options = [])
