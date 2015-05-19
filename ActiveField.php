@@ -297,6 +297,7 @@ class ActiveField extends \yii\widgets\ActiveField
      * - encode: boolean, whether value should be HTML-encoded or not.
      *
      * @return $this the field object itself
+     * @since 2.0.5
      */
     public function staticControl($options = [])
     {

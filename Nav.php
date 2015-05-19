@@ -33,6 +33,11 @@ use yii\helpers\ArrayHelper;
  *                  ['label' => 'Level 1 - Dropdown B', 'url' => '#'],
  *             ],
  *         ],
+ *         [
+ *             'label' => 'Login',
+ *             'url' => ['site/login'],
+ *             'visible' => Yii::$app->user->isGuest
+ *         ],
  *     ],
  *     'options' => ['class' =>'nav-pills'], // set this to nav-tab to get tab-styled navigation
  * ]);
