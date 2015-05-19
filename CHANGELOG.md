@@ -7,6 +7,9 @@ Yii Framework 2 bootstrap extension Change Log
 - Enh #38: Added object support for `content` option in `Collapse` class (pana1990, ItsReddi)
 - Enh #40: Added `visible` option to `yii\bootstrap\Tab` widget items (klimov-paul)
 - Enh #41: Added `submenuOptions` support at `yii\bootstrap\Dropdown` (spikyjt, klimov-paul)
+- Enh #42: Added support for the glyphicons via `yii\bootstrap\Html::icon()` (klimov-paul)
+- Enh #43: Added support for the static form controls via `yii\bootstrap\Html` (klimov-paul)
+
 
 2.0.4 May 10, 2015
 ------------------

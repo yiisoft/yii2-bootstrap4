@@ -9,7 +9,6 @@ namespace yii\bootstrap;
 
 use Yii;
 use yii\helpers\ArrayHelper;
-use yii\helpers\Html;
 
 /**
  * Modal renders a modal window that can be toggled by clicking on a button.

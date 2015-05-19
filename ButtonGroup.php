@@ -8,7 +8,6 @@
 namespace yii\bootstrap;
 
 use yii\helpers\ArrayHelper;
-use yii\helpers\Html;
 
 /**
  * ButtonGroup renders a button group bootstrap component.
