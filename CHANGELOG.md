@@ -9,6 +9,7 @@ Yii Framework 2 bootstrap extension Change Log
 - Enh #41: Added `submenuOptions` support at `yii\bootstrap\Dropdown` (spikyjt, klimov-paul)
 - Enh #42: Added support for the glyphicons via `yii\bootstrap\Html::icon()` (klimov-paul)
 - Enh #43: Added support for the static form controls via `yii\bootstrap\Html` (klimov-paul)
+- Enh #44: Fixed `yii\bootstrap\ButtonDropdown` renders two buttons have same with id if 'split' is enabled (klimov-paul)
 
 
 2.0.4 May 10, 2015
