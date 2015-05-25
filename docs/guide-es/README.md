@@ -21,7 +21,7 @@ Uso
 
 * [Yii widgets](usage-widgets.md)
 
-Topics Adicionales
-------------------
+Temas Adicionales
+-----------------
 
 * [Usando directamente los ficheros .less de Bootstrap](topics-less.md)

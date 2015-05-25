@@ -1,7 +1,7 @@
 Yii widgets
 ===========
 
-La mayoría de los componentes de bootstrap son envueltos dentro de Yii widgets lo que permite una sintaxis
+La mayoría de los componentes de bootstrap están encapsulados dentro de Yii widgets lo que permite una sintaxis
 más robusta y poder integrarse con las características del framework. Todos los widgets pertenecen
 al namespace `\yii\bootstrap`:
 
