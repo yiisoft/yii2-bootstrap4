@@ -121,7 +121,7 @@ class Nav extends Widget
         if ($this->dropDownCaret === null) {
             $this->dropDownCaret = Html::tag('b', '', ['class' => 'caret']);
         }
-        Html::addCssClass($this->options, 'nav');
+        Html::addCssClass($this->options, ['widget' => 'nav']);
     }
 
     /**
@@ -178,8 +178,8 @@ class Nav extends Widget
 
         if ($items !== null) {
             $linkOptions['data-toggle'] = 'dropdown';
-            Html::addCssClass($options, 'dropdown');
-            Html::addCssClass($linkOptions, 'dropdown-toggle');
+            Html::addCssClass($options, ['widget' => 'dropdown']);
+            Html::addCssClass($linkOptions, ['widget' => 'dropdown-toggle']);
             if ($this->dropDownCaret !== '') {
                 $label .= ' ' . $this->dropDownCaret;
             }

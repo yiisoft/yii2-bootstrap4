@@ -93,11 +93,11 @@ class NavBar extends Widget
     {
         parent::init();
         $this->clientOptions = false;
-        Html::addCssClass($this->options, 'navbar');
-        if ($this->options['class'] === 'navbar') {
-            Html::addCssClass($this->options, 'navbar-default');
+        if (empty($this->options['class'])) {
+            Html::addCssClass($this->options, ['navbar', 'navbar-default']);
+        } else {
+            Html::addCssClass($this->options, ['widget' => 'navbar']);
         }
-        Html::addCssClass($this->brandOptions, 'navbar-brand');
         if (empty($this->options['role'])) {
             $this->options['role'] = 'navigation';
         }
@@ -116,12 +116,11 @@ class NavBar extends Widget
         }
         echo $this->renderToggleButton();
         if ($this->brandLabel !== false) {
-            Html::addCssClass($this->brandOptions, 'navbar-brand');
+            Html::addCssClass($this->brandOptions, ['widget' => 'navbar-brand']);
             echo Html::a($this->brandLabel, $this->brandUrl === false ? Yii::$app->homeUrl : $this->brandUrl, $this->brandOptions);
         }
         echo Html::endTag('div');
-        Html::addCssClass($this->containerOptions, 'collapse');
-        Html::addCssClass($this->containerOptions, 'navbar-collapse');
+        Html::addCssClass($this->containerOptions, ['collapse' => 'collapse', 'widget' => 'navbar-collapse']);
         $options = $this->containerOptions;
         $tag = ArrayHelper::remove($options, 'tag', 'div');
         echo Html::beginTag($tag, $options);

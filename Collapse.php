@@ -78,7 +78,7 @@ class Collapse extends Widget
     public function init()
     {
         parent::init();
-        Html::addCssClass($this->options, 'panel-group');
+        Html::addCssClass($this->options, ['widget' => 'panel-group']);
     }
 
     /**
@@ -109,7 +109,7 @@ class Collapse extends Widget
             }
             $header = $item['label'];
             $options = ArrayHelper::getValue($item, 'options', []);
-            Html::addCssClass($options, 'panel panel-default');
+            Html::addCssClass($options, ['panel' => 'panel', 'widget' => 'panel-default']);
             $items[] = Html::tag('div', $this->renderItem($header, $item, ++$index), $options);
         }
 
@@ -130,7 +130,7 @@ class Collapse extends Widget
             $id = $this->options['id'] . '-collapse' . $index;
             $options = ArrayHelper::getValue($item, 'contentOptions', []);
             $options['id'] = $id;
-            Html::addCssClass($options, 'panel-collapse collapse');
+            Html::addCssClass($options, ['widget' => 'panel-collapse', 'collapse' => 'collapse']);
 
             $encodeLabel = isset($item['encode']) ? $item['encode'] : $this->encodeLabels;
             if ($encodeLabel) {
