@@ -4,6 +4,7 @@ Yii Framework 2 bootstrap extension Change Log
 2.0.5 under development
 -----------------------
 
+- Enh #15: Allowed overriding default Bootstrap CSS classes added by widgets (klimov-paul)
 - Enh #38: Added object support for `content` option in `Collapse` class (pana1990, ItsReddi)
 - Enh #40: Added `visible` option to `yii\bootstrap\Tab` widget items (klimov-paul)
 - Enh #41: Added `submenuOptions` support at `yii\bootstrap\Dropdown` (spikyjt, klimov-paul)
