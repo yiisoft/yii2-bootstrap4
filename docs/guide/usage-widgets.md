@@ -21,8 +21,8 @@ framework features. All widgets belong to `\yii\bootstrap` namespace:
 
 ## Customizing widget CSS classes <span id="customizing-css-classes"></span>
 
-These widgets allow quick composition of the HTML for the Bootstrap components that require the use of the Bootstrap CSS classes.
-The default class for the component is added automatically by the widget, and the optional classes that you may want to customize are usually supported through the properties of the widget.
+The widgets allow quick composition of the HTML for the bootstrap components that require the bootstrap CSS classes.
+The default classes for a particular component will be added automatically by the widget, and the optional classes that you may want to customize are usually supported through the properties of the widget.
 
 For example, you may use [[yii\bootstrap\Button::options]] to customize the appearance of a button.
 The class 'btn' which is required for a button will be added automatically, so you don't need to worry about it.
@@ -35,11 +35,11 @@ echo Button::widget([
 ]);
 ```
 
-However, sometimes you may need to replace the default class with an alternative one.
+However, sometimes you may need to replace the default classes with the alternative ones.
 For example, the widget [[yii\bootstrap\ButtonGroup]] uses 'btn-group' class for the container div by default,
 but you may need to use 'btn-group-vertical' instead to align the buttons vertically.
 Using a plain 'class' option simply adds 'btn-group-vertical' to 'btn-group', which will produce an incorrect result.
-In order to override the default class of a widget, you need to specify the 'class' option as an array that contains the customized class name under the 'widget' key:
+In order to override the default classes of a widget, you need to specify the 'class' option as an array that contains the customized class definition under the 'widget' key:
 
 ```php
 echo ButtonGroup::widget([
