@@ -21,6 +21,7 @@ Usage
 
 * [Yii widgets](usage-widgets.md)
 * [Html helper](helper-html.md)
+* [Asset Bundles](asset-bundles.md)
 
 Additional topics
 -----------------
