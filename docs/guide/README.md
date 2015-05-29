@@ -20,6 +20,7 @@ Usage
 ----- 
 
 * [Yii widgets](usage-widgets.md)
+* [Html helper](helper-html.md)
 
 Additional topics
 -----------------
