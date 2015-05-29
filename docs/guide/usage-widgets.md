@@ -19,15 +19,14 @@ framework features. All widgets belong to `\yii\bootstrap` namespace:
 - [[yii\bootstrap\Tabs|Tabs]]
 
 
-## Customize widget CSS classes <span id="widgets-customize-css-classes"></span>
+## Customizing widget CSS classes <span id="customizing-css-classes"></span>
 
-Widgets allow quick composition of the HTML for particular Bootstrap components, which requires usage of the
-Bootstrap CSS classes. Those classes are added automatically by the widgets. However usually widget provides
-fields or properties, which allow customization of the CSS styles for particular HTML tags.
+The widgets allow quick composition of the HTML for the bootstrap components that require the bootstrap CSS classes.
+The default classes for a particular component will be added automatically by the widget, and the optional classes that you may want to customize are usually supported through the properties of the widget.
 
-For example: you may use [[yii\bootstrap\Button::options]] to customize appearance of the rendered button.
-Class 'btn' will be added automatically, so you don't need to worry about it. All you need is specify particular
-button class:
+For example, you may use [[yii\bootstrap\Button::options]] to customize the appearance of a button.
+The class 'btn' which is required for a button will be added automatically, so you don't need to worry about it.
+All you need is specify a particular button class:
 
 ```php
 echo Button::widget([
@@ -36,17 +35,16 @@ echo Button::widget([
 ]);
 ```
 
-However, sometimes you may need to replace standard class, added by the widget, with alternative one.
-For example: widget [[yii\bootstrap\ButtonGroup]] uses 'btn-group' class for the container div, but you may
-need to use 'btn-group-vertical', which allows vertical-style layout for the buttons. Using plain 'class' option
-simply adds 'btn-group-vertical' to 'btn-group', which produces incorrect result.
-In order to actually replace class added by widget, you need to specify 'class' option as array, containing
-needed class name under the 'widget' key:
+However, sometimes you may need to replace the default classes with the alternative ones.
+For example, the widget [[yii\bootstrap\ButtonGroup]] uses 'btn-group' class for the container div by default,
+but you may need to use 'btn-group-vertical' instead to align the buttons vertically.
+Using a plain 'class' option simply adds 'btn-group-vertical' to 'btn-group', which will produce an incorrect result.
+In order to override the default classes of a widget, you need to specify the 'class' option as an array that contains the customized class definition under the 'widget' key:
 
 ```php
 echo ButtonGroup::widget([
     'options' => [
-        'class' => ['widget' => 'btn-group-vertical'] // replace 'btn-group' with 'btn-group-vertical'
+        'class' => ['widget' => 'btn-group-vertical'] // replaces 'btn-group' with 'btn-group-vertical'
     ],
     'buttons' => [
         ['label' => 'A'],
