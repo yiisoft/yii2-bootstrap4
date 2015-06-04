@@ -20,6 +20,8 @@ Bootstrap のコアは二つの部分によって表されます。
 --------
 
 * [Yii ウィジェット](usage-widgets.md)
+* [Html ヘルパ](helper-html.md)
+* [アセットバンドル](asset-bundles.md)
 
 追加のトピック
 --------------
