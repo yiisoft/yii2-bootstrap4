@@ -27,6 +27,7 @@ use yii\helpers\ArrayHelper;
  *         ['label' => 'Home', 'url' => ['/site/index']],
  *         ['label' => 'About', 'url' => ['/site/about']],
  *     ],
+ *     'options' => ['class' => 'navbar-nav'],
  * ]);
  * NavBar::end();
  * ```
