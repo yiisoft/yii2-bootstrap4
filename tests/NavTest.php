@@ -85,5 +85,38 @@ EXPECTED;
 EXPECTED;
 
         $this->assertEqualsWithoutLE($expected, $out);
-    }    
+    }
+
+    public function testEmptyItems()
+    {
+        Nav::$counter = 0;
+        $out = Nav::widget([
+            'items' => [
+                [
+                    'label' => 'Page1',
+                    'items' => null,
+                ],
+                [
+                    'label' => 'Dropdown1',
+                    'items' => [
+                        ['label' => 'Page2', 'content' => 'Page2'],
+                        ['label' => 'Page3', 'content' => 'Page3'],
+                    ],
+                ],
+                [
+                    'label' => 'Page4',
+                    'items' => [],
+                ],
+            ],
+        ]);
+
+        $expected = <<<EXPECTED
+<ul id="w0" class="nav"><li><a href="#">Page1</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Dropdown1 <b class="caret"></b></a><ul id="w1" class="dropdown-menu"><li class="dropdown-header">Page2</li>
+<li class="dropdown-header">Page3</li></ul></li>
+<li><a href="#">Page4</a></li></ul>
+EXPECTED;
+
+        $this->assertEqualsWithoutLE($expected, $out);
+    }
 }

@@ -4,6 +4,7 @@ Yii Framework 2 bootstrap extension Change Log
 2.0.6 under development
 -----------------------
 
+- Bug #68: Fixed `yii\bootstrap\Nav` handling empty items (freezy-sk)
 
 
 2.0.5 September 23, 2015
