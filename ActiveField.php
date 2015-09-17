@@ -298,6 +298,7 @@ class ActiveField extends \yii\widgets\ActiveField
      *
      * @return $this the field object itself
      * @since 2.0.5
+     * @see http://getbootstrap.com/css/#forms-controls-static
      */
     public function staticControl($options = [])
     {

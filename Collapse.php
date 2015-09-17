@@ -65,7 +65,6 @@ class Collapse extends Widget
      * - contentOptions: optional, the HTML attributes of the group's content
      */
     public $items = [];
-
     /**
      * @var boolean whether the labels for header items should be HTML-encoded.
      */
