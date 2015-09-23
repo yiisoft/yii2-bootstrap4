@@ -1,8 +1,8 @@
 Yii Framework 2 bootstrap extension Change Log
 ==============================================
 
-2.0.5 under development
------------------------
+2.0.5 September 23, 2015
+------------------------
 
 - Enh #15: Allowed overriding default Bootstrap CSS classes added by widgets (klimov-paul)
 - Enh #38: Added object support for `content` option in `Collapse` class (pana1990, ItsReddi)
