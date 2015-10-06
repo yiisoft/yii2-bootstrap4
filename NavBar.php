@@ -61,9 +61,10 @@ class NavBar extends Widget
      */
     public $brandLabel = false;
     /**
-     * @var array|string|boolean $url the URL for the brand's hyperlink tag. This parameter will be processed by [[Url::to()]]
+     * @var array|string|boolean $url the URL for the brand's hyperlink tag. This parameter will be processed by [[\yii\helpers\Url::to()]]
      * and will be used for the "href" attribute of the brand link. Default value is false that means
      * [[\yii\web\Application::homeUrl]] will be used.
+     * You may set it to `null` if you want to have no link at all.
      */
     public $brandUrl = false;
     /**
