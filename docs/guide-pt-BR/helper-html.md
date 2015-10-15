@@ -1,9 +1,10 @@
-Bootstrap introduces many consistent HTML constructions and skeletons, which allow creating different visual effects. Only the most complex of them are covered by the widgets provided with this extension. The rest should be composed manually using direct HTML composition. However, several special Bootstrap markup cases are covered by [[\yii\bootstrap\Html]] helper. [[\yii\bootstrap\Html]] is an enhanced version of the regular [[\yii\helpers\Html]] dedicated to the Bootstrap needs. It provides several useful methods:
+Bootstrap introduz construções HTML mais consistentes e esqueletos, que permitem a criação de diferentes efeitos visuais. Apenas o mais complexos deles são cobertos por os widgets fornecidos com esta extensão . O restante deverá ser escrito manualmente usando escrita HTML direta. No entanto, vários casos especiais de marcação Bootstrap são cobertos pelo helper [[\yii\bootstrap\Html]]. [[\yii\bootstrap\Html]] é uma versão melhorada de [[\yii\helpers\Html]] dedicada à quem precisa do Bootstrap. Ele fornece vários métodos úteis :
 
     icon() - allows rendering of Glyphicon icons
     staticControl() - allows rendering of form "static controls"
 
-[[\yii\bootstrap\Html]] inherits all functionality available at [[\yii\helpers\Html]] and can be used as a substitute, so you don't need them both inside your view files. For example:
+[[\yii\bootstrap\Html]] herda toda funcionalidade disponível em [[\yii\helpers\Html]] e pode ser usado como um substituto , para que você não precisa de ambos dentro de seus arquivos de views . Por exemplo:
+
 
 <?php
 use yii\bootstrap\Html;
@@ -14,4 +15,4 @@ use yii\bootstrap\Html;
     'options' => ['class' => 'btn-primary'],
 ]); ?>
 
-    Attention: do not confuse [[\yii\bootstrap\Html]] and [[\yii\helpers\Html]], be careful of which class you are using inside your views.
+    Atenção: Não confunda [[\yii\bootstrap\Html]] e [[\yii\helpers\Html]], tenha o cuidado de que classe você está usando dentro de seus arquivos de views.
