@@ -1,16 +1,15 @@
 Asset Bundles
 =============
 
-Bootstrap is a complex front-end solution, which includes CSS, JavaScript, fonts and so on.
-In order to allow you the most flexible control over Bootstrap components, this extension provides several asset bundles.
-They are:
+Bootstrap é uma solução complexa para front-end, o qual inclue CSS, JavaScript, fontes e assim por diante.
+A fim de permitir que você tenha controle mais flexível sobre componentes Bootstrap , esta extensão fornece vários asset bundles. Eles são:
 
-- [[yii\bootstrap\BootstrapAsset|BootstrapAsset]] - contains only the main CSS files.
-- [[yii\bootstrap\BootstrapPluginAsset|BootstrapPluginAsset]] - depends on [[yii\bootstrap\BootstrapAsset]], contains the javascript files.
-- [[yii\bootstrap\BootstrapThemeAsset|BootstrapThemeAsset]] - depends on [[yii\bootstrap\BootstrapAsset]], contains the Bootstrap default theme CSS.
+- [[yii\bootstrap\BootstrapAsset|BootstrapAsset]] - Contém apenas arquivos CSS.
+- [[yii\bootstrap\BootstrapPluginAsset|BootstrapPluginAsset]] - Depende de [[yii\bootstrap\BootstrapAsset]], contem os arquivos JavaScript.
+- [[yii\bootstrap\BootstrapThemeAsset|BootstrapThemeAsset]] - depende de [[yii\bootstrap\BootstrapAsset]], contém o tema padrão do Bootstrap.
 
-Particular application needs may require different bundle (or bundle combination) usage.
-If you need only CSS styles, [[yii\bootstrap\BootstrapAsset]] will be enough for you. However, if
-you want to use Bootstrap JavaScript, you need to register [[yii\bootstrap\BootstrapPluginAsset]].
+Necessidades de aplicações específicas podem exigir utilização de pacotes diferentes ( ou a combinação bundle).
+Se você precisa apenas de estilos CSS, [[yii\bootstrap\BootstrapAsset]] será o suficiente para você. No entanto , se
+você quiser usar Bootstrap JavaScript, você precisa se registrar [[yii\bootstrap\BootstrapPluginAsset]].
 
-> Tip: most of the widgets register [[yii\bootstrap\BootstrapPluginAsset]] automatically.
+> Tip: a maioria dos widgets [[yii\bootstrap\BootstrapPluginAsset]] registram automaticamente.
