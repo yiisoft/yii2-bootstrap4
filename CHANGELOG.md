@@ -4,7 +4,7 @@ Yii Framework 2 bootstrap extension Change Log
 2.0.6 under development
 -----------------------
 
-
+- Bug #98: Fixed `yii\bootstrap\ButtonDropdown` setting `href` attribute for non `a` tags (13nightevil)
 
 2.0.5 September 23, 2015
 ------------------------
