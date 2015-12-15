@@ -13,4 +13,4 @@ Bootstrap コンポーネントに対する最大限の柔軟な制御を可能�
 CSS のスタイルだけが必要なのであれば、[[yii\bootstrap\BootstrapAsset]] だけで十分です。
 しかし、Bootstrap の JavaScript を必要とする場合は、[[yii\bootstrap\BootstrapPluginAsset]] を登録しなければなりません。
 
-> Tip|ヒント: ほとんどのウィジェットは [[yii\bootstrap\BootstrapPluginAsset]] を自動的に登録します。
+> Tip: ほとんどのウィジェットは [[yii\bootstrap\BootstrapPluginAsset]] を自動的に登録します。
