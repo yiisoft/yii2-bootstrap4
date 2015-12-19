@@ -19,7 +19,7 @@ use yii\helpers\ArrayHelper;
  *
  * ```php
  * use yii\bootstrap\NavBar;
- * use yii\widgets\Menu;
+ * use yii\bootstrap\Nav;
  *
  * NavBar::begin(['brandLabel' => 'NavBar Test']);
  * echo Nav::widget([
