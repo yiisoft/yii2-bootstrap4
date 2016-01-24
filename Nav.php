@@ -177,7 +177,9 @@ class Nav extends Widget
             $active = $this->isItemActive($item);
         }
 
-        if (!empty($items)) {
+        if (empty($items)) {
+            $items = '';
+        } else {
             $linkOptions['data-toggle'] = 'dropdown';
             Html::addCssClass($options, ['widget' => 'dropdown']);
             Html::addCssClass($linkOptions, ['widget' => 'dropdown-toggle']);
@@ -190,10 +192,6 @@ class Nav extends Widget
                 }
                 $items = $this->renderDropdown($items, $item);
             }
-        }
-
-        if (empty($items)) {
-            $items = '';
         }
 
         if ($this->activateItems && $active) {

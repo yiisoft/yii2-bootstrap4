@@ -4,6 +4,7 @@ Yii Framework 2 bootstrap extension Change Log
 2.0.6 under development
 -----------------------
 
+- Bug #68: Fixed `yii\bootstrap\Nav` handling empty items (freezy-sk)
 - Bug #81: Fixed `yii\bootstrap\ActiveField::radioList()` and `yii\bootstrap\ActiveField::checkboxList()` ignore `itemOptions` (mikehaertl)
 - Bug #98: Fixed `yii\bootstrap\ButtonDropdown` setting `href` attribute for non `a` tags (13nightevil)
 - Enh #45: Added support for Bootstrap checkbox/radio toggle buttons (RomeroMsk, klimov-paul)
