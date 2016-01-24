@@ -139,7 +139,7 @@ class NavBar extends Widget
             echo Html::endTag('div');
         }
         $tag = ArrayHelper::remove($this->options, 'tag', 'nav');
-        echo Html::endTag($tag, $this->options);
+        echo Html::endTag($tag);
         BootstrapPluginAsset::register($this->getView());
     }
 
