@@ -71,7 +71,7 @@ class ToggleButtonGroup extends InputWidget
             $this->options['item'] = [$this, 'renderItem'];
         }
         switch ($this->type) {
-            case 'checkbox' :
+            case 'checkbox':
                 return Html::activeCheckboxList($this->model, $this->attribute, $this->items, $this->options);
             case 'radio':
                 return Html::activeRadioList($this->model, $this->attribute, $this->items, $this->options);
