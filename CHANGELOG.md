@@ -5,6 +5,7 @@ Yii Framework 2 bootstrap extension Change Log
 -----------------------
 
 - Bug #98: Fixed `yii\bootstrap\ButtonDropdown` setting `href` attribute for non `a` tags (13nightevil)
+- Enh #45: Added support for Bootstrap checkbox/radio toggle buttons (RomeroMsk, klimov-paul)
 
 2.0.5 September 23, 2015
 ------------------------
