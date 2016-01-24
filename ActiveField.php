@@ -254,7 +254,7 @@ class ActiveField extends \yii\widgets\ActiveField
                     'labelOptions' => ['class' => 'checkbox-inline'],
                 ];
             }
-        }  elseif (!isset($options['item'])) {
+        } elseif (!isset($options['item'])) {
             $options['item'] = function ($index, $label, $name, $checked, $value) {
                 return '<div class="checkbox">' . Html::checkbox($name, $checked, ['label' => $label, 'value' => $value]) . '</div>';
             };
@@ -280,7 +280,7 @@ class ActiveField extends \yii\widgets\ActiveField
                     'labelOptions' => ['class' => 'radio-inline'],
                 ];
             }
-        }  elseif (!isset($options['item'])) {
+        } elseif (!isset($options['item'])) {
             $options['item'] = function ($index, $label, $name, $checked, $value) {
                 return '<div class="radio">' . Html::radio($name, $checked, ['label' => $label, 'value' => $value]) . '</div>';
             };
@@ -298,6 +298,7 @@ class ActiveField extends \yii\widgets\ActiveField
      *
      * @return $this the field object itself
      * @since 2.0.5
+     * @see http://getbootstrap.com/css/#forms-controls-static
      */
     public function staticControl($options = [])
     {
@@ -326,7 +327,7 @@ class ActiveField extends \yii\widgets\ActiveField
 
     /**
      * @param boolean $value whether to render a inline list
-     * @return static the field object itself
+     * @return $this the field object itself
      * Make sure you call this method before [[checkboxList()]] or [[radioList()]] to have any effect.
      */
     public function inline($value = true)

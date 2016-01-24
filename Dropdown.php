@@ -77,7 +77,7 @@ class Dropdown extends Widget
             unset($this->submenuOptions['id']);
         }
         parent::init();
-        Html::addCssClass($this->options, 'dropdown-menu');
+        Html::addCssClass($this->options, ['widget' => 'dropdown-menu']);
     }
 
     /**
@@ -120,7 +120,7 @@ class Dropdown extends Widget
             if (empty($item['items'])) {
                 if ($url === null) {
                     $content = $label;
-                    Html::addCssClass($itemOptions, 'dropdown-header');
+                    Html::addCssClass($itemOptions, ['widget' => 'dropdown-header']);
                 } else {
                     $content = Html::a($label, $url, $linkOptions);
                 }
@@ -131,7 +131,7 @@ class Dropdown extends Widget
                 }
                 $content = Html::a($label, $url === null ? '#' : $url, $linkOptions)
                     . $this->renderItems($item['items'], $submenuOptions);
-                Html::addCssClass($itemOptions, 'dropdown-submenu');
+                Html::addCssClass($itemOptions, ['widget' => 'dropdown-submenu']);
             }
 
             $lines[] = Html::tag('li', $content, $itemOptions);
