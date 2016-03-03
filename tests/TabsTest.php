@@ -106,4 +106,24 @@ class TabsTest extends TestCase
         $this->assertNotContains('InvisibleItem', $html);
         $this->assertNotContains('Invisible Item Content', $html);
     }
+
+    public function testItem()
+    {
+        $checkTag = 'article';
+
+        $out = Tabs::widget([
+            'items' => [
+                [
+                    'label' => 'Page1', 'content' => 'Page1',
+                ],
+                [
+                    'label' => 'Page2', 'content' => 'Page2',
+                ],
+            ],
+            'itemOptions' => ['tag' => $checkTag],
+            'renderTabContent' => true,
+        ]);
+
+        $this->assertContains('<' . $checkTag, $out);
+    }
 }

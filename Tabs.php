@@ -194,7 +194,8 @@ class Tabs extends Widget
                 }
 
                 if ($this->renderTabContent) {
-                    $panes[] = Html::tag('div', isset($item['content']) ? $item['content'] : '', $options);
+                    $tag = ArrayHelper::remove($options, 'tag', 'div');
+                    $panes[] = Html::tag($tag, isset($item['content']) ? $item['content'] : '', $options);
                 }
             }
 
