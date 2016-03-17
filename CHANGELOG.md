@@ -1,6 +1,11 @@
 Yii Framework 2 bootstrap extension Change Log
 ==============================================
 
+2.0.7 under development
+-----------------------
+
+
+
 2.0.6 March 17, 2016
 --------------------
 
