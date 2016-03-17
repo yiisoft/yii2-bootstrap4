@@ -1,8 +1,8 @@
 Yii Framework 2 bootstrap extension Change Log
 ==============================================
 
-2.0.6 under development
------------------------
+2.0.6 March 17, 2016
+--------------------
 
 - Bug #68: Fixed `yii\bootstrap\Nav` handling empty items (freezy-sk)
 - Bug #81: Fixed `yii\bootstrap\ActiveField::radioList()` and `yii\bootstrap\ActiveField::checkboxList()` ignore `itemOptions` (mikehaertl)

@@ -16,4 +16,4 @@ namespace yii\bootstrap;
 class InputWidget extends \yii\widgets\InputWidget
 {
     use BootstrapWidgetTrait;
-} 
+}
