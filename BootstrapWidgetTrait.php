@@ -29,7 +29,7 @@ use yii\helpers\Json;
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @author Paul Klimov <klimov.paul@gmail.com>
- * @since 2.0.5
+ * @since 2.0.6
  */
 trait BootstrapWidgetTrait
 {
