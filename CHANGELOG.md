@@ -9,6 +9,8 @@ Yii Framework 2 bootstrap extension Change Log
 - Bug #98: Fixed `yii\bootstrap\ButtonDropdown` setting `href` attribute for non `a` tags (13nightevil)
 - Bug #124: Fixed `yii\bootstrap\Tabs` to use `tag` configuration option for item container (arturf)
 - Enh #45: Added support for Bootstrap checkbox/radio toggle buttons (RomeroMsk, klimov-paul)
+- Enh #92: Allow overriding `data-toggle` in `yii\bootstrap\Tabs` (machour)
+
 
 2.0.5 September 23, 2015
 ------------------------
@@ -21,7 +23,6 @@ Yii Framework 2 bootstrap extension Change Log
 - Enh #43: Added support for the static form controls via `yii\bootstrap\Html` (klimov-paul)
 - Enh #44: Fixed `yii\bootstrap\ButtonDropdown` renders two buttons with the same id, if 'split' is enabled (klimov-paul)
 - Enh #50: Added `dropDownOptions` that is passed to `yii\bootstrap\Nav` dropdown items (fbau123)
-- Enh #92: Allow overriding `data-toggle` in `yii\bootstrap\Tabs` (machour)
 
 
 2.0.4 May 10, 2015
