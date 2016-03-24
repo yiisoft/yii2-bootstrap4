@@ -11,9 +11,9 @@ use Yii;
 use yii\base\InvalidConfigException;
 
 /**
- * A Bootstrap 3 enhanced version of [[\yii\widgets\ActiveForm]].
+ * A Bootstrap 4 enhanced version of [[\yii\widgets\ActiveForm]].
  *
- * This class mainly adds the [[layout]] property to choose a Bootstrap 3 form layout.
+ * This class mainly adds the [[layout]] property to choose a Bootstrap 4 form layout.
  * So for example to render a horizontal form you would:
  *
  * ```php
@@ -78,9 +78,13 @@ class ActiveForm extends \yii\widgets\ActiveForm
      * By choosing a layout, an appropriate default field configuration is applied. This will
      * render the form fields with slightly different markup for each layout. You can
      * override these defaults through [[fieldConfig]].
-     * @see \yii\bootstrap\ActiveField for details on Bootstrap 3 field configuration
+     * @see \yii\bootstrap\ActiveField for details on Bootstrap 4 field configuration
      */
     public $layout = 'default';
+    /**
+     * @var string the CSS class that is added to a field container when the associated attribute has validation error.
+     */
+    public $errorCssClass = 'has-danger';
 
 
     /**
@@ -92,8 +96,8 @@ class ActiveForm extends \yii\widgets\ActiveForm
             throw new InvalidConfigException('Invalid layout type: ' . $this->layout);
         }
 
-        if ($this->layout !== 'default') {
-            Html::addCssClass($this->options, 'form-' . $this->layout);
+        if ($this->layout === 'inline') {
+            Html::addCssClass($this->options, 'form-inline');
         }
         parent::init();
     }

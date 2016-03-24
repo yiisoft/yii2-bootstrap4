@@ -42,7 +42,10 @@ class Carousel extends Widget
      * @var array|boolean the labels for the previous and the next control buttons.
      * If false, it means the previous and the next control buttons should not be displayed.
      */
-    public $controls = ['&lsaquo;', '&rsaquo;'];
+    public $controls = [
+        '<span class="icon-prev"></span><span class="sr-only">Previous</span>',
+        '<span class="icon-next"></span><span class="sr-only">Next</span>'
+    ];
     /**
      * @var boolean
      * If false carousel indicators (<ol> tag with anchors to items) should not be displayed.
@@ -122,7 +125,7 @@ class Carousel extends Widget
             $items[] = $this->renderItem($this->items[$i], $i);
         }
 
-        return Html::tag('div', implode("\n", $items), ['class' => 'carousel-inner']);
+        return Html::tag('div', implode("\n", $items), ['class' => 'carousel-inner', 'role' => 'listbox']);
     }
 
     /**
@@ -149,7 +152,7 @@ class Carousel extends Widget
             throw new InvalidConfigException('The "content" option is required.');
         }
 
-        Html::addCssClass($options, ['widget' => 'item']);
+        Html::addCssClass($options, ['widget' => 'carousel-item']);
         if ($index === 0) {
             Html::addCssClass($options, 'active');
         }

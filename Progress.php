@@ -25,29 +25,27 @@ use yii\helpers\ArrayHelper;
  * // styled
  * echo Progress::widget([
  *     'percent' => 65,
- *     'barOptions' => ['class' => 'progress-bar-danger']
+ *     'options' => ['class' => 'progress-danger']
  * ]);
  *
  * // striped
  * echo Progress::widget([
  *     'percent' => 70,
- *     'barOptions' => ['class' => 'progress-bar-warning'],
- *     'options' => ['class' => 'progress-striped']
+ *     'options' => ['class' => 'progress-warning progress-striped']
  * ]);
  *
  * // striped animated
  * echo Progress::widget([
  *     'percent' => 70,
- *     'barOptions' => ['class' => 'progress-bar-success'],
- *     'options' => ['class' => 'active progress-striped']
+ *     'options' => ['class' => 'progress-success active progress-striped']
  * ]);
  *
  * // stacked bars
  * echo Progress::widget([
  *     'bars' => [
- *         ['percent' => 30, 'options' => ['class' => 'progress-bar-danger']],
- *         ['percent' => 30, 'label' => 'test', 'options' => ['class' => 'progress-bar-success']],
- *         ['percent' => 35, 'options' => ['class' => 'progress-bar-warning']],
+ *         ['percent' => 30, 'options' => ['class' => 'progress-danger']],
+ *         ['percent' => 30, 'label' => 'test', 'options' => ['class' => 'progress-success']],
+ *         ['percent' => 35, 'options' => ['class' => 'progress-warning']],
  *     ]
  * ]);
  * ```
@@ -67,11 +65,6 @@ class Progress extends Widget
      */
     public $percent = 0;
     /**
-     * @var array the HTML attributes of the bar.
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
-     */
-    public $barOptions = [];
-    /**
      * @var array a set of bars that are stacked together to form a single progress bar.
      * Each bar is an array of the following structure:
      *
@@ -88,28 +81,13 @@ class Progress extends Widget
      */
     public $bars;
 
-
-    /**
-     * Initializes the widget.
-     * If you override this method, make sure you call the parent implementation first.
-     */
-    public function init()
-    {
-        parent::init();
-        Html::addCssClass($this->options, ['widget' => 'progress']);
-    }
-
     /**
      * Renders the widget.
      */
     public function run()
     {
         BootstrapAsset::register($this->getView());
-        return implode("\n", [
-            Html::beginTag('div', $this->options),
-            $this->renderProgress(),
-            Html::endTag('div')
-        ]) . "\n";
+        return $this->renderProgress();
     }
 
     /**
@@ -120,7 +98,7 @@ class Progress extends Widget
     protected function renderProgress()
     {
         if (empty($this->bars)) {
-            return $this->renderBar($this->percent, $this->label, $this->barOptions);
+            return $this->renderBar($this->percent, $this->label, $this->options);
         }
         $bars = [];
         foreach ($this->bars as $bar) {
@@ -145,21 +123,18 @@ class Progress extends Widget
     protected function renderBar($percent, $label = '', $options = [])
     {
         $defaultOptions = [
-            'role' => 'progressbar',
-            'aria-valuenow' => $percent,
-            'aria-valuemin' => 0,
-            'aria-valuemax' => 100,
-            'style' => "width:{$percent}%",
+            'value' => $percent,
+            'max' => 100,
         ];
         $options = array_merge($defaultOptions, $options);
-        Html::addCssClass($options, ['widget' => 'progress-bar']);
+        Html::addCssClass($options, ['widget' => 'progress']);
 
-        $out = Html::beginTag('div', $options);
+        $out = Html::beginTag('progress', $options);
         $out .= $label;
         $out .= Html::tag('span', \Yii::t('yii', '{percent}% Complete', ['percent' => $percent]), [
             'class' => 'sr-only'
         ]);
-        $out .= Html::endTag('div');
+        $out .= Html::endTag('progress');
 
         return $out;
     }

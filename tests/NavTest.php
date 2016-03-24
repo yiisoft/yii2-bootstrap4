@@ -40,14 +40,14 @@ class NavTest extends TestCase
         );
 
         $expected = <<<EXPECTED
-<ul id="w0" class="nav"><li><a href="#">Page1</a></li>
-<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Dropdown1 <b class="caret"></b></a><ul id="w1" class="dropdown-menu"><li class="dropdown-header">Page2</li>
-<li class="dropdown-header">Page3</li></ul></li></ul>
+<ul id="w0" class="nav"><li class="nav-item"><a class="nav-link" href="#">Page1</a></li>
+<li class="dropdown nav-item"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Dropdown1</a><div id="w1" class="dropdown-menu"><h6 class="dropdown-header">Page2</h6>
+<h6 class="dropdown-header">Page3</h6></div></li></ul>
 EXPECTED;
 
         $this->assertEqualsWithoutLE($expected, $out);
     }
-    
+
     public function testRenderDropDownWithDropDownOptions()
     {
         Nav::$counter = 0;
@@ -79,9 +79,9 @@ EXPECTED;
         );
 
         $expected = <<<EXPECTED
-<ul id="w0" class="nav"><li><a href="#">Page1</a></li>
-<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Dropdown1 <b class="caret"></b></a><ul id="test1" class="test dropdown-menu" data-id="t1"><li class="dropdown-header">Page2</li>
-<li class="dropdown-header">Page3</li></ul></li></ul>
+<ul id="w0" class="nav"><li class="nav-item"><a class="nav-link" href="#">Page1</a></li>
+<li class="dropdown nav-item"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Dropdown1</a><div id="test1" class="test dropdown-menu" data-id="t1"><h6 class="dropdown-header">Page2</h6>
+<h6 class="dropdown-header">Page3</h6></div></li></ul>
 EXPECTED;
 
         $this->assertEqualsWithoutLE($expected, $out);
@@ -111,10 +111,10 @@ EXPECTED;
         ]);
 
         $expected = <<<EXPECTED
-<ul id="w0" class="nav"><li><a href="#">Page1</a></li>
-<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Dropdown1 <b class="caret"></b></a><ul id="w1" class="dropdown-menu"><li class="dropdown-header">Page2</li>
-<li class="dropdown-header">Page3</li></ul></li>
-<li><a href="#">Page4</a></li></ul>
+<ul id="w0" class="nav"><li class="nav-item"><a class="nav-link" href="#">Page1</a></li>
+<li class="dropdown nav-item"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Dropdown1</a><div id="w1" class="dropdown-menu"><h6 class="dropdown-header">Page2</h6>
+<h6 class="dropdown-header">Page3</h6></div></li>
+<li class="nav-item"><a class="nav-link" href="#">Page4</a></li></ul>
 EXPECTED;
 
         $this->assertEqualsWithoutLE($expected, $out);

@@ -143,6 +143,8 @@ class Alert extends Widget
                 'aria-hidden' => 'true',
                 'class' => 'close',
             ], $this->closeButton);
+
+            Html::addCssClass($this->options, ['alert-dismissible']);
         }
     }
 }
