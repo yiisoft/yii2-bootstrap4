@@ -4,7 +4,7 @@ Yii Framework 2 bootstrap extension Change Log
 2.0.7 under development
 -----------------------
 
-
+- Bug #126: `yii\bootstrap\ToggleButtonGroup` was unable to work without model (makroxyz)
 
 2.0.6 March 17, 2016
 --------------------
