@@ -5,6 +5,7 @@ Yii Framework 2 bootstrap extension Change Log
 -----------------------
 
 - Bug #126: `yii\bootstrap\ToggleButtonGroup` was unable to work without model (makroxyz)
+- Bug #130: Fixed `yii\bootstrap\Collapse` to use pure numerical value on `content` property (meysampg)
 
 2.0.6 March 17, 2016
 --------------------

@@ -144,7 +144,7 @@ class Collapse extends Widget
 
             $header = Html::tag('h4', $headerToggle, ['class' => 'panel-title']);
 
-            if (is_string($item['content']) || is_object($item['content'])) {
+            if (is_string($item['content']) || is_numeric($item['content']) || is_object($item['content'])) {
                 $content = Html::tag('div', $item['content'], ['class' => 'panel-body']) . "\n";
             } elseif (is_array($item['content'])) {
                 $content = Html::ul($item['content'], [
