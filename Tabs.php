@@ -118,6 +118,12 @@ class Tabs extends Widget
      * @since 2.0.1
      */
     public $renderTabContent = true;
+    /**
+     * @var array list of HTML attributes for the `tab-content` container. This will always contain the CSS class `tab-content`.
+     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @since 2.0.7
+     */
+    public $tabContentOptions = [];
 	/**
 	 * @var string name of a class to use for rendering dropdowns withing this widget. Defaults to [[Dropdown]].
 	 * @since 2.0.7
@@ -132,6 +138,7 @@ class Tabs extends Widget
     {
         parent::init();
         Html::addCssClass($this->options, ['widget' => 'nav', $this->navType]);
+        Html::addCssClass($this->tabContentOptions, 'tab-content');
     }
 
     /**
@@ -288,6 +295,6 @@ class Tabs extends Widget
      */
     public function renderPanes($panes)
     {
-        return $this->renderTabContent ? "\n" . Html::tag('div', implode("\n", $panes), ['class' => 'tab-content']) : '';
+        return $this->renderTabContent ? "\n" . Html::tag('div', implode("\n", $panes), $this->tabContentOptions) : '';
     }
 }

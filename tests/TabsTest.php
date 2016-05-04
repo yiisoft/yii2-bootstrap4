@@ -138,4 +138,24 @@ class TabsTest extends TestCase
 
         $this->assertContains('<' . $checkTag, $out);
     }
+
+    public function testTabContentOptions()
+    {
+        $checkAttribute = "test_attribute";
+        $checkValue = "check_attribute";
+
+        $out = Tabs::widget([
+            'items' => [
+                [
+                    'label' => 'Page1', 'content'=>'Page1'
+                ]
+            ],
+            'tabContentOptions' => [
+                $checkAttribute => $checkValue
+            ]
+        ]);
+
+        $this->assertContains($checkAttribute.'=', $out);
+        $this->assertContains($checkValue, $out);
+    }
 }
