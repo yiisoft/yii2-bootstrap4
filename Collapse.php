@@ -32,7 +32,7 @@ use yii\helpers\ArrayHelper;
  *             'contentOptions' => [...],
  *             'options' => [...],
  *         ],
- *         // if you want to swap out .panel-body with .list-group, you may use the following
+ *         // if you want to swap out .card-block with .list-group, you may use the following
  *         [
  *             'label' => 'Collapsible Group Item #1',
  *             'content' => [
@@ -70,16 +70,6 @@ class Collapse extends Widget
      */
     public $encodeLabels = true;
 
-
-    /**
-     * Initializes the widget.
-     */
-    public function init()
-    {
-        parent::init();
-        Html::addCssClass($this->options, ['widget' => 'panel-group']);
-    }
-
     /**
      * Renders the widget.
      */
@@ -108,7 +98,7 @@ class Collapse extends Widget
             }
             $header = $item['label'];
             $options = ArrayHelper::getValue($item, 'options', []);
-            Html::addCssClass($options, ['panel' => 'panel', 'widget' => 'panel-default']);
+            Html::addCssClass($options, ['panel' => 'card']);
             $items[] = Html::tag('div', $this->renderItem($header, $item, ++$index), $options);
         }
 
@@ -142,10 +132,10 @@ class Collapse extends Widget
                     'data-parent' => '#' . $this->options['id']
                 ]) . "\n";
 
-            $header = Html::tag('h4', $headerToggle, ['class' => 'panel-title']);
+            $header = Html::tag('h4', $headerToggle, ['class' => 'card-title']);
 
             if (is_string($item['content']) || is_numeric($item['content']) || is_object($item['content'])) {
-                $content = Html::tag('div', $item['content'], ['class' => 'panel-body']) . "\n";
+                $content = Html::tag('div', $item['content'], ['class' => 'card-block']) . "\n";
             } elseif (is_array($item['content'])) {
                 $content = Html::ul($item['content'], [
                     'class' => 'list-group',
@@ -155,7 +145,7 @@ class Collapse extends Widget
                     'encode' => false,
                 ]) . "\n";
                 if (isset($item['footer'])) {
-                    $content .= Html::tag('div', $item['footer'], ['class' => 'panel-footer']) . "\n";
+                    $content .= Html::tag('div', $item['footer'], ['class' => 'card-footer']) . "\n";
                 }
             } else {
                 throw new InvalidConfigException('The "content" option should be a string, array or object.');
@@ -165,7 +155,7 @@ class Collapse extends Widget
         }
         $group = [];
 
-        $group[] = Html::tag('div', $header, ['class' => 'panel-heading']);
+        $group[] = Html::tag('div', $header, ['class' => 'card-header']);
         $group[] = Html::tag('div', $content, $options);
 
         return implode("\n", $group);

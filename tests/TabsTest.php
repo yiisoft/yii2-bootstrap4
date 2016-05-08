@@ -69,7 +69,7 @@ class TabsTest extends TestCase
             "id=\"$page3\"",
             "id=\"$page4\"",
             "id=\"$page5\"",
-            Html::a($extAnchor,$extUrl),
+            Html::a($extAnchor, $extUrl, ['class' => 'nav-link']),
         ];
 
         foreach ($shouldContain as $string) {

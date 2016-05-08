@@ -19,7 +19,8 @@
     ],
     "require": {
         "yiisoft/yii2": ">=2.0.6",
-        "bower-asset/bootstrap": "3.3.* | 3.2.* | 3.1.*"
+        "bower-asset/bootstrap": "dev-default#48938155eb24b4ccdde09426066869504c6dab3c",
+        "bower-asset/tether": "1.2.*"
     },
     "autoload": {
         "psr-4": {

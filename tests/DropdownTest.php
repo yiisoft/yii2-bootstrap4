@@ -40,9 +40,9 @@ class DropdownTest extends TestCase
         );
 
         $expected = <<<EXPECTED
-<ul id="w0" class="dropdown-menu"><li class="dropdown-header">Page1</li>
-<li class="dropdown-submenu"><a href="#" tabindex="-1">Dropdown1</a><ul><li class="dropdown-header">Page2</li>
-<li class="dropdown-header">Page3</li></ul></li></ul>
+<div id="w0" class="dropdown-menu"><h6 class="dropdown-header">Page1</h6>
+<div class="dropdown-submenu"><a class="dropdown-item" href="#" tabindex="-1">Dropdown1</a><div><h6 class="dropdown-header">Page2</h6>
+<h6 class="dropdown-header">Page3</h6></div></div></div>
 EXPECTED;
 
         $this->assertEqualsWithoutLE($expected, $out);
@@ -79,10 +79,10 @@ EXPECTED;
         );
 
         $expected = <<<EXPECTED
-<ul id="w0" class="dropdown-menu"><li class="dropdown-submenu"><a href="#" tabindex="-1">Dropdown1</a><ul class="submenu-list"><li class="dropdown-header">Page1</li>
-<li class="dropdown-header">Page2</li></ul></li>
-<li class="dropdown-submenu"><a href="#" tabindex="-1">Dropdown2</a><ul class="submenu-override"><li class="dropdown-header">Page3</li>
-<li class="dropdown-header">Page4</li></ul></li></ul>
+<div id="w0" class="dropdown-menu"><div class="dropdown-submenu"><a class="dropdown-item" href="#" tabindex="-1">Dropdown1</a><div class="submenu-list"><h6 class="dropdown-header">Page1</h6>
+<h6 class="dropdown-header">Page2</h6></div></div>
+<div class="dropdown-submenu"><a class="dropdown-item" href="#" tabindex="-1">Dropdown2</a><div class="submenu-override"><h6 class="dropdown-header">Page3</h6>
+<h6 class="dropdown-header">Page4</h6></div></div></div>
 EXPECTED;
 
         $this->assertEqualsWithoutLE($expected, $out);

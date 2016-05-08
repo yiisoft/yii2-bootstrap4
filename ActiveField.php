@@ -10,10 +10,10 @@ namespace yii\bootstrap;
 use yii\helpers\ArrayHelper;
 
 /**
- * A Bootstrap 3 enhanced version of [[\yii\widgets\ActiveField]].
+ * A Bootstrap 4 enhanced version of [[\yii\widgets\ActiveField]].
  *
  * This class adds some useful features to [[\yii\widgets\ActiveField|ActiveField]] to render all
- * sorts of Bootstrap 3 form fields in different form layouts:
+ * sorts of Bootstrap 4 form fields in different form layouts:
  *
  * - [[inputTemplate]] is an optional template to render complex inputs, for example input groups
  * - [[horizontalCssClasses]] defines the CSS grid classes to add to label, wrapper, error and hint
@@ -349,11 +349,11 @@ class ActiveField extends \yii\widgets\ActiveField
         $config = [
             'hintOptions' => [
                 'tag' => 'p',
-                'class' => 'help-block',
+                'class' => 'text-muted',
             ],
             'errorOptions' => [
                 'tag' => 'p',
-                'class' => 'help-block help-block-error',
+                'class' => 'text-danger',
             ],
             'inputOptions' => [
                 'class' => 'form-control',
@@ -376,9 +376,10 @@ class ActiveField extends \yii\widgets\ActiveField
             }
             $config['horizontalCssClasses'] = $cssClasses;
             $config['wrapperOptions'] = ['class' => $cssClasses['wrapper']];
-            $config['labelOptions'] = ['class' => 'control-label ' . $cssClasses['label']];
-            $config['errorOptions'] = ['class' => 'help-block help-block-error ' . $cssClasses['error']];
-            $config['hintOptions'] = ['class' => 'help-block ' . $cssClasses['hint']];
+            $config['labelOptions'] = ['class' => 'form-control-label ' . $cssClasses['label']];
+            $config['errorOptions'] = ['class' => 'text-danger ' . $cssClasses['error']];
+            $config['hintOptions'] = ['class' => 'text-muted ' . $cssClasses['hint']];
+            $config['options'] = ['class' => 'form-group row'];
         } elseif ($layout === 'inline') {
             $config['labelOptions'] = ['class' => 'sr-only'];
             $config['enableError'] = false;

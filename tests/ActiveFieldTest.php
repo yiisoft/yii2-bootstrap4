@@ -57,7 +57,7 @@ class ActiveFieldTest extends TestCase
 <input type="hidden" name="DynamicModel[attributeName]" value=""><div id="dynamicmodel-attributename"><div class="radio"><label><input type="radio" name="DynamicModel[attributeName]" value="1"> name1</label></div>
 <div class="radio"><label><input type="radio" name="DynamicModel[attributeName]" value="2"> name2</label></div></div>
 
-<p class="help-block help-block-error"></p>
+<p class="text-danger"></p>
 </div>
 HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
@@ -73,7 +73,7 @@ HTML;
 <input type="hidden" name="DynamicModel[attributeName]" value=""><div id="dynamicmodel-attributename"><div class="checkbox"><label><input type="checkbox" name="DynamicModel[attributeName][]" value="1"> name1</label></div>
 <div class="checkbox"><label><input type="checkbox" name="DynamicModel[attributeName][]" value="2"> name2</label></div></div>
 
-<p class="help-block help-block-error"></p>
+<p class="text-danger"></p>
 </div>
 HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);

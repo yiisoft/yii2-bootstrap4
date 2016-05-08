@@ -159,9 +159,9 @@ class Tabs extends Widget
             $label = $encodeLabel ? Html::encode($item['label']) : $item['label'];
             $headerOptions = array_merge($this->headerOptions, ArrayHelper::getValue($item, 'headerOptions', []));
             $linkOptions = array_merge($this->linkOptions, ArrayHelper::getValue($item, 'linkOptions', []));
+            Html::addCssClass($linkOptions, 'nav-link');
 
             if (isset($item['items'])) {
-                $label .= ' <b class="caret"></b>';
                 Html::addCssClass($headerOptions, ['widget' => 'dropdown']);
 
                 if ($this->renderDropdown($n, $item['items'], $panes)) {
@@ -181,7 +181,7 @@ class Tabs extends Widget
                 Html::addCssClass($options, ['widget' => 'tab-pane']);
                 if (ArrayHelper::remove($item, 'active')) {
                     Html::addCssClass($options, 'active');
-                    Html::addCssClass($headerOptions, 'active');
+                    Html::addCssClass($linkOptions, 'active');
                 }
 
                 if (isset($item['url'])) {
@@ -199,6 +199,7 @@ class Tabs extends Widget
                 }
             }
 
+            Html::addCssClass($headerOptions, 'nav-item');
             $headers[] = Html::tag('li', $header, $headerOptions);
         }
 
