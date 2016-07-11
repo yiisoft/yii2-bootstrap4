@@ -39,7 +39,13 @@ class TabsTest extends TestCase
                     ]
                 ],
                 [
-                    'label' => $extAnchor = 'External link', 'url' => $extUrl = ['//other/route'],
+                    'label' => $extAnchor1 = 'External link', 'url' => $extUrl1 = ['//other/route'],
+                ],
+                [
+                    'label' => 'Dropdown3',
+                    'items' => [
+                        ['label' => $extAnchor2 = 'External Dropdown Link', 'url' => $extUrl2 = ['//other/dropdown/route']],
+                    ]
                 ],
             ]
         ]);
@@ -63,13 +69,16 @@ class TabsTest extends TestCase
                     "#$page4", // Page4
                     "#$page5", // Page5
 
+                'w3', // Dropdown3
+
             // containers
             "id=\"$page1\"",
             "id=\"$page2\"",
             "id=\"$page3\"",
             "id=\"$page4\"",
             "id=\"$page5\"",
-            Html::a($extAnchor,$extUrl),
+            Html::a($extAnchor1,$extUrl1),
+            Html::a($extAnchor2,$extUrl2, ['tabindex' => -1]),
         ];
 
         foreach ($shouldContain as $string) {
@@ -96,6 +105,8 @@ class TabsTest extends TestCase
                         ['label' => 'Page2', 'content' => 'Page2'],
                         ['label' => 'InvisibleItem', 'content' => 'Invisible Item Content', 'visible' => false],
                         ['label' => 'Page3', 'content' => 'Page3'],
+                        ['label' => 'External Link', 'url' => ['//other/dropdown/route']],
+                        ['label' => 'Invisible External Link', 'url' => ['//other/dropdown/route'], 'visible' => false],
                     ]
                 ],
             ]
@@ -105,6 +116,7 @@ class TabsTest extends TestCase
         $this->assertNotContains('Invisible Page Content', $html);
         $this->assertNotContains('InvisibleItem', $html);
         $this->assertNotContains('Invisible Item Content', $html);
+        $this->assertNotContains('Invisible External Link', $html);
     }
 
     public function testItem()
