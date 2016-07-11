@@ -245,7 +245,7 @@ class Tabs extends Widget
                 continue;
             }
             if (!(array_key_exists('content', $item) xor array_key_exists('url', $item))) {
-                throw new InvalidConfigException("Either the 'content' or the 'url' option is required.");
+                throw new InvalidConfigException("Either the 'content' or the 'url' option is required, but only one can be set.");
             }
             if (array_key_exists('url', $item)) {
                 continue;
