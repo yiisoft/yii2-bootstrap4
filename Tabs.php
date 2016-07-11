@@ -44,6 +44,10 @@ use yii\helpers\ArrayHelper;
  *                      'label' => 'DropdownB',
  *                      'content' => 'DropdownB, Anim pariatur cliche...',
  *                  ],
+ *                  [
+ *                      'label' => 'External Link',
+ *                      'url' => 'http://www.example.com',
+ *                  ],
  *             ],
  *         ],
  *     ],
@@ -240,8 +244,11 @@ class Tabs extends Widget
             if (isset($item['visible']) && !$item['visible']) {
                 continue;
             }
-            if (!array_key_exists('content', $item)) {
-                throw new InvalidConfigException("The 'content' option is required.");
+            if (!(array_key_exists('content', $item) xor array_key_exists('url', $item))) {
+                throw new InvalidConfigException("Either the 'content' or the 'url' option is required.");
+            }
+            if (array_key_exists('url', $item)) {
+                continue;
             }
 
             $content = ArrayHelper::remove($item, 'content');
