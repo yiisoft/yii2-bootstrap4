@@ -7,6 +7,7 @@ Yii Framework 2 bootstrap extension Change Log
 - Bug #126: `yii\bootstrap\ToggleButtonGroup` was unable to work without model (makroxyz)
 - Bug #130: Fixed `yii\bootstrap\Collapse` to use pure numerical value on `content` property (meysampg)
 - Bug #137: Remove `role="navbar"` from `yii\bootstrap\NavBar` according to new aria specification (tino415)
+- Enh #113: Allow URLs instead of content for Tab Widget Dropdown items (Okeanos)
 
 2.0.6 March 17, 2016
 --------------------
