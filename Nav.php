@@ -102,7 +102,7 @@ class Nav extends Widget
     /**
      * @var string this property allows you to customize the HTML which is used to generate the drop down caret symbol,
      * which is displayed next to the button text to indicate the drop down functionality.
-     * Defaults to `null` which means `<b class="caret"></b>` will be used. To disable the caret, set this property to be an empty string.
+     * Defaults to `null` which means `<span class="caret"></span>` will be used. To disable the caret, set this property to be an empty string.
      */
     public $dropDownCaret;
     /**
@@ -125,7 +125,7 @@ class Nav extends Widget
             $this->params = Yii::$app->request->getQueryParams();
         }
         if ($this->dropDownCaret === null) {
-            $this->dropDownCaret = Html::tag('b', '', ['class' => 'caret']);
+            $this->dropDownCaret = '<span class="caret"></span>';
         }
         Html::addCssClass($this->options, ['widget' => 'nav']);
     }

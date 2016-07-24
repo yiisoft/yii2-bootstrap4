@@ -41,7 +41,7 @@ class NavTest extends TestCase
 
         $expected = <<<EXPECTED
 <ul id="w0" class="nav"><li><a href="#">Page1</a></li>
-<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Dropdown1 <b class="caret"></b></a><ul id="w1" class="dropdown-menu"><li class="dropdown-header">Page2</li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Dropdown1 <span class="caret"></span></a><ul id="w1" class="dropdown-menu"><li class="dropdown-header">Page2</li>
 <li class="dropdown-header">Page3</li></ul></li></ul>
 EXPECTED;
 
@@ -80,7 +80,7 @@ EXPECTED;
 
         $expected = <<<EXPECTED
 <ul id="w0" class="nav"><li><a href="#">Page1</a></li>
-<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Dropdown1 <b class="caret"></b></a><ul id="test1" class="test dropdown-menu" data-id="t1"><li class="dropdown-header">Page2</li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Dropdown1 <span class="caret"></span></a><ul id="test1" class="test dropdown-menu" data-id="t1"><li class="dropdown-header">Page2</li>
 <li class="dropdown-header">Page3</li></ul></li></ul>
 EXPECTED;
 
@@ -112,7 +112,7 @@ EXPECTED;
 
         $expected = <<<EXPECTED
 <ul id="w0" class="nav"><li><a href="#">Page1</a></li>
-<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Dropdown1 <b class="caret"></b></a><ul id="w1" class="dropdown-menu"><li class="dropdown-header">Page2</li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Dropdown1 <span class="caret"></span></a><ul id="w1" class="dropdown-menu"><li class="dropdown-header">Page2</li>
 <li class="dropdown-header">Page3</li></ul></li>
 <li><a href="#">Page4</a></li></ul>
 EXPECTED;
