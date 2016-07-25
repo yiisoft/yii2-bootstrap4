@@ -105,6 +105,11 @@ class Nav extends Widget
      * Defaults to `null` which means `<b class="caret"></b>` will be used. To disable the caret, set this property to be an empty string.
      */
     public $dropDownCaret;
+    /**
+     * @var string name of a class to use for rendering dropdowns withing this widget. Defaults to [[Dropdown]].
+	 * @since 2.0.7
+     */
+	public $dropdownClass = 'yii\bootstrap\Dropdown';
 
 
     /**
@@ -211,7 +216,9 @@ class Nav extends Widget
      */
     protected function renderDropdown($items, $parentItem)
     {
-        return Dropdown::widget([
+		/** @var Widget $dropdownClass */
+		$dropdownClass = $this->dropdownClass;
+		return $dropdownClass::widget([
             'options' => ArrayHelper::getValue($parentItem, 'dropDownOptions', []),
             'items' => $items,
             'encodeLabels' => $this->encodeLabels,

@@ -118,6 +118,11 @@ class Tabs extends Widget
      * @since 2.0.1
      */
     public $renderTabContent = true;
+	/**
+	 * @var string name of a class to use for rendering dropdowns withing this widget. Defaults to [[Dropdown]].
+	 * @since 2.0.7
+	 */
+	public $dropdownClass = 'yii\bootstrap\Dropdown';
 
 
     /**
@@ -176,8 +181,10 @@ class Tabs extends Widget
                 if (!isset($linkOptions['data-toggle'])) {
                     $linkOptions['data-toggle'] = 'dropdown';
                 }
+				/** @var Widget $dropdownClass */
+				$dropdownClass = $this->dropdownClass;
                 $header = Html::a($label, "#", $linkOptions) . "\n"
-                    . Dropdown::widget(['items' => $item['items'], 'clientOptions' => false, 'view' => $this->getView()]);
+                    . $dropdownClass::widget(['items' => $item['items'], 'clientOptions' => false, 'view' => $this->getView()]);
             } else {
                 $options = array_merge($this->itemOptions, ArrayHelper::getValue($item, 'options', []));
                 $options['id'] = ArrayHelper::getValue($options, 'id', $this->options['id'] . '-tab' . $n);
