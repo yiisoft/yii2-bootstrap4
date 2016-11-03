@@ -28,12 +28,11 @@ class ActiveFieldTest extends TestCase
 
     protected function setUp()
     {
-        parent::setUp();
         // dirty way to have Request object not throwing exception when running testHomeLinkNull()
         $_SERVER['SCRIPT_FILENAME'] = "index.php";
         $_SERVER['SCRIPT_NAME'] = "index.php";
 
-        $this->mockWebApplication();
+        parent::setUp();
 
         $this->helperModel = new DynamicModel(['attributeName']);
         ob_start();
@@ -53,7 +52,7 @@ class ActiveFieldTest extends TestCase
 
         $expectedHtml = <<<HTML
 <div class="form-group field-dynamicmodel-attributename">
-<label class="control-label" for="dynamicmodel-attributename">Attribute Name</label>
+<label class="control-label">Attribute Name</label>
 <input type="hidden" name="DynamicModel[attributeName]" value=""><div id="dynamicmodel-attributename"><div class="radio"><label><input type="radio" name="DynamicModel[attributeName]" value="1"> name1</label></div>
 <div class="radio"><label><input type="radio" name="DynamicModel[attributeName]" value="2"> name2</label></div></div>
 
@@ -69,7 +68,7 @@ HTML;
 
         $expectedHtml = <<<HTML
 <div class="form-group field-dynamicmodel-attributename">
-<label class="control-label" for="dynamicmodel-attributename">Attribute Name</label>
+<label class="control-label">Attribute Name</label>
 <input type="hidden" name="DynamicModel[attributeName]" value=""><div id="dynamicmodel-attributename"><div class="checkbox"><label><input type="checkbox" name="DynamicModel[attributeName][]" value="1"> name1</label></div>
 <div class="checkbox"><label><input type="checkbox" name="DynamicModel[attributeName][]" value="2"> name2</label></div></div>
 
