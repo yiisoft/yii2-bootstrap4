@@ -10,6 +10,7 @@ Yii Framework 2 bootstrap extension Change Log
 - Bug #137: Remove `role="navbar"` from `yii\bootstrap\NavBar` according to new aria specification (tino415)
 - Enh #113: Allow URLs instead of content for Tab Widget Dropdown items (Okeanos)
 - Bug #143: Fixed `yii\bootstrap\Nav` to use tags according to bootstrap docs (PowerGamer1)
+- Bug #162: Fixed `yii\bootstrap\Nav` not taking explicit `active` into account when `activateItems` is off (samdark)
 
 2.0.6 March 17, 2016
 --------------------

@@ -119,4 +119,33 @@ EXPECTED;
 
         $this->assertEqualsWithoutLE($expected, $out);
     }
+
+    /**
+     * @see https://github.com/yiisoft/yii2-bootstrap/issues/162
+     */
+    public function testExplicitActive()
+    {
+        Nav::$counter = 0;
+        $out = Nav::widget([
+            'activateItems' => false,
+            'items' => [
+                [
+                    'label' => 'Item1',
+                    //'url' => ['some/route1'],
+                    'active' => true,
+                ],
+                [
+                    'label' => 'Item2',
+                    //'url' => ['some/route2'],
+                ],
+            ],
+        ]);
+
+        $expected = <<<EXPECTED
+<ul id="w0" class="nav"><li class="active"><a href="#">Item1</a></li>
+<li><a href="#">Item2</a></li></ul>
+EXPECTED;
+
+        $this->assertEqualsWithoutLE($expected, $out);
+    }
 }

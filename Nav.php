@@ -199,7 +199,7 @@ class Nav extends Widget
             }
         }
 
-        if ($this->activateItems && $active) {
+        if ($active) {
             Html::addCssClass($options, 'active');
         }
 
