@@ -192,9 +192,7 @@ class Nav extends Widget
                 $label .= ' ' . $this->dropDownCaret;
             }
             if (is_array($items)) {
-                if ($this->activateItems) {
-                    $items = $this->isChildActive($items, $active);
-                }
+                $items = $this->isChildActive($items, $active);
                 $items = $this->renderDropdown($items, $item);
             }
         }
@@ -258,6 +256,9 @@ class Nav extends Widget
      */
     protected function isItemActive($item)
     {
+        if (!$this->activateItems) {
+            return false;
+        }
         if (isset($item['url']) && is_array($item['url']) && isset($item['url'][0])) {
             $route = $item['url'][0];
             if ($route[0] !== '/' && Yii::$app->controller) {
