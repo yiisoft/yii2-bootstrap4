@@ -213,8 +213,7 @@ class Tabs extends Widget
             $headers[] = Html::tag('li', $header, $headerOptions);
         }
 
-        return Html::tag('ul', implode("\n", $headers), $this->options)
-        . ($this->renderTabContent ? "\n" . Html::tag('div', implode("\n", $panes), ['class' => 'tab-content']) : '');
+        return Html::tag('ul', implode("\n", $headers), $this->options) . $this->renderPanes($panes);
     }
 
     /**
@@ -278,5 +277,17 @@ class Tabs extends Widget
         }
 
         return $itemActive;
+    }
+
+    /**
+     * Renders tab panes.
+     *
+     * @param array $panes
+     * @return string the rendering result.
+     * @since 2.0.7
+     */
+    public function renderPanes($panes)
+    {
+        return $this->renderTabContent ? "\n" . Html::tag('div', implode("\n", $panes), ['class' => 'tab-content']) : '';
     }
 }
