@@ -20,7 +20,7 @@
     "require": {
         "yiisoft/yii2": ">=2.0.6",
         "bower-asset/bootstrap": "~4.0.0@alpha",
-        "bower-asset/tether": "1.2.*"
+        "bower-asset/tether": "1.4.*"
     },
     "autoload": {
         "psr-4": {
