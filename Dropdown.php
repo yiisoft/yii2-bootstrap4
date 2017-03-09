@@ -39,8 +39,8 @@ class Dropdown extends Widget
      * or an array representing a single menu with the following structure:
      *
      * - label: string, required, the label of the item link.
-     * - encode: boolean, optional, whether to HTML-ecnode item label.
-     * - url: string|array, optional, the url of the item link. This will be processed by [[Url::to()]].
+     * - encode: boolean, optional, whether to HTML-encode item label.
+     * - url: string|array, optional, the URL of the item link. This will be processed by [[\yii\helpers\Url::to()]].
      *   If not set, the item will be treated as a menu header when the item has no sub-menu.
      * - visible: boolean, optional, whether this menu item is visible. Defaults to true.
      * - linkOptions: array, optional, the HTML attributes of the item link.
