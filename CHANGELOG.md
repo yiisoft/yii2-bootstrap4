@@ -6,6 +6,7 @@ Yii Framework 2 bootstrap extension Change Log
 
 - Enh #131 Added `tabContentOptions` to set HTML attributes for 'tab-content' container in `Tabs` widget (AndrewKorpusov)
 - Enh #145: Added the ability to customize the class used to draw dropdowns in `yii\bootstrap\Nav`, `yii\bootstrapButtonDropdown` and `yii\bootstrap\Tab` widgets (PowerGamer1)
+- Enh #187: Added `yii\bootstrap\Tabs::activateFirstVisibleTab()` to set the first visible tab as active if no active tab is set (nilsburg)
 - Bug #126: `yii\bootstrap\ToggleButtonGroup` was unable to work without model (makroxyz)
 - Bug #130: Fixed `yii\bootstrap\Collapse` to use pure numerical value on `content` property (meysampg)
 - Bug #137: Remove `role="navbar"` from `yii\bootstrap\NavBar` according to new aria specification (tino415)
