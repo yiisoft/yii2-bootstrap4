@@ -1,6 +1,13 @@
 Yii Framework 2 bootstrap extension Change Log
 ==============================================
 
+
+2.1.0 under development
+-----------------------
+
+- Chg #133: Markup and defaults were adjusted for Bootstrap 4 alpha (alanwillms, skotos)
+
+
 2.0.7 under development
 -----------------------
 
