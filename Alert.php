@@ -135,7 +135,7 @@ class Alert extends Widget
      */
     protected function initOptions()
     {
-        Html::addCssClass($this->options, ['alert', 'fade', 'in']);
+        Html::addCssClass($this->options, ['alert', 'fade', 'show']);
 
         if ($this->closeButton !== false) {
             $this->closeButton = array_merge([

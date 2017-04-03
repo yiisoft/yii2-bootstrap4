@@ -6,6 +6,7 @@ Yii Framework 2 bootstrap extension Change Log
 -----------------------
 
 - Chg #133: Markup and defaults were adjusted for Bootstrap 4 alpha (alanwillms, skotos)
+- Bug #190: Fixed `yii\bootstrap\Alert` message does not appear (grd16)
 
 
 2.0.7 under development
