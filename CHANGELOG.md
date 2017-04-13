@@ -12,6 +12,7 @@ Yii Framework 2 bootstrap extension Change Log
 - Bug #143: Fixed `yii\bootstrap\Nav` to use tags according to bootstrap docs (PowerGamer1)
 - Bug #162: Fixed `yii\bootstrap\Nav` not taking explicit `active` into account when `activateItems` is off (samdark)
 - Enh #174: Added `yii\bootstrap\Tabs::renderPanes()` to allow extending the class to manipulate the content between the tabs and the content (thiagotalma)
+- Bug #196: Remove `role="form"` from `yii\bootstrap\ActiveForm` according to new aria specification (bastardijke)
 
 2.0.6 March 17, 2016
 --------------------
