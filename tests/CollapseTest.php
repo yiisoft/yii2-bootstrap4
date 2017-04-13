@@ -2,6 +2,7 @@
 namespace yiiunit\extensions\bootstrap;
 
 use yii\bootstrap\Collapse;
+use yii\widgets\ActiveForm;
 
 /**
  * @group bootstrap
@@ -116,7 +117,8 @@ HTML
     {
         $template = ['template' => '{input}'];
         ob_start();
-        $form = \yii\widgets\ActiveForm::begin(['action' => '/something']);
+        $form = ActiveForm::begin(['action' => '/something']);
+        ActiveForm::end();
         ob_end_clean();
         $model = new data\Singer;
 
