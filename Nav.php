@@ -107,9 +107,9 @@ class Nav extends Widget
     public $dropDownCaret;
     /**
      * @var string name of a class to use for rendering dropdowns withing this widget. Defaults to [[Dropdown]].
-	 * @since 2.0.7
+     * @since 2.0.7
      */
-	public $dropdownClass = 'yii\bootstrap\Dropdown';
+    public $dropdownClass = 'yii\bootstrap\Dropdown';
 
 
     /**
@@ -214,9 +214,9 @@ class Nav extends Widget
      */
     protected function renderDropdown($items, $parentItem)
     {
-		/** @var Widget $dropdownClass */
-		$dropdownClass = $this->dropdownClass;
-		return $dropdownClass::widget([
+        /** @var Widget $dropdownClass */
+        $dropdownClass = $this->dropdownClass;
+        return $dropdownClass::widget([
             'options' => ArrayHelper::getValue($parentItem, 'dropDownOptions', []),
             'items' => $items,
             'encodeLabels' => $this->encodeLabels,

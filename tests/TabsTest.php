@@ -199,7 +199,7 @@ class TabsTest extends TestCase
                 ],
                 [
                     'label' => 'Tab 2',
-                    'content' => 'some content'                            
+                    'content' => 'some content'
                 ],
                 [
                     'label' => 'Tab 3',
@@ -211,7 +211,7 @@ class TabsTest extends TestCase
                     'content' => 'some content'
                 ]
             ]
-        ]);        
+        ]);
         $this->assertContains('<li class="active"><a href="#mytab-tab2" data-toggle="tab">Tab 3</a></li>', $html);
     }
 }
