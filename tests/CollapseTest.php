@@ -214,4 +214,28 @@ HTML
 HTML
         , $output);
     }
+
+    public function testAutoCloseItems()
+    {
+        $items = [
+            [
+                'label' => 'Item 1',
+                'content' => 'Content 1',
+            ],
+            [
+                'label' => 'Item 2',
+                'content' => 'Content 2',
+            ],
+        ];
+
+        $output = Collapse::widget([
+            'items' => $items
+        ]);
+        $this->assertContains('data-parent="', $output);
+        $output = Collapse::widget([
+            'autoCloseItems' => false,
+            'items' => $items
+        ]);
+        $this->assertNotContains('data-parent="', $output);
+    }
 }

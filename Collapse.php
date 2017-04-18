@@ -90,6 +90,12 @@ class Collapse extends Widget
      * @var boolean whether the labels for header items should be HTML-encoded.
      */
     public $encodeLabels = true;
+    /**
+     * @var boolean whether to close other items if an item is opened. Defaults to `true` which causes an
+     * accordion effect. Set this to `false` to allow keeping multiple items open at once.
+     * @since 2.0.7
+     */
+    public $autoCloseItems = true;
 
 
     /**
@@ -164,11 +170,14 @@ class Collapse extends Widget
                 $header = Html::encode($header);
             }
 
-            $headerToggle = Html::a($header, '#' . $id, [
-                    'class' => 'collapse-toggle',
-                    'data-toggle' => 'collapse',
-                    'data-parent' => '#' . $this->options['id']
-                ]) . "\n";
+            $headerOptions = [
+                'class' => 'collapse-toggle',
+                'data-toggle' => 'collapse',
+            ];
+            if ($this->autoCloseItems) {
+                $headerOptions['data-parent'] = '#' . $this->options['id'];
+            }
+            $headerToggle = Html::a($header, '#' . $id, $headerOptions) . "\n";
 
             $header = Html::tag('h4', $headerToggle, ['class' => 'panel-title']);
 
