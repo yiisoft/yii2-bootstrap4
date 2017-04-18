@@ -4,6 +4,7 @@ Yii Framework 2 bootstrap extension Change Log
 2.0.7 under development
 -----------------------
 
+- Bug #157: Active status of multilevel submenu items of the `yii\bootstrap\Nav` class is determined correctly now (PowerGamer1)
 - Enh #64: Added simplified syntax for specifying `Collapse` widget `$items` (Faryshta, cebe)
 - Enh #131 Added `tabContentOptions` to set HTML attributes for 'tab-content' container in `Tabs` widget (AndrewKorpusov)
 - Enh #145: Added the ability to customize the class used to draw dropdowns in `yii\bootstrap\Nav`, `yii\bootstrapButtonDropdown` and `yii\bootstrap\Tab` widgets (PowerGamer1)
