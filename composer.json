@@ -19,8 +19,8 @@
     ],
     "require": {
         "yiisoft/yii2": "~2.0.6",
-        "bower-asset/bootstrap": "~4.0.0@alpha",
-        "bower-asset/tether": "1.4.*"
+        "bower-asset/bootstrap": "~4.0.0@beta",
+        "bower-asset/popper.js": "~1.12.0"
     },
     "autoload": {
         "psr-4": {

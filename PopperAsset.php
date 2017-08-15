@@ -10,18 +10,15 @@ namespace yii\bootstrap;
 use yii\web\AssetBundle;
 
 /**
- * Asset bundle for Tether javascript files.
+ * Asset bundle for Popper javascript files.
  *
- * @author Alan Willms <alanwillms@gmail.com>
+ * @author Artur Zhdanov <zhdanovartur@gmail.com>
  * @since 2.0
  */
-class TetherAsset extends AssetBundle
+class PopperAsset extends AssetBundle
 {
-    public $sourcePath = '@bower/tether/dist';
-    public $css = [
-        'css/tether.css',
-    ];
+    public $sourcePath = '@bower/popper.js/dist';
     public $js = [
-        'js/tether.js',
+        'umd/popper.js',
     ];
 }
