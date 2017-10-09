@@ -153,7 +153,7 @@ class Collapse extends Widget
      * Renders a single collapsible item group
      * @param string $header a label of the item group [[items]]
      * @param array $item a single item from [[items]]
-     * @param integer $index the item index as each item group content must have an id
+     * @param int $index the item index as each item group content must have an id
      * @return string the rendering result
      * @throws InvalidConfigException
      */

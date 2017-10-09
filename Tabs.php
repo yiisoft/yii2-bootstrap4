@@ -224,7 +224,7 @@ class Tabs extends Widget
     }
 
     /**
-     * @return boolean if there's active tab defined
+     * @return bool if there's active tab defined
      */
     protected function hasActiveTab()
     {
@@ -262,7 +262,7 @@ class Tabs extends Widget
      * @param string $itemNumber number of the item
      * @param array $items the dropdown items configuration.
      * @param array $panes the panes reference array.
-     * @return boolean whether any of the dropdown items is `active` or not.
+     * @return bool whether any of the dropdown items is `active` or not.
      * @throws InvalidConfigException
      */
     protected function renderDropdown($itemNumber, &$items, &$panes)
