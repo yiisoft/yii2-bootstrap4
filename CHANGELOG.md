@@ -10,7 +10,6 @@ Yii Framework 2 bootstrap extension Change Log
 2.0.7 October 09, 2017
 ----------------------
 
-- Enh #131 Added `tabContentOptions` to set HTML attributes for 'tab-content' container in `Tabs` widget (AndrewKorpusov)
 - Bug #126: `yii\bootstrap\ToggleButtonGroup` was unable to work without model (makroxyz)
 - Bug #130: Fixed `yii\bootstrap\Collapse` to use pure numerical value on `content` property (meysampg)
 - Bug #137: Remove `role="navbar"` from `yii\bootstrap\NavBar` according to new aria specification (tino415)
