@@ -31,4 +31,32 @@ EXPECTED;
 
         $this->assertEqualsWithoutLE($expected, $out);
     }
+
+    public function testBrandImage()
+    {
+        $out = NavBar::widget([
+            'brandImage' => '/images/test.jpg',
+            'brandUrl' => '/',
+        ]);
+
+        $this->assertContains('<a class="navbar-brand" href="/"><img src="/images/test.jpg" alt=""></a>', $out);
+    }
+
+    public function testHeaderContent()
+    {
+        $testContent = <<<HTML
+<form class="navbar-form navbar-left">
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+HTML;
+
+        $out = NavBar::widget([
+            'headerContent' => $testContent,
+        ]);
+
+        $this->assertContains($testContent, $out);
+    }
 }
