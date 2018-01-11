@@ -56,7 +56,7 @@ class ButtonDropdown extends Widget
      */
     public $dropdown = [];
     /**
-     * @var boolean whether to display a group of split-styled button group.
+     * @var bool whether to display a group of split-styled button group.
      */
     public $split = false;
     /**
@@ -64,7 +64,7 @@ class ButtonDropdown extends Widget
      */
     public $tagName = 'button';
     /**
-     * @var boolean whether the label should be HTML-encoded.
+     * @var bool whether the label should be HTML-encoded.
      */
     public $encodeLabel = true;
     /**

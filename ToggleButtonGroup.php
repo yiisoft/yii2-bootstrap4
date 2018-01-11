@@ -46,13 +46,13 @@ class ToggleButtonGroup extends InputWidget
      */
     public $labelOptions = [];
     /**
-     * @var boolean whether the items labels should be HTML-encoded.
+     * @var bool whether the items labels should be HTML-encoded.
      */
     public $encodeLabels = true;
 
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function init()
     {
@@ -63,7 +63,7 @@ class ToggleButtonGroup extends InputWidget
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function run()
     {

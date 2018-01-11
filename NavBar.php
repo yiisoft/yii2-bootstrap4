@@ -56,18 +56,18 @@ class NavBar extends Widget
      */
     public $containerOptions = [];
     /**
-     * @var string|boolean the text of the brand or false if it's not used. Note that this is not HTML-encoded.
+     * @var string|bool the text of the brand or false if it's not used. Note that this is not HTML-encoded.
      * @see https://getbootstrap.com/docs/3.3/components/#navbar
      */
     public $brandLabel = false;
     /**
-     * @var string|boolean src of the brand image or false if it's not used. Note that this param will override `$this->brandLabel` param.
+     * @var string|bool src of the brand image or false if it's not used. Note that this param will override `$this->brandLabel` param.
      * @see https://getbootstrap.com/docs/3.3/components/#navbar
      * @since 2.0.8
      */
     public $brandImage = false;
     /**
-     * @var array|string|boolean $url the URL for the brand's hyperlink tag. This parameter will be processed by [[\yii\helpers\Url::to()]]
+     * @var array|string|bool $url the URL for the brand's hyperlink tag. This parameter will be processed by [[\yii\helpers\Url::to()]]
      * and will be used for the "href" attribute of the brand link. Default value is false that means
      * [[\yii\web\Application::homeUrl]] will be used.
      * You may set it to `null` if you want to have no link at all.
@@ -88,7 +88,7 @@ class NavBar extends Widget
      */
     public $screenReaderToggleText = 'Toggle navigation';
     /**
-     * @var boolean whether the navbar content should be included in an inner div container which by default
+     * @var bool whether the navbar content should be included in an inner div container which by default
      * adds left and right padding. Set this to false for a 100% width navbar.
      */
     public $renderInnerContainer = true;

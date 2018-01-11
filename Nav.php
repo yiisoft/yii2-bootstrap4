@@ -59,30 +59,30 @@ class Nav extends Widget
      *
      * - label: string, required, the nav item label.
      * - url: optional, the item's URL. Defaults to "#".
-     * - visible: boolean, optional, whether this menu item is visible. Defaults to true.
+     * - visible: bool, optional, whether this menu item is visible. Defaults to true.
      * - linkOptions: array, optional, the HTML attributes of the item's link.
      * - options: array, optional, the HTML attributes of the item container (LI).
-     * - active: boolean, optional, whether the item should be on active state or not.
+     * - active: bool, optional, whether the item should be on active state or not.
      * - dropDownOptions: array, optional, the HTML options that will passed to the [[Dropdown]] widget.
      * - items: array|string, optional, the configuration array for creating a [[Dropdown]] widget,
      *   or a string representing the dropdown menu. Note that Bootstrap does not support sub-dropdown menus.
-     * - encode: boolean, optional, whether the label will be HTML-encoded. If set, supersedes the $encodeLabels option for only this item.
+     * - encode: bool, optional, whether the label will be HTML-encoded. If set, supersedes the $encodeLabels option for only this item.
      *
      * If a menu item is a string, it will be rendered directly without HTML encoding.
      */
     public $items = [];
     /**
-     * @var boolean whether the nav items labels should be HTML-encoded.
+     * @var bool whether the nav items labels should be HTML-encoded.
      */
     public $encodeLabels = true;
     /**
-     * @var boolean whether to automatically activate items according to whether their route setting
+     * @var bool whether to automatically activate items according to whether their route setting
      * matches the currently requested route.
      * @see isItemActive
      */
     public $activateItems = true;
     /**
-     * @var boolean whether to activate parent menu items when one of the corresponding child menu items is active.
+     * @var bool whether to activate parent menu items when one of the corresponding child menu items is active.
      */
     public $activateParents = false;
     /**

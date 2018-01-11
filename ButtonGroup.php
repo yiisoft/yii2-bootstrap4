@@ -49,11 +49,11 @@ class ButtonGroup extends Widget
      *
      * - label: string, required, the button label.
      * - options: array, optional, the HTML attributes of the button.
-     * - visible: boolean, optional, whether this button is visible. Defaults to true.
+     * - visible: bool, optional, whether this button is visible. Defaults to true.
      */
     public $buttons = [];
     /**
-     * @var boolean whether to HTML-encode the button labels.
+     * @var bool whether to HTML-encode the button labels.
      */
     public $encodeLabels = true;
 

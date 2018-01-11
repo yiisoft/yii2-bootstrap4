@@ -63,7 +63,7 @@ class Progress extends Widget
      */
     public $label;
     /**
-     * @var integer the amount of progress as a percentage.
+     * @var int the amount of progress as a percentage.
      */
     public $percent = 0;
     /**

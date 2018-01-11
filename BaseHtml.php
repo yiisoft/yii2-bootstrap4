@@ -48,7 +48,7 @@ class BaseHtml extends \yii\helpers\Html
      * @param array $options the tag options in terms of name-value pairs. These will be rendered as
      * the attributes of the resulting tag. There are also a special options:
      *
-     * - encode: boolean, whether value should be HTML-encoded or not.
+     * - encode: bool, whether value should be HTML-encoded or not.
      *
      * @return string generated HTML
      * @see http://getbootstrap.com/css/#forms-controls-static

@@ -84,7 +84,7 @@ class ActiveForm extends \yii\widgets\ActiveForm
 
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function init()
     {
@@ -99,7 +99,7 @@ class ActiveForm extends \yii\widgets\ActiveForm
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      * @return ActiveField the created ActiveField object
      */
     public function field($model, $attribute, $options = [])

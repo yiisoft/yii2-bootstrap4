@@ -65,7 +65,7 @@ class Tabs extends Widget
      * tab with the following structure:
      *
      * - label: string, required, the tab header label.
-     * - encode: boolean, optional, whether this label should be HTML-encoded. This param will override
+     * - encode: bool, optional, whether this label should be HTML-encoded. This param will override
      *   global `$this->encodeLabels` param.
      * - headerOptions: array, optional, the HTML attributes of the tab header.
      * - linkOptions: array, optional, the HTML attributes of the tab header link tags.
@@ -73,12 +73,12 @@ class Tabs extends Widget
      * - url: string, optional, an external URL. When this is specified, clicking on this tab will bring
      *   the browser to this URL. This option is available since version 2.0.4.
      * - options: array, optional, the HTML attributes of the tab pane container.
-     * - active: boolean, optional, whether this item tab header and pane should be active. If no item is marked as
+     * - active: bool, optional, whether this item tab header and pane should be active. If no item is marked as
      *   'active' explicitly - the first one will be activated.
-     * - visible: boolean, optional, whether the item tab header and pane should be visible or not. Defaults to true.
+     * - visible: bool, optional, whether the item tab header and pane should be visible or not. Defaults to true.
      * - items: array, optional, can be used instead of `content` to specify a dropdown items
      *   configuration array. Each item can hold three extra keys, besides the above ones:
-     *     * active: boolean, optional, whether the item tab header and pane should be visible or not.
+     *     * active: bool, optional, whether the item tab header and pane should be visible or not.
      *     * content: string, required if `items` is not set. The content (HTML) of the tab pane.
      *     * contentOptions: optional, array, the HTML attributes of the tab content container.
      */
@@ -105,7 +105,7 @@ class Tabs extends Widget
      */
     public $linkOptions = [];
     /**
-     * @var boolean whether the labels for header items should be HTML-encoded.
+     * @var bool whether the labels for header items should be HTML-encoded.
      */
     public $encodeLabels = true;
     /**
@@ -113,7 +113,7 @@ class Tabs extends Widget
      */
     public $navType = 'nav-tabs';
     /**
-     * @var boolean whether to render the `tab-content` container and its content. You may set this property
+     * @var bool whether to render the `tab-content` container and its content. You may set this property
      * to be false so that you can manually render `tab-content` yourself in case your tab contents are complex.
      * @since 2.0.1
      */

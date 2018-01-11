@@ -39,13 +39,12 @@ use yii\helpers\ArrayHelper;
 class Carousel extends Widget
 {
     /**
-     * @var array|boolean the labels for the previous and the next control buttons.
+     * @var array|bool the labels for the previous and the next control buttons.
      * If false, it means the previous and the next control buttons should not be displayed.
      */
     public $controls = ['&lsaquo;', '&rsaquo;'];
     /**
-     * @var boolean
-     * If false carousel indicators (<ol> tag with anchors to items) should not be displayed.
+     * @var bool whether carousel indicators (<ol> tag with anchors to items) should be displayed or not.
      */
     public $showIndicators = true;
     /**

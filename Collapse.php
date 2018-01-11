@@ -58,7 +58,7 @@ class Collapse extends Widget
      * group with the following structure:
      *
      * - label: string, required, the group header label.
-     * - encode: boolean, optional, whether this label should be HTML-encoded. This param will override
+     * - encode: bool, optional, whether this label should be HTML-encoded. This param will override
      *   global `$this->encodeLabels` param.
      * - content: array|string|object, required, the content (HTML) of the group
      * - options: array, optional, the HTML attributes of the group
@@ -87,11 +87,11 @@ class Collapse extends Widget
      */
     public $items = [];
     /**
-     * @var boolean whether the labels for header items should be HTML-encoded.
+     * @var bool whether the labels for header items should be HTML-encoded.
      */
     public $encodeLabels = true;
     /**
-     * @var boolean whether to close other items if an item is opened. Defaults to `true` which causes an
+     * @var bool whether to close other items if an item is opened. Defaults to `true` which causes an
      * accordion effect. Set this to `false` to allow keeping multiple items open at once.
      * @since 2.0.7
      */

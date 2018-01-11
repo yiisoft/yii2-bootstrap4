@@ -33,7 +33,7 @@ class Button extends Widget
      */
     public $label = 'Button';
     /**
-     * @var boolean whether the label should be HTML-encoded.
+     * @var bool whether the label should be HTML-encoded.
      */
     public $encodeLabel = true;
 
