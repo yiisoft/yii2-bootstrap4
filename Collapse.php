@@ -96,6 +96,20 @@ class Collapse extends Widget
      * @since 2.0.7
      */
     public $autoCloseItems = true;
+    /**
+     * @var string the HTML options for the item toggle tag. Key 'tag' might be used here for the tag name specification.
+     * For example:
+     *
+     * ```php
+     * [
+     *     'tag' => 'div',
+     *     'class' => 'custom-toggle',
+     * ]
+     * ```
+     *
+     * @since 2.0.8
+     */
+    public $itemToggleOptions = [];
 
 
     /**
@@ -170,14 +184,23 @@ class Collapse extends Widget
                 $header = Html::encode($header);
             }
 
-            $headerOptions = [
-                'class' => 'collapse-toggle',
+            $itemToggleOptions = array_merge([
+                'tag' => 'a',
                 'data-toggle' => 'collapse',
-            ];
+            ], $this->itemToggleOptions);
+            Html::addCssClass($itemToggleOptions, ['widget' => 'collapse-toggle']);
+
             if ($this->autoCloseItems) {
-                $headerOptions['data-parent'] = '#' . $this->options['id'];
+                $itemToggleOptions['data-parent'] = '#' . $this->options['id'];
             }
-            $headerToggle = Html::a($header, '#' . $id, $headerOptions) . "\n";
+
+            $itemToggleTag = ArrayHelper::remove($itemToggleOptions, 'tag', 'a');
+            if ($itemToggleTag === 'a') {
+                $headerToggle = Html::a($header, '#' . $id, $itemToggleOptions) . "\n";
+            } else {
+                $itemToggleOptions['data-target'] = '#' . $id;
+                $headerToggle = Html::tag($itemToggleTag, $header, $itemToggleOptions) . "\n";
+            }
 
             $header = Html::tag('h4', $headerToggle, ['class' => 'panel-title']);
 

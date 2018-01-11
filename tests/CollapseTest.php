@@ -238,4 +238,41 @@ HTML
         ]);
         $this->assertNotContains('data-parent="', $output);
     }
+
+    /**
+     * @depends testRender
+     */
+    public function testItemToggleTag()
+    {
+        $items = [
+            [
+                'label' => 'Item 1',
+                'content' => 'Content 1',
+            ],
+            [
+                'label' => 'Item 2',
+                'content' => 'Content 2',
+            ],
+        ];
+
+        $output = Collapse::widget([
+            'items' => $items,
+            'itemToggleOptions' => [
+                'tag' => 'span',
+                'class' => 'custom-toggle',
+            ],
+        ]);
+        $this->assertContains('<h4 class="panel-title"><span class="custom-toggle collapse-toggle" data-toggle="collapse" ', $output);
+        $this->assertNotContains('<a', $output);
+
+        $output = Collapse::widget([
+            'items' => $items,
+            'itemToggleOptions' => [
+                'tag' => 'span',
+                'class' => ['widget' => 'custom-toggle'],
+            ],
+        ]);
+        $this->assertContains('<h4 class="panel-title"><span class="custom-toggle" data-toggle="collapse" ', $output);
+        $this->assertNotContains('collapse-toggle', $output);
+    }
 }
