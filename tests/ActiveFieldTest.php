@@ -6,6 +6,7 @@ use yii\base\DynamicModel;
 use yii\bootstrap\ActiveField;
 use yii\bootstrap\ActiveForm;
 use Yii;
+use yiiunit\extensions\bootstrap\data\ExtendedActiveField;
 
 class ActiveFieldTest extends TestCase
 {
@@ -109,5 +110,52 @@ HTML;
         ])->render();
 
         $this->assertContains('data-attribute="test"', $content);
+    }
+
+    public function testHorizontalCssClasses()
+    {
+        $this->helperForm->layout = 'horizontal';
+
+        $activeField = new ActiveField(['form' => $this->helperForm]);
+        $activeField->model = $this->helperModel;
+        $activeField->attribute = $this->attributeName;
+
+        $html = $activeField->render();
+        $expectedHtml = <<<EXPECTED
+<div class="form-group field-dynamicmodel-attributename">
+<label class="control-label col-sm-3" for="dynamicmodel-attributename">Attribute Name</label>
+<div class="col-sm-6">
+<input type="text" id="dynamicmodel-attributename" class="form-control" name="DynamicModel[attributeName]">
+<div class="help-block help-block-error "></div>
+</div>
+
+</div>
+EXPECTED;
+        $this->assertEqualsWithoutLE($expectedHtml, $html);
+    }
+
+    /**
+     * @depends testHorizontalCssClasses
+     */
+    public function testHorizontalCssClassesOverride()
+    {
+        $this->helperForm->layout = 'horizontal';
+
+        $activeField = new ExtendedActiveField(['form' => $this->helperForm]);
+        $activeField->model = $this->helperModel;
+        $activeField->attribute = $this->attributeName;
+
+        $html = $activeField->render();
+        $expectedHtml = <<<EXPECTED
+<div class="form-group field-dynamicmodel-attributename">
+<label class="control-label col-md-4" for="dynamicmodel-attributename">Attribute Name</label>
+<div class="col-md-6">
+<input type="text" id="dynamicmodel-attributename" class="form-control" name="DynamicModel[attributeName]">
+<div class="help-block help-block-error col-md-3"></div>
+</div>
+
+</div>
+EXPECTED;
+        $this->assertEqualsWithoutLE($expectedHtml, $html);
     }
 }

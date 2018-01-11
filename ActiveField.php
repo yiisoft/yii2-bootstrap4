@@ -110,7 +110,7 @@ class ActiveField extends \yii\widgets\ActiveField
      *  - 'error' the error grid class
      *  - 'hint' the hint grid class
      */
-    public $horizontalCssClasses;
+    public $horizontalCssClasses = [];
     /**
      * @var string the template for checkboxes in default layout
      */
@@ -364,13 +364,13 @@ class ActiveField extends \yii\widgets\ActiveField
 
         if ($layout === 'horizontal') {
             $config['template'] = "{label}\n{beginWrapper}\n{input}\n{error}\n{endWrapper}\n{hint}";
-            $cssClasses = [
+            $cssClasses = array_merge([
                 'offset' => 'col-sm-offset-3',
                 'label' => 'col-sm-3',
                 'wrapper' => 'col-sm-6',
                 'error' => '',
                 'hint' => 'col-sm-3',
-            ];
+            ], $this->horizontalCssClasses);
             if (isset($instanceConfig['horizontalCssClasses'])) {
                 $cssClasses = ArrayHelper::merge($cssClasses, $instanceConfig['horizontalCssClasses']);
             }
