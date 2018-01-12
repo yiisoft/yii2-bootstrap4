@@ -127,4 +127,19 @@ class BaseHtml extends \yii\helpers\Html
 
         return parent::checkboxList($name, $selection, $items, $options);
     }
+
+    /**
+     * {@inheritdoc}
+     * @since 2.0.8
+     */
+    public static function error($model, $attribute, $options = [])
+    {
+        if (!array_key_exists('tag', $options)) {
+            $options['tag'] = 'p';
+        }
+        if (!array_key_exists('class', $options)) {
+            $options['class'] = 'help-block help-block-error';
+        }
+        return parent::error($model, $attribute, $options);
+    }
 }

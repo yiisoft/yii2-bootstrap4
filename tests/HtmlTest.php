@@ -2,6 +2,7 @@
 
 namespace yiiunit\extensions\bootstrap;
 
+use yii\base\DynamicModel;
 use yii\bootstrap\Html;
 
 /**
@@ -152,5 +153,15 @@ EOD;
 <div><div class="checkbox"><label><input type="checkbox" name="test[]" value="value" checked> label&</label></div></div>
 EOD;
         $this->assertEqualsWithoutLE($expected, Html::checkboxList('test', 'value', ['value' => 'label&'], ['encode' => false]));
+    }
+
+    public function testError()
+    {
+        $model = new DynamicModel();
+        $model->addError('foo', 'Some error message.');
+
+        $this->assertEquals('<p class="help-block help-block-error">Some error message.</p>', Html::error($model, 'foo'));
+        $this->assertEquals('<p class="custom-class">Some error message.</p>', Html::error($model, 'foo', ['class' => 'custom-class']));
+        $this->assertEquals('<div class="help-block help-block-error">Some error message.</div>', Html::error($model, 'foo', ['tag' => 'div']));
     }
 }

@@ -126,7 +126,7 @@ HTML;
 <label class="control-label col-sm-3" for="dynamicmodel-attributename">Attribute Name</label>
 <div class="col-sm-6">
 <input type="text" id="dynamicmodel-attributename" class="form-control" name="DynamicModel[attributeName]">
-<div class="help-block help-block-error "></div>
+<p class="help-block help-block-error "></p>
 </div>
 
 </div>
@@ -151,7 +151,7 @@ EXPECTED;
 <label class="control-label col-md-4" for="dynamicmodel-attributename">Attribute Name</label>
 <div class="col-md-6">
 <input type="text" id="dynamicmodel-attributename" class="form-control" name="DynamicModel[attributeName]">
-<div class="help-block help-block-error col-md-3"></div>
+<p class="help-block help-block-error col-md-3"></p>
 </div>
 
 </div>

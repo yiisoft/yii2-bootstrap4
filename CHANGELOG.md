@@ -7,6 +7,7 @@ Yii Framework 2 bootstrap extension Change Log
 - Bug #126: Fixed `yii\bootstrap\ToggleButtonGroup` toggles dropdown for both buttons in case `split` is enabled (klimov-paul)
 - Bug #136: Allow overriding `horizontalCssClasses` when extending `\yii\bootstrap\ActiveField` (mikehaertl, klimov-paul)
 - Enh #118: Methods `radioList()` and `checkboxList()` overridden at `yii\bootstrap\Html` applying Bootstrap style (klimov-paul)
+- Enh #148: `yii\bootstrap\Html::error()` now automatically set 'help-block help-block-error' CSS class for generated tag (klimov-paul)
 - Enh #219: Add ability to use custom HTML in navbar-header (razvanphp)
 - Enh #171: Add ability to use a brandImage with the navbar (razvanphp)
 - Enh #227: Added `yii\bootstrap\Collapse::$itemToggleOptions` allowing setup custom collapse tag name and HTML options (mskayali, klimov-paul)
