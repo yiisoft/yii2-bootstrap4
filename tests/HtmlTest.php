@@ -162,6 +162,7 @@ EOD;
 
         $this->assertEquals('<p class="help-block help-block-error">Some error message.</p>', Html::error($model, 'foo'));
         $this->assertEquals('<p class="custom-class">Some error message.</p>', Html::error($model, 'foo', ['class' => 'custom-class']));
+        $this->assertEquals('<p>Some error message.</p>', Html::error($model, 'foo', ['class' => null]));
         $this->assertEquals('<div class="help-block help-block-error">Some error message.</div>', Html::error($model, 'foo', ['tag' => 'div']));
     }
 }
