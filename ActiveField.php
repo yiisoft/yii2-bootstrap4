@@ -254,10 +254,14 @@ class ActiveField extends \yii\widgets\ActiveField
                     'labelOptions' => ['class' => 'checkbox-inline'],
                 ];
             }
-        }  elseif (!isset($options['item'])) {
+        } elseif (!isset($options['item'])) {
             $itemOptions = isset($options['itemOptions']) ? $options['itemOptions'] : [];
-            $options['item'] = function ($index, $label, $name, $checked, $value) use ($itemOptions) {
-                $options = array_merge(['label' => $label, 'value' => $value], $itemOptions);
+            $encode = ArrayHelper::getValue($options, 'encode', true);
+            $options['item'] = function ($index, $label, $name, $checked, $value) use ($itemOptions, $encode) {
+                $options = array_merge([
+                    'label' => $encode ? Html::encode($label) : $label,
+                    'value' => $value
+                ], $itemOptions);
                 return '<div class="checkbox">' . Html::checkbox($name, $checked, $options) . '</div>';
             };
         }
@@ -284,8 +288,12 @@ class ActiveField extends \yii\widgets\ActiveField
             }
         }  elseif (!isset($options['item'])) {
             $itemOptions = isset($options['itemOptions']) ? $options['itemOptions'] : [];
-            $options['item'] = function ($index, $label, $name, $checked, $value) use ($itemOptions) {
-                $options = array_merge(['label' => $label, 'value' => $value], $itemOptions);
+            $encode = ArrayHelper::getValue($options, 'encode', true);
+            $options['item'] = function ($index, $label, $name, $checked, $value) use ($itemOptions, $encode) {
+                $options = array_merge([
+                    'label' => $encode ? Html::encode($label) : $label,
+                    'value' => $value
+                ], $itemOptions);
                 return '<div class="radio">' . Html::radio($name, $checked, $options) . '</div>';
             };
         }

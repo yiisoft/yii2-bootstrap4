@@ -85,4 +85,46 @@ class BaseHtml extends \yii\helpers\Html
         }
         return static::staticControl($value, $options);
     }
+
+    /**
+     * {@inheritdoc}
+     * @since 2.0.8
+     */
+    public static function radioList($name, $selection = null, $items = [], $options = [])
+    {
+        if (!isset($options['item'])) {
+            $itemOptions = ArrayHelper::remove($options, 'itemOptions', []);
+            $encode = ArrayHelper::getValue($options, 'encode', true);
+            $options['item'] = function ($index, $label, $name, $checked, $value) use ($itemOptions, $encode) {
+                $options = array_merge([
+                    'label' => $encode ? static::encode($label) : $label,
+                    'value' => $value
+                ], $itemOptions);
+                return '<div class="radio">' . static::radio($name, $checked, $options) . '</div>';
+            };
+        }
+
+        return parent::radioList($name, $selection, $items, $options);
+    }
+
+    /**
+     * {@inheritdoc}
+     * @since 2.0.8
+     */
+    public static function checkboxList($name, $selection = null, $items = [], $options = [])
+    {
+        if (!isset($options['item'])) {
+            $itemOptions = ArrayHelper::remove($options, 'itemOptions', []);
+            $encode = ArrayHelper::getValue($options, 'encode', true);
+            $options['item'] = function ($index, $label, $name, $checked, $value) use ($itemOptions, $encode) {
+                $options = array_merge([
+                    'label' => $encode ? static::encode($label) : $label,
+                    'value' => $value
+                ], $itemOptions);
+                return '<div class="checkbox">' . Html::checkbox($name, $checked, $options) . '</div>';
+            };
+        }
+
+        return parent::checkboxList($name, $selection, $items, $options);
+    }
 }
