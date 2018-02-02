@@ -43,7 +43,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "yii\\bootstrap\\": ""
+            "yii\\bootstrap\\": "src"
         }
     },
     "extra": {
