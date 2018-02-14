@@ -185,3 +185,57 @@ return [
     // ...
 ];
 ```
+
+
+## Compiling from the .sass files
+
+If you want to customize the Bootstrap CSS source directly, you may want to compile it from source *.sass files.
+These can be obtained from [Bootstrap ported from Less to Sass](https://github.com/twbs/bootstrap-sass).
+
+In such case installing Bootstrap assets from Composer or Bower/NPM makes no sense, since you can not modify files
+inside 'vendor' directory.
+You'll have to downloaded Bootstrap assets manually and place them somewhere inside you project source code,
+for example at 'assets/source/bootstrap' folder.
+
+In the `composer.json` of your project, add the following lines in order to prevent redundant Bootstrap asset installation:
+
+```json
+"replace": {
+    "bower-asset/bootstrap": ">=3.3.0"
+},
+```
+
+Configure 'assetManager' application component, overriding Bootstrap assent bundles and specifying compiler for CSS files:
+
+```php
+return [
+    'components' => [
+        'assetManager' => [
+            // setup asset converter for *.sass files :
+            'converter' => [
+                'class' => 'yii\web\AssetConverter',
+                'commands' => [
+                    'scss' => ['css', 'sass {from} {to} --sourcemap']
+                ],
+            ],
+            // override bundles to use local project files :
+            'bundles' => [
+                'yii\bootstrap\BootstrapAsset' => [
+                    'sourcePath' => '@app/assets/source/bootstrap',
+                    'css' => [
+                        'css/bootstrap.scss'
+                    ],
+                ],
+                'yii\bootstrap\BootstrapPluginAsset' => [
+                    'sourcePath' => '@app/assets/source/bootstrap',
+                ],
+                'yii\bootstrap\BootstrapThemeAsset' => [
+                    'sourcePath' => '@app/assets/source/bootstrap',
+                ],
+            ],
+        ],
+        // ...
+    ],
+    // ...
+];
+```
