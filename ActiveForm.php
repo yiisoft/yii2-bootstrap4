@@ -29,7 +29,7 @@ use yii\base\InvalidConfigException;
  *
  * ```php
  * [
- *     'offset' => 'col-sm-offset-3',
+ *     'offset' => 'offset-sm-3',
  *     'label' => 'col-sm-3',
  *     'wrapper' => 'col-sm-6',
  *     'error' => '',
@@ -47,7 +47,7 @@ use yii\base\InvalidConfigException;
  *         'template' => "{label}\n{beginWrapper}\n{input}\n{hint}\n{error}\n{endWrapper}",
  *         'horizontalCssClasses' => [
  *             'label' => 'col-sm-4',
- *             'offset' => 'col-sm-offset-4',
+ *             'offset' => 'offset-sm-4',
  *             'wrapper' => 'col-sm-8',
  *             'error' => '',
  *             'hint' => '',

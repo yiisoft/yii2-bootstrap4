@@ -365,11 +365,11 @@ class ActiveField extends \yii\widgets\ActiveField
         if ($layout === 'horizontal') {
             $config['template'] = "{label}\n{beginWrapper}\n{input}\n{error}\n{endWrapper}\n{hint}";
             $cssClasses = [
-                'offset' => 'col-sm-offset-3',
-                'label' => 'col-sm-3',
-                'wrapper' => 'col-sm-6',
+                'offset' => 'offset-md-2',
+                'label' => 'col-md-2 col-form-label',
+                'wrapper' => 'col-md-8',
                 'error' => '',
-                'hint' => 'col-sm-3',
+                'hint' => 'col-md-2',
             ];
             if (isset($instanceConfig['horizontalCssClasses'])) {
                 $cssClasses = ArrayHelper::merge($cssClasses, $instanceConfig['horizontalCssClasses']);
