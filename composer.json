@@ -1,5 +1,5 @@
 {
-    "name": "yiisoft/yii2-bootstrap",
+    "name": "yiisoft/yii2-bootstrap4",
     "description": "The Twitter Bootstrap extension for the Yii framework",
     "keywords": ["yii2", "bootstrap", "bootstrap4"],
     "type": "yii2-extension",
