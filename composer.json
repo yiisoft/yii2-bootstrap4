@@ -1,15 +1,15 @@
 {
     "name": "yiisoft/yii2-bootstrap",
     "description": "The Twitter Bootstrap extension for the Yii framework",
-    "keywords": ["yii2", "bootstrap"],
+    "keywords": ["yii2", "bootstrap", "bootstrap4"],
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
     "support": {
-        "issues": "https://github.com/yiisoft/yii2-bootstrap/issues",
+        "issues": "https://github.com/yiisoft/yii2-bootstrap4/issues",
         "forum": "http://www.yiiframework.com/forum/",
         "wiki": "http://www.yiiframework.com/wiki/",
         "irc": "irc://irc.freenode.net/yii",
-        "source": "https://github.com/yiisoft/yii2-bootstrap"
+        "source": "https://github.com/yiisoft/yii2-bootstrap4"
     },
     "authors": [
         {
@@ -33,7 +33,7 @@
     ],
     "require": {
         "yiisoft/yii2": "~2.0.6",
-        "bower-asset/bootstrap": "~4.0.0@beta",
+        "bower-asset/bootstrap": "~4.0.0",
         "bower-asset/popper.js": "~1.12.0"
     },
     "repositories": [
@@ -49,7 +49,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "2.0.x-dev"
+            "dev-master": "1.0.x-dev"
         }
     }
 }
