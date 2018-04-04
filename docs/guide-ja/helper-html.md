@@ -10,7 +10,7 @@ Bootstrap は、一貫性の高い多数の HTML 構文ないしはスケルト�
  - `icon()` - Glyphicon のアイコンのレンダリングを可能にする
  - `staticControl()` - フォームの "static controls" のレンダリングを可能にする
 
-[[\yii\bootstrap\Html]] は [[\yii\helpers\Html]] で利用できる全ての機能を継承しており、その代替物として使うことが出来ますので、ビューファイルの中で両方を使う必要はありません。
+[[\yii\bootstrap\Html]] は [[\yii\helpers\Html]] で利用できる全ての機能を継承しており、その代替物として使うことが出来ますので、ビュー・ファイルの中で両方を使う必要はありません。
 例えば、
 
 ```php

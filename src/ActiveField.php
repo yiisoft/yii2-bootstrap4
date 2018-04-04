@@ -21,7 +21,7 @@ use yii\helpers\ArrayHelper;
  * - [[inline]]/[[inline()]] is used to render inline [[checkboxList()]] and [[radioList()]]
  * - [[enableError]] can be set to `false` to disable to the error
  * - [[enableLabel]] can be set to `false` to disable to the label
- * - [[label()]] can be used with a `boolean` argument to enable/disable the label
+ * - [[label()]] can be used with a `bool` argument to enable/disable the label
  *
  * There are also some new placeholders that you can use in the [[template]] configuration:
  *
@@ -91,7 +91,7 @@ use yii\helpers\ArrayHelper;
 class ActiveField extends \yii\widgets\ActiveField
 {
     /**
-     * @var boolean whether to render [[checkboxList()]] and [[radioList()]] inline.
+     * @var bool whether to render [[checkboxList()]] and [[radioList()]] inline.
      */
     public $inline = false;
     /**
@@ -110,7 +110,7 @@ class ActiveField extends \yii\widgets\ActiveField
      *  - 'error' the error grid class
      *  - 'hint' the hint grid class
      */
-    public $horizontalCssClasses;
+    public $horizontalCssClasses = [];
     /**
      * @var string the template for checkboxes in default layout
      */
@@ -136,17 +136,17 @@ class ActiveField extends \yii\widgets\ActiveField
      */
     public $inlineRadioListTemplate = "{label}\n{beginWrapper}\n{input}\n{error}\n{endWrapper}\n{hint}";
     /**
-     * @var boolean whether to render the error. Default is `true` except for layout `inline`.
+     * @var bool whether to render the error. Default is `true` except for layout `inline`.
      */
     public $enableError = true;
     /**
-     * @var boolean whether to render the label. Default is `true`.
+     * @var bool whether to render the label. Default is `true`.
      */
     public $enableLabel = true;
 
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function __construct($config = [])
     {
@@ -156,7 +156,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function render($content = null)
     {
@@ -188,7 +188,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function checkbox($options = [], $enclosedByLabel = true)
     {
@@ -213,7 +213,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function radio($options = [], $enclosedByLabel = true)
     {
@@ -238,7 +238,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function checkboxList($items, $options = [])
     {
@@ -254,10 +254,14 @@ class ActiveField extends \yii\widgets\ActiveField
                     'labelOptions' => ['class' => 'checkbox-inline'],
                 ];
             }
-        }  elseif (!isset($options['item'])) {
+        } elseif (!isset($options['item'])) {
             $itemOptions = isset($options['itemOptions']) ? $options['itemOptions'] : [];
-            $options['item'] = function ($index, $label, $name, $checked, $value) use ($itemOptions) {
-                $options = array_merge(['label' => $label, 'value' => $value], $itemOptions);
+            $encode = ArrayHelper::getValue($options, 'encode', true);
+            $options['item'] = function ($index, $label, $name, $checked, $value) use ($itemOptions, $encode) {
+                $options = array_merge([
+                    'label' => $encode ? Html::encode($label) : $label,
+                    'value' => $value
+                ], $itemOptions);
                 return '<div class="checkbox">' . Html::checkbox($name, $checked, $options) . '</div>';
             };
         }
@@ -266,7 +270,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function radioList($items, $options = [])
     {
@@ -284,8 +288,12 @@ class ActiveField extends \yii\widgets\ActiveField
             }
         }  elseif (!isset($options['item'])) {
             $itemOptions = isset($options['itemOptions']) ? $options['itemOptions'] : [];
-            $options['item'] = function ($index, $label, $name, $checked, $value) use ($itemOptions) {
-                $options = array_merge(['label' => $label, 'value' => $value], $itemOptions);
+            $encode = ArrayHelper::getValue($options, 'encode', true);
+            $options['item'] = function ($index, $label, $name, $checked, $value) use ($itemOptions, $encode) {
+                $options = array_merge([
+                    'label' => $encode ? Html::encode($label) : $label,
+                    'value' => $value
+                ], $itemOptions);
                 return '<div class="radio">' . Html::radio($name, $checked, $options) . '</div>';
             };
         }
@@ -298,7 +306,7 @@ class ActiveField extends \yii\widgets\ActiveField
      * @param array $options the tag options in terms of name-value pairs. These will be rendered as
      * the attributes of the resulting tag. There are also a special options:
      *
-     * - encode: boolean, whether value should be HTML-encoded or not.
+     * - encode: bool, whether value should be HTML-encoded or not.
      *
      * @return $this the field object itself
      * @since 2.0.5
@@ -312,7 +320,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function label($label = null, $options = [])
     {
@@ -330,7 +338,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
-     * @param boolean $value whether to render a inline list
+     * @param bool $value whether to render a inline list
      * @return $this the field object itself
      * Make sure you call this method before [[checkboxList()]] or [[radioList()]] to have any effect.
      */

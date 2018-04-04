@@ -32,7 +32,7 @@ use yii\helpers\ArrayHelper;
  * NavBar::end();
  * ```
  *
- * @see http://getbootstrap.com/components/#navbar
+ * @see https://getbootstrap.com/docs/3.3/components/#navbar
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  * @author Alexander Kochetov <creocoder@gmail.com>
  * @since 2.0
@@ -56,12 +56,18 @@ class NavBar extends Widget
      */
     public $containerOptions = [];
     /**
-     * @var string|boolean the text of the brand or false if it's not used. Note that this is not HTML-encoded.
-     * @see http://getbootstrap.com/components/#navbar
+     * @var string|bool the text of the brand or false if it's not used. Note that this is not HTML-encoded.
+     * @see https://getbootstrap.com/docs/3.3/components/#navbar
      */
     public $brandLabel = false;
     /**
-     * @var array|string|boolean $url the URL for the brand's hyperlink tag. This parameter will be processed by [[\yii\helpers\Url::to()]]
+     * @var string|bool src of the brand image or false if it's not used. Note that this param will override `$this->brandLabel` param.
+     * @see https://getbootstrap.com/docs/3.3/components/#navbar
+     * @since 2.0.8
+     */
+    public $brandImage = false;
+    /**
+     * @var array|string|bool $url the URL for the brand's hyperlink tag. This parameter will be processed by [[\yii\helpers\Url::to()]]
      * and will be used for the "href" attribute of the brand link. Default value is false that means
      * [[\yii\web\Application::homeUrl]] will be used.
      * You may set it to `null` if you want to have no link at all.
@@ -73,11 +79,16 @@ class NavBar extends Widget
      */
     public $brandOptions = [];
     /**
+     * @var string HTML content to be added in navbar-header div, for example, mobile search form.
+     * @since 2.0.8
+     */
+    public $headerContent;
+    /**
      * @var string text to show for screen readers for the button to toggle the navbar.
      */
     public $screenReaderToggleText = 'Toggle navigation';
     /**
-     * @var boolean whether the navbar content should be included in an inner div container which by default
+     * @var bool whether the navbar content should be included in an inner div container which by default
      * adds left and right padding. Set this to false for a 100% width navbar.
      */
     public $renderInnerContainer = true;
@@ -117,10 +128,14 @@ class NavBar extends Widget
             $this->containerOptions['id'] = "{$this->options['id']}-collapse";
         }
         echo $this->renderToggleButton();
+        if ($this->brandImage !== false) {
+            $this->brandLabel = Html::img($this->brandImage);
+        }
         if ($this->brandLabel !== false) {
             Html::addCssClass($this->brandOptions, ['widget' => 'navbar-brand']);
             echo Html::a($this->brandLabel, $this->brandUrl === false ? Yii::$app->homeUrl : $this->brandUrl, $this->brandOptions);
         }
+        echo $this->headerContent;
         echo Html::endTag('div');
         Html::addCssClass($this->containerOptions, ['collapse' => 'collapse', 'widget' => 'navbar-toggleable-xs']);
         $options = $this->containerOptions;

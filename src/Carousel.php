@@ -39,7 +39,7 @@ use yii\helpers\ArrayHelper;
 class Carousel extends Widget
 {
     /**
-     * @var array|boolean the labels for the previous and the next control buttons.
+     * @var array|bool the labels for the previous and the next control buttons.
      * If false, it means the previous and the next control buttons should not be displayed.
      */
     public $controls = [
@@ -47,8 +47,7 @@ class Carousel extends Widget
         '<span class="icon-next"></span><span class="sr-only">Next</span>'
     ];
     /**
-     * @var boolean
-     * If false carousel indicators (<ol> tag with anchors to items) should not be displayed.
+     * @var bool whether carousel indicators (<ol> tag with anchors to items) should be displayed or not.
      */
     public $showIndicators = true;
     /**
@@ -131,7 +130,7 @@ class Carousel extends Widget
     /**
      * Renders a single carousel item
      * @param string|array $item a single item from [[items]]
-     * @param integer $index the item index as the first item should be set to `active`
+     * @param int $index the item index as the first item should be set to `active`
      * @return string the rendering result
      * @throws InvalidConfigException if the item is invalid
      */

@@ -272,6 +272,37 @@ EXPECTED;
     }
 
     /**
+     * @see https://github.com/yiisoft/yii2-bootstrap/issues/96
+     * @see https://github.com/yiisoft/yii2-bootstrap/issues/157
+     */
+    public function testDeepActivateParents()
+    {
+        Nav::$counter = 0;
+        $out = Nav::widget([
+            'activateParents' => true,
+            'items' => [
+                [
+                    'label' => 'Dropdown',
+                    'items' => [
+                        [
+                            'label' => 'Sub-dropdown',
+                            'items' => [
+                                ['label' => 'Page', 'content' => 'Page', 'active' => true],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ]);
+
+        $expected = <<<EXPECTED
+<ul id="w0" class="nav"><li class="dropdown active"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Dropdown <span class="caret"></span></a><ul id="w1" class="dropdown-menu"><li class="active dropdown-submenu"><a href="#" tabindex="-1">Sub-dropdown</a><ul><li class="active dropdown-header">Page</li></ul></li></ul></li></ul>
+EXPECTED;
+
+        $this->assertEqualsWithoutLE($expected, $out);
+    }
+
+    /**
     * Mocks controller action with parameters
     *
     * @param string $controllerId

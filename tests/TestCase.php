@@ -9,7 +9,7 @@ use Yii;
 /**
  * This is the base class for all yii framework unit tests.
  */
-abstract class TestCase extends \PHPUnit_Framework_TestCase
+abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
     protected function setUp()
     {
@@ -28,26 +28,19 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Populates Yii::$app with a new application
-     * The application will be destroyed on tearDown() automatically.
-     * @param array $config The application configuration, if needed
-     * @param string $appClass name of the application class to create
+     * @param array $config
+     * @param string $appClass
      */
-    protected function mockApplication($config = [], $appClass = '\yii\console\Application')
-    {
-        new $appClass(ArrayHelper::merge([
-            'id' => 'testapp',
-            'basePath' => __DIR__,
-            'vendorPath' => dirname(__DIR__) . '/vendor',
-        ], $config));
-    }
-
     protected function mockWebApplication($config = [], $appClass = '\yii\web\Application')
     {
         new $appClass(ArrayHelper::merge([
             'id' => 'testapp',
             'basePath' => __DIR__,
             'vendorPath' => dirname(__DIR__) . '/vendor',
+            'aliases' => [
+                '@bower' => '@vendor/bower-asset',
+                '@npm'   => '@vendor/npm-asset',
+            ],
             'components' => [
                 'request' => [
                     'cookieValidationKey' => 'wefJDF8sfdsfSDefwqdxj9oq',

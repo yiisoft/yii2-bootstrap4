@@ -48,7 +48,7 @@ class BaseHtml extends \yii\helpers\Html
      * @param array $options the tag options in terms of name-value pairs. These will be rendered as
      * the attributes of the resulting tag. There are also a special options:
      *
-     * - encode: boolean, whether value should be HTML-encoded or not.
+     * - encode: bool, whether value should be HTML-encoded or not.
      *
      * @return string generated HTML
      * @see http://getbootstrap.com/css/#forms-controls-static
@@ -84,5 +84,62 @@ class BaseHtml extends \yii\helpers\Html
             $value = static::getAttributeValue($model, $attribute);
         }
         return static::staticControl($value, $options);
+    }
+
+    /**
+     * {@inheritdoc}
+     * @since 2.0.8
+     */
+    public static function radioList($name, $selection = null, $items = [], $options = [])
+    {
+        if (!isset($options['item'])) {
+            $itemOptions = ArrayHelper::remove($options, 'itemOptions', []);
+            $encode = ArrayHelper::getValue($options, 'encode', true);
+            $options['item'] = function ($index, $label, $name, $checked, $value) use ($itemOptions, $encode) {
+                $options = array_merge([
+                    'label' => $encode ? static::encode($label) : $label,
+                    'value' => $value
+                ], $itemOptions);
+                return '<div class="radio">' . static::radio($name, $checked, $options) . '</div>';
+            };
+        }
+
+        return parent::radioList($name, $selection, $items, $options);
+    }
+
+    /**
+     * {@inheritdoc}
+     * @since 2.0.8
+     */
+    public static function checkboxList($name, $selection = null, $items = [], $options = [])
+    {
+        if (!isset($options['item'])) {
+            $itemOptions = ArrayHelper::remove($options, 'itemOptions', []);
+            $encode = ArrayHelper::getValue($options, 'encode', true);
+            $options['item'] = function ($index, $label, $name, $checked, $value) use ($itemOptions, $encode) {
+                $options = array_merge([
+                    'label' => $encode ? static::encode($label) : $label,
+                    'value' => $value
+                ], $itemOptions);
+                return '<div class="checkbox">' . Html::checkbox($name, $checked, $options) . '</div>';
+            };
+        }
+
+        return parent::checkboxList($name, $selection, $items, $options);
+    }
+
+    /**
+     * {@inheritdoc}
+     * @since 2.0.8
+     */
+    public static function error($model, $attribute, $options = [])
+    {
+        if (!array_key_exists('tag', $options)) {
+            $options['tag'] = 'p';
+        }
+        if (!array_key_exists('class', $options)) {
+            $options['class'] = 'help-block help-block-error';
+        }
+        return parent::error($model, $attribute, $options);
     }
 }

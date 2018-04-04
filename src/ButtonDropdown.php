@@ -8,6 +8,7 @@
 namespace yii\bootstrap;
 
 use yii\helpers\ArrayHelper;
+use yii\helpers\Url;
 
 /**
  * ButtonDropdown renders a group or split button dropdown bootstrap component.
@@ -56,7 +57,7 @@ class ButtonDropdown extends Widget
      */
     public $dropdown = [];
     /**
-     * @var boolean whether to display a group of split-styled button group.
+     * @var bool whether to display a group of split-styled button group.
      */
     public $split = false;
     /**
@@ -64,14 +65,14 @@ class ButtonDropdown extends Widget
      */
     public $tagName = 'button';
     /**
-     * @var boolean whether the label should be HTML-encoded.
+     * @var bool whether the label should be HTML-encoded.
      */
     public $encodeLabel = true;
-	/**
-	 * @var string name of a class to use for rendering dropdowns withing this widget. Defaults to [[Dropdown]].
-	 * @since 2.0.7
-	 */
-	public $dropdownClass = 'yii\bootstrap\Dropdown';
+    /**
+     * @var string name of a class to use for rendering dropdowns withing this widget. Defaults to [[Dropdown]].
+     * @since 2.0.7
+     */
+    public $dropdownClass = 'yii\bootstrap\Dropdown';
 
 
     /**
@@ -84,7 +85,7 @@ class ButtonDropdown extends Widget
         $options = $this->containerOptions;
         $tag = ArrayHelper::remove($options, 'tag', 'div');
 
-        $this->registerPlugin('button');
+        $this->registerPlugin('dropdown');
         return implode("\n", [
             Html::beginTag($tag, $options),
             $this->renderButton(),
@@ -104,11 +105,12 @@ class ButtonDropdown extends Widget
         if ($this->encodeLabel) {
             $label = Html::encode($label);
         }
+
         if ($this->split) {
             $options = $this->options;
             $this->options['data-toggle'] = 'dropdown';
             Html::addCssClass($this->options, ['toggle' => 'dropdown-toggle']);
-            unset($this->options['id']);
+            unset($options['id']);
             $splitButton = Button::widget([
                 'label' => '<span class="caret"></span>',
                 'encodeLabel' => false,
@@ -118,12 +120,19 @@ class ButtonDropdown extends Widget
         } else {
             $label .= ' <span class="caret"></span>';
             $options = $this->options;
-            if (!isset($options['href']) && $this->tagName === 'a') {
-                $options['href'] = '#';
-            }
             Html::addCssClass($options, ['toggle' => 'dropdown-toggle']);
             $options['data-toggle'] = 'dropdown';
             $splitButton = '';
+        }
+
+        if (isset($options['href'])) {
+            if (is_array($options['href'])) {
+                $options['href'] = Url::to($options['href']);
+            }
+        } else {
+            if ($this->tagName === 'a') {
+                $options['href'] = '#';
+            }
         }
 
         return Button::widget([
@@ -144,8 +153,8 @@ class ButtonDropdown extends Widget
         $config = $this->dropdown;
         $config['clientOptions'] = false;
         $config['view'] = $this->getView();
-		/** @var Widget $dropdownClass */
-		$dropdownClass = $this->dropdownClass;
-		return $dropdownClass::widget($config);
+        /** @var Widget $dropdownClass */
+        $dropdownClass = $this->dropdownClass;
+        return $dropdownClass::widget($config);
     }
 }

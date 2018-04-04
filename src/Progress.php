@@ -61,7 +61,7 @@ class Progress extends Widget
      */
     public $label;
     /**
-     * @var integer the amount of progress as a percentage.
+     * @var int the amount of progress as a percentage.
      */
     public $percent = 0;
     /**
@@ -115,7 +115,7 @@ class Progress extends Widget
 
     /**
      * Generates a bar
-     * @param integer $percent the percentage of the bar
+     * @param int $percent the percentage of the bar
      * @param string $label, optional, the label to display at the bar
      * @param array $options the HTML attributes of the bar
      * @return string the rendering result.
