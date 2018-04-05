@@ -2,7 +2,7 @@
 
 namespace yiiunit\extensions\bootstrap;
 
-use yii\bootstrap\Alert;
+use yii\bootstrap4\Alert;
 use yii;
 
 /**

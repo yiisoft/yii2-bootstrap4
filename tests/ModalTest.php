@@ -2,7 +2,7 @@
 
 namespace yiiunit\extensions\bootstrap;
 
-use yii\bootstrap\Modal;
+use yii\bootstrap4\Modal;
 
 /**
  * @group bootstrap

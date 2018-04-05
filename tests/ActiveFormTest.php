@@ -1,7 +1,7 @@
 <?php
 namespace yiiunit\extensions\bootstrap;
 
-use yii\bootstrap\ActiveForm;
+use yii\bootstrap4\ActiveForm;
 
 /**
  * Tests for ActiveForm widget

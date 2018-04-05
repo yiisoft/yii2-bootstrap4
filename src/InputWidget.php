@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\bootstrap;
+namespace yii\bootstrap4;
 
 /**
  * InputWidget is an adjusted for bootstrap needs version of [[\yii\widgets\InputWidget]].

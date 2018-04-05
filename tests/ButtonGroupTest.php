@@ -1,8 +1,8 @@
 <?php
 namespace yiiunit\extensions\bootstrap;
 
-use yii\bootstrap\Button;
-use yii\bootstrap\ButtonGroup;
+use yii\bootstrap4\Button;
+use yii\bootstrap4\ButtonGroup;
 
 /**
  * @group bootstrap

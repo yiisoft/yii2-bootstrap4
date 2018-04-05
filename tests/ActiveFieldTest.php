@@ -3,8 +3,8 @@
 namespace yiiunit\extensions\bootstrap;
 
 use yii\base\DynamicModel;
-use yii\bootstrap\ActiveField;
-use yii\bootstrap\ActiveForm;
+use yii\bootstrap4\ActiveField;
+use yii\bootstrap4\ActiveForm;
 use Yii;
 use yiiunit\extensions\bootstrap\data\ExtendedActiveField;
 

@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\bootstrap;
+namespace yii\bootstrap4;
 
 use yii\helpers\ArrayHelper;
 

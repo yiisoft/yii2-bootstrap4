@@ -1,7 +1,7 @@
 <?php
 namespace yiiunit\extensions\bootstrap;
 
-use yii\bootstrap\ButtonDropdown;
+use yii\bootstrap4\ButtonDropdown;
 
 /**
  * @group bootstrap

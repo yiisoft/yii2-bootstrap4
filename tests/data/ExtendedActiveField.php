@@ -2,7 +2,7 @@
 
 namespace yiiunit\extensions\bootstrap\data;
 
-use yii\bootstrap\ActiveField;
+use yii\bootstrap4\ActiveField;
 
 /**
  * A customized extension from ActiveField

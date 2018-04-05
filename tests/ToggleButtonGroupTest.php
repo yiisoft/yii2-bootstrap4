@@ -3,7 +3,7 @@
 namespace yiiunit\extensions\bootstrap;
 
 use yii\base\Model;
-use yii\bootstrap\ToggleButtonGroup;
+use yii\bootstrap4\ToggleButtonGroup;
 
 /**
  * @group bootstrap
