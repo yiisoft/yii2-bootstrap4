@@ -7,9 +7,9 @@
 
 namespace yii\bootstrap;
 
-use Yii;
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
+use Yii;
 
 /**
  * Nav renders a nav HTML component.
@@ -100,12 +100,6 @@ class Nav extends Widget
      */
     public $params;
     /**
-     * @var string this property allows you to customize the HTML which is used to generate the drop down caret symbol,
-     * which is displayed next to the button text to indicate the drop down functionality.
-     * Defaults to `null` which means `<span class="caret"></span>` will be used. To disable the caret, set this property to be an empty string.
-     */
-    public $dropDownCaret;
-    /**
      * @var string name of a class to use for rendering dropdowns within this widget. Defaults to [[Dropdown]].
      * @since 2.0.7
      */
@@ -124,14 +118,12 @@ class Nav extends Widget
         if ($this->params === null) {
             $this->params = Yii::$app->request->getQueryParams();
         }
-        if ($this->dropDownCaret === null) {
-            $this->dropDownCaret = '<span class="caret"></span>';
-        }
         Html::addCssClass($this->options, ['widget' => 'nav']);
     }
 
     /**
      * Renders the widget.
+     * @throws InvalidConfigException
      */
     public function run()
     {
@@ -141,6 +133,7 @@ class Nav extends Widget
 
     /**
      * Renders widget items.
+     * @throws InvalidConfigException
      */
     public function renderItems()
     {
@@ -160,6 +153,7 @@ class Nav extends Widget
      * @param string|array $item the item to render.
      * @return string the rendering result.
      * @throws InvalidConfigException
+     * @throws \Exception
      */
     public function renderItem($item)
     {
@@ -198,6 +192,7 @@ class Nav extends Widget
         Html::addCssClass($linkOptions, 'nav-link');
 
         if ($this->activateItems && $active) {
+            Html::addCssClass($options, 'active'); // In NavBar the "nav-item" get's activated
             Html::addCssClass($linkOptions, 'active');
         }
 
@@ -211,6 +206,7 @@ class Nav extends Widget
      * @param array $parentItem the parent item information. Please refer to [[items]] for the structure of this array.
      * @return string the rendering result.
      * @since 2.0.1
+     * @throws \Exception
      */
     protected function renderDropdown($items, $parentItem)
     {
