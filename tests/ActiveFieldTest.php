@@ -1,12 +1,12 @@
 <?php
 
-namespace yiiunit\extensions\bootstrap;
+namespace yiiunit\extensions\bootstrap4;
 
 use yii\base\DynamicModel;
 use yii\bootstrap4\ActiveField;
 use yii\bootstrap4\ActiveForm;
 use Yii;
-use yiiunit\extensions\bootstrap\data\ExtendedActiveField;
+use yiiunit\extensions\bootstrap4\data\ExtendedActiveField;
 
 class ActiveFieldTest extends TestCase
 {
