@@ -83,6 +83,11 @@ class NavBar extends Widget
      */
     public $screenReaderToggleText = 'Toggle navigation';
     /**
+     * @var array the HTML attributes of the navbar toggler button.
+     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     */
+    public $togglerOptions = [];
+    /**
      * @var bool whether the navbar content should be included in an inner div container which by default
      * adds left and right padding. Set this to false for a 100% width navbar.
      */
@@ -157,16 +162,20 @@ class NavBar extends Widget
      */
     protected function renderToggleButton()
     {
-        return Html::button(Html::tag('span', '', ['class' => 'navbar-toggler-icon']), [
-            'class' => 'navbar-toggler',
-            'type' => 'button',
-            'data' => [
-                'toggle' => 'collapse',
-                'target' => '#' . $this->containerOptions['id'],
-            ],
-            'aria-controls' => $this->containerOptions['id'],
-            'aria-expanded' => false,
-            'aria-label' => $this->screenReaderToggleText,
-        ]);
+        $options = $this->togglerOptions;
+        Html::addCssClass($options, ['widget' => 'navbar-toggler']);
+        return Html::button(
+            Html::tag('span', '', ['class' => 'navbar-toggler-icon']),
+            ArrayHelper::merge($options, [
+                'type' => 'button',
+                'data' => [
+                    'toggle' => 'collapse',
+                    'target' => '#' . $this->containerOptions['id'],
+                ],
+                'aria-controls' => $this->containerOptions['id'],
+                'aria-expanded' => false,
+                'aria-label' => $this->screenReaderToggleText,
+            ])
+        );
     }
 }
