@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\bootstrap;
+namespace yii\bootstrap4;
 
 use yii\web\AssetBundle;
 
@@ -23,7 +23,7 @@ class BootstrapPluginAsset extends AssetBundle
     ];
     public $depends = [
         'yii\web\JqueryAsset',
-        'yii\bootstrap\BootstrapAsset',
-        'yii\bootstrap\PopperAsset',
+        'yii\bootstrap4\BootstrapAsset',
+        'yii\bootstrap4\PopperAsset',
     ];
 }

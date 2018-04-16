@@ -1,9 +1,9 @@
 <?php
 
-namespace yiiunit\extensions\bootstrap;
+namespace yiiunit\extensions\bootstrap4;
 
 use yii\base\Model;
-use yii\bootstrap\ToggleButtonGroup;
+use yii\bootstrap4\ToggleButtonGroup;
 
 /**
  * @group bootstrap

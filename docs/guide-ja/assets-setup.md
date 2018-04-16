@@ -103,21 +103,21 @@ return [
         'assetManager' => [
             // バンドルをオーバーライドして CDN を使う
             'bundles' => [
-                'yii\bootstrap\BootstrapAsset' => [
+                'yii\bootstrap4\BootstrapAsset' => [
                     'sourcePath' => null,
                     'baseUrl' => 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7',
                     'css' => [
                         'css/bootstrap.min.css'
                     ],
                 ],
-                'yii\bootstrap\BootstrapPluginAsset' => [
+                'yii\bootstrap4\BootstrapPluginAsset' => [
                     'sourcePath' => null,
                     'baseUrl' => 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7',
                     'js' => [
                         'js/bootstrap.min.js'
                     ],
                 ],
-                'yii\bootstrap\BootstrapThemeAsset' => [
+                'yii\bootstrap4\BootstrapThemeAsset' => [
                     'sourcePath' => null,
                     'baseUrl' => 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7',
                     'css' => [
@@ -163,16 +163,16 @@ return [
             ],
             // バンドルをオーバーライドし、ローカル・プロジェクト・ファイルを使う
             'bundles' => [
-                'yii\bootstrap\BootstrapAsset' => [
+                'yii\bootstrap4\BootstrapAsset' => [
                     'sourcePath' => '@app/assets/source/bootstrap',
                     'css' => [
                         'css/bootstrap.less'
                     ],
                 ],
-                'yii\bootstrap\BootstrapPluginAsset' => [
+                'yii\bootstrap4\BootstrapPluginAsset' => [
                     'sourcePath' => '@app/assets/source/bootstrap',
                 ],
-                'yii\bootstrap\BootstrapThemeAsset' => [
+                'yii\bootstrap4\BootstrapThemeAsset' => [
                     'sourcePath' => '@app/assets/source/bootstrap',
                 ],
             ],
@@ -215,16 +215,16 @@ return [
             ],
             // バンドルをオーバーライドし、ローカル・プロジェクト・ファイルを使う
             'bundles' => [
-                'yii\bootstrap\BootstrapAsset' => [
+                'yii\bootstrap4\BootstrapAsset' => [
                     'sourcePath' => '@app/assets/source/bootstrap',
                     'css' => [
                         'css/bootstrap.scss'
                     ],
                 ],
-                'yii\bootstrap\BootstrapPluginAsset' => [
+                'yii\bootstrap4\BootstrapPluginAsset' => [
                     'sourcePath' => '@app/assets/source/bootstrap',
                 ],
-                'yii\bootstrap\BootstrapThemeAsset' => [
+                'yii\bootstrap4\BootstrapThemeAsset' => [
                     'sourcePath' => '@app/assets/source/bootstrap',
                 ],
             ],

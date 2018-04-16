@@ -2,18 +2,18 @@ Yii widgets
 ===========
 
 A maioria dos componentes complexos do bootstrap são envolvidos em widgets Yii para permitir uma sintaxe mais robusta e integrar-se com
-características estruturais do framework. Todos widgets pertencem ao namespace `\yii\bootstrap`:
+características estruturais do framework. Todos widgets pertencem ao namespace `\yii\bootstrap4`:
 
-- [[yii\bootstrap\ActiveForm|ActiveForm]]
-- [[yii\bootstrap\Alert|Alert]]
-- [[yii\bootstrap\Button|Button]]
-- [[yii\bootstrap\ButtonDropdown|ButtonDropdown]]
-- [[yii\bootstrap\ButtonGroup|ButtonGroup]]
-- [[yii\bootstrap\Carousel|Carousel]]
-- [[yii\bootstrap\Collapse|Collapse]]
-- [[yii\bootstrap\Dropdown|Dropdown]]
-- [[yii\bootstrap\Modal|Modal]]
-- [[yii\bootstrap\Nav|Nav]]
-- [[yii\bootstrap\NavBar|NavBar]]
-- [[yii\bootstrap\Progress|Progress]]
-- [[yii\bootstrap\Tabs|Tabs]]
+- [[yii\bootstrap4\ActiveForm|ActiveForm]]
+- [[yii\bootstrap4\Alert|Alert]]
+- [[yii\bootstrap4\Button|Button]]
+- [[yii\bootstrap4\ButtonDropdown|ButtonDropdown]]
+- [[yii\bootstrap4\ButtonGroup|ButtonGroup]]
+- [[yii\bootstrap4\Carousel|Carousel]]
+- [[yii\bootstrap4\Collapse|Collapse]]
+- [[yii\bootstrap4\Dropdown|Dropdown]]
+- [[yii\bootstrap4\Modal|Modal]]
+- [[yii\bootstrap4\Nav|Nav]]
+- [[yii\bootstrap4\NavBar|NavBar]]
+- [[yii\bootstrap4\Progress|Progress]]
+- [[yii\bootstrap4\Tabs|Tabs]]
