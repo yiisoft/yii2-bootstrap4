@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\bootstrap;
+namespace yii\bootstrap4;
 
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
@@ -128,7 +128,7 @@ class Tabs extends Widget
      * @var string name of a class to use for rendering dropdowns withing this widget. Defaults to [[Dropdown]].
      * @since 2.0.7
      */
-    public $dropdownClass = 'yii\bootstrap\Dropdown';
+    public $dropdownClass = 'yii\bootstrap4\Dropdown';
 
 
     /**

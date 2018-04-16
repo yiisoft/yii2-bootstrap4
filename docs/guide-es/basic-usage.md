@@ -8,7 +8,7 @@ directorio `@app/assets`:
 ```php
 public $depends = [
     'yii\web\YiiAsset',
-    'yii\bootstrap\BootstrapAsset', // esta linea
+    'yii\bootstrap4\BootstrapAsset', // esta linea
 ];
 ```
 

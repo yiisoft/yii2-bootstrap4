@@ -6,7 +6,7 @@ Yii不会将 bootstrap 合并到PHP代码中，因为HTML本身是非常简单�
 ```php
 public $depends = [
     'yii\web\YiiAsset',
-    'yii\bootstrap\BootstrapAsset', // this line
+    'yii\bootstrap4\BootstrapAsset', // this line
 ];
 ```
 

@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\bootstrap;
+namespace yii\bootstrap4;
 
 use yii\web\AssetBundle;
 
@@ -22,6 +22,6 @@ class BootstrapThemeAsset extends AssetBundle
         'css/bootstrap-theme.css',
     ];
     public $depends = [
-        'yii\bootstrap\BootstrapAsset',
+        'yii\bootstrap4\BootstrapAsset',
     ];
 }

@@ -1,9 +1,9 @@
 <?php
-namespace yiiunit\extensions\bootstrap;
+namespace yiiunit\extensions\bootstrap4;
 
 use yii\base\Action;
 use yii\base\Module;
-use yii\bootstrap\Nav;
+use yii\bootstrap4\Nav;
 use yii\web\Controller;
 
 /**

@@ -1,8 +1,8 @@
 <?php
-namespace yiiunit\extensions\bootstrap;
+namespace yiiunit\extensions\bootstrap4;
 
 use yii\base\DynamicModel;
-use yii\bootstrap\Collapse;
+use yii\bootstrap4\Collapse;
 use yii\widgets\ActiveForm;
 
 /**
