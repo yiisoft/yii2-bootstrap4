@@ -83,6 +83,7 @@ class Dropdown extends Widget
 
     /**
      * Renders the widget.
+     * @throws InvalidConfigException
      */
     public function run()
     {
@@ -133,7 +134,8 @@ class Dropdown extends Widget
                 }
                 $content = Html::a($label, $url === null ? '#' : $url, $linkOptions)
                     . $this->renderItems($item['items'], $submenuOptions);
-                Html::addCssClass($itemOptions, ['widget' => 'dropdown-submenu']);
+                Html::addCssClass($itemOptions, ['widget' => 'dropdown-menu']);
+                Html::addCssClass($itemOptions, 'dropdown-submenu');
 
                 $lines[] = Html::tag('div', $content, $itemOptions);
             }
