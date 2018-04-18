@@ -6,7 +6,7 @@ use yii\bootstrap4\Dropdown;
 /**
  * Tests for Dropdown widget
  *
- * @group bootstrap
+ * @group bootstrap4
  */
 class DropdownTest extends TestCase
 {
@@ -17,14 +17,14 @@ class DropdownTest extends TestCase
             [
                 'items' => [
                     [
-                        'label' => 'Page1',
-                        'content' => 'Page1',
+                        'label' => 'Page1'
                     ],
                     [
                         'label' => 'Dropdown1',
+                        'url' => '#test',
                         'items' => [
-                            ['label' => 'Page2', 'content' => 'Page2'],
-                            ['label' => 'Page3', 'content' => 'Page3'],
+                            ['label' => 'Page2'],
+                            ['label' => 'Page3'],
                         ]
                     ],
                     [
@@ -41,8 +41,12 @@ class DropdownTest extends TestCase
 
         $expected = <<<EXPECTED
 <div id="w0" class="dropdown-menu"><h6 class="dropdown-header">Page1</h6>
-<div class="dropdown-submenu"><a class="dropdown-item" href="#" tabindex="-1">Dropdown1</a><div><h6 class="dropdown-header">Page2</h6>
-<h6 class="dropdown-header">Page3</h6></div></div></div>
+<div id="w1" class="dropdown">
+<a id="w2" class="dropdown-item btn dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">Dropdown1</a>
+
+<div id="w3" class="dropdown-submenu dropdown-menu"><h6 class="dropdown-header">Page2</h6>
+<h6 class="dropdown-header">Page3</h6></div>
+</div></div>
 EXPECTED;
 
         $this->assertEqualsWithoutLE($expected, $out);
@@ -79,10 +83,18 @@ EXPECTED;
         );
 
         $expected = <<<EXPECTED
-<div id="w0" class="dropdown-menu"><div class="dropdown-submenu"><a class="dropdown-item" href="#" tabindex="-1">Dropdown1</a><div class="submenu-list"><h6 class="dropdown-header">Page1</h6>
-<h6 class="dropdown-header">Page2</h6></div></div>
-<div class="dropdown-submenu"><a class="dropdown-item" href="#" tabindex="-1">Dropdown2</a><div class="submenu-override"><h6 class="dropdown-header">Page3</h6>
-<h6 class="dropdown-header">Page4</h6></div></div></div>
+<div id="w0" class="dropdown-menu"><div id="w1" class="dropdown">
+<a id="w2" class="dropdown-item btn dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">Dropdown1</a>
+
+<div id="w3" class="submenu-list dropdown-submenu dropdown-menu"><h6 class="dropdown-header">Page1</h6>
+<h6 class="dropdown-header">Page2</h6></div>
+</div>
+<div id="w4" class="dropdown">
+<a id="w5" class="dropdown-item btn dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">Dropdown2</a>
+
+<div id="w6" class="submenu-override dropdown-submenu dropdown-menu"><h6 class="dropdown-header">Page3</h6>
+<h6 class="dropdown-header">Page4</h6></div>
+</div></div>
 EXPECTED;
 
         $this->assertEqualsWithoutLE($expected, $out);

@@ -49,7 +49,6 @@ use Yii;
  * @see http://getbootstrap.com/components/#nav
  *
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @since 2.0
  */
 class Nav extends Widget
 {
@@ -101,7 +100,6 @@ class Nav extends Widget
     public $params;
     /**
      * @var string name of a class to use for rendering dropdowns within this widget. Defaults to [[Dropdown]].
-     * @since 2.0.7
      */
     public $dropdownClass = 'yii\bootstrap4\Dropdown';
 
@@ -205,7 +203,6 @@ class Nav extends Widget
      * @param array $items the given items. Please refer to [[Dropdown::items]] for the array structure.
      * @param array $parentItem the parent item information. Please refer to [[items]] for the structure of this array.
      * @return string the rendering result.
-     * @since 2.0.1
      * @throws \Exception
      */
     protected function renderDropdown($items, $parentItem)

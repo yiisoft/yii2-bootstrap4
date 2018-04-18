@@ -29,7 +29,6 @@ use yii\helpers\Json;
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @author Paul Klimov <klimov.paul@gmail.com>
- * @since 2.0.6
  */
 trait BootstrapWidgetTrait
 {
@@ -85,7 +84,6 @@ trait BootstrapWidgetTrait
 
     /**
      * Registers JS event handlers that are listed in [[clientEvents]].
-     * @since 2.0.2
      */
     protected function registerClientEvents()
     {

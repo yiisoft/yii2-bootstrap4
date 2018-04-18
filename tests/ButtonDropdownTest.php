@@ -4,7 +4,7 @@ namespace yiiunit\extensions\bootstrap4;
 use yii\bootstrap4\ButtonDropdown;
 
 /**
- * @group bootstrap
+ * @group bootstrap4
  */
 class ButtonDropdownTest extends TestCase
 {
@@ -14,7 +14,7 @@ class ButtonDropdownTest extends TestCase
 
         ButtonDropdown::$counter = 0;
         $out = ButtonDropdown::widget([
-            'containerOptions' => [
+            'options' => [
                 'class' => $containerClass,
             ],
             'label' => 'Action',

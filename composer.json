@@ -37,7 +37,8 @@
         "bower-asset/popper.js": "~1.12.0"
     },
     "require-dev": {
-        "yiisoft/yii2-coding-standards": "~2.0"
+        "yiisoft/yii2-coding-standards": "~2.0",
+        "phpunit/phpunit": "*"
     },
     "repositories": [
         {

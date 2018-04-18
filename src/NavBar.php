@@ -35,7 +35,6 @@ use yii\helpers\ArrayHelper;
  * @see https://getbootstrap.com/docs/3.3/components/#navbar
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  * @author Alexander Kochetov <creocoder@gmail.com>
- * @since 2.0
  */
 class NavBar extends Widget
 {
@@ -63,7 +62,6 @@ class NavBar extends Widget
     /**
      * @var string|bool src of the brand image or false if it's not used. Note that this param will override `$this->brandLabel` param.
      * @see https://getbootstrap.com/docs/3.3/components/#navbar
-     * @since 2.0.8
      */
     public $brandImage = false;
     /**
@@ -173,7 +171,7 @@ class NavBar extends Widget
                     'target' => '#' . $this->containerOptions['id'],
                 ],
                 'aria-controls' => $this->containerOptions['id'],
-                'aria-expanded' => false,
+                'aria-expanded' => 'false',
                 'aria-label' => $this->screenReaderToggleText,
             ])
         );

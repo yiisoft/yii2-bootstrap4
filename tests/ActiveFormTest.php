@@ -5,8 +5,8 @@ use yii\bootstrap4\ActiveForm;
 
 /**
  * Tests for ActiveForm widget
- * 
- * @group bootstrap
+ *
+ * @group bootstrap4
  */
 class ActiveFormTest extends TestCase
 {

@@ -9,7 +9,7 @@ use yii\web\Controller;
 /**
  * Tests for Nav widget
  *
- * @group bootstrap
+ * @group bootstrap4
  */
 class NavTest extends TestCase
 {

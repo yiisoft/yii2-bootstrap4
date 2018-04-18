@@ -27,10 +27,10 @@ use yii\helpers\ArrayHelper;
  * Modal::end();
  * ~~~
  *
- * @see http://getbootstrap.com/javascript/#modals
+ * @see https://getbootstrap.com/docs/4.1/components/modal/
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  * @author Qiang Xue <qiang.xue@gmail.com>
- * @since 2.0
+ * @author Simon Karlen <simi.albi@gmail.com>
  */
 class Modal extends Widget
 {
@@ -39,31 +39,33 @@ class Modal extends Widget
     const SIZE_DEFAULT = "";
 
     /**
-     * @var string the header content in the modal window.
+     * @var string the tile content in the modal window.
      */
-    public $header;
+    public $title;
     /**
-     * @var string additional header options
+     * @var array additional title options
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
-     * @since 2.0.1
      */
-    public $headerOptions;
+    public $titleOptions = [];
+    /**
+     * @var array additional header options
+     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     */
+    public $headerOptions = [];
     /**
      * @var array body options
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
-     * @since 2.0.7
      */
-    public $bodyOptions = ['class' => 'modal-body'];
+    public $bodyOptions = [];
     /**
      * @var string the footer content in the modal window.
      */
     public $footer;
     /**
-     * @var string additional footer options
+     * @var array additional footer options
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
-     * @since 2.0.1
      */
-    public $footerOptions;
+    public $footerOptions = [];
     /**
      * @var string the modal size. Can be [[SIZE_LARGE]] or [[SIZE_SMALL]], or empty for default.
      */
@@ -138,12 +140,14 @@ class Modal extends Widget
     protected function renderHeader()
     {
         $button = $this->renderCloseButton();
-        if ($button !== null) {
-            $this->header = $button . "\n" . $this->header;
-        }
-        if ($this->header !== null) {
+        if ($this->title !== null) {
+            Html::addCssClass($this->titleOptions, ['widget' => 'modal-title']);
+            $header = Html::tag('h5', $this->title, $this->titleOptions);
+            if ($button !== null) {
+                $header .= $button;
+            }
             Html::addCssClass($this->headerOptions, ['widget' => 'modal-header']);
-            return Html::tag('div', "\n" . $this->header . "\n", $this->headerOptions);
+            return Html::tag('div', "\n" . $header . "\n", $this->headerOptions);
         } else {
             return null;
         }
@@ -155,6 +159,7 @@ class Modal extends Widget
      */
     protected function renderBodyBegin()
     {
+        Html::addCssClass($this->bodyOptions, ['widget' => 'modal-body']);
         return Html::beginTag('div', $this->bodyOptions);
     }
 
@@ -190,9 +195,6 @@ class Modal extends Widget
         if (($toggleButton = $this->toggleButton) !== false) {
             $tag = ArrayHelper::remove($toggleButton, 'tag', 'button');
             $label = ArrayHelper::remove($toggleButton, 'label', 'Show');
-            if ($tag === 'button' && !isset($toggleButton['type'])) {
-                $toggleButton['type'] = 'button';
-            }
 
             return Html::tag($tag, $label, $toggleButton);
         } else {
@@ -208,10 +210,9 @@ class Modal extends Widget
     {
         if (($closeButton = $this->closeButton) !== false) {
             $tag = ArrayHelper::remove($closeButton, 'tag', 'button');
-            $label = ArrayHelper::remove($closeButton, 'label', '&times;');
-            if ($tag === 'button' && !isset($closeButton['type'])) {
-                $closeButton['type'] = 'button';
-            }
+            $label = ArrayHelper::remove($closeButton, 'label', Html::tag('span', '&times;', [
+                'aria-hidden' => 'true'
+            ]));
 
             return Html::tag($tag, $label, $closeButton);
         } else {
@@ -229,6 +230,7 @@ class Modal extends Widget
             'class' => 'fade',
             'role' => 'dialog',
             'tabindex' => -1,
+            'aria-hidden' => 'true'
         ], $this->options);
         Html::addCssClass($this->options, ['widget' => 'modal']);
 
@@ -236,17 +238,25 @@ class Modal extends Widget
             $this->clientOptions = array_merge(['show' => false], $this->clientOptions);
         }
 
+        $this->titleOptions = array_merge([
+            'id' => $this->options['id'] . '-label'
+        ], $this->titleOptions);
+        if (!isset($this->options['aria-label'], $this->options['aria-labelledby']) && $this->title !== null) {
+            $this->options['aria-labelledby'] = $this->titleOptions['id'];
+        }
+
         if ($this->closeButton !== false) {
             $this->closeButton = array_merge([
                 'data-dismiss' => 'modal',
-                'aria-hidden' => 'true',
                 'class' => 'close',
+                'type' => 'button',
             ], $this->closeButton);
         }
 
         if ($this->toggleButton !== false) {
             $this->toggleButton = array_merge([
                 'data-toggle' => 'modal',
+                'type' => 'button'
             ], $this->toggleButton);
             if (!isset($this->toggleButton['data-target']) && !isset($this->toggleButton['href'])) {
                 $this->toggleButton['data-target'] = '#' . $this->options['id'];

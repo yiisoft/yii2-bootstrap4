@@ -11,7 +11,7 @@ $_SERVER['SCRIPT_FILENAME'] = __FILE__;
 require_once(__DIR__ . '/../vendor/autoload.php');
 require_once(__DIR__ . '/../vendor/yiisoft/yii2/Yii.php');
 
-Yii::setAlias('@yiiunit/extensions/bootstrap', __DIR__);
-Yii::setAlias('@yii/bootstrap', dirname(__DIR__) . '/src');
+Yii::setAlias('@yiiunit/extensions/bootstrap4', __DIR__);
+Yii::setAlias('@yii/bootstrap4', dirname(__DIR__) . '/src');
 
 require_once(__DIR__ . '/compatibility.php');

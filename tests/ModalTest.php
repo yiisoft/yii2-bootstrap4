@@ -5,7 +5,7 @@ namespace yiiunit\extensions\bootstrap4;
 use yii\bootstrap4\Modal;
 
 /**
- * @group bootstrap
+ * @group bootstrap4
  */
 class ModalTest extends TestCase
 {
@@ -18,13 +18,10 @@ class ModalTest extends TestCase
 
         $expected = <<<EXPECTED
 
-<div id="w1" class="fade modal" role="dialog" tabindex="-1">
+<div id="w0" class="fade modal" role="dialog" tabindex="-1" aria-hidden="true">
 <div class="modal-dialog ">
 <div class="modal-content">
-<div class="modal-header">
-<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 
-</div>
 <div class="modal-body test" style="text-align:center;">
 
 </div>

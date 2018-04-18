@@ -54,9 +54,10 @@ use yii\helpers\ArrayHelper;
  * ]);
  * ```
  *
- * @see http://getbootstrap.com/javascript/#tabs
+ * @see https://getbootstrap.com/docs/4.1/components/navs/#tabs
+ * @see https://getbootstrap.com/docs/4.1/components/card/#navigation
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @since 2.0
+ * @author Simon Karlen <simi.albi@gmail.com>
  */
 class Tabs extends Widget
 {
@@ -115,24 +116,21 @@ class Tabs extends Widget
     /**
      * @var bool whether to render the `tab-content` container and its content. You may set this property
      * to be false so that you can manually render `tab-content` yourself in case your tab contents are complex.
-     * @since 2.0.1
      */
     public $renderTabContent = true;
     /**
      * @var array list of HTML attributes for the `tab-content` container. This will always contain the CSS class `tab-content`.
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
-     * @since 2.0.7
      */
     public $tabContentOptions = [];
     /**
      * @var string name of a class to use for rendering dropdowns withing this widget. Defaults to [[Dropdown]].
-     * @since 2.0.7
      */
     public $dropdownClass = 'yii\bootstrap4\Dropdown';
 
 
     /**
-     * Initializes the widget.
+     * {@inheritdoc}
      */
     public function init()
     {
@@ -142,7 +140,8 @@ class Tabs extends Widget
     }
 
     /**
-     * Renders the widget.
+     * {@inheritdoc}
+     * @throws InvalidConfigException
      */
     public function run()
     {
@@ -154,6 +153,7 @@ class Tabs extends Widget
      * Renders tab items as specified on [[items]].
      * @return string the rendering result.
      * @throws InvalidConfigException.
+     * @throws \Exception
      */
     protected function renderItems()
     {
@@ -188,10 +188,14 @@ class Tabs extends Widget
                 if (!isset($linkOptions['data-toggle'])) {
                     $linkOptions['data-toggle'] = 'dropdown';
                 }
-                /** @var Widget $dropdownClass */
+                /** @var Dropdown $dropdownClass */
                 $dropdownClass = $this->dropdownClass;
                 $header = Html::a($label, "#", $linkOptions) . "\n"
-                    . $dropdownClass::widget(['items' => $item['items'], 'clientOptions' => false, 'view' => $this->getView()]);
+                    . $dropdownClass::widget([
+                        'items' => $item['items'],
+                        'clientOptions' => false,
+                        'view' => $this->getView()
+                    ]);
             } else {
                 $options = array_merge($this->itemOptions, ArrayHelper::getValue($item, 'options', []));
                 $options['id'] = ArrayHelper::getValue($options, 'id', $this->options['id'] . '-tab' . $n);
@@ -200,6 +204,9 @@ class Tabs extends Widget
                 if (ArrayHelper::remove($item, 'active')) {
                     Html::addCssClass($options, 'active');
                     Html::addCssClass($linkOptions, 'active');
+                    if (!isset($item['url'])) {
+                        $linkOptions['aria-selected'] = 'true';
+                    }
                 }
 
                 if (isset($item['url'])) {
@@ -208,6 +215,10 @@ class Tabs extends Widget
                     if (!isset($linkOptions['data-toggle'])) {
                         $linkOptions['data-toggle'] = 'tab';
                     }
+                    if (!isset($linkOptions['aria-selected'])) {
+                        $linkOptions['aria-selected'] = 'false';
+                    }
+                    $linkOptions['aria-controls'] = $options['id'];
                     $header = Html::a($label, '#' . $options['id'], $linkOptions);
                 }
 
@@ -243,7 +254,6 @@ class Tabs extends Widget
      *
      * This method activates the first tab that is visible and
      * not explicitly set to inactive (`'active' => false`).
-     * @since 2.0.7
      */
     protected function activateFirstVisibleTab()
     {
@@ -293,7 +303,8 @@ class Tabs extends Widget
                 $itemActive = true;
             }
 
-            $options['id'] = ArrayHelper::getValue($options, 'id', $this->options['id'] . '-dd' . $itemNumber . '-tab' . $n);
+            $options['id'] = ArrayHelper::getValue($options, 'id',
+                $this->options['id'] . '-dd' . $itemNumber . '-tab' . $n);
             $item['url'] = '#' . $options['id'];
             if (!isset($item['linkOptions']['data-toggle'])) {
                 $item['linkOptions']['data-toggle'] = 'tab';
@@ -311,7 +322,6 @@ class Tabs extends Widget
      *
      * @param array $panes
      * @return string the rendering result.
-     * @since 2.0.7
      */
     public function renderPanes($panes)
     {

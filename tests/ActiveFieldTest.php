@@ -5,8 +5,8 @@ namespace yiiunit\extensions\bootstrap4;
 use yii\base\DynamicModel;
 use yii\bootstrap4\ActiveField;
 use yii\bootstrap4\ActiveForm;
-use Yii;
 use yiiunit\extensions\bootstrap4\data\ExtendedActiveField;
+use Yii;
 
 class ActiveFieldTest extends TestCase
 {
@@ -158,3 +158,4 @@ EXPECTED;
 EXPECTED;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
     }
+}

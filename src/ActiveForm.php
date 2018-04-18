@@ -60,10 +60,14 @@ use yii\base\InvalidConfigException;
  * @see http://getbootstrap.com/css/#forms
  *
  * @author Michael Härtl <haertl.mike@gmail.com>
- * @since 2.0
+ * @author Simon Karlen <simi.albi@gmail.com>
  */
 class ActiveForm extends \yii\widgets\ActiveForm
 {
+    const LAYOUT_DEFAULT = 'default';
+    const LAYOUT_HORIZONTAL = 'horizontal';
+    const LAYOUT_INLINE = 'inline';
+
     /**
      * @var string the default field class name when calling [[field()]] to create a new field.
      * @see fieldConfig
@@ -74,21 +78,22 @@ class ActiveForm extends \yii\widgets\ActiveForm
      */
     public $options = [];
     /**
-     * @var string the form layout. Either 'default', 'horizontal' or 'inline'.
+     * @var string the form layout. Either [[LAYOUT_DEFAULT]], [[LAYOUT_HORIZONTAL]] or [[LAYOUT_INLINE]].
      * By choosing a layout, an appropriate default field configuration is applied. This will
      * render the form fields with slightly different markup for each layout. You can
      * override these defaults through [[fieldConfig]].
      * @see \yii\bootstrap4\ActiveField for details on Bootstrap 4 field configuration
      */
-    public $layout = 'default';
+    public $layout = self::LAYOUT_DEFAULT;
     /**
      * @var string the CSS class that is added to a field container when the associated attribute has validation error.
      */
-    public $errorCssClass = 'has-danger';
+    public $errorCssClass = 'invalid-feedback';
 
 
     /**
      * {@inheritdoc}
+     * @throws InvalidConfigException
      */
     public function init()
     {
@@ -104,7 +109,7 @@ class ActiveForm extends \yii\widgets\ActiveForm
 
     /**
      * {@inheritdoc}
-     * @return ActiveField the created ActiveField object
+     * @return \yii\widgets\ActiveField
      */
     public function field($model, $attribute, $options = [])
     {

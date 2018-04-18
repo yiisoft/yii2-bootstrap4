@@ -13,7 +13,6 @@ use yii\web\AssetBundle;
  * Asset bundle for Popper javascript files.
  *
  * @author Artur Zhdanov <zhdanovartur@gmail.com>
- * @since 2.0
  */
 class PopperAsset extends AssetBundle
 {

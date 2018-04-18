@@ -3,12 +3,12 @@
 namespace yiiunit\extensions\bootstrap4;
 
 use yii\bootstrap4\Alert;
-use yii;
+use Yii;
 
 /**
  * Tests for Alert widget
  *
- * @group bootstrap
+ * @group bootstrap4
  */
 class AlertTest extends TestCase
 {
@@ -20,8 +20,8 @@ class AlertTest extends TestCase
         ]);
 
         $expectedHtml = <<<HTML
-<div id="w0" class="alert fade show alert-dismissible">
-<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+<div id="w0" class="alert alert-dismissible" role="alert">
+<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
 
 Message1
 

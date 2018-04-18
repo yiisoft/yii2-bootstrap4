@@ -15,10 +15,21 @@ use yii\helpers\ArrayHelper;
  * Do not use BaseHtml. Use [[Html]] instead.
  *
  * @author Paul Klimov <klimov.paul@gmail.com>
- * @since 2.0.5
  */
 class BaseHtml extends \yii\helpers\Html
 {
+
+    /**
+     * @var int a counter used to generate [[id]] for widgets.
+     * @internal
+     */
+    public static $counter = 0;
+    /**
+     * @var string the prefix to the automatically generated widget IDs.
+     * @see getId()
+     */
+    public static $autoIdPrefix = 'i';
+
     /**
      * Composes icon HTML for bootstrap Glyphicons.
      * @param string $name icon short name, for example: 'star'
@@ -51,19 +62,20 @@ class BaseHtml extends \yii\helpers\Html
      * - encode: bool, whether value should be HTML-encoded or not.
      *
      * @return string generated HTML
-     * @see http://getbootstrap.com/css/#forms-controls-static
+     * @see https://getbootstrap.com/docs/4.1/components/forms/#readonly-plain-text
      */
     public static function staticControl($value, $options = [])
     {
-        static::addCssClass($options, 'form-control-static');
-        $value = (string) $value;
+        static::addCssClass($options, 'form-control-plaintext');
+        $value = (string)$value;
+        $options['readonly'] = true;
         if (isset($options['encode'])) {
             $encode = $options['encode'];
             unset($options['encode']);
         } else {
             $encode = true;
         }
-        return static::tag('p', $encode ? static::encode($value) : $value, $options);
+        return static::input('text', null, $encode ? static::encode($value) : $value, $options);
     }
 
     /**
@@ -88,7 +100,6 @@ class BaseHtml extends \yii\helpers\Html
 
     /**
      * {@inheritdoc}
-     * @since 2.0.8
      */
     public static function radioList($name, $selection = null, $items = [], $options = [])
     {
@@ -97,10 +108,12 @@ class BaseHtml extends \yii\helpers\Html
             $encode = ArrayHelper::getValue($options, 'encode', true);
             $options['item'] = function ($index, $label, $name, $checked, $value) use ($itemOptions, $encode) {
                 $options = array_merge([
+                    'class' => 'form-check-input',
                     'label' => $encode ? static::encode($label) : $label,
+                    'labelOptions' => ['class' => 'form-check-label'],
                     'value' => $value
                 ], $itemOptions);
-                return '<div class="radio">' . static::radio($name, $checked, $options) . '</div>';
+                return '<div class="form-check">' . static::radio($name, $checked, $options) . '</div>';
             };
         }
 
@@ -109,7 +122,6 @@ class BaseHtml extends \yii\helpers\Html
 
     /**
      * {@inheritdoc}
-     * @since 2.0.8
      */
     public static function checkboxList($name, $selection = null, $items = [], $options = [])
     {
@@ -118,10 +130,12 @@ class BaseHtml extends \yii\helpers\Html
             $encode = ArrayHelper::getValue($options, 'encode', true);
             $options['item'] = function ($index, $label, $name, $checked, $value) use ($itemOptions, $encode) {
                 $options = array_merge([
+                    'class' => 'form-check-input',
                     'label' => $encode ? static::encode($label) : $label,
+                    'labelOptions' => ['class' => 'form-check-label'],
                     'value' => $value
                 ], $itemOptions);
-                return '<div class="checkbox">' . Html::checkbox($name, $checked, $options) . '</div>';
+                return '<div class="form-check">' . Html::checkbox($name, $checked, $options) . '</div>';
             };
         }
 
@@ -129,17 +143,57 @@ class BaseHtml extends \yii\helpers\Html
     }
 
     /**
+     * @inheritdoc
+     */
+    protected static function booleanInput($type, $name, $checked = false, $options = [])
+    {
+        $options['checked'] = (bool)$checked;
+        $value = array_key_exists('value', $options) ? $options['value'] : '1';
+        if (isset($options['uncheck'])) {
+            // add a hidden field so that if the checkbox is not selected, it still submits a value
+            $hiddenOptions = [];
+            if (isset($options['form'])) {
+                $hiddenOptions['form'] = $options['form'];
+            }
+            $hidden = static::hiddenInput($name, $options['uncheck'], $hiddenOptions);
+            unset($options['uncheck']);
+        } else {
+            $hidden = '';
+        }
+        if (isset($options['label'])) {
+            $label = $options['label'];
+            $labelOptions = isset($options['labelOptions']) ? $options['labelOptions'] : [];
+            unset($options['label'], $options['labelOptions']);
+
+            if (!isset($options['id'])) {
+                $options['id'] = static::getId();
+            }
+
+            $content = static::input($type, $name, $value, $options) . "\n";
+            $content .= static::label($label, $options['id'], $labelOptions);
+            return $hidden . $content;
+        }
+
+        return $hidden . static::input($type, $name, $value, $options);
+    }
+
+    /**
      * {@inheritdoc}
-     * @since 2.0.8
      */
     public static function error($model, $attribute, $options = [])
     {
-        if (!array_key_exists('tag', $options)) {
-            $options['tag'] = 'p';
-        }
         if (!array_key_exists('class', $options)) {
-            $options['class'] = 'help-block help-block-error';
+            $options['class'] = ['invalid-feedback'];
         }
         return parent::error($model, $attribute, $options);
+    }
+
+    /**
+     * Returns an autogenerated ID
+     * @return string Autogenerated ID
+     */
+    protected static function getId()
+    {
+        return static::$autoIdPrefix . static::$counter++;
     }
 }

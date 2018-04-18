@@ -13,7 +13,6 @@ use yii\web\AssetBundle;
  * Asset bundle for the Twitter bootstrap default theme.
  *
  * @author Alexander Makarov <sam@rmcreative.ru>
- * @since 2.0
  */
 class BootstrapThemeAsset extends AssetBundle
 {
