@@ -124,19 +124,21 @@ class Dropdown extends Widget
                     $submenuOptions = array_merge($submenuOptions, $item['submenuOptions']);
                 }
                 Html::addCssClass($submenuOptions, ['dropdown-submenu']);
-                Html::removeCssClass($linkOptions, 'dropdown-item');
+                Html::addCssClass($linkOptions, ['dropdown-toggle']);
 
-                $lines[] = ButtonDropdown::widget([
-                    'label' => $item['label'],
-                    'tagName' => 'a',
-                    'options' => $linkOptions,
-                    'buttonOptions' => ['class' => 'dropdown-item'],
-                    'dropdown' => [
-                        'items' => $item['items'],
-                        'options' => $submenuOptions,
-                        'submenuOptions' => $submenuOptions
-                    ]
+                $lines[] = Html::beginTag('div', ['class' => ['dropdown'], 'aria-expanded' => 'false']);
+                $lines[] = Html::a($label, $url, array_merge([
+                    'data-toggle' => 'dropdown',
+                    'aria-haspopup' => 'true',
+                    'aria-expanded' => 'false',
+                    'role' => 'button'
+                ], $linkOptions));
+                $lines[] = static::widget([
+                    'items' => $item['items'],
+                    'options' => $submenuOptions,
+                    'submenuOptions' => $submenuOptions
                 ]);
+                $lines[] = Html::endTag('div');
             }
         }
 
