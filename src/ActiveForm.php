@@ -64,8 +64,17 @@ use yii\base\InvalidConfigException;
  */
 class ActiveForm extends \yii\widgets\ActiveForm
 {
+    /**
+     * Default form layout
+     */
     const LAYOUT_DEFAULT = 'default';
+    /**
+     * Horizontal form layout
+     */
     const LAYOUT_HORIZONTAL = 'horizontal';
+    /**
+     * Inline form layout
+     */
     const LAYOUT_INLINE = 'inline';
 
     /**
@@ -88,7 +97,15 @@ class ActiveForm extends \yii\widgets\ActiveForm
     /**
      * @var string the CSS class that is added to a field container when the associated attribute has validation error.
      */
-    public $errorCssClass = 'invalid-feedback';
+    public $errorCssClass = 'is-invalid';
+    /**
+     * {@inheritdoc}
+     */
+    public $successCssClass = 'is-valid';
+    /**
+     * {@inheritdoc}
+     */
+    public $validationStateOn = self::VALIDATION_STATE_ON_INPUT;
 
 
     /**
