@@ -81,6 +81,10 @@ class NavBar extends Widget
      */
     public $screenReaderToggleText = 'Toggle navigation';
     /**
+     * @var string the toggle button content. Defaults to bootstrap 4 default `<span class="navbar-toggler-icon"></span>`
+     */
+    public $togglerContent = '<span class="navbar-toggler-icon"></span>';
+    /**
      * @var array the HTML attributes of the navbar toggler button.
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
      */
@@ -163,7 +167,7 @@ class NavBar extends Widget
         $options = $this->togglerOptions;
         Html::addCssClass($options, ['widget' => 'navbar-toggler']);
         return Html::button(
-            Html::tag('span', '', ['class' => 'navbar-toggler-icon']),
+            $this->togglerContent,
             ArrayHelper::merge($options, [
                 'type' => 'button',
                 'data' => [
