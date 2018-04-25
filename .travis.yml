@@ -13,9 +13,9 @@ matrix:
       cache:
         directories: "$HOME/.composer/cache"
       before_install:
-        - wget https://phar.phpunit.de/phpunit-4.5.1.phar
+        - wget https://phar.phpunit.de/phpunit-7.1.4.phar
       script:
-        - php phpunit-4.5.1.phar --verbose $PHPUNIT_FLAGS
+        - php phpunit-7.1.4.phar --verbose $PHPUNIT_FLAGS
 
 sudo: false
 
@@ -31,7 +31,7 @@ install:
 
 before_script:
   - |
-    if [ $TRAVIS_PHP_VERSION = '5.6' ]; then
+    if [ $TRAVIS_PHP_VERSION = '7.1' ]; then
       PHPUNIT_FLAGS="--coverage-clover=coverage.clover"
     fi
 
@@ -40,7 +40,7 @@ script:
 
 after_script:
   - |
-    if [ $TRAVIS_PHP_VERSION = '5.6' ]; then
+    if [ $TRAVIS_PHP_VERSION = '7.1' ]; then
       travis_retry wget https://scrutinizer-ci.com/ocular.phar
       php ocular.phar code-coverage:upload --format=php-clover coverage.clover
     fi
