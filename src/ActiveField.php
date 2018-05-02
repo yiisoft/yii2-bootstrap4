@@ -82,10 +82,13 @@ use yii\helpers\ArrayHelper;
  * ActiveForm::end();
  * ```
  *
+ * @property-read \yii\bootstrap4\ActiveForm $form
+ *
  * @see \yii\bootstrap4\ActiveForm
  * @see http://getbootstrap.com/css/#forms
  *
  * @author Michael Härtl <haertl.mike@gmail.com>
+ * @author Simon Karlen <simi.albi@gmail.com>
  */
 class ActiveField extends \yii\widgets\ActiveField
 {
@@ -131,13 +134,13 @@ class ActiveField extends \yii\widgets\ActiveField
      */
     public $horizontalCssClasses = [];
     /**
-     * @var string the template for checkboxes in default layout
+     * @var string the template for checkboxes and radios in default layout
      */
-    public $checkboxTemplate = "<div class=\"form-check\">\n{input}\n{label}\n{error}\n{hint}\n</div>";
+    public $checkTemplate = "<div class=\"form-check\">\n{input}\n{label}\n{error}\n{hint}\n</div>";
     /**
-     * @var string the template for radios in default layout
+     * @var string the `enclosed by label` template for checkboxes and radios in default layout
      */
-    public $radioTemplate = "<div class=\"form-check\">\n{input}\n{label}\n{error}\n{hint}\n</div>";
+    public $checkEnclosedTemplate = "<div class=\"form-check\">\n{beginLabel}\n{input}\n{labelTitle}\n{endLabel}\n{error}\n{hint}\n</div>";
     /**
      * @var string the template for inline checkboxLists
      */
@@ -207,18 +210,20 @@ class ActiveField extends \yii\widgets\ActiveField
         Html::removeCssClass($options, 'form-control');
         Html::addCssClass($options, 'form-check-input');
         Html::addCssClass($this->labelOptions, 'form-check-label');
+
+        if (!isset($options['template'])) {
+            $this->template = ($enclosedByLabel) ? $this->checkEnclosedTemplate : $this->checkTemplate;
+        } else {
+            $this->template = $options['template'];
+            unset($options['template']);
+        }
+        if ($this->form->layout === 'horizontal') {
+            Html::addCssClass($this->wrapperOptions, $this->horizontalCssClasses['offset']);
+        }
+
         if ($enclosedByLabel) {
-            if (!isset($options['template'])) {
-                $this->template = "<div class=\"form-check\">\n{beginLabel}\n{input}\n{labelTitle}\n{endLabel}\n{error}\n{hint}\n</div>";
-            } else {
-                $this->template = $options['template'];
-                unset($options['template']);
-            }
             if (isset($options['label'])) {
                 $this->parts['{labelTitle}'] = $options['label'];
-            }
-            if ($this->form->layout === 'horizontal') {
-                Html::addCssClass($this->wrapperOptions, $this->horizontalCssClasses['offset']);
             }
         }
 
@@ -233,18 +238,20 @@ class ActiveField extends \yii\widgets\ActiveField
         Html::removeCssClass($options, 'form-control');
         Html::addCssClass($options, 'form-check-input');
         Html::addCssClass($this->labelOptions, 'form-check-label');
+
+        if (!isset($options['template'])) {
+            $this->template = ($enclosedByLabel) ? $this->checkEnclosedTemplate : $this->checkTemplate;
+        } else {
+            $this->template = $options['template'];
+            unset($options['template']);
+        }
+        if ($this->form->layout === 'horizontal') {
+            Html::addCssClass($this->wrapperOptions, $this->horizontalCssClasses['offset']);
+        }
+
         if ($enclosedByLabel) {
-            if (!isset($options['template'])) {
-                $this->template = "<div class=\"form-check\">\n{beginLabel}\n{input}\n{labelTitle}\n{endLabel}\n{error}\n{hint}\n</div>";
-            } else {
-                $this->template = $options['template'];
-                unset($options['template']);
-            }
             if (isset($options['label'])) {
                 $this->parts['{labelTitle}'] = $options['label'];
-            }
-            if ($this->form->layout === 'horizontal') {
-                Html::addCssClass($this->wrapperOptions, $this->horizontalCssClasses['offset']);
             }
         }
 
