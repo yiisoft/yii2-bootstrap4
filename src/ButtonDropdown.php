@@ -71,6 +71,17 @@ class ButtonDropdown extends Widget
      */
     public $dropdownClass = 'yii\bootstrap4\Dropdown';
 
+    /**
+     * {@inheritdoc}
+     */
+    public function init()
+    {
+        parent::init();
+
+        if (!isset($this->buttonOptions['id'])) {
+            $this->buttonOptions['id'] = $this->options['id'] . '-button';
+        }
+    }
 
     /**
      * {@inheritdoc}
@@ -82,13 +93,18 @@ class ButtonDropdown extends Widget
         $options = $this->options;
         $tag = ArrayHelper::remove($options, 'tag', 'div');
 
-        $this->registerPlugin('dropdown');
-        return implode("\n", [
+        $html = implode("\n", [
             Html::beginTag($tag, $options),
             $this->renderButton(),
             $this->renderDropdown(),
             Html::endTag($tag)
         ]);
+
+        // Set options id to button options id to ensure correct css selector in plugin initialisation
+        $this->options['id'] = $this->buttonOptions['id'];
+
+        $this->registerPlugin('dropdown');
+        return $html;
     }
 
     /**
