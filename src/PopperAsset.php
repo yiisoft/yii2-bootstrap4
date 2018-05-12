@@ -17,8 +17,8 @@ use yii\web\AssetBundle;
  */
 class PopperAsset extends AssetBundle
 {
-    public $sourcePath = '@bower/popper.js/dist';
+    public $sourcePath = '@bower/bootstrap/assets/js/vendor';
     public $js = [
-        'umd/popper.js',
+        'popper.min.js',
     ];
 }
