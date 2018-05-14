@@ -32,20 +32,9 @@
         }
     ],
     "require": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        "yiisoft/yii2": "~2.0.6",
-        "bower-asset/bootstrap": "~4.0.0"
-=======
         "yiisoft/yii2": "~2.0.15",
         "bower-asset/bootstrap": "~4.1.0",
         "bower-asset/popper.js": "~1.14.3"
->>>>>>> 7ca56c84... Fixed (#9): Update Composer, Lastet Version Packages.
-=======
-        "yiisoft/yii2": "~2.0.15",
-        "bower-asset/bootstrap": "~4.1.0",
-        "bower-asset/popper.js": "~1.14.3"
->>>>>>> 7ca56c84... Fixed (#9): Update Composer, Lastet Version Packages.
     },
     "repositories": [
         {
