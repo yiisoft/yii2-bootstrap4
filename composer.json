@@ -33,8 +33,7 @@
     ],
     "require": {
         "yiisoft/yii2": "~2.0.15",
-        "bower-asset/bootstrap": "~4.1.0",
-        "bower-asset/popper.js": "~1.14.3"
+        "bower-asset/bootstrap": "~4.1.0"
     },
     "repositories": [
         {
