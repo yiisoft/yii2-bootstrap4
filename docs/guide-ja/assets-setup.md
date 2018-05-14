@@ -42,7 +42,8 @@ return [
 composer global require "fxp/composer-asset-plugin:^1.4.0"
 ```
 
-Yii を使ってアセットを発行したい場合は、あなたのプロジェクトの `composer.json` に下記の行を追加して、インストールされるパッケージが置かれるディレクトリを設定します。
+Yii を使ってアセットを発行したい場合は、あなたのプロジェクトの `composer.json` に下記の行を追加して、
+インストールされるパッケージが置かれるディレクトリを設定します。
 
 ```json
 "extra": {
@@ -55,7 +56,8 @@ Yii を使ってアセットを発行したい場合は、あなたのプロジ�
 
 これで、`composer install/update` コマンドを実行すると、Bootstrap のアセットを取得することが可能になります。
 
-> Note: `fxp/composer-asset-plugin` は asset-packagist に比べると、`composer update` コマンドを著しく遅くさせます。
+> Note: `fxp/composer-asset-plugin` は asset-packagist に比べると、`composer update` 
+  コマンドを著しく遅くさせます。
 
 
 ## Bower/NPM クライアントを直接に使う
@@ -138,7 +140,8 @@ return [
 Bootstrap CSS ソースを直接にカスタマイズしたい場合、*.less ファイルから CSS をコンパイルしたいと思うことがあるでしょう。
 そのような場合は、Bootstrap アセットを Composer や Bower/NPM からインストールすることは合理的ではありません。
 なぜなら、`vendor` ディレクトリ内のファイルは変更できないからです。
-Bootstrap アセットを手作業でダウンロードし、プロジェクト・ソース・コード内のどこか、例えば `assets/source/bootstrap` フォルダに置かなければなりません。
+Bootstrap アセットを手作業でダウンロードし、プロジェクト・ソース・コード内のどこか、
+例えば `assets/source/bootstrap` フォルダに置かなければなりません。
 
 あなたのプロジェクトの `package.json` に次の行を追加して、Bootstrap アセットの冗長なインストールを防止します。
 
@@ -191,7 +194,8 @@ Bootstrap CSS ソースを直接にカスタマイズしたい場合、*.sass �
 
 そのような場合は、Bootstrap アセットを Composer や Bower/NPM からインストールすることは合理的ではありません。
 なぜなら、`vendor` ディレクトリ内のファイルは変更できないからです。
-Bootstrap アセットを手作業でダウンロードし、プロジェクト・ソース・コード内のどこか、例えば `assets/source/bootstrap` フォルダに置かなければなりません。
+Bootstrap アセットを手作業でダウンロードし、プロジェクト・ソース・コード内のどこか、
+例えば `assets/source/bootstrap` フォルダに置かなければなりません。
 
 あなたのプロジェクトの `package.json` に次の行を追加して、Bootstrap アセットの冗長なインストールを防止します。
 
@@ -200,6 +204,7 @@ Bootstrap アセットを手作業でダウンロードし、プロジェクト�
     "bower-asset/bootstrap": ">=3.3.0"
 },
 ```
+
 'assetManager' アプリケーション・コンポーネントを構成して、Bootstrap アセット・バンドルをオーバーライドし、CSS ファイルのためのコンパイラを指定します。
 
 ```php
