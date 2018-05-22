@@ -1,6 +1,11 @@
 Yii Framework 2 bootstrap4 extension Change Log
 ==============================================
 
+2.0.0 under development
+-----------------------
+- Enh #19: Bumped minimum PHP version to 7.0 (robregonm)
+- Bug #19: Upgraded class namespaces and dependencies to meet Yii 2.1 requirements and changes (robregonm)
+
 1.0.0 under development
 -----------------------
 
