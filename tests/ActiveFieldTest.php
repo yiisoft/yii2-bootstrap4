@@ -158,3 +158,4 @@ EXPECTED;
 EXPECTED;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
     }
+}

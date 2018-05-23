@@ -22,8 +22,8 @@ class BootstrapPluginAsset extends AssetBundle
         'js/bootstrap.js',
     ];
     public $depends = [
-        'yii\web\JqueryAsset',
-        'yii\bootstrap4\BootstrapAsset',
-        'yii\bootstrap4\PopperAsset',
+        yii\jquery\JqueryAsset::class,
+        yii\bootstrap4\BootstrapAsset::class,
+        yii\bootstrap4\PopperAsset::class,
     ];
 }
