@@ -113,7 +113,8 @@ class Modal extends Widget
         echo Html::beginTag('div', $this->options) . "\n";
         echo Html::beginTag('div', ['class' => 'modal-dialog ' . $this->size]) . "\n";
         echo Html::beginTag('div', ['class' => 'modal-content']) . "\n";
-        echo $this->renderHeader() . "\n";
+        echo $this->
+            () . "\n";
         echo $this->renderBodyBegin() . "\n";
     }
 
@@ -139,7 +140,7 @@ class Modal extends Widget
     {
         $button = $this->renderCloseButton();
         if ($button !== null) {
-            $this->header = $button . "\n" . $this->header;
+            $this->header = $this->header . "\n" . $button;
         }
         if ($this->header !== null) {
             Html::addCssClass($this->headerOptions, ['widget' => 'modal-header']);
