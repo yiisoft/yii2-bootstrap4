@@ -54,6 +54,11 @@
             "yii\\bootstrap4\\": "src"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "yiiunit\\extensions\\bootstrap4\\": "tests"
+        }
+    },
     "extra": {
         "branch-alias": {
             "dev-master": "1.0.x-dev"
