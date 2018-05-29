@@ -113,8 +113,7 @@ class Modal extends Widget
         echo Html::beginTag('div', $this->options) . "\n";
         echo Html::beginTag('div', ['class' => 'modal-dialog ' . $this->size]) . "\n";
         echo Html::beginTag('div', ['class' => 'modal-content']) . "\n";
-        echo $this->
-            () . "\n";
+        echo $this->renderHeader() . "\n";
         echo $this->renderBodyBegin() . "\n";
     }
 
