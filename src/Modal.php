@@ -139,7 +139,7 @@ class Modal extends Widget
     {
         $button = $this->renderCloseButton();
         if ($button !== null) {
-            $this->header = $button . "\n" . $this->header;
+            $this->header = $this->header . "\n" . $button;
         }
         if ($this->header !== null) {
             Html::addCssClass($this->headerOptions, ['widget' => 'modal-header']);
