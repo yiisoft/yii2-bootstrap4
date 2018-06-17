@@ -27,4 +27,4 @@ Usage
 Additional topics
 -----------------
 
-* [Using the .less files of Bootstrap directly](topics-less.md)
+* [Using the .sass files of Bootstrap directly](topics-sass.md)
