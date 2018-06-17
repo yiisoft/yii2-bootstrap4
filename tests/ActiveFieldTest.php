@@ -5,8 +5,8 @@ namespace yiiunit\extensions\bootstrap4;
 use yii\base\DynamicModel;
 use yii\bootstrap4\ActiveField;
 use yii\bootstrap4\ActiveForm;
-use Yii;
 use yiiunit\extensions\bootstrap4\data\ExtendedActiveField;
+use Yii;
 
 class ActiveFieldTest extends TestCase
 {
@@ -54,11 +54,13 @@ class ActiveFieldTest extends TestCase
 
         $expectedHtml = <<<HTML
 <div class="form-group field-dynamicmodel-attributename">
-<label class="control-label">Attribute Name</label>
-<input type="hidden" name="DynamicModel[attributeName]" value=""><div id="dynamicmodel-attributename"><div class="radio"><label><input type="radio" name="DynamicModel[attributeName]" value="1"> name1</label></div>
-<div class="radio"><label><input type="radio" name="DynamicModel[attributeName]" value="2"> name2</label></div></div>
+<label>Attribute Name</label>
+<input type="hidden" name="DynamicModel[attributeName]" value=""><div id="dynamicmodel-attributename"><div class="form-check"><input type="radio" id="i0" class="form-check-input" name="DynamicModel[attributeName]" value="1">
+<label class="form-check-label" for="i0">name1</label></div>
+<div class="form-check"><input type="radio" id="i1" class="form-check-input" name="DynamicModel[attributeName]" value="2">
+<label class="form-check-label" for="i1">name2</label></div></div>
 
-<p class="text-danger"></p>
+<div class="invalid-feedback"></div>
 </div>
 HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
@@ -70,11 +72,13 @@ HTML;
 
         $expectedHtml = <<<HTML
 <div class="form-group field-dynamicmodel-attributename">
-<label class="control-label">Attribute Name</label>
-<input type="hidden" name="DynamicModel[attributeName]" value=""><div id="dynamicmodel-attributename"><div class="checkbox"><label><input type="checkbox" name="DynamicModel[attributeName][]" value="1"> name1</label></div>
-<div class="checkbox"><label><input type="checkbox" name="DynamicModel[attributeName][]" value="2"> name2</label></div></div>
+<label>Attribute Name</label>
+<input type="hidden" name="DynamicModel[attributeName]" value=""><div id="dynamicmodel-attributename"><div class="form-check"><input type="checkbox" id="i0" class="form-check-input" name="DynamicModel[attributeName][]" value="1">
+<label class="form-check-label" for="i0">name1</label></div>
+<div class="form-check"><input type="checkbox" id="i1" class="form-check-input" name="DynamicModel[attributeName][]" value="2">
+<label class="form-check-label" for="i1">name2</label></div></div>
 
-<p class="text-danger"></p>
+<div class="invalid-feedback"></div>
 </div>
 HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
@@ -122,13 +126,13 @@ HTML;
 
         $html = $activeField->render();
         $expectedHtml = <<<EXPECTED
-<div class="form-group field-dynamicmodel-attributename">
-<label class="control-label col-sm-3" for="dynamicmodel-attributename">Attribute Name</label>
-<div class="col-sm-6">
+<div class="form-group row field-dynamicmodel-attributename">
+<label class="col-md-2 col-form-label" for="dynamicmodel-attributename">Attribute Name</label>
+<div class="col-md-10">
 <input type="text" id="dynamicmodel-attributename" class="form-control" name="DynamicModel[attributeName]">
-<p class="help-block help-block-error "></p>
-</div>
+<div class="invalid-feedback "></div>
 
+</div>
 </div>
 EXPECTED;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
@@ -147,14 +151,15 @@ EXPECTED;
 
         $html = $activeField->render();
         $expectedHtml = <<<EXPECTED
-<div class="form-group field-dynamicmodel-attributename">
-<label class="control-label col-md-4" for="dynamicmodel-attributename">Attribute Name</label>
-<div class="col-md-6">
+<div class="form-group row field-dynamicmodel-attributename">
+<label class="col-md-2 col-form-label" for="dynamicmodel-attributename">Attribute Name</label>
+<div class="col-md-10">
 <input type="text" id="dynamicmodel-attributename" class="form-control" name="DynamicModel[attributeName]">
-<p class="help-block help-block-error col-md-3"></p>
-</div>
+<div class="invalid-feedback "></div>
 
+</div>
 </div>
 EXPECTED;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
     }
+}

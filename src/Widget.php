@@ -12,7 +12,6 @@ namespace yii\bootstrap4;
  *
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  * @author Qiang Xue <qiang.xue@gmail.com>
- * @since 2.0
  */
 class Widget extends \yii\base\Widget
 {

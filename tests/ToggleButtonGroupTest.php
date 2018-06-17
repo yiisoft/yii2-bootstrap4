@@ -6,7 +6,7 @@ use yii\base\Model;
 use yii\bootstrap4\ToggleButtonGroup;
 
 /**
- * @group bootstrap
+ * @group bootstrap4
  */
 class ToggleButtonGroupTest extends TestCase
 {

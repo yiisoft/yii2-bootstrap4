@@ -15,7 +15,6 @@ namespace yii\bootstrap4;
  * you are using inside your views.
  *
  * @author Paul Klimov <klimov.paul@gmail.com>
- * @since 2.0.5
  */
 class Html extends BaseHtml
 {

@@ -20,7 +20,6 @@ namespace yii\bootstrap4;
  * ```
  * @see http://getbootstrap.com/javascript/#buttons
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @since 2.0
  */
 class Button extends Widget
 {
@@ -50,11 +49,12 @@ class Button extends Widget
     }
 
     /**
-     * Renders the widget.
+     * {@inheritdoc}
      */
     public function run()
     {
         $this->registerPlugin('button');
-        return Html::tag($this->tagName, $this->encodeLabel ? Html::encode($this->label) : $this->label, $this->options);
+        return Html::tag($this->tagName, $this->encodeLabel ? Html::encode($this->label) : $this->label,
+            $this->options);
     }
 }

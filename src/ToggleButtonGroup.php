@@ -16,22 +16,27 @@ use yii\base\InvalidConfigException;
  * method, for example like this:
  *
  * ```php
- * <?= $form->field($model, 'item_id')->widget(\yii\bootstrap4\ToggleButtonGroup::classname(), [
- *     // configure additional widget properties here
+ * <?= $form->field($model, 'item_id')->widget(\yii\bootstrap4\ToggleButtonGroup::class, [
+ *     'type' => \yii\bootstrap4\ToggleButtonGroup::TYPE_CHECKBOX
+ *     'items' => [
+ *         'fooValue' => 'BarLabel',
+ *         'barValue' => 'BazLabel'
+ *     ]
  * ]) ?>
  * ```
  *
  * @see http://getbootstrap.com/javascript/#buttons-checkbox-radio
  *
  * @author Paul Klimov <klimov.paul@gmail.com>
- * @since 2.0.6
+ * @author Simon Karlen <simi.albi@gmail.com>
  */
 class ToggleButtonGroup extends InputWidget
 {
+    const TYPE_CHECKBOX = 'checkbox';
+    const TYPE_RADIO = 'radio';
+
     /**
-     * @var string input type, can be:
-     * - 'checkbox'
-     * - 'radio'
+     * @var string input type, can be [[TYPE_CHECKBOX]] or [[TYPE_RADIO]]
      */
     public $type;
     /**
@@ -58,12 +63,13 @@ class ToggleButtonGroup extends InputWidget
     {
         parent::init();
         $this->registerPlugin('button');
-        Html::addCssClass($this->options, 'btn-group');
+        Html::addCssClass($this->options, ['widget' => ['btn-group', 'btn-group-toggle']]);
         $this->options['data-toggle'] = 'buttons';
     }
 
     /**
      * {@inheritdoc}
+     * @throws InvalidConfigException
      */
     public function run()
     {
@@ -79,9 +85,9 @@ class ToggleButtonGroup extends InputWidget
                 }
             case 'radio':
                 if ($this->hasModel()) {
-                    return Html::activeRadioList($this->model, $this->attribute, $this->items, $this->options); 
+                    return Html::activeRadioList($this->model, $this->attribute, $this->items, $this->options);
                 } else {
-                    return Html::radioList($this->name, $this->value, $this->items, $this->options); 
+                    return Html::radioList($this->name, $this->value, $this->items, $this->options);
                 }
             default:
                 throw new InvalidConfigException("Unsupported type '{$this->type}'");
@@ -110,6 +116,11 @@ class ToggleButtonGroup extends InputWidget
         if ($this->encodeLabels) {
             $label = Html::encode($label);
         }
-        return Html::$type($name, $checked, ['label' => $label, 'labelOptions' => $labelOptions, 'value' => $value]);
+        return Html::$type($name, $checked, [
+            'label' => $label,
+            'labelOptions' => $labelOptions,
+            'autocomplete' => 'off',
+            'value' => $value
+        ]);
     }
 }
