@@ -1,4 +1,4 @@
-Using the .less files of Bootstrap directly
+Using the .sass files of Bootstrap directly
 ===========================================
 
 If you want to include the [Bootstrap css directly in your less files](http://getbootstrap.com/getting-started/#customizing)
