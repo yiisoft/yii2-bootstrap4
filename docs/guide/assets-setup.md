@@ -122,7 +122,7 @@ return [
                 'yii\bootstrap4\BootstrapThemeAsset' => [
                     'sourcePath' => null,
                     'baseUrl' => null,
-                    'css' => null
+                    'css' => []
                 ],
             ],
         ],
