@@ -8,13 +8,13 @@
 Запустіть
 
 ```
-php composer.phar require --prefer-dist yiisoft/yii2-bootstrap
+php composer.phar require --prefer-dist yiisoft/yii2-bootstrap4
 ```
 
 або додайте
 
 ```
-"yiisoft/yii2-bootstrap": "~2.0.0"
+"yiisoft/yii2-bootstrap": "~1.0.0"
 ```
 
 до потрібного розділу вашого файлу `composer.json`.

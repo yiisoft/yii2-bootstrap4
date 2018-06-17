@@ -69,7 +69,7 @@ Bower または NPM のクライアントを直接に使って Bootstrap のア�
 {
     ...
     "dependencies": {
-        "bootstrap": "3.3.5",
+        "bootstrap": "4.1.1",
         ...
     }
     ...
@@ -80,7 +80,7 @@ Bower または NPM のクライアントを直接に使って Bootstrap のア�
 
 ```json
 "replace": {
-    "bower-asset/bootstrap": ">=3.3.0"
+    "bower-asset/bootstrap": ">=4.1.1"
 },
 ```
 
@@ -93,7 +93,7 @@ Bower または NPM のクライアントを直接に使って Bootstrap のア�
 
 ```json
 "replace": {
-    "bower-asset/bootstrap": ">=3.3.0"
+    "bower-asset/bootstrap": ">=4.1.1"
 },
 ```
 
@@ -107,24 +107,22 @@ return [
             'bundles' => [
                 'yii\bootstrap4\BootstrapAsset' => [
                     'sourcePath' => null,
-                    'baseUrl' => 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7',
+                    'baseUrl' => 'https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1',
                     'css' => [
                         'css/bootstrap.min.css'
                     ],
                 ],
                 'yii\bootstrap4\BootstrapPluginAsset' => [
                     'sourcePath' => null,
-                    'baseUrl' => 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7',
+                    'baseUrl' => 'https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1',
                     'js' => [
                         'js/bootstrap.min.js'
                     ],
                 ],
                 'yii\bootstrap4\BootstrapThemeAsset' => [
                     'sourcePath' => null,
-                    'baseUrl' => 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7',
-                    'css' => [
-                        'css/bootstrap-theme.min.css'
-                    ]
+                    'baseUrl' => null,
+                    'css' => []
                 ],
             ],
         ],
