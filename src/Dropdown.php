@@ -28,9 +28,9 @@ use yii\helpers\ArrayHelper;
  *     ?>
  * </div>
  * ```
- * @see http://getbootstrap.com/javascript/#dropdowns
+ * @see https://getbootstrap.com/docs/4.1/components/dropdowns/
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @since 2.0
+ * @author Simon Karlen <simi.albi@gmail.com>
  */
 class Dropdown extends Widget
 {
@@ -59,30 +59,21 @@ class Dropdown extends Widget
     public $encodeLabels = true;
     /**
      * @var array|null the HTML attributes for sub-menu container tags.
-     * If not set - [[options]] value will be used for it.
-     * @since 2.0.5
      */
-    public $submenuOptions;
-
+    public $submenuOptions = [];
 
     /**
-     * Initializes the widget.
-     * If you override this method, make sure you call the parent implementation first.
+     * {@inheritdoc}
      */
     public function init()
     {
-        if ($this->submenuOptions === null) {
-            // copying of [[options]] kept for BC
-            // @todo separate [[submenuOptions]] from [[options]] completely before 2.1 release
-            $this->submenuOptions = $this->options;
-            unset($this->submenuOptions['id']);
-        }
         parent::init();
         Html::addCssClass($this->options, ['widget' => 'dropdown-menu']);
     }
 
     /**
      * Renders the widget.
+     * @throws InvalidConfigException
      */
     public function run()
     {
@@ -97,6 +88,7 @@ class Dropdown extends Widget
      * @param array $options the container HTML attributes
      * @return string the rendering result.
      * @throws InvalidConfigException if the label option is not specified in one of the items.
+     * @throws \Exception
      */
     protected function renderItems($items, $options = [])
     {
@@ -116,7 +108,7 @@ class Dropdown extends Widget
             $label = $encodeLabel ? Html::encode($item['label']) : $item['label'];
             $itemOptions = ArrayHelper::getValue($item, 'options', []);
             $linkOptions = ArrayHelper::getValue($item, 'linkOptions', []);
-            $linkOptions['tabindex'] = '-1';
+//            $linkOptions['tabindex'] = '-1';
             Html::addCssClass($linkOptions, 'dropdown-item');
             $url = array_key_exists('url', $item) ? $item['url'] : null;
             if (empty($item['items'])) {
@@ -131,11 +123,22 @@ class Dropdown extends Widget
                 if (isset($item['submenuOptions'])) {
                     $submenuOptions = array_merge($submenuOptions, $item['submenuOptions']);
                 }
-                $content = Html::a($label, $url === null ? '#' : $url, $linkOptions)
-                    . $this->renderItems($item['items'], $submenuOptions);
-                Html::addCssClass($itemOptions, ['widget' => 'dropdown-submenu']);
+                Html::addCssClass($submenuOptions, ['dropdown-submenu']);
+                Html::addCssClass($linkOptions, ['dropdown-toggle']);
 
-                $lines[] = Html::tag('div', $content, $itemOptions);
+                $lines[] = Html::beginTag('div', ['class' => ['dropdown'], 'aria-expanded' => 'false']);
+                $lines[] = Html::a($label, $url, array_merge([
+                    'data-toggle' => 'dropdown',
+                    'aria-haspopup' => 'true',
+                    'aria-expanded' => 'false',
+                    'role' => 'button'
+                ], $linkOptions));
+                $lines[] = static::widget([
+                    'items' => $item['items'],
+                    'options' => $submenuOptions,
+                    'submenuOptions' => $submenuOptions
+                ]);
+                $lines[] = Html::endTag('div');
             }
         }
 

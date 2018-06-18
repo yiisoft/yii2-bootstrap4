@@ -39,9 +39,9 @@ use yii\helpers\ArrayHelper;
  * Alert::end();
  * ```
  *
- * @see http://getbootstrap.com/components/#alerts
+ * @see https://getbootstrap.com/docs/4.1/components/alerts/
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @since 2.0
+ * @author Simon Karlen <simi.albi@gmail.com>
  */
 class Alert extends Widget
 {
@@ -69,7 +69,7 @@ class Alert extends Widget
 
 
     /**
-     * Initializes the widget.
+     * {@inheritdoc}
      */
     public function init()
     {
@@ -82,7 +82,7 @@ class Alert extends Widget
     }
 
     /**
-     * Renders the widget.
+     * {@inheritdoc}
      */
     public function run()
     {
@@ -118,7 +118,9 @@ class Alert extends Widget
     {
         if (($closeButton = $this->closeButton) !== false) {
             $tag = ArrayHelper::remove($closeButton, 'tag', 'button');
-            $label = ArrayHelper::remove($closeButton, 'label', '&times;');
+            $label = ArrayHelper::remove($closeButton, 'label', Html::tag('span', '&times;', [
+                'aria-hidden' => 'true'
+            ]));
             if ($tag === 'button' && !isset($closeButton['type'])) {
                 $closeButton['type'] = 'button';
             }
@@ -135,16 +137,18 @@ class Alert extends Widget
      */
     protected function initOptions()
     {
-        Html::addCssClass($this->options, ['alert', 'fade', 'show']);
+        Html::addCssClass($this->options, ['widget' => 'alert']);
 
         if ($this->closeButton !== false) {
             $this->closeButton = array_merge([
                 'data-dismiss' => 'alert',
-                'aria-hidden' => 'true',
-                'class' => 'close',
+                'class' => ['widget' => 'close'],
             ], $this->closeButton);
 
             Html::addCssClass($this->options, ['alert-dismissible']);
+        }
+        if (!isset($this->options['role'])) {
+            $this->options['role'] = 'alert';
         }
     }
 }

@@ -29,11 +29,19 @@
         {
             "name": "Paul Klimov",
             "email": "klimov.paul@gmail.com"
+        },
+        {
+            "name": "Simon Karlen",
+            "email": "simi.albi@gmail.com"
         }
     ],
     "require": {
-        "yiisoft/yii2": "~3.0.0",
+        "yiisoft/yii2": "~3.0@dev",
         "bower-asset/bootstrap": "~4.1.0"
+    },
+    "require-dev": {
+        "yiisoft/yii2-coding-standards": "~2.0",
+        "phpunit/phpunit": "*"
     },
     "repositories": [
         {

@@ -30,7 +30,6 @@ use yii\helpers\Url;
  * @see http://getbootstrap.com/javascript/#buttons
  * @see http://getbootstrap.com/components/#btn-dropdowns
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @since 2.0
  */
 class ButtonDropdown extends Widget
 {
@@ -44,14 +43,13 @@ class ButtonDropdown extends Widget
      * - tag: string, defaults to "div", the name of the container tag.
      *
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
-     * @since 2.0.1
      */
-    public $containerOptions = [];
+    public $options = [];
     /**
      * @var array the HTML attributes of the button.
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
      */
-    public $options = [];
+    public $buttonOptions = [];
     /**
      * @var array the configuration array for [[Dropdown]].
      */
@@ -70,83 +68,104 @@ class ButtonDropdown extends Widget
     public $encodeLabel = true;
     /**
      * @var string name of a class to use for rendering dropdowns withing this widget. Defaults to [[Dropdown]].
-     * @since 2.0.7
      */
     public $dropdownClass = 'yii\bootstrap4\Dropdown';
 
+    /**
+     * {@inheritdoc}
+     */
+    public function init()
+    {
+        parent::init();
+
+        if (!isset($this->buttonOptions['id'])) {
+            $this->buttonOptions['id'] = $this->options['id'] . '-button';
+        }
+    }
 
     /**
-     * Renders the widget.
+     * {@inheritdoc}
+     * @throws \Exception
      */
     public function run()
     {
-        // @todo use [[options]] instead of [[containerOptions]] and introduce [[buttonOptions]] before 2.1 release
-        Html::addCssClass($this->containerOptions, ['widget' => 'btn-group']);
-        $options = $this->containerOptions;
+        Html::addCssClass($this->options, ['widget' => 'dropdown']);
+        $options = $this->options;
         $tag = ArrayHelper::remove($options, 'tag', 'div');
 
-        $this->registerPlugin('dropdown');
-        return implode("\n", [
+        $html = implode("\n", [
             Html::beginTag($tag, $options),
             $this->renderButton(),
             $this->renderDropdown(),
             Html::endTag($tag)
         ]);
+
+        // Set options id to button options id to ensure correct css selector in plugin initialisation
+        $this->options['id'] = $this->buttonOptions['id'];
+
+        $this->registerPlugin('dropdown');
+        return $html;
     }
 
     /**
      * Generates the button dropdown.
      * @return string the rendering result.
+     * @throws \Exception
      */
     protected function renderButton()
     {
-        Html::addCssClass($this->options, ['widget' => 'btn']);
+        Html::addCssClass($this->buttonOptions, ['widget' => 'btn']);
         $label = $this->label;
         if ($this->encodeLabel) {
             $label = Html::encode($label);
         }
 
         if ($this->split) {
-            $options = $this->options;
-            $this->options['data-toggle'] = 'dropdown';
-            Html::addCssClass($this->options, ['toggle' => 'dropdown-toggle']);
-            unset($options['id']);
+            $buttonOptions = $this->buttonOptions;
+            $this->buttonOptions['data-toggle'] = 'dropdown';
+            $this->buttonOptions['aria-haspopup'] = 'true';
+            $this->buttonOptions['aria-expanded'] = 'true';
+            Html::addCssClass($this->buttonOptions, ['toggle' => ['dropdown-toggle', 'dropdown-toggle-split']]);
+            unset($buttonOptions['id']);
             $splitButton = Button::widget([
-                'label' => '<span class="caret"></span>',
+                'label' => '<span class="sr-only">Toggle Dropdown</span>',
                 'encodeLabel' => false,
-                'options' => $this->options,
+                'options' => $this->buttonOptions,
                 'view' => $this->getView(),
             ]);
         } else {
-            $label .= ' <span class="caret"></span>';
-            $options = $this->options;
-            Html::addCssClass($options, ['toggle' => 'dropdown-toggle']);
-            $options['data-toggle'] = 'dropdown';
+            $buttonOptions = $this->buttonOptions;
+            Html::addCssClass($buttonOptions, ['toggle' => 'dropdown-toggle']);
+            $buttonOptions['data-toggle'] = 'dropdown';
+            $buttonOptions['aria-haspopup'] = 'true';
+            $buttonOptions['aria-expanded'] = 'false';
             $splitButton = '';
         }
 
-        if (isset($options['href'])) {
-            if (is_array($options['href'])) {
-                $options['href'] = Url::to($options['href']);
+        if (isset($buttonOptions['href'])) {
+            if (is_array($buttonOptions['href'])) {
+                $buttonOptions['href'] = Url::to($buttonOptions['href']);
             }
         } else {
             if ($this->tagName === 'a') {
-                $options['href'] = '#';
+                $buttonOptions['href'] = '#';
+                $buttonOptions['role'] = 'button';
             }
         }
 
         return Button::widget([
-            'tagName' => $this->tagName,
-            'label' => $label,
-            'options' => $options,
-            'encodeLabel' => false,
-            'view' => $this->getView(),
-        ]) . "\n" . $splitButton;
+                'tagName' => $this->tagName,
+                'label' => $label,
+                'options' => $buttonOptions,
+                'encodeLabel' => false,
+                'view' => $this->getView(),
+            ]) . "\n" . $splitButton;
     }
 
     /**
      * Generates the dropdown menu.
      * @return string the rendering result.
+     * @throws \Exception
      */
     protected function renderDropdown()
     {

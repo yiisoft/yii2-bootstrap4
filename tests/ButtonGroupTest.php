@@ -5,7 +5,7 @@ use yii\bootstrap4\Button;
 use yii\bootstrap4\ButtonGroup;
 
 /**
- * @group bootstrap
+ * @group bootstrap4
  */
 class ButtonGroupTest extends TestCase
 {

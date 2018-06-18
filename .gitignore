@@ -25,6 +25,7 @@ phpunit.phar
 # local phpunit config
 /phpunit.xml
 
+/tests/bootstrap.local.php
 /tests/runtime
 /tests/data/config.local.php
 /tests/docker

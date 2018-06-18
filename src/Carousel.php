@@ -26,15 +26,16 @@ use yii\helpers\ArrayHelper;
  *         [
  *             'content' => '<img src="http://twitter.github.io/bootstrap/assets/img/bootstrap-mdo-sfmoma-03.jpg"/>',
  *             'caption' => '<h4>This is title</h4><p>This is the caption text</p>',
+ *             'captionOptions' => ['class' => ['d-none', 'd-md-block']]
  *             'options' => [...],
  *         ],
  *     ]
  * ]);
  * ```
  *
- * @see http://getbootstrap.com/javascript/#carousel
+ * @see https://getbootstrap.com/docs/4.1/components/carousel/
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @since 2.0
+ * @author Simon Karlen <simi.albi@gmail.com>
  */
 class Carousel extends Widget
 {
@@ -43,8 +44,8 @@ class Carousel extends Widget
      * If false, it means the previous and the next control buttons should not be displayed.
      */
     public $controls = [
-        '<span class="icon-prev"></span><span class="sr-only">Previous</span>',
-        '<span class="icon-next"></span><span class="sr-only">Next</span>'
+        '<span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span>',
+        '<span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span>'
     ];
     /**
      * @var bool whether carousel indicators (<ol> tag with anchors to items) should be displayed or not.
@@ -78,18 +79,19 @@ class Carousel extends Widget
     }
 
     /**
-     * Renders the widget.
+     * {@inheritdoc}
+     * @throws InvalidConfigException
      */
     public function run()
     {
         $this->registerPlugin('carousel');
         return implode("\n", [
-            Html::beginTag('div', $this->options),
-            $this->renderIndicators(),
-            $this->renderItems(),
-            $this->renderControls(),
-            Html::endTag('div')
-        ]) . "\n";
+                Html::beginTag('div', $this->options),
+                $this->renderIndicators(),
+                $this->renderItems(),
+                $this->renderControls(),
+                Html::endTag('div')
+            ]) . "\n";
     }
 
     /**
@@ -110,12 +112,13 @@ class Carousel extends Widget
             $indicators[] = Html::tag('li', '', $options);
         }
 
-        return Html::tag('ol', implode("\n", $indicators), ['class' => 'carousel-indicators']);
+        return Html::tag('ol', implode("\n", $indicators), ['class' => ['carousel-indicators']]);
     }
 
     /**
      * Renders carousel items as specified on [[items]].
      * @return string the rendering result
+     * @throws InvalidConfigException
      */
     public function renderItems()
     {
@@ -124,7 +127,7 @@ class Carousel extends Widget
             $items[] = $this->renderItem($this->items[$i], $i);
         }
 
-        return Html::tag('div', implode("\n", $items), ['class' => 'carousel-inner', 'role' => 'listbox']);
+        return Html::tag('div', implode("\n", $items), ['class' => 'carousel-inner']);
     }
 
     /**
@@ -144,7 +147,10 @@ class Carousel extends Widget
             $content = $item['content'];
             $caption = ArrayHelper::getValue($item, 'caption');
             if ($caption !== null) {
-                $caption = Html::tag('div', $caption, ['class' => 'carousel-caption']);
+                $captionOptions = ArrayHelper::remove($item, 'captionOptions', []);
+                Html::addCssClass($captionOptions, ['widget' => 'carousel-caption']);
+
+                $caption = Html::tag('div', $caption, $captionOptions);
             }
             $options = ArrayHelper::getValue($item, 'options', []);
         } else {
@@ -167,13 +173,15 @@ class Carousel extends Widget
     {
         if (isset($this->controls[0], $this->controls[1])) {
             return Html::a($this->controls[0], '#' . $this->options['id'], [
-                'class' => 'left carousel-control',
-                'data-slide' => 'prev',
-            ]) . "\n"
-            . Html::a($this->controls[1], '#' . $this->options['id'], [
-                'class' => 'right carousel-control',
-                'data-slide' => 'next',
-            ]);
+                    'class' => 'carousel-control-prev',
+                    'data-slide' => 'prev',
+                    'role' => 'button'
+                ]) . "\n"
+                . Html::a($this->controls[1], '#' . $this->options['id'], [
+                    'class' => 'carousel-control-next',
+                    'data-slide' => 'next',
+                    'role' => 'button'
+                ]);
         } elseif ($this->controls === false) {
             return '';
         } else {
