@@ -133,64 +133,10 @@ return [
 ```
 
 
-## .less ファイルからコンパイルする
-
-Bootstrap CSS ソースを直接にカスタマイズしたい場合、*.less ファイルから CSS をコンパイルしたいと思うことがあるでしょう。
-そのような場合は、Bootstrap アセットを Composer や Bower/NPM からインストールすることは合理的ではありません。
-なぜなら、`vendor` ディレクトリ内のファイルは変更できないからです。
-Bootstrap アセットを手作業でダウンロードし、プロジェクト・ソース・コード内のどこか、
-例えば `assets/source/bootstrap` フォルダに置かなければなりません。
-
-あなたのプロジェクトの `package.json` に次の行を追加して、Bootstrap アセットの冗長なインストールを防止します。
-
-```json
-"replace": {
-    "bower-asset/bootstrap": ">=3.3.0"
-},
-```
-
-'assetManager' アプリケーション・コンポーネントを構成して、Bootstrap アセット・バンドルをオーバーライドし、CSS ファイルのためのコンパイラを指定します。
-
-```php
-return [
-    'components' => [
-        'assetManager' => [
-            // *.less ファイルのためのアセット・コンバータを設定する
-            'converter' => [
-                'class' => 'yii\web\AssetConverter',
-                'commands' => [
-                    'less' => ['css', 'lessc {from} {to} --no-color'],
-                ],
-            ],
-            // バンドルをオーバーライドし、ローカル・プロジェクト・ファイルを使う
-            'bundles' => [
-                'yii\bootstrap4\BootstrapAsset' => [
-                    'sourcePath' => '@app/assets/source/bootstrap',
-                    'css' => [
-                        'css/bootstrap.less'
-                    ],
-                ],
-                'yii\bootstrap4\BootstrapPluginAsset' => [
-                    'sourcePath' => '@app/assets/source/bootstrap',
-                ],
-                'yii\bootstrap4\BootstrapThemeAsset' => [
-                    'sourcePath' => '@app/assets/source/bootstrap',
-                ],
-            ],
-        ],
-        // ...
-    ],
-    // ...
-];
-```
-
-
 ## .sass ファイルからコンパイルする
 
 Bootstrap CSS ソースを直接にカスタマイズしたい場合、*.sass ファイルから CSS をコンパイルしたいと思うことがあるでしょう。
-そのための *.sass ファイルは [Bootstrap ported from Less to Sass](https://github.com/twbs/bootstrap-sass) から得ることが出来ます。
-
-そのような場合は、Bootstrap アセットを Composer や Bower/NPM からインストールすることは合理的ではありません。
+そのような場合は、Bootstrap アセットを Composer や Bower/NPM からインストールしても意味がありません。
 なぜなら、`vendor` ディレクトリ内のファイルは変更できないからです。
 Bootstrap アセットを手作業でダウンロードし、プロジェクト・ソース・コード内のどこか、
 例えば `assets/source/bootstrap` フォルダに置かなければなりません。
@@ -203,32 +149,25 @@ Bootstrap アセットを手作業でダウンロードし、プロジェクト�
 },
 ```
 
-'assetManager' アプリケーション・コンポーネントを構成して、Bootstrap アセット・バンドルをオーバーライドし、CSS ファイルのためのコンパイラを指定します。
+'assetManager' アプリケーション・コンポーネントを構成して、Bootstrap アセット・バンドルをオーバーライドします。
 
 ```php
 return [
     'components' => [
         'assetManager' => [
-            // *.sass ファイルのためのアセット・コンバータを設定する
-            'converter' => [
-                'class' => 'yii\web\AssetConverter',
-                'commands' => [
-                    'scss' => ['css', 'sass {from} {to} --sourcemap']
-                ],
-            ],
             // バンドルをオーバーライドし、ローカル・プロジェクト・ファイルを使う
             'bundles' => [
                 'yii\bootstrap4\BootstrapAsset' => [
-                    'sourcePath' => '@app/assets/source/bootstrap',
+                    'sourcePath' => '@app/assets/source/bootstrap/dist',
                     'css' => [
-                        'css/bootstrap.scss'
+                        YII_ENV_DEV ? 'css/bootstrap.css' : 'css/bootstrap.min.css',
                     ],
                 ],
                 'yii\bootstrap4\BootstrapPluginAsset' => [
-                    'sourcePath' => '@app/assets/source/bootstrap',
-                ],
-                'yii\bootstrap4\BootstrapThemeAsset' => [
-                    'sourcePath' => '@app/assets/source/bootstrap',
+                    'sourcePath' => '@app/assets/source/bootstrap/dist',
+                    'js' => [
+                        YII_ENV_DEV ? 'js/bootstrap.js' : 'js/bootstrap.min.js',
+                    ]
                 ],
             ],
         ],
@@ -237,3 +176,5 @@ return [
     // ...
 ];
 ```
+
+Bootsrap のソース・ファイルを変更した後は、例えば `npm run dist` を使って、必ず[コンパイル](https://getbootstrap.com/docs/4.1/getting-started/build-tools/)して下さい。

@@ -27,4 +27,4 @@ Bootstrap のコアは二つの部分によって表されます。
 追加のトピック
 --------------
 
-* [Bootstrap の .less ファイルを直接に使う](topics-less.md)
+* [Bootstrap の .sass ファイルを直接に使う](topics-sass.md)
