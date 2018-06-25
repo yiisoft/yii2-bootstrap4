@@ -138,7 +138,7 @@ return [
 If you want to customize the Bootstrap CSS source directly, you may want to compile it from source *.sass files.
 In such case installing Bootstrap assets from Composer or Bower/NPM makes no sense, since you can not modify files
 inside 'vendor' directory.
-You'll have to downloaded Bootstrap assets manually and place them somewhere inside you project source code,
+You'll have to downloaded Bootstrap assets manually and place them somewhere inside your project source code,
 for example at 'assets/source/bootstrap' folder.
 
 In the `composer.json` of your project, add the following lines in order to prevent redundant Bootstrap asset installation:
@@ -149,7 +149,7 @@ In the `composer.json` of your project, add the following lines in order to prev
 },
 ```
 
-Configure 'assetManager' application component, overriding Bootstrap assent bundles:
+Configure 'assetManager' application component, overriding Bootstrap asset bundles:
 
 ```php
 return [
