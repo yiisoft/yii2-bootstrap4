@@ -1,4 +1,4 @@
-Bootstrap の .less ファイルを直接に使う
+Bootstrap の .sass ファイルを直接に使う
 =======================================
 
 あなたが [Bootstrap CSS をあなたの less ファイルに直接含める](http://getbootstrap.com/getting-started/#customizing) ことを望む場合は、
