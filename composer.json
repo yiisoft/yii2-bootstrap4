@@ -37,7 +37,8 @@
     ],
     "require": {
         "yiisoft/yii2": "~2.0|~2.1@dev|~3.0@dev",
-        "bower-asset/bootstrap": "~4.0"
+        "npm-asset/bootstrap": "~4.1",
+        "npm-asset/popper.js": "~1.14.3"
     },
     "require-dev": {
         "yiisoft/yii2-coding-standards": "~2.0",

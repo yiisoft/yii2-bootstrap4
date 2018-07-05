@@ -80,7 +80,7 @@ In the `composer.json` of your project, add the following lines in order to prev
 
 ```json
 "replace": {
-    "bower-asset/bootstrap": ">=4.1.1"
+    "npm-asset/bootstrap": ">=4.1.1"
 },
 ```
 
@@ -93,7 +93,7 @@ In the `composer.json` of your project, add the following lines in order to prev
 
 ```json
 "replace": {
-    "bower-asset/bootstrap": ">=4.1.1"
+    "npm-asset/bootstrap": ">=4.1.1"
 },
 ```
 
@@ -145,7 +145,7 @@ In the `composer.json` of your project, add the following lines in order to prev
 
 ```json
 "replace": {
-    "bower-asset/bootstrap": ">=4.1.1"
+    "npm-asset/bootstrap": ">=4.1.1"
 },
 ```
 
