@@ -1,0 +1,11 @@
+{
+  "require": {
+    "bower-asset/bootstrap": "~4.0"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ]
+}
