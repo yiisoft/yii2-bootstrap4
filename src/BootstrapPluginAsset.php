@@ -18,11 +18,10 @@ class BootstrapPluginAsset extends AssetBundle
 {
     public $sourcePath = '@bower/bootstrap/dist';
     public $js = [
-        'js/bootstrap.js',
+        'js/bootstrap.bundle.js',
     ];
     public $depends = [
         \yii\jquery\JqueryAsset::class,
         \yii\bootstrap4\BootstrapAsset::class,
-        \yii\bootstrap4\PopperAsset::class,
     ];
 }
