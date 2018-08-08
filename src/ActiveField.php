@@ -38,12 +38,8 @@ use yii\helpers\ArrayHelper;
  * and radioLists in the [[\yii\widgets\ActiveForm::fieldConfig|fieldConfig]] of the
  * [[\yii\widgets\ActiveForm]]:
  *
- * - [[checkboxTemplate]] the template for checkboxes in default layout
- * - [[radioTemplate]] the template for radio buttons in default layout
- * - [[horizontalCheckboxTemplate]] the template for checkboxes in horizontal layout
- * - [[horizontalRadioTemplate]] the template for radio buttons in horizontal layout
- * - [[inlineCheckboxListTemplate]] the template for inline checkboxLists
- * - [[inlineRadioListTemplate]] the template for inline radioLists
+ * - [[checkTemplate]] the default template for checkboxes and radios
+ * - [[checkEnclosedTemplate]] the template for checkboxes and radios enclosed by label
  *
  * Example:
  *
@@ -257,20 +253,22 @@ class ActiveField extends \yii\widgets\ActiveField
     {
         $itemOptions = isset($options['itemOptions']) ? $options['itemOptions'] : [];
         $encode = ArrayHelper::getValue($options, 'encode', true);
-        $inline = $this->inline;
-        $options['item'] = function ($index, $label, $name, $checked, $value) use ($itemOptions, $encode, $inline) {
+        $wrapperOptions = ['class' => ['form-check']];
+        if ($this->inline) {
+            Html::addCssClass($wrapperOptions, 'form-check-inline');
+        }
+        $options['item'] = function ($i, $label, $name, $checked, $value) use ($itemOptions, $encode, $wrapperOptions) {
             $options = array_merge([
                 'class' => 'form-check-input',
                 'label' => $encode ? Html::encode($label) : $label,
                 'labelOptions' => ['class' => 'form-check-label'],
                 'value' => $value
             ], $itemOptions);
-            $class = 'form-check';
-            if ($inline) {
-                $class .= '-inline';
-            }
 
-            return '<div class="' . $class . '">' . Html::checkbox($name, $checked, $options) . '</div>';
+            return
+                Html::beginTag('div', $wrapperOptions) .
+                Html::checkbox($name, $checked, $options) .
+                Html::endTag('div');
         };
 
         parent::checkboxList($items, $options);
@@ -284,20 +282,22 @@ class ActiveField extends \yii\widgets\ActiveField
     {
         $itemOptions = isset($options['itemOptions']) ? $options['itemOptions'] : [];
         $encode = ArrayHelper::getValue($options, 'encode', true);
-        $inline = $this->inline;
-        $options['item'] = function ($index, $label, $name, $checked, $value) use ($itemOptions, $encode, $inline) {
+        $wrapperOptions = ['class' => ['form-check']];
+        if ($this->inline) {
+            Html::addCssClass($wrapperOptions, 'form-check-inline');
+        }
+        $options['item'] = function ($i, $label, $name, $checked, $value) use ($itemOptions, $encode, $wrapperOptions) {
             $options = array_merge([
                 'class' => 'form-check-input',
                 'label' => $encode ? Html::encode($label) : $label,
                 'labelOptions' => ['class' => 'form-check-label'],
                 'value' => $value
             ], $itemOptions);
-            $class = 'form-check';
-            if ($inline) {
-                $class .= '-inline';
-            }
 
-            return '<div class="' . $class . '">' . Html::radio($name, $checked, $options) . '</div>';
+            return
+                Html::beginTag('div', $wrapperOptions) .
+                Html::radio($name, $checked, $options) .
+                Html::endTag('div');
         };
 
         parent::radioList($items, $options);
