@@ -6,7 +6,6 @@ use yii\base\DynamicModel;
 use yii\bootstrap4\ActiveField;
 use yii\bootstrap4\ActiveForm;
 use yiiunit\extensions\bootstrap4\data\ExtendedActiveField;
-use Yii;
 
 class ActiveFieldTest extends TestCase
 {
@@ -76,6 +75,44 @@ HTML;
 <input type="hidden" name="DynamicModel[attributeName]" value=""><div id="dynamicmodel-attributename"><div class="form-check"><input type="checkbox" id="i0" class="form-check-input" name="DynamicModel[attributeName][]" value="1">
 <label class="form-check-label" for="i0">name1</label></div>
 <div class="form-check"><input type="checkbox" id="i1" class="form-check-input" name="DynamicModel[attributeName][]" value="2">
+<label class="form-check-label" for="i1">name2</label></div></div>
+
+<div class="invalid-feedback"></div>
+</div>
+HTML;
+        $this->assertEqualsWithoutLE($expectedHtml, $html);
+    }
+
+    public function testRadioListInline()
+    {
+        $this->activeField->inline = true;
+        $html = $this->activeField->radioList([1 => 'name1', 2 => 'name2'])->render();
+
+        $expectedHtml = <<<HTML
+<div class="form-group field-dynamicmodel-attributename">
+<label>Attribute Name</label>
+<input type="hidden" name="DynamicModel[attributeName]" value=""><div id="dynamicmodel-attributename"><div class="form-check form-check-inline"><input type="radio" id="i0" class="form-check-input" name="DynamicModel[attributeName]" value="1">
+<label class="form-check-label" for="i0">name1</label></div>
+<div class="form-check form-check-inline"><input type="radio" id="i1" class="form-check-input" name="DynamicModel[attributeName]" value="2">
+<label class="form-check-label" for="i1">name2</label></div></div>
+
+<div class="invalid-feedback"></div>
+</div>
+HTML;
+        $this->assertEqualsWithoutLE($expectedHtml, $html);
+    }
+
+    public function testCheckboxListInline()
+    {
+        $this->activeField->inline = true;
+        $html = $this->activeField->checkboxList([1 => 'name1', 2 => 'name2'])->render();
+
+        $expectedHtml = <<<HTML
+<div class="form-group field-dynamicmodel-attributename">
+<label>Attribute Name</label>
+<input type="hidden" name="DynamicModel[attributeName]" value=""><div id="dynamicmodel-attributename"><div class="form-check form-check-inline"><input type="checkbox" id="i0" class="form-check-input" name="DynamicModel[attributeName][]" value="1">
+<label class="form-check-label" for="i0">name1</label></div>
+<div class="form-check form-check-inline"><input type="checkbox" id="i1" class="form-check-input" name="DynamicModel[attributeName][]" value="2">
 <label class="form-check-label" for="i1">name2</label></div></div>
 
 <div class="invalid-feedback"></div>
