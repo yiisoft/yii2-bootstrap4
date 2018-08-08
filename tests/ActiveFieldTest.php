@@ -37,7 +37,7 @@ class ActiveFieldTest extends TestCase
 
         $this->helperModel = new DynamicModel(['attributeName']);
         ob_start();
-        $this->helperForm = ActiveForm::begin(['action' => '/something', 'enableClientScript' => false]);
+        $this->helperForm = ActiveForm::begin(['action' => '/something']);
         ActiveForm::end();
         ob_end_clean();
 
