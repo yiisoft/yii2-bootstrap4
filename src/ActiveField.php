@@ -251,25 +251,27 @@ class ActiveField extends \yii\widgets\ActiveField
      */
     public function checkboxList($items, $options = [])
     {
-        $itemOptions = isset($options['itemOptions']) ? $options['itemOptions'] : [];
-        $encode = ArrayHelper::getValue($options, 'encode', true);
-        $wrapperOptions = ['class' => ['form-check']];
-        if ($this->inline) {
-            Html::addCssClass($wrapperOptions, 'form-check-inline');
-        }
-        $options['item'] = function ($i, $label, $name, $checked, $value) use ($itemOptions, $encode, $wrapperOptions) {
-            $options = array_merge([
-                'class' => 'form-check-input',
-                'label' => $encode ? Html::encode($label) : $label,
-                'labelOptions' => ['class' => 'form-check-label'],
-                'value' => $value
-            ], $itemOptions);
+        if (!isset($options['item'])) {
+            $itemOptions    = isset($options['itemOptions']) ? $options['itemOptions'] : [];
+            $encode         = ArrayHelper::getValue($options, 'encode', true);
+            $wrapperOptions = ['class' => ['form-check']];
+            if ($this->inline) {
+                Html::addCssClass($wrapperOptions, 'form-check-inline');
+            }
+            $options['item'] = function ($i, $label, $name, $checked, $value) use ($itemOptions, $encode, $wrapperOptions) {
+                $options = array_merge([
+                    'class'        => 'form-check-input',
+                    'label'        => $encode ? Html::encode($label) : $label,
+                    'labelOptions' => ['class' => 'form-check-label'],
+                    'value'        => $value
+                ], $itemOptions);
 
-            return
-                Html::beginTag('div', $wrapperOptions) .
-                Html::checkbox($name, $checked, $options) .
-                Html::endTag('div');
-        };
+                return
+                    Html::beginTag('div', $wrapperOptions) .
+                    Html::checkbox($name, $checked, $options) .
+                    Html::endTag('div');
+            };
+        }
 
         parent::checkboxList($items, $options);
         return $this;
@@ -280,25 +282,27 @@ class ActiveField extends \yii\widgets\ActiveField
      */
     public function radioList($items, $options = [])
     {
-        $itemOptions = isset($options['itemOptions']) ? $options['itemOptions'] : [];
-        $encode = ArrayHelper::getValue($options, 'encode', true);
-        $wrapperOptions = ['class' => ['form-check']];
-        if ($this->inline) {
-            Html::addCssClass($wrapperOptions, 'form-check-inline');
-        }
-        $options['item'] = function ($i, $label, $name, $checked, $value) use ($itemOptions, $encode, $wrapperOptions) {
-            $options = array_merge([
-                'class' => 'form-check-input',
-                'label' => $encode ? Html::encode($label) : $label,
-                'labelOptions' => ['class' => 'form-check-label'],
-                'value' => $value
-            ], $itemOptions);
+        if (!isset($options['item'])) {
+            $itemOptions = isset($options['itemOptions']) ? $options['itemOptions'] : [];
+            $encode = ArrayHelper::getValue($options, 'encode', true);
+            $wrapperOptions = ['class' => ['form-check']];
+            if ($this->inline) {
+                Html::addCssClass($wrapperOptions, 'form-check-inline');
+            }
+            $options['item'] = function ($i, $label, $name, $checked, $value) use ($itemOptions, $encode, $wrapperOptions) {
+                $options = array_merge([
+                    'class'        => 'form-check-input',
+                    'label'        => $encode ? Html::encode($label) : $label,
+                    'labelOptions' => ['class' => 'form-check-label'],
+                    'value'        => $value
+                ], $itemOptions);
 
-            return
-                Html::beginTag('div', $wrapperOptions) .
-                Html::radio($name, $checked, $options) .
-                Html::endTag('div');
-        };
+                return
+                    Html::beginTag('div', $wrapperOptions) .
+                    Html::radio($name, $checked, $options) .
+                    Html::endTag('div');
+            };
+        }
 
         parent::radioList($items, $options);
         return $this;
