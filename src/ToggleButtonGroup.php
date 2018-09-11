@@ -63,7 +63,7 @@ class ToggleButtonGroup extends InputWidget
     {
         parent::init();
         $this->registerPlugin('button');
-        Html::addCssClass($this->options, ['widget' => ['btn-group', 'btn-group-toggle']]);
+        Html::addCssClass($this->options, ['btn-group', 'btn-group-toggle']);
         $this->options['data-toggle'] = 'buttons';
     }
 
