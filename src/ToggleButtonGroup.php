@@ -63,7 +63,7 @@ class ToggleButtonGroup extends InputWidget
     {
         parent::init();
         $this->registerPlugin('button');
-        Html::addCssClass($this->options, ['btn-group', 'btn-group-toggle']);
+        Html::addCssClass($this->options, ['btn-group']);
         $this->options['data-toggle'] = 'buttons';
     }
 
@@ -108,6 +108,7 @@ class ToggleButtonGroup extends InputWidget
     public function renderItem($index, $label, $name, $checked, $value)
     {
         $labelOptions = $this->labelOptions;
+        $labelOptions['wrapInput'] = true;
         Html::addCssClass($labelOptions, 'btn');
         if ($checked) {
             Html::addCssClass($labelOptions, 'active');
@@ -117,6 +118,7 @@ class ToggleButtonGroup extends InputWidget
             $label = Html::encode($label);
         }
         return Html::$type($name, $checked, [
+            'class'=>'d-none',
             'label' => $label,
             'labelOptions' => $labelOptions,
             'autocomplete' => 'off',
