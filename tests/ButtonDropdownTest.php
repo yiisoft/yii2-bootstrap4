@@ -10,10 +10,11 @@ class ButtonDropdownTest extends TestCase
 {
     public function testContainerOptions()
     {
-        $containerClass = "dropup";
+        $containerClass = 'testClass';
 
         ButtonDropdown::$counter = 0;
         $out = ButtonDropdown::widget([
+            'direction' => 'up',
             'options' => [
                 'class' => $containerClass,
             ],
@@ -26,7 +27,7 @@ class ButtonDropdownTest extends TestCase
             ],
         ]);
 
-        $this->assertContains("$containerClass btn-group", $out);
+        $this->assertContains("$containerClass dropup btn-group", $out);
     }
 
     public function testDirection()
