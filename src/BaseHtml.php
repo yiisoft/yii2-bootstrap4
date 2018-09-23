@@ -169,8 +169,14 @@ class BaseHtml extends \yii\helpers\Html
                 $options['id'] = static::getId();
             }
 
-            $content = static::input($type, $name, $value, $options) . "\n";
-            $content .= static::label($label, $options['id'], $labelOptions);
+            $input = static::input($type, $name, $value, $options);
+
+            if (isset($labelOptions['wrapInput']) && $labelOptions['wrapInput']) {
+                unset($labelOptions['wrapInput']);
+                $content = static::label($input . $label, $options['id'], $labelOptions);
+            } else {
+                $content = $input . "\n" . static::label($label, $options['id'], $labelOptions);
+            }
             return $hidden . $content;
         }
 
