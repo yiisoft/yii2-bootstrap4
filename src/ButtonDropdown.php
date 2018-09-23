@@ -55,6 +55,12 @@ class ButtonDropdown extends Widget
      */
     public $dropdown = [];
     /**
+     * @var string the drop-direction of the widget
+     *
+     * Possible values are 'left', 'right', 'up', or 'down' (default)
+     */
+    public $direction = 'down';
+    /**
      * @var bool whether to display a group of split-styled button group.
      */
     public $split = false;
@@ -97,7 +103,7 @@ class ButtonDropdown extends Widget
         $html = $this->renderButton() . "\n" . $this->renderDropdown();
 
         if ($this->renderContainer) {
-            Html::addCssClass($this->options, ['widget' => 'dropdown']);
+            Html::addCssClass($this->options, ['widget' => 'drop'.$this->direction, 'btn-group']);
             $options = $this->options;
             $tag = ArrayHelper::remove($options, 'tag', 'div');
             $html = Html::tag($tag, $html, $options);
