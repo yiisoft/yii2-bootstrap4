@@ -3,7 +3,6 @@
 namespace yiiunit\extensions\bootstrap4;
 
 use yii\bootstrap4\Alert;
-use Yii;
 
 /**
  * Tests for Alert widget

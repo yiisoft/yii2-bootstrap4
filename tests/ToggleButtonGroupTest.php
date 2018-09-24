@@ -3,8 +3,6 @@
 namespace yiiunit\extensions\bootstrap4;
 
 use yii\base\Model;
-use yii\base\Widget;
-use yii\bootstrap4\ActiveField;
 use yii\bootstrap4\ToggleButtonGroup;
 
 /**
