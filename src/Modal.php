@@ -18,7 +18,7 @@ use yii\helpers\ArrayHelper;
  *
  * ~~~php
  * Modal::begin([
- *     'header' => '<h2>Hello world</h2>',
+ *     'title' => '<h2>Hello world</h2>',
  *     'toggleButton' => ['label' => 'click me'],
  * ]);
  *
