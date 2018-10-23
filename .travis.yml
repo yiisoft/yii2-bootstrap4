@@ -8,19 +8,6 @@ php:
   - 7.1
   - 7.2
 
-matrix:
-  include:
-    - php: hhvm
-      sudo: true
-      dist: trusty
-      group: edge
-      cache:
-        directories: "$HOME/.composer/cache"
-      before_install:
-        - wget https://phar.phpunit.de/phpunit-4.5.1.phar
-      script:
-        - php phpunit-4.5.1.phar --verbose $PHPUNIT_FLAGS
-
 sudo: false
 
 # cache vendor dirs

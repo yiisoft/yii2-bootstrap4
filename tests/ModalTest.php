@@ -11,6 +11,7 @@ class ModalTest extends TestCase
 {
     public function testBodyOptions()
     {
+        Modal::$counter = 0;
         $out = Modal::widget([
             'bodyOptions' => ['class' => 'modal-body test', 'style' => 'text-align:center;']
         ]);

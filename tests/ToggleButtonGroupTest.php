@@ -12,7 +12,7 @@ class ToggleButtonGroupTest extends TestCase
 {
     public function testCheckbox()
     {
-        ToggleButtonGroup::$counter = 0;
+        \yii\bootstrap4\Html::$counter = 0;
         $html = ToggleButtonGroup::widget([
             'type' => 'checkbox',
             'model' => new ToggleButtonGroupTestModel(),
@@ -24,15 +24,15 @@ class ToggleButtonGroupTest extends TestCase
         ]);
 
         $expectedHtml = <<<HTML
-<input type="hidden" name="ToggleButtonGroupTestModel[value]" value=""><div id="togglebuttongrouptestmodel-value" class="btn-group" data-toggle="buttons"><label class="btn"><input type="checkbox" name="ToggleButtonGroupTestModel[value][]" value="1"> item 1</label>
-<label class="btn"><input type="checkbox" name="ToggleButtonGroupTestModel[value][]" value="2"> item 2</label></div>
+<input type="hidden" name="ToggleButtonGroupTestModel[value]" value=""><div id="togglebuttongrouptestmodel-value" class="btn-group" data-toggle="buttons"><label class="btn" for="i0"><input type="checkbox" id="i0" class="d-none" name="ToggleButtonGroupTestModel[value][]" value="1" autocomplete="off">item 1</label>
+<label class="btn" for="i1"><input type="checkbox" id="i1" class="d-none" name="ToggleButtonGroupTestModel[value][]" value="2" autocomplete="off">item 2</label></div>
 HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
     }
 
     public function testRadio()
     {
-        ToggleButtonGroup::$counter = 0;
+        \yii\bootstrap4\Html::$counter = 0;
         $html = ToggleButtonGroup::widget([
             'type' => 'radio',
             'model' => new ToggleButtonGroupTestModel(),
@@ -44,8 +44,8 @@ HTML;
         ]);
 
         $expectedHtml = <<<HTML
-<input type="hidden" name="ToggleButtonGroupTestModel[value]" value=""><div id="togglebuttongrouptestmodel-value" class="btn-group" data-toggle="buttons"><label class="btn"><input type="radio" name="ToggleButtonGroupTestModel[value]" value="1"> item 1</label>
-<label class="btn"><input type="radio" name="ToggleButtonGroupTestModel[value]" value="2"> item 2</label></div>
+<input type="hidden" name="ToggleButtonGroupTestModel[value]" value=""><div id="togglebuttongrouptestmodel-value" class="btn-group" data-toggle="buttons"><label class="btn" for="i0"><input type="radio" id="i0" class="d-none" name="ToggleButtonGroupTestModel[value]" value="1" autocomplete="off">item 1</label>
+<label class="btn" for="i1"><input type="radio" id="i1" class="d-none" name="ToggleButtonGroupTestModel[value]" value="2" autocomplete="off">item 2</label></div>
 HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
     }

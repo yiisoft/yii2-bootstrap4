@@ -55,6 +55,12 @@ class ButtonDropdown extends Widget
      */
     public $dropdown = [];
     /**
+     * @var string the drop-direction of the widget
+     *
+     * Possible values are 'left', 'right', 'up', or 'down' (default)
+     */
+    public $direction = 'down';
+    /**
      * @var bool whether to display a group of split-styled button group.
      */
     public $split = false;
@@ -70,6 +76,11 @@ class ButtonDropdown extends Widget
      * @var string name of a class to use for rendering dropdowns withing this widget. Defaults to [[Dropdown]].
      */
     public $dropdownClass = 'yii\bootstrap4\Dropdown';
+    /**
+     * @var bool whether to render the container using the [[options]] as HTML attributes. If set to `false`,
+     * the container element enclosing the button and dropdown will NOT be rendered.
+     */
+    public $renderContainer = true;
 
     /**
      * {@inheritdoc}
@@ -89,16 +100,14 @@ class ButtonDropdown extends Widget
      */
     public function run()
     {
-        Html::addCssClass($this->options, ['widget' => 'dropdown']);
-        $options = $this->options;
-        $tag = ArrayHelper::remove($options, 'tag', 'div');
+        $html = $this->renderButton() . "\n" . $this->renderDropdown();
 
-        $html = implode("\n", [
-            Html::beginTag($tag, $options),
-            $this->renderButton(),
-            $this->renderDropdown(),
-            Html::endTag($tag)
-        ]);
+        if ($this->renderContainer) {
+            Html::addCssClass($this->options, ['widget' => 'drop'.$this->direction, 'btn-group']);
+            $options = $this->options;
+            $tag = ArrayHelper::remove($options, 'tag', 'div');
+            $html = Html::tag($tag, $html, $options);
+        }
 
         // Set options id to button options id to ensure correct css selector in plugin initialisation
         $this->options['id'] = $this->buttonOptions['id'];

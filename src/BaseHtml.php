@@ -53,13 +53,9 @@ class BaseHtml extends \yii\helpers\Html
     /**
      * Renders Bootstrap static form control.
      *
-     * By default value will be HTML-encoded using [[encode()]], you may control this behavior
-     * via 'encode' option.
      * @param string $value static control value.
      * @param array $options the tag options in terms of name-value pairs. These will be rendered as
      * the attributes of the resulting tag. There are also a special options:
-     *
-     * - encode: bool, whether value should be HTML-encoded or not.
      *
      * @return string generated HTML
      * @see https://getbootstrap.com/docs/4.1/components/forms/#readonly-plain-text
@@ -69,13 +65,7 @@ class BaseHtml extends \yii\helpers\Html
         static::addCssClass($options, 'form-control-plaintext');
         $value = (string)$value;
         $options['readonly'] = true;
-        if (isset($options['encode'])) {
-            $encode = $options['encode'];
-            unset($options['encode']);
-        } else {
-            $encode = true;
-        }
-        return static::input('text', null, $encode ? static::encode($value) : $value, $options);
+        return static::input('text', null, $value, $options);
     }
 
     /**
@@ -169,8 +159,14 @@ class BaseHtml extends \yii\helpers\Html
                 $options['id'] = static::getId();
             }
 
-            $content = static::input($type, $name, $value, $options) . "\n";
-            $content .= static::label($label, $options['id'], $labelOptions);
+            $input = static::input($type, $name, $value, $options);
+
+            if (isset($labelOptions['wrapInput']) && $labelOptions['wrapInput']) {
+                unset($labelOptions['wrapInput']);
+                $content = static::label($input . $label, $options['id'], $labelOptions);
+            } else {
+                $content = $input . "\n" . static::label($label, $options['id'], $labelOptions);
+            }
             return $hidden . $content;
         }
 

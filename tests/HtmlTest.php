@@ -60,14 +60,7 @@ class HtmlTest extends TestCase
                 '<html>',
                 [],
                 '<input type="text" class="form-control-plaintext" value="&lt;html&gt;" readonly>'
-            ],
-            [
-                '<html></html>',
-                [
-                    'encode' => false
-                ],
-                '<input type="text" class="form-control-plaintext" value="<html></html>" readonly>'
-            ],
+            ]
         ];
     }
 

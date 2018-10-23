@@ -136,7 +136,8 @@ class Dropdown extends Widget
                 $lines[] = static::widget([
                     'items' => $item['items'],
                     'options' => $submenuOptions,
-                    'submenuOptions' => $submenuOptions
+                    'submenuOptions' => $submenuOptions,
+                    'encodeLabels' => $this->encodeLabels
                 ]);
                 $lines[] = Html::endTag('div');
             }
