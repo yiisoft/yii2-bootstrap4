@@ -116,6 +116,7 @@ class Accordion extends Widget
     public function run()
     {
         $this->registerPlugin('collapse');
+        Html::addCssClass($this->options, 'accordion');
         return implode("\n", [
                 Html::beginTag('div', $this->options),
                 $this->renderItems(),
@@ -189,10 +190,6 @@ class Accordion extends Widget
                 'aria-controls' => $options['id']
             ], $this->itemToggleOptions);
 
-            if ($this->autoCloseItems) {
-                $itemToggleOptions['data-parent'] = '#' . $this->options['id'];
-            }
-
             $itemToggleTag = ArrayHelper::remove($itemToggleOptions, 'tag', 'button');
             if ($itemToggleTag === 'a') {
                 ArrayHelper::remove($itemToggleOptions, 'data-target');
@@ -225,6 +222,10 @@ class Accordion extends Widget
             throw new InvalidConfigException('The "content" option is required.');
         }
         $group = [];
+
+        if ($this->autoCloseItems) {
+            $options['data-parent'] = '#' . $this->options['id'];
+        }
 
         $group[] = Html::tag('div', $header, ['class' => 'card-header', 'id' => $options['id'] . '-heading']);
         $group[] = Html::beginTag('div', $options);
