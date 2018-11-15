@@ -11,41 +11,6 @@ use yii\bootstrap4\Html;
 class HtmlTest extends TestCase
 {
     /**
-     * Data provider for [[testIcon()]]
-     * @return array test data
-     */
-    public function dataProviderIcon()
-    {
-        return [
-            [
-                'star',
-                [],
-                '<span class="glyphicon glyphicon-star"></span>',
-            ],
-            [
-                'star',
-                [
-                    'tag' => 'i',
-                    'prefix' => 'my-icon icon-',
-                ],
-                '<i class="my-icon icon-star"></i>',
-            ],
-        ];
-    }
-
-    /**
-     * @dataProvider dataProviderIcon
-     *
-     * @param $name
-     * @param $options
-     * @param $expectedHtml
-     */
-    public function testIcon($name, array $options, $expectedHtml)
-    {
-        $this->assertEquals($expectedHtml, Html::icon($name, $options));
-    }
-
-    /**
      * @return array
      */
     public function dataProviderStaticControl()
