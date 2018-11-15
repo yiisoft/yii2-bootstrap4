@@ -7,7 +7,6 @@ They are:
 
 - [[yii\bootstrap4\BootstrapAsset|BootstrapAsset]] - contains only the main CSS files.
 - [[yii\bootstrap4\BootstrapPluginAsset|BootstrapPluginAsset]] - depends on [[yii\bootstrap4\BootstrapAsset]], contains the javascript files.
-- [[yii\bootstrap4\BootstrapThemeAsset|BootstrapThemeAsset]] - depends on [[yii\bootstrap4\BootstrapAsset]], contains the Bootstrap default theme CSS.
 
 Particular application needs may require different bundle (or bundle combination) usage.
 If you need only CSS styles, [[yii\bootstrap4\BootstrapAsset]] will be enough for you. However, if

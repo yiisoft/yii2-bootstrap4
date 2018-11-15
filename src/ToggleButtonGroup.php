@@ -32,7 +32,13 @@ use yii\base\InvalidConfigException;
  */
 class ToggleButtonGroup extends InputWidget
 {
+    /**
+     * Checkbox type
+     */
     const TYPE_CHECKBOX = 'checkbox';
+    /**
+     * Radio type
+     */
     const TYPE_RADIO = 'radio';
 
     /**
@@ -118,7 +124,6 @@ class ToggleButtonGroup extends InputWidget
             $label = Html::encode($label);
         }
         return Html::$type($name, $checked, [
-            'class'=>'d-none',
             'label' => $label,
             'labelOptions' => $labelOptions,
             'autocomplete' => 'off',

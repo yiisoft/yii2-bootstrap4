@@ -1,4 +1,5 @@
 <?php
+
 namespace yiiunit\extensions\bootstrap4;
 
 use yii\bootstrap4\Tabs;
@@ -22,7 +23,8 @@ class TabsTest extends TestCase
         $out = Tabs::widget([
             'items' => [
                 [
-                    'label' => 'Page1', 'content' => 'Page1',
+                    'label' => 'Page1',
+                    'content' => 'Page1',
                 ],
                 [
                     'label' => 'Dropdown1',
@@ -39,12 +41,16 @@ class TabsTest extends TestCase
                     ]
                 ],
                 [
-                    'label' => $extAnchor1 = 'External link', 'url' => $extUrl1 = ['//other/route'],
+                    'label' => $extAnchor1 = 'External link',
+                    'url' => $extUrl1 = ['//other/route'],
                 ],
                 [
                     'label' => 'Dropdown3',
                     'items' => [
-                        ['label' => $extAnchor2 = 'External Dropdown Link', 'url' => $extUrl2 = ['//other/dropdown/route']],
+                        [
+                            'label' => $extAnchor2 = 'External Dropdown Link',
+                            'url' => $extUrl2 = ['//other/dropdown/route']
+                        ],
                     ]
                 ],
             ]
@@ -58,16 +64,16 @@ class TabsTest extends TestCase
 
         $shouldContain = [
             'w0', // nav widget container
-                "#$page1", // Page1
+            "#$page1", // Page1
 
             'w1', // Dropdown1
-                "$page2", // Page2
-                "$page3", // Page3
+            "$page2", // Page2
+            "$page3", // Page3
 
 
             'w2', // Dropdown2
-                "#$page4", // Page4
-                "#$page5", // Page5
+            "#$page4", // Page4
+            "#$page5", // Page5
 
             'w3', // Dropdown3
 
@@ -78,7 +84,9 @@ class TabsTest extends TestCase
             "id=\"$page4\"",
             "id=\"$page5\"",
             Html::a($extAnchor1, $extUrl1, ['class' => 'nav-link']),
-            Html::a($extAnchor2, $extUrl2, [/*'tabindex' => -1, */'class' => 'dropdown-item']),
+            Html::a($extAnchor2, $extUrl2, [/*'tabindex' => -1, */
+                'class' => 'dropdown-item'
+            ]),
         ];
 
         foreach ($shouldContain as $string) {
@@ -92,7 +100,8 @@ class TabsTest extends TestCase
         $html = Tabs::widget([
             'items' => [
                 [
-                    'label' => 'Page1', 'content' => 'Page1',
+                    'label' => 'Page1',
+                    'content' => 'Page1',
                 ],
                 [
                     'label' => 'InvisiblePage',
@@ -126,10 +135,12 @@ class TabsTest extends TestCase
         $out = Tabs::widget([
             'items' => [
                 [
-                    'label' => 'Page1', 'content' => 'Page1',
+                    'label' => 'Page1',
+                    'content' => 'Page1',
                 ],
                 [
-                    'label' => 'Page2', 'content' => 'Page2',
+                    'label' => 'Page2',
+                    'content' => 'Page2',
                 ],
             ],
             'itemOptions' => ['tag' => $checkTag],
@@ -147,7 +158,8 @@ class TabsTest extends TestCase
         $out = Tabs::widget([
             'items' => [
                 [
-                    'label' => 'Page1', 'content' => 'Page1'
+                    'label' => 'Page1',
+                    'content' => 'Page1'
                 ]
             ],
             'tabContentOptions' => [
@@ -162,7 +174,7 @@ class TabsTest extends TestCase
     public function testActivateFirstVisibleTab()
     {
         $html = Tabs::widget([
-            'id'=>'mytab',
+            'id' => 'mytab',
             'items' => [
                 [
                     'label' => 'Tab 1',
@@ -184,19 +196,21 @@ class TabsTest extends TestCase
             ]
         ]);
 
-        $this->assertNotContains('<li class="nav-item"><a class="nav-link active" href="#mytab-tab0" aria-selected="true" data-toggle="tab" aria-controls="mytab-tab0">Tab 1</a></li>', $html);
-        $this->assertContains('<li class="nav-item"><a class="nav-link active" href="#mytab-tab1" aria-selected="true" data-toggle="tab" aria-controls="mytab-tab1">Tab 2</a></li>', $html);
+        $this->assertNotContains('<li class="nav-item active"><a class="nav-link active" href="#mytab-tab0" data-toggle="tab" role="tab" aria-controls="mytab-tab0" aria-selected="true">Tab 1</a></li>',
+            $html);
+        $this->assertContains('<li class="nav-item active"><a class="nav-link active" href="#mytab-tab1" data-toggle="tab" role="tab" aria-controls="mytab-tab1" aria-selected="true">Tab 2</a></li>',
+            $html);
     }
 
     public function testActivateTab()
     {
         $html = Tabs::widget([
-            'id'=>'mytab',
+            'id' => 'mytab',
             'items' => [
                 [
                     'label' => 'Tab 1',
                     'content' => 'some content',
-                    'visible'=>false
+                    'visible' => false
                 ],
                 [
                     'label' => 'Tab 2',
@@ -213,6 +227,7 @@ class TabsTest extends TestCase
                 ]
             ]
         ]);
-        $this->assertContains('<li class="nav-item"><a class="nav-link active" href="#mytab-tab2" aria-selected="true" data-toggle="tab" aria-controls="mytab-tab2">Tab 3</a></li>', $html);
+        $this->assertContains('<li class="nav-item active"><a class="nav-link active" href="#mytab-tab2" data-toggle="tab" role="tab" aria-controls="mytab-tab2" aria-selected="true">Tab 3</a></li>',
+            $html);
     }
 }

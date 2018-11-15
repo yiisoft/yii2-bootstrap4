@@ -50,7 +50,7 @@ class Dropdown extends Widget
      * - submenuOptions: array, optional, the HTML attributes for sub-menu container tag. If specified it will be
      *   merged with [[submenuOptions]].
      *
-     * To insert divider use `<li role="presentation" class="divider"></li>`.
+     * To insert divider use `-`.
      */
     public $items = [];
     /**
@@ -95,7 +95,9 @@ class Dropdown extends Widget
         $lines = [];
         foreach ($items as $item) {
             if (is_string($item)) {
-                $lines[] = $item;
+                $lines[] = ($item === '-')
+                    ? Html::tag('div', '', ['class' => 'dropdown-divider'])
+                    : $item;
                 continue;
             }
             if (isset($item['visible']) && !$item['visible']) {

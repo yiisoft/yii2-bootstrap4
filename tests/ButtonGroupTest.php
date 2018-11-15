@@ -21,9 +21,13 @@ class ButtonGroupTest extends TestCase
             ],
         ]);
 
-        static::assertContains('button-A', $out);
-        static::assertContains('button-B', $out);
-        static::assertContains('button-B', $out);
-        static::assertNotContains('button-C', $out);
+        $expected = <<<HTML
+<div id="w1" class="btn-group" role="group"><button type="button" id="w2" class="btn">button-A</button>
+<button type="button" id="w3" class="btn">button-B</button>
+<button id="w0" class="btn">button-D</button></div>
+HTML;
+
+
+        $this->assertEqualsWithoutLE($expected, $out);
     }
 }
