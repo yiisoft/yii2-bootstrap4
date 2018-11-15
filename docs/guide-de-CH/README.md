@@ -1,30 +1,29 @@
-Twitter Bootstrap Extension for Yii 2
-=====================================
+Twitter Bootstrap Erweiterung für Yii 2
+=======================================
 
-The extension includes support for the [Bootstrap 4](http://getbootstrap.com/) markup and components framework
-(also known as "Twitter Bootstrap"). Bootstrap is an excellent, responsive framework that can greatly speed up the
-client-side of your development process.
+Diese Erweiterung enthält Unterstützung für das [Bootstrap 4 Framework](http://getbootstrap.com/) (auch bekannt als "Twitter Bootstrap")
+Markup und dessen Komponenten. Bootstrap ist eine exzellentes, reponsives Framework welches den clientseitigen
+Entwicklungsprozess vehement zu verkürzen vermag.
 
-The core of Bootstrap is represented by two parts:
+Die Basis von Bootstrap ist unterteilt in folgende 2 Bereiche:
+ - CSS Basics: Grid Layout System, Typography, Helper-Klassen, Responsive Funktionen.
+ - "Ready to use"-Komponenten: Formulare, Menus, Paginationen, Modals, Tabs etc.
 
-- CSS basics, such as a grid layout system, typography, helper classes, and responsive utilities.
-- Ready to use components, such as forms, menus, pagination, modal boxes, tabs etc.
-
-Getting Started
----------------
+Loslegen
+--------
 
 * [Installation](installation.md)
 * [Assets Setup](assets-setup.md)
 * [Basic Usage](basic-usage.md)
 
-Usage
------ 
+Verwendung
+----------
 
 * [Yii widgets](usage-widgets.md)
 * [Html helper](helper-html.md)
 * [Asset Bundles](asset-bundles.md)
 
-Additional topics
------------------
+Weitere Themen
+--------------
 
 * [Using the .sass files of Bootstrap directly](topics-sass.md)

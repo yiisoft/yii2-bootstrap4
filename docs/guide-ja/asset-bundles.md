@@ -7,7 +7,6 @@ Bootstrap コンポーネントに対する最大限の柔軟な制御を可能�
 
 - [[yii\bootstrap4\BootstrapAsset|BootstrapAsset]] - メインの CSS ファイルのみを含みます。
 - [[yii\bootstrap4\BootstrapPluginAsset|BootstrapPluginAsset]] - [[yii\bootstrap4\BootstrapAsset]] に依存し、javascript ファイルを含みます。
-- [[yii\bootstrap4\BootstrapThemeAsset|BootstrapThemeAsset]] - [[yii\bootstrap4\BootstrapAsset]] に依存し、Bootstrap のデフォルト・テーマの CSS を含みます。
 
 個々のアプリケーションは、その要求に応じて、異なるバンドル (またはバンドルの組み合わせ) を必要とするでしょう。
 CSS のスタイルだけが必要なのであれば、[[yii\bootstrap4\BootstrapAsset]] だけで十分です。

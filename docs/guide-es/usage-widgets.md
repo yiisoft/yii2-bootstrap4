@@ -5,19 +5,23 @@ La mayoría de los componentes de bootstrap están encapsulados dentro de Yii wi
 más robusta y poder integrarse con las características del framework. Todos los widgets pertenecen
 al namespace `\yii\bootstrap4`:
 
+- [[yii\bootstrap4\Accordion|Accordion]]
+- [[yii\bootstrap4\ActiveField|ActiveField]]
 - [[yii\bootstrap4\ActiveForm|ActiveForm]]
 - [[yii\bootstrap4\Alert|Alert]]
 - [[yii\bootstrap4\Button|Button]]
 - [[yii\bootstrap4\ButtonDropdown|ButtonDropdown]]
 - [[yii\bootstrap4\ButtonGroup|ButtonGroup]]
+- [[yii\bootstrap4\ButtonToolbar|ButtonToolbar]]
 - [[yii\bootstrap4\Carousel|Carousel]]
-- [[yii\bootstrap4\Collapse|Collapse]]
+- [[yii\bootstrap4\Collapse|Collapse]] *deprecated* (see [[yii\bootstrap4\Accordion|Accordion]])
 - [[yii\bootstrap4\Dropdown|Dropdown]]
 - [[yii\bootstrap4\Modal|Modal]]
 - [[yii\bootstrap4\Nav|Nav]]
 - [[yii\bootstrap4\NavBar|NavBar]]
 - [[yii\bootstrap4\Progress|Progress]]
 - [[yii\bootstrap4\Tabs|Tabs]]
+- [[yii\bootstrap4\ToggleButtonGroup|ToggleButtonGroup]]
 
 
 ## Personalización de las clases css para los widget <span id="customizing-css-classes"></span>

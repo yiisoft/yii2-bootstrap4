@@ -1,17 +1,17 @@
 Basic Usage
 ===========
 
-Yii doesn't wrap the bootstrap basics into PHP code since HTML is very simple by itself in this case. You can find details
-about using the basics at [bootstrap documentation website](http://getbootstrap.com/css/). Still Yii provides a
-convenient way to include bootstrap assets in your pages with a single line added to `AppAsset.php` located in your
-`@app/assets` directory:
+Yii verpackt die Bootstrap Basics nicht in PHP Code, da dass HTML selbst sehr einfach aufgebaut ist. Sie finden mehr 
+Informationen zur Verwendung der Basics unter [bootstrap documentation website](http://getbootstrap.com/css/). Yii bietet
+aber eine einfache Methode zur Einbindung der Bootstrap Assets in Ihre Seite durch das Hinzufügen einer Zeile zu `AppAsset.ph`
+im `@app/assets` Verzeichnis:
 
 ```php
 public $depends = [
     'yii\web\YiiAsset',
-    'yii\bootstrap4\BootstrapAsset', // this line
+    'yii\bootstrap4\BootstrapAsset', // Diese Zeile
 ];
 ```
 
-Using bootstrap through Yii asset manager allows you to minimize its resources and combine with your own resources when
-needed.
+Die Verwendung von Bootstrap mittels des Yii Asset Manager erlaubt die Komprimierung und Kombinierung der Bootstrapressourcen
+mit den Applikationsressourcen (falls nötig).

@@ -6,7 +6,6 @@ A fim de permitir que você tenha controle mais flexível sobre componentes Boot
 
 - [[yii\bootstrap4\BootstrapAsset|BootstrapAsset]] - Contém apenas arquivos CSS.
 - [[yii\bootstrap4\BootstrapPluginAsset|BootstrapPluginAsset]] - Depende de [[yii\bootstrap4\BootstrapAsset]], contem os arquivos JavaScript.
-- [[yii\bootstrap4\BootstrapThemeAsset|BootstrapThemeAsset]] - depende de [[yii\bootstrap4\BootstrapAsset]], contém o tema padrão do Bootstrap.
 
 Necessidades de aplicações específicas podem exigir utilização de pacotes diferentes ( ou a combinação bundle).
 Se você precisa apenas de estilos CSS, [[yii\bootstrap4\BootstrapAsset]] será o suficiente para você. No entanto , se
