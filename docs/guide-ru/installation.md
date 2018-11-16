@@ -1,11 +1,11 @@
 Установка
-============
+=========
 
-## Получение Composer пакета
+## Получение расширения через Composer
 
-Предпочтительный способ установки расширения через [composer](http://getcomposer.org/download/).
+Предпочтительный способ установки расширения - через [Composer](http://getcomposer.org/download/).
 
-Для этого запустите
+Для этого запустите команду
 
 ```
 php composer.phar require --prefer-dist yiisoft/yii2-bootstrap4
@@ -17,4 +17,4 @@ php composer.phar require --prefer-dist yiisoft/yii2-bootstrap4
 "yiisoft/yii2-bootstrap": "~1.0.0"
 ```
 
-в секцию require вашего `composer.json`.
+в секцию **require** вашего `composer.json`.
