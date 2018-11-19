@@ -32,6 +32,8 @@ use yii\helpers\ArrayHelper;
  * NavBar::end();
  * ```
  *
+ * @property-write array $containerOptions
+ *
  * @see https://getbootstrap.com/docs/4.1/components/navbar/
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  * @author Alexander Kochetov <creocoder@gmail.com>
@@ -94,12 +96,12 @@ class NavBar extends Widget
      * @var bool whether the navbar content should be included in an inner div container which by default
      * adds left and right padding. Set this to false for a 100% width navbar.
      */
-    public $renderContainer = true;
+    public $renderInnerContainer = true;
     /**
      * @var array the HTML attributes of the inner container.
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
      */
-    public $containerOptions = [];
+    public $innerContainerOptions = [];
     /**
      * {@inheritdoc}
      */
@@ -123,8 +125,8 @@ class NavBar extends Widget
         $navOptions = $this->options;
         $navTag = ArrayHelper::remove($navOptions, 'tag', 'nav');
         $brand = '';
-        if (!isset($this->containerOptions['class'])) {
-            Html::addCssClass($this->containerOptions, 'container');
+        if (!isset($this->innerContainerOptions['class'])) {
+            Html::addCssClass($this->innerContainerOptions, 'container');
         }
         if (!isset($this->collapseOptions['id'])) {
             $this->collapseOptions['id'] = "{$this->options['id']}-collapse";
@@ -142,8 +144,8 @@ class NavBar extends Widget
         $collapseTag = ArrayHelper::remove($collapseOptions, 'tag', 'div');
 
         echo Html::beginTag($navTag, $navOptions) . "\n";
-        if ($this->renderContainer) {
-            echo Html::beginTag('div', $this->containerOptions)."\n";
+        if ($this->renderInnerContainer) {
+            echo Html::beginTag('div', $this->innerContainerOptions)."\n";
         }
         echo $brand . "\n";
         echo $this->renderToggleButton() . "\n";
@@ -157,7 +159,7 @@ class NavBar extends Widget
     {
         $tag = ArrayHelper::remove($this->collapseOptions, 'tag', 'div');
         echo Html::endTag($tag) . "\n";
-        if ($this->renderContainer) {
+        if ($this->renderInnerContainer) {
             echo Html::endTag('div') . "\n";
         }
         $tag = ArrayHelper::remove($this->options, 'tag', 'nav');
@@ -186,5 +188,15 @@ class NavBar extends Widget
                 'aria-label' => $this->screenReaderToggleText,
             ])
         );
+    }
+
+    /**
+     * Container options setter for backwards compatibility
+     * @param array $collapseOptions
+     * @deprecated
+     */
+    public function setContainerOptions($collapseOptions)
+    {
+        $this->collapseOptions = $collapseOptions;
     }
 }
