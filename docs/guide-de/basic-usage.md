@@ -1,5 +1,5 @@
-Basic Usage
-===========
+Grundlegende Verwendung
+=======================
 
 Yii verpackt die Bootstrap Basics nicht in PHP Code, da dass HTML selbst sehr einfach aufgebaut ist. Sie finden mehr 
 Informationen zur Verwendung der Basics unter [bootstrap documentation website](http://getbootstrap.com/css/). Yii bietet

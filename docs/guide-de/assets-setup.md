@@ -1,5 +1,5 @@
-Assets Setup
-============
+Asset-Konfiguration
+===================
 
 Diese Erweiterung beruht auf [Bower](http://bower.io/) und/oder [NPM](https://www.npmjs.org/) Packages für die Asset Installation.
 Bevor Sie diese Erweiterung einsetzen, sollten Sie entscheiden, auf welche Weise Sie diese Packages installieren möchten.

@@ -1,4 +1,4 @@
-Html helper
+HTML helper
 ===========
 
 Bootstrap führt viele konsistente HTML Strukturen ein, welche es erlauben, verschiedene visuelle Effekte einfach zu verwenden.
