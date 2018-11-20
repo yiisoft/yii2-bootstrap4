@@ -34,8 +34,17 @@ use yii\helpers\ArrayHelper;
  */
 class Modal extends Widget
 {
+    /**
+     * The additional css class of large modal
+     */
     const SIZE_LARGE = "modal-lg";
+    /**
+     * The additional css class of small modal
+     */
     const SIZE_SMALL = "modal-sm";
+    /**
+     * The additional css class of default modal
+     */
     const SIZE_DEFAULT = "";
 
     /**
@@ -86,7 +95,7 @@ class Modal extends Widget
      */
     public $closeButton = [];
     /**
-     * @var array the options for rendering the toggle button tag.
+     * @var array|false the options for rendering the toggle button tag.
      * The toggle button is used to toggle the visibility of the modal window.
      * If this property is false, no toggle button will be rendered.
      *
@@ -143,14 +152,17 @@ class Modal extends Widget
         if ($this->title !== null) {
             Html::addCssClass($this->titleOptions, ['widget' => 'modal-title']);
             $header = Html::tag('h5', $this->title, $this->titleOptions);
-            if ($button !== null) {
-                $header .= $button;
-            }
-            Html::addCssClass($this->headerOptions, ['widget' => 'modal-header']);
-            return Html::tag('div', "\n" . $header . "\n", $this->headerOptions);
         } else {
-            return null;
+            $header = '';
         }
+
+        if ($button !== null) {
+            $header .= "\n" . $button;
+        } elseif ($header === '') {
+            return '';
+        }
+        Html::addCssClass($this->headerOptions, ['widget' => 'modal-header']);
+        return Html::tag('div', "\n" . $header . "\n", $this->headerOptions);
     }
 
     /**

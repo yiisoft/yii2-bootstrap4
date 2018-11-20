@@ -34,6 +34,23 @@ use yii\helpers\Url;
 class ButtonDropdown extends Widget
 {
     /**
+     * The css class part of dropdown
+     */
+    const DIRECTION_DOWN = 'down';
+    /**
+     * The css class part of dropleft
+     */
+    const DIRECTION_LEFT = 'left';
+    /**
+     * The css class part of dropright
+     */
+    const DIRECTION_RIGHT = 'right';
+    /**
+     * The css class part of dropup
+     */
+    const DIRECTION_UP = 'up';
+
+    /**
      * @var string the button label
      */
     public $label = 'Button';
@@ -59,7 +76,7 @@ class ButtonDropdown extends Widget
      *
      * Possible values are 'left', 'right', 'up', or 'down' (default)
      */
-    public $direction = 'down';
+    public $direction = self::DIRECTION_DOWN;
     /**
      * @var bool whether to display a group of split-styled button group.
      */
@@ -133,8 +150,8 @@ class ButtonDropdown extends Widget
             $buttonOptions = $this->buttonOptions;
             $this->buttonOptions['data-toggle'] = 'dropdown';
             $this->buttonOptions['aria-haspopup'] = 'true';
-            $this->buttonOptions['aria-expanded'] = 'true';
-            Html::addCssClass($this->buttonOptions, ['toggle' => ['dropdown-toggle', 'dropdown-toggle-split']]);
+            $this->buttonOptions['aria-expanded'] = 'false';
+            Html::addCssClass($this->buttonOptions, ['toggle' => 'dropdown-toggle dropdown-toggle-split']);
             unset($buttonOptions['id']);
             $splitButton = Button::widget([
                 'label' => '<span class="sr-only">Toggle Dropdown</span>',

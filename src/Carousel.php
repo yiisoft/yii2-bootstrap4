@@ -40,7 +40,7 @@ use yii\helpers\ArrayHelper;
 class Carousel extends Widget
 {
     /**
-     * @var array|bool the labels for the previous and the next control buttons.
+     * @var array|false the labels for the previous and the next control buttons.
      * If false, it means the previous and the next control buttons should not be displayed.
      */
     public $controls = [
@@ -67,6 +67,14 @@ class Carousel extends Widget
      * ```
      */
     public $items = [];
+    /**
+     * @var bool Animate slides with a fade transition instead of a slide. Defaults to `false`
+     */
+    public $crossfade = false;
+    /**
+     * {@inheritdoc}
+     */
+    public $options = ['data-ride' => 'carousel'];
 
 
     /**
@@ -75,7 +83,10 @@ class Carousel extends Widget
     public function init()
     {
         parent::init();
-        Html::addCssClass($this->options, ['widget' => 'carousel']);
+        Html::addCssClass($this->options, ['widget' => 'carousel', 'slide']);
+        if ($this->crossfade) {
+            Html::addCssClass($this->options, 'carousel-fade');
+        }
     }
 
     /**

@@ -7,7 +7,6 @@ Bootstrap是一个复杂的前端解决方案，其中包括 CSS ， JavaScript 
 
 - [[yii\bootstrap4\BootstrapAsset|BootstrapAsset]] - 只包含主要的 CSS 文件.
 - [[yii\bootstrap4\BootstrapPluginAsset|BootstrapPluginAsset]] - 包含 javascript 文件, 依赖于 [[yii\bootstrap4\BootstrapAsset]] .
-- [[yii\bootstrap4\BootstrapThemeAsset|BootstrapThemeAsset]] - 包含 Bootstrap 默认样式 CSS, 依赖于 [[yii\bootstrap4\BootstrapAsset]].
 
 特定的应用可能需要加载不同的资源包，（或者资源包组合）.
 如果只需要 CSS 文件, 引入 [[yii\bootstrap4\BootstrapAsset]] 即可. 但是, 如果需要使用 Bootstrap 的 JavaScript, 则需要引入 [[yii\bootstrap4\BootstrapPluginAsset]].

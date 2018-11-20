@@ -78,7 +78,6 @@ class Alert extends Widget
         $this->initOptions();
 
         echo Html::beginTag('div', $this->options) . "\n";
-        echo $this->renderBodyBegin() . "\n";
     }
 
     /**
@@ -93,21 +92,12 @@ class Alert extends Widget
     }
 
     /**
-     * Renders the close button if any before rendering the content.
-     * @return string the rendering result
-     */
-    protected function renderBodyBegin()
-    {
-        return $this->renderCloseButton();
-    }
-
-    /**
-     * Renders the alert body (if any).
+     * Renders the alert body and the close button (if any).
      * @return string the rendering result
      */
     protected function renderBodyEnd()
     {
-        return $this->body . "\n";
+        return $this->body . "\n" .  $this->renderCloseButton() . "\n";
     }
 
     /**
