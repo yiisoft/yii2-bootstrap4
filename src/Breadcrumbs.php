@@ -17,7 +17,7 @@ use yii\helpers\ArrayHelper;
  * For example,
  *
  * ```php
- * echo Breadcrumb::widget([
+ * echo Breadcrumbs::widget([
  *     'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
  *     'options' => [],
  * ]);
