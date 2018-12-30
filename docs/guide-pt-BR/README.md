@@ -26,4 +26,4 @@ Uso
 Tópicos Adicionais
 -----------------
 
-* [Usando arquivos .less do Bootstrap diretamente](topics-less.md)
+* [Usando arquivos .sass do Bootstrap diretamente](topics-sass.md)

@@ -26,4 +26,4 @@ Bootstrap的核心由两部分组成：
 其他
 -----------------
 
-* [直接使用Bootstrap的.less文件](topics-less.md)
+* [直接使用Bootstrap的.sass文件](topics-sass.md)
