@@ -8,11 +8,11 @@ Bootstrap は、一貫性の高い多数の HTML 構文ないしはスケルト�
 [[\yii\bootstrap4\Html]] は通常の [[\yii\helpers\Html]] の拡張版であり、Bootstrap の要求に特化して、
 いくつかの便利なメソッドを提供するものです。
 
- - `icon()` - Glyphicon のアイコンのレンダリングを可能にする
- - `staticControl()` - フォームの "static controls" のレンダリングを可能にする
+ - `staticControl()` - フォームの "[static controls](https://getbootstrap.com/docs/4.1/components/forms/#readonly-plain-text)" のレンダリングを可能にする
 
-[[\yii\bootstrap4\Html]] は [[\yii\helpers\Html]] で利用できる全ての機能を継承しており、
+[[\yii\bootstrap4\Html]] は [[\yii\helpers\Html]] を継承しており、
 その代替物として使うことが出来ますので、ビュー・ファイルの中で両方を使う必要はありません。
+
 例えば、
 
 ```php
