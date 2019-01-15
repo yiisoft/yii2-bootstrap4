@@ -28,3 +28,4 @@ Additional topics
 -----------------
 
 * [Using the .sass files of Bootstrap directly](topics-sass.md)
+* [Migrating from yii2-bootstrap](migrating-yii2-bootstrap.md)
