@@ -8,6 +8,7 @@
 - [[yii\bootstrap4\ActiveField|ActiveField]]
 - [[yii\bootstrap4\ActiveForm|ActiveForm]]
 - [[yii\bootstrap4\Alert|Alert]]
+- [[yii\bootstrap4\Breadcrumbs|Breadcrumbs]]
 - [[yii\bootstrap4\Button|Button]]
 - [[yii\bootstrap4\ButtonDropdown|ButtonDropdown]]
 - [[yii\bootstrap4\ButtonGroup|ButtonGroup]]
