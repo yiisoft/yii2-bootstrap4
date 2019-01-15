@@ -24,4 +24,4 @@
 Додаткові теми
 --------------
 
-* [Використання .less файлів в Bootstrap](topics-less.md)
+* [Використання .sass файлів в Bootstrap](topics-sass.md)
