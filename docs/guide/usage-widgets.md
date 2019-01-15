@@ -63,7 +63,7 @@ echo ButtonGroup::widget([
 The navbar widget has its peculiarities. You should define at which breakpoint the navbar collapses and the generic
 style of navbar (color scheme).
 
-You change the color scheme and the collapse breakpoint with css classes. If not defined, the scheme defaults to 
+You can change the color scheme and the collapse breakpoint with css classes. If not defined, the scheme defaults to 
 `navbar-light bg-light` and the breakpoint to `navbar-expand-lg`. For more information, see [Bootstrap documentation](https://getbootstrap.com/docs/4.2/components/navbar/):
 ```php
 Navbar::begin([
