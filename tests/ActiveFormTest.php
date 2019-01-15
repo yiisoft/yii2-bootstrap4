@@ -54,12 +54,13 @@ HTML;
         Html::$counter = 0;
         ActiveForm::$counter = 0;
         ob_start();
-        $model = new DynamicModel(['attributeName', 'gridRadios']);
+        $model = new DynamicModel(['attributeName', 'checkbox', 'gridRadios']);
         $form = ActiveForm::begin([
             'action' => '/some-action',
             'layout' => ActiveForm::LAYOUT_HORIZONTAL
         ]);
         echo $form->field($model, 'attributeName');
+        echo $form->field($model, 'checkbox')->checkbox();
         echo $form->field($model, 'gridRadios')->radioList([
             'option1' => 'First radio',
             'option2' => 'Second radio',
@@ -79,6 +80,18 @@ HTML;
 </div>
 HTML;
         $expected2 = <<<HTML
+<div class="form-group row field-dynamicmodel-checkbox">
+<div class="col-sm-10 offset-sm-2">
+<div class="form-check">
+<input type="hidden" name="DynamicModel[checkbox]" value="0"><input type="checkbox" id="dynamicmodel-checkbox" class="form-check-input" name="DynamicModel[checkbox]" value="1">
+<label class="form-check-label" for="dynamicmodel-checkbox">Checkbox</label>
+<div class="invalid-feedback "></div>
+
+</div>
+</div>
+</div>
+HTML;
+        $expected3 = <<<HTML
 <div class="form-group row field-dynamicmodel-gridradios">
 <label class="col-sm-2 col-form-label">Grid Radios</label>
 <div class="col-sm-10">
@@ -106,6 +119,7 @@ HTML;
 
         $this->assertContains($expected, $out);
         $this->assertContains($expected2, $out);
+        $this->assertContains($expected3, $out);
     }
 
     public function testInlineLayout()
