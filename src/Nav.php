@@ -62,7 +62,7 @@ class Nav extends Widget
      * - linkOptions: array, optional, the HTML attributes of the item's link.
      * - options: array, optional, the HTML attributes of the item container (LI).
      * - active: bool, optional, whether the item should be on active state or not.
-     * - dropDownOptions: array, optional, the HTML options that will passed to the [[Dropdown]] widget.
+     * - dropdownOptions: array, optional, the HTML options that will passed to the [[Dropdown]] widget.
      * - items: array|string, optional, the configuration array for creating a [[Dropdown]] widget,
      *   or a string representing the dropdown menu. Note that Bootstrap does not support sub-dropdown menus.
      * - encode: bool, optional, whether the label will be HTML-encoded. If set, supersedes the $encodeLabels option for only this item.
@@ -210,7 +210,7 @@ class Nav extends Widget
         /** @var Widget $dropdownClass */
         $dropdownClass = $this->dropdownClass;
         return $dropdownClass::widget([
-            'options' => ArrayHelper::getValue($parentItem, 'dropDownOptions', []),
+            'options' => ArrayHelper::getValue($parentItem, 'dropdownOptions', []),
             'items' => $items,
             'encodeLabels' => $this->encodeLabels,
             'clientOptions' => false,
