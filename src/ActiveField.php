@@ -343,13 +343,13 @@ class ActiveField extends \yii\widgets\ActiveField
     /**
      * {@inheritdoc}
      */
-    public function dropDownList($items, $options = [])
+    public function dropdownList($items, $options = [])
     {
         if ($this->form->layout === ActiveForm::LAYOUT_INLINE) {
             Html::removeCssClass($this->labelOptions, 'sr-only');
         }
 
-        return parent::dropDownList($items, $options);
+        return parent::dropdownList($items, $options);
     }
 
     /**
