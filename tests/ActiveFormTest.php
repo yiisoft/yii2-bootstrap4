@@ -213,17 +213,17 @@ HTML;
 </div>
 HTML;
         $expected3 = <<<HTML
-<div class="form-group field-user-username">
+<div class="form-group field-user-username required">
 <label for="user-username">Username</label>
-<input type="text" id="user-username" class="form-control" name="User[username]">
+<input type="text" id="user-username" class="form-control" name="User[username]" aria-required="true">
 <small class="form-text text-muted">Your username must be at least 4 characters long</small>
 <div class="invalid-feedback"></div>
 </div>
 HTML;
         $expected4 = <<<HTML
-<div class="form-group field-user-password">
+<div class="form-group field-user-password required">
 <label for="user-password">Password</label>
-<input type="password" id="user-password" class="form-control" name="User[password]">
+<input type="password" id="user-password" class="form-control" name="User[password]" aria-required="true">
 <small class="form-text text-muted">Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.</small>
 <div class="invalid-feedback"></div>
 </div>
