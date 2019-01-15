@@ -47,6 +47,26 @@ EXPECTED;
         $this->assertContains('<a class="navbar-brand" href="/"><img src="/images/test.jpg" alt=""></a>', $out);
     }
 
+    public function testBrandLink()
+    {
+        $out = NavBar::widget([
+            'brandLabel' => 'Yii Framework',
+            'brandUrl' => false,
+        ]);
+
+        $this->assertContains('<a class="navbar-brand" href="/index.php">Yii Framework</a>', $out);
+    }
+
+    public function testBrandSpan()
+    {
+        $out = NavBar::widget([
+            'brandLabel' => 'Yii Framework',
+            'brandUrl' => null,
+        ]);
+
+        $this->assertContains('<span class="navbar-brand">Yii Framework</span>', $out);
+    }
+
     /**
      * @depends testRender
      */
