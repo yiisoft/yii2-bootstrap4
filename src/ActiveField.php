@@ -134,6 +134,10 @@ class ActiveField extends \yii\widgets\ActiveField
      */
     public $checkTemplate = "<div class=\"form-check\">\n{input}\n{label}\n{error}\n{hint}\n</div>";
     /**
+     * @var string the template for checkboxes and radios in horizontal layout
+     */
+    public $checkHorizontalTemplate = "{beginWrapper}\n<div class=\"form-check\">\n{input}\n{label}\n{error}\n{hint}\n</div>\n{endWrapper}";
+    /**
      * @var string the `enclosed by label` template for checkboxes and radios in default layout
      */
     public $checkEnclosedTemplate = "<div class=\"form-check\">\n{beginLabel}\n{input}\n{labelTitle}\n{endLabel}\n{error}\n{hint}\n</div>";
@@ -206,6 +210,10 @@ class ActiveField extends \yii\widgets\ActiveField
             unset($options['template']);
         }
         if ($this->form->layout === ActiveForm::LAYOUT_HORIZONTAL) {
+            if (!isset($options['template'])) {
+                $this->template = $this->checkHorizontalTemplate;
+            }
+            Html::removeCssClass($this->labelOptions, $this->horizontalCssClasses['label']);
             Html::addCssClass($this->wrapperOptions, $this->horizontalCssClasses['offset']);
         }
 
@@ -234,6 +242,10 @@ class ActiveField extends \yii\widgets\ActiveField
             unset($options['template']);
         }
         if ($this->form->layout === ActiveForm::LAYOUT_HORIZONTAL) {
+            if (!isset($options['template'])) {
+                $this->template = $this->checkHorizontalTemplate;
+            }
+            Html::removeCssClass($this->labelOptions, $this->horizontalCssClasses['label']);
             Html::addCssClass($this->wrapperOptions, $this->horizontalCssClasses['offset']);
         }
 
@@ -331,13 +343,13 @@ class ActiveField extends \yii\widgets\ActiveField
     /**
      * {@inheritdoc}
      */
-    public function dropDownList($items, $options = [])
+    public function dropdownList($items, $options = [])
     {
         if ($this->form->layout === ActiveForm::LAYOUT_INLINE) {
             Html::removeCssClass($this->labelOptions, 'sr-only');
         }
 
-        return parent::dropDownList($items, $options);
+        return parent::dropdownList($items, $options);
     }
 
     /**
@@ -414,8 +426,8 @@ class ActiveField extends \yii\widgets\ActiveField
             $config['labelOptions'] = [];
             $config['options'] = [];
             $cssClasses = [
-                'offset' => '',
-                'label' => 'col-sm-2 col-form-label',
+                'offset' => ['col-sm-10', 'offset-sm-2'],
+                'label' => ['col-sm-2', 'col-form-label'],
                 'wrapper' => 'col-sm-10',
                 'error' => '',
                 'hint' => '',

@@ -103,7 +103,7 @@ return [
             'bundles' => [
                 'yii\bootstrap4\BootstrapAsset' => [
                     'sourcePath' => null,
-                    'baseUrl' => 'https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1',
+                    'baseUrl' => 'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1',
                     'css' => [
                         'css/bootstrap.min.css'
                     ],
@@ -112,7 +112,7 @@ return [
                     'sourcePath' => null,
                     'baseUrl' => 'https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1',
                     'js' => [
-                        'js/bootstrap.min.js'
+                        'js/bootstrap.bundle.min.js'
                     ],
                 ],
             ],

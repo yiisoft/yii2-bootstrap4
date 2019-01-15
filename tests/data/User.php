@@ -19,6 +19,18 @@ class User extends Model
     /**
      * {@inheritdoc}
      */
+    public function rules()
+    {
+        return [
+            ['username', 'string', 'min' => 4],
+            ['password', 'string', 'min' => 8, 'max' => '20'],
+            [['username', 'password'], 'required']
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function attributeHints()
     {
         return [

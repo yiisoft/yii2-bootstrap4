@@ -136,8 +136,15 @@ class NavBar extends Widget
         }
         if ($this->brandLabel !== false) {
             Html::addCssClass($this->brandOptions, ['widget' => 'navbar-brand']);
-            $brand = Html::a($this->brandLabel, $this->brandUrl === false ? Yii::$app->homeUrl : $this->brandUrl,
-                $this->brandOptions);
+            if ($this->brandUrl === null) {
+                $brand = Html::tag('span', $this->brandLabel, $this->brandOptions);
+            } else {
+                $brand = Html::a(
+                    $this->brandLabel,
+                    $this->brandUrl === false ? Yii::$app->homeUrl : $this->brandUrl,
+                    $this->brandOptions
+                );
+            }
         }
         Html::addCssClass($this->collapseOptions, ['collapse' => 'collapse', 'widget' => 'navbar-collapse']);
         $collapseOptions = $this->collapseOptions;

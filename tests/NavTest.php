@@ -71,7 +71,7 @@ EXPECTED;
         $this->assertEqualsWithoutLE($expected, $out);
     }
 
-    public function testRenderDropDownWithDropDownOptions()
+    public function testRenderDropdownWithDropdownOptions()
     {
         Nav::$counter = 0;
         $out = Nav::widget(
@@ -83,7 +83,7 @@ EXPECTED;
                     ],
                     [
                         'label' => 'Dropdown1',
-                        'dropDownOptions' => ['class' => 'test', 'data-id' => 't1', 'id' => 'test1'],
+                        'dropdownOptions' => ['class' => 'test', 'data-id' => 't1', 'id' => 'test1'],
                         'items' => [
                             ['label' => 'Page2', 'content' => 'Page2'],
                             ['label' => 'Page3', 'content' => 'Page3'],

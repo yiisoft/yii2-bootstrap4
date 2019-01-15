@@ -1,4 +1,5 @@
 <?php
+
 namespace yiiunit\extensions\bootstrap4;
 
 use yii\base\DynamicModel;
@@ -54,12 +55,13 @@ HTML;
         Html::$counter = 0;
         ActiveForm::$counter = 0;
         ob_start();
-        $model = new DynamicModel(['attributeName', 'gridRadios']);
+        $model = new DynamicModel(['attributeName', 'checkbox', 'gridRadios']);
         $form = ActiveForm::begin([
             'action' => '/some-action',
             'layout' => ActiveForm::LAYOUT_HORIZONTAL
         ]);
         echo $form->field($model, 'attributeName');
+        echo $form->field($model, 'checkbox')->checkbox();
         echo $form->field($model, 'gridRadios')->radioList([
             'option1' => 'First radio',
             'option2' => 'Second radio',
@@ -79,6 +81,18 @@ HTML;
 </div>
 HTML;
         $expected2 = <<<HTML
+<div class="form-group row field-dynamicmodel-checkbox">
+<div class="col-sm-10 offset-sm-2">
+<div class="form-check">
+<input type="hidden" name="DynamicModel[checkbox]" value="0"><input type="checkbox" id="dynamicmodel-checkbox" class="form-check-input" name="DynamicModel[checkbox]" value="1">
+<label class="form-check-label" for="dynamicmodel-checkbox">Checkbox</label>
+<div class="invalid-feedback "></div>
+
+</div>
+</div>
+</div>
+HTML;
+        $expected3 = <<<HTML
 <div class="form-group row field-dynamicmodel-gridradios">
 <label class="col-sm-2 col-form-label">Grid Radios</label>
 <div class="col-sm-10">
@@ -106,6 +120,7 @@ HTML;
 
         $this->assertContains($expected, $out);
         $this->assertContains($expected2, $out);
+        $this->assertContains($expected3, $out);
     }
 
     public function testInlineLayout()
@@ -198,17 +213,17 @@ HTML;
 </div>
 HTML;
         $expected3 = <<<HTML
-<div class="form-group field-user-username">
+<div class="form-group field-user-username required">
 <label for="user-username">Username</label>
-<input type="text" id="user-username" class="form-control" name="User[username]">
+<input type="text" id="user-username" class="form-control" name="User[username]" aria-required="true">
 <small class="form-text text-muted">Your username must be at least 4 characters long</small>
 <div class="invalid-feedback"></div>
 </div>
 HTML;
         $expected4 = <<<HTML
-<div class="form-group field-user-password">
+<div class="form-group field-user-password required">
 <label for="user-password">Password</label>
-<input type="password" id="user-password" class="form-control" name="User[password]">
+<input type="password" id="user-password" class="form-control" name="User[password]" aria-required="true">
 <small class="form-text text-muted">Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.</small>
 <div class="invalid-feedback"></div>
 </div>
@@ -228,5 +243,23 @@ HTML;
         $form = ActiveForm::widget();
 
         $this->assertNotContains('role="form"', $form);
+    }
+
+    public function testErrorSummaryRendering()
+    {
+        ActiveForm::$counter = 0;
+        ob_start();
+        $model = new User();
+        $model->validate();
+        $form = ActiveForm::begin([
+            'action' => '/some-action',
+            'layout' => ActiveForm::LAYOUT_DEFAULT
+        ]);
+        echo $form->errorSummary($model);
+        ActiveForm::end();
+        $out = ob_get_clean();
+
+
+        $this->assertContains('<div class="alert alert-danger"', $out);
     }
 }
