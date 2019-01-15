@@ -1,4 +1,5 @@
 <?php
+
 namespace yiiunit\extensions\bootstrap4;
 
 use yii\base\DynamicModel;
@@ -242,5 +243,23 @@ HTML;
         $form = ActiveForm::widget();
 
         $this->assertNotContains('role="form"', $form);
+    }
+
+    public function testErrorSummaryRendering()
+    {
+        ActiveForm::$counter = 0;
+        ob_start();
+        $model = new User();
+        $model->validate();
+        $form = ActiveForm::begin([
+            'action' => '/some-action',
+            'layout' => ActiveForm::LAYOUT_DEFAULT
+        ]);
+        echo $form->errorSummary($model);
+        ActiveForm::end();
+        $out = ob_get_clean();
+
+
+        $this->assertContains('<div class="alert alert-danger"', $out);
     }
 }
