@@ -119,11 +119,6 @@ return [
                         'js/bootstrap.min.js'
                     ],
                 ],
-                'yii\bootstrap4\BootstrapThemeAsset' => [
-                    'sourcePath' => null,
-                    'baseUrl' => null,
-                    'css' => []
-                ],
             ],
         ],
         // ...

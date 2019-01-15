@@ -8,6 +8,7 @@ von Framework-Funktionen. Alle Widgets gehören zum `\yii\bootstrap4` Namespace:
 - [[yii\bootstrap4\ActiveField|ActiveField]]
 - [[yii\bootstrap4\ActiveForm|ActiveForm]]
 - [[yii\bootstrap4\Alert|Alert]]
+- [[yii\bootstrap4\Breadcrumbs|Breadcrumbs]]
 - [[yii\bootstrap4\Button|Button]]
 - [[yii\bootstrap4\ButtonDropdown|ButtonDropdown]]
 - [[yii\bootstrap4\ButtonGroup|ButtonGroup]]
@@ -56,4 +57,36 @@ echo ButtonGroup::widget([
         ['label' => 'B'],
     ]
 ]);
+```
+
+
+## Navbar widget <span id="navbar-widget"></span>
+
+Das Navbar Widget hat so seine Eigenheiten. Bei der Verwendung des Widgets sollten Sie darauf achten, dass der Breakpoint,
+ab welchem die Navigation zugeklappt wird (Mobile Navigation) sowie das Farbschema definiert sind.
+
+Diese Definition geschieht über CSS Klassen. Die Standartwerte lauten `navbar-light bg-light` fürs Farbschema und
+`navbar-expand-lg` für den brakpoint. Für weitere Informationen, konsultieren Sie die [Bootstrap Dokumentation](https://getbootstrap.com/docs/4.2/components/navbar/):
+```php
+Navbar::begin([
+    'options' => [
+        'class' => ['navbar-dark', 'bg-dark', 'navbar-expand-md']
+    ]
+]);
+    [...]
+Navbar::end();
+``` 
+
+Falls Sie die Reihenfolge des Logos und des "Toggle Buttons" ändern möchten, können Sie dies wie folgt tun:
+```php
+Navbar::begin([
+	'brandOptions' => [
+		'class' => ['order-1']
+	],
+	'togglerOptions' => [
+		'class' => ['order-0']
+	]
+]);
+    [...]
+Navbar::end();
 ```

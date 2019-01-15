@@ -8,6 +8,7 @@ framework features. All widgets belong to `\yii\bootstrap4` namespace:
 - [[yii\bootstrap4\ActiveField|ActiveField]]
 - [[yii\bootstrap4\ActiveForm|ActiveForm]]
 - [[yii\bootstrap4\Alert|Alert]]
+- [[yii\bootstrap4\Breadcrumbs|Breadcrumbs]]
 - [[yii\bootstrap4\Button|Button]]
 - [[yii\bootstrap4\ButtonDropdown|ButtonDropdown]]
 - [[yii\bootstrap4\ButtonGroup|ButtonGroup]]
@@ -55,4 +56,35 @@ echo ButtonGroup::widget([
         ['label' => 'B'],
     ]
 ]);
+```
+
+## Navbar widget <span id="navbar-widget"></span>
+
+The navbar widget has its peculiarities. You should define at which breakpoint the navbar collapses and the generic
+style of navbar (color scheme).
+
+You change the color scheme and the collapse breakpoint with css classes. If not defined, the scheme defaults to 
+`navbar-light bg-light` and the breakpoint to `navbar-expand-lg`. For more information, see [Bootstrap documentation](https://getbootstrap.com/docs/4.2/components/navbar/):
+```php
+Navbar::begin([
+    'options' => [
+        'class' => ['navbar-dark', 'bg-dark', 'navbar-expand-md']
+    ]
+]);
+    [...]
+Navbar::end();
+``` 
+
+If you'd like to flip the brand (icon) and toggle button positions in mobile navigation, you can do this like this:
+```php
+Navbar::begin([
+	'brandOptions' => [
+		'class' => ['order-1']
+	],
+	'togglerOptions' => [
+		'class' => ['order-0']
+	]
+]);
+    [...]
+Navbar::end();
 ```
