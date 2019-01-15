@@ -66,7 +66,7 @@ Fügen Sie dafür folgende Zeilen zur `package.json`-Datei Ihres Projekts hinzu:
 {
     ...
     "dependencies": {
-        "bootstrap": "4.1.1",
+        "bootstrap": "4.2.1",
         ...
     }
     ...
@@ -77,7 +77,7 @@ Fügen Sie zur `composer.json`-Datei Ihres Projekts folgende Zeilen hinzu zum Ve
 
 ```json
 "replace": {
-    "bower-asset/bootstrap": ">=4.1.1"
+    "npm-asset/bootstrap": ">=4.2.1"
 },
 ```
 
@@ -89,7 +89,7 @@ Fügen Sie zur `composer.json`-Datei Ihres Projekts folgende Zeilen hinzu zum Ve
 
 ```json
 "replace": {
-    "bower-asset/bootstrap": ">=4.1.1"
+    "npm-asset/bootstrap": ">=4.2.1"
 },
 ```
 
@@ -135,7 +135,7 @@ Fügen Sie zur `composer.json`-Datei Ihres Projekts folgende Zeilen hinzu zum Ve
 
 ```json
 "replace": {
-    "bower-asset/bootstrap": ">=4.1.1"
+    "npm-asset/bootstrap": ">=4.2.1"
 },
 ```
 
