@@ -66,7 +66,7 @@ Fügen Sie dafür folgende Zeilen zur `package.json`-Datei Ihres Projekts hinzu:
 {
     ...
     "dependencies": {
-        "bootstrap": "4.1.1",
+        "bootstrap": "4.2.1",
         ...
     }
     ...
@@ -77,7 +77,7 @@ Fügen Sie zur `composer.json`-Datei Ihres Projekts folgende Zeilen hinzu zum Ve
 
 ```json
 "replace": {
-    "bower-asset/bootstrap": ">=4.1.1"
+    "npm-asset/bootstrap": ">=4.2.1"
 },
 ```
 
@@ -89,7 +89,7 @@ Fügen Sie zur `composer.json`-Datei Ihres Projekts folgende Zeilen hinzu zum Ve
 
 ```json
 "replace": {
-    "bower-asset/bootstrap": ">=4.1.1"
+    "npm-asset/bootstrap": ">=4.2.1"
 },
 ```
 
@@ -103,14 +103,14 @@ return [
             'bundles' => [
                 'yii\bootstrap4\BootstrapAsset' => [
                     'sourcePath' => null,
-                    'baseUrl' => 'https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1',
+                    'baseUrl' => 'https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1',
                     'css' => [
                         'css/bootstrap.min.css'
                     ],
                 ],
                 'yii\bootstrap4\BootstrapPluginAsset' => [
                     'sourcePath' => null,
-                    'baseUrl' => 'https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1',
+                    'baseUrl' => 'https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1',
                     'js' => [
                         'js/bootstrap.min.js'
                     ],
@@ -135,7 +135,7 @@ Fügen Sie zur `composer.json`-Datei Ihres Projekts folgende Zeilen hinzu zum Ve
 
 ```json
 "replace": {
-    "bower-asset/bootstrap": ">=4.1.1"
+    "npm-asset/bootstrap": ">=4.2.1"
 },
 ```
 
