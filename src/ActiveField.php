@@ -360,7 +360,7 @@ class ActiveField extends \yii\widgets\ActiveField
      * - encode: bool, whether value should be HTML-encoded or not.
      *
      * @return $this the field object itself
-     * @see https://getbootstrap.com/docs/4.1/components/forms/#readonly-plain-text
+     * @see https://getbootstrap.com/docs/4.2/components/forms/#readonly-plain-text
      */
     public function staticControl($options = [])
     {

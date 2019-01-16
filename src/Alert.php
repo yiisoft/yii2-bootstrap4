@@ -39,7 +39,7 @@ use yii\helpers\ArrayHelper;
  * Alert::end();
  * ```
  *
- * @see https://getbootstrap.com/docs/4.1/components/alerts/
+ * @see https://getbootstrap.com/docs/4.2/components/alerts/
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  * @author Simon Karlen <simi.albi@gmail.com>
  */

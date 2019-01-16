@@ -45,8 +45,8 @@ namespace yii\bootstrap4;
  *
  * Pressing on the button should be handled via JavaScript. See the following for details:
  *
- * @see https://getbootstrap.com/docs/4.1/components/buttons/
- * @see https://getbootstrap.com/docs/4.1/components/button-group/#button-toolbar
+ * @see https://getbootstrap.com/docs/4.2/components/buttons/
+ * @see https://getbootstrap.com/docs/4.2/components/button-group/#button-toolbar
  *
  * @author Simon Karlen <simi.albi@gmail.com>
  */
