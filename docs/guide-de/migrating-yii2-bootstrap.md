@@ -1,7 +1,7 @@
 Migration von yii2-bootstrap
 ============================
 
-yii2-bootstrap4 ist eine komplette Überarbeitung des Projekts (sowie Bootstrap 4 für Bootstrap 3).
+yii2-bootstrap4 ist eine komplette Überarbeitung des Projekts (siehe den Bootstrap 4 von Bootstrap 3 Migrationsguide).
 Die grössten Änderungen finden Sie hier zusammengefasst:
 
 ## Allgemein
