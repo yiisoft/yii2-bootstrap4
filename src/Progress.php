@@ -26,16 +26,14 @@ use yii\helpers\ArrayHelper;
  * // styled
  * echo Progress::widget([
  *     'bars' => [
- *         'percent' => 65,
- *         'options' => ['class' => 'bg-danger']
+ *         ['percent' => 65, 'options' => ['class' => 'bg-danger']]
  *     ]
  * ]);
  *
  * // striped
  * echo Progress::widget([
  *     'bars' => [
- *         'percent' => 70,
- *         'options' => ['class' => 'bg-warning progress-bar-striped']
+ *         ['percent' => 70, 'options' => ['class' => 'bg-warning progress-bar-striped']]
  *     ]
  * ]);
  *
