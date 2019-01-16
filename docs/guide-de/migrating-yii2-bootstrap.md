@@ -6,7 +6,7 @@ Die grössten Änderungen finden Sie hier zusammengefasst:
 
 ## Allgemein
 
-* Der Namespace ist nun `yii\boostrap4` anstatt `yii\bootstrap`
+* Der Namespace ist nun `yii\bootstrap4` anstatt `yii\bootstrap`
 * Es wird das `npm` Paket verwendet anstatt das `bower` Paket
 * Es gibt kein Theme Asset mehr
 * `popper.js` muss nicht mehr extra installiert werden (wird vom Bootstrap JS Bundle mitgeliefert) 

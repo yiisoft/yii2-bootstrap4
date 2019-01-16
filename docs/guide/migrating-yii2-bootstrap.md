@@ -6,7 +6,7 @@ The most notable changes are summarized below:
 
 ## General
 
-* The namespace is `yii\boostrap4` instead of `yii\bootstrap`
+* The namespace is `yii\bootstrap4` instead of `yii\bootstrap`
 * `npm` package is used instead of `bower`
 * There is no theme asset any more
 * No `popper.js` is needed any more (gets delivered with bootstrap js bundle) 
