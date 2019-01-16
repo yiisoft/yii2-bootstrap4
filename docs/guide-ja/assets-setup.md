@@ -69,7 +69,7 @@ Bower または NPM のクライアントを直接に使って Bootstrap のア�
 {
     ...
     "dependencies": {
-        "bootstrap": "4.1.1",
+        "bootstrap": "4.2.1",
         ...
     }
     ...
@@ -80,7 +80,7 @@ Bower または NPM のクライアントを直接に使って Bootstrap のア�
 
 ```json
 "replace": {
-    "bower-asset/bootstrap": ">=4.1.1"
+    "npm-asset/bootstrap": ">=4.2.1"
 },
 ```
 
@@ -93,7 +93,7 @@ Bower または NPM のクライアントを直接に使って Bootstrap のア�
 
 ```json
 "replace": {
-    "bower-asset/bootstrap": ">=4.1.1"
+    "npm-asset/bootstrap": ">=4.2.1"
 },
 ```
 
@@ -141,7 +141,7 @@ Bootstrap アセットを手作業でダウンロードし、プロジェクト�
 
 ```json
 "replace": {
-    "bower-asset/bootstrap": ">=4.1.1"
+    "npm-asset/bootstrap": ">=4.2.1"
 },
 ```
 

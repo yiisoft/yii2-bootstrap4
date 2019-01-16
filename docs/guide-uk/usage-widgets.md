@@ -14,7 +14,6 @@
 - [[yii\bootstrap4\ButtonGroup|ButtonGroup]]
 - [[yii\bootstrap4\ButtonToolbar|ButtonToolbar]]
 - [[yii\bootstrap4\Carousel|Carousel]]
-- [[yii\bootstrap4\Collapse|Collapse]] *засуджується* (see [[yii\bootstrap4\Accordion|Accordion]])
 - [[yii\bootstrap4\Dropdown|Dropdown]]
 - [[yii\bootstrap4\Modal|Modal]]
 - [[yii\bootstrap4\Nav|Nav]]
