@@ -29,6 +29,13 @@ class BaseHtml extends \yii\helpers\Html
      * @see getId()
      */
     public static $autoIdPrefix = 'i';
+    /**
+     * @var array list of tag attributes that should be specially handled when their values are of array type.
+     * In particular, if the value of the `data` attribute is `['name' => 'xyz', 'age' => 13]`, two attributes
+     * will be generated instead of one: `data-name="xyz" data-age="13"`.
+     * @since 2.0.3
+     */
+    public static $dataAttributes = ['data', 'data-ng', 'ng', 'aria'];
 
     /**
      * Renders Bootstrap static form control.
@@ -38,7 +45,7 @@ class BaseHtml extends \yii\helpers\Html
      * the attributes of the resulting tag. There are also a special options:
      *
      * @return string generated HTML
-     * @see https://getbootstrap.com/docs/4.1/components/forms/#readonly-plain-text
+     * @see https://getbootstrap.com/docs/4.2/components/forms/#readonly-plain-text
      */
     public static function staticControl($value, $options = [])
     {

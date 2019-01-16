@@ -27,3 +27,4 @@ Weitere Themen
 --------------
 
 * [Using the .sass files of Bootstrap directly](topics-sass.md)
+* [Migration von yii2-bootstrap](migrating-yii2-bootstrap.md)
