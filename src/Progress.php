@@ -25,28 +25,30 @@ use yii\helpers\ArrayHelper;
  *
  * // styled
  * echo Progress::widget([
- *     'percent' => 65,
- *     'options' => ['class' => 'progress-danger']
+ *     'bars' => [
+ *         ['percent' => 65, 'options' => ['class' => 'bg-danger']]
+ *     ]
  * ]);
  *
  * // striped
  * echo Progress::widget([
- *     'percent' => 70,
- *     'options' => ['class' => 'progress-warning progress-striped']
+ *     'bars' => [
+ *         ['percent' => 70, 'options' => ['class' => 'bg-warning progress-bar-striped']]
+ *     ]
  * ]);
  *
  * // striped animated
  * echo Progress::widget([
  *     'percent' => 70,
- *     'options' => ['class' => 'progress-success active progress-striped']
+ *     'options' => ['class' => 'bg-success progress-bar-animated progress-bar-striped']
  * ]);
  *
  * // stacked bars
  * echo Progress::widget([
  *     'bars' => [
- *         ['percent' => 30, 'options' => ['class' => 'progress-danger']],
- *         ['percent' => 30, 'label' => 'test', 'options' => ['class' => 'progress-success']],
- *         ['percent' => 35, 'options' => ['class' => 'progress-warning']],
+ *         ['percent' => 30, 'options' => ['class' => 'bg-danger']],
+ *         ['percent' => 30, 'label' => 'test', 'options' => ['class' => 'bg-success']],
+ *         ['percent' => 35, 'options' => ['class' => 'bg-warning']],
  *     ]
  * ]);
  * ```
