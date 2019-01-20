@@ -207,7 +207,6 @@ class ActiveField extends \yii\widgets\ActiveField
             $this->template = ($enclosedByLabel) ? $this->checkEnclosedTemplate : $this->checkTemplate;
         } else {
             $this->template = $options['template'];
-            unset($options['template']);
         }
         if ($this->form->layout === ActiveForm::LAYOUT_HORIZONTAL) {
             if (!isset($options['template'])) {
@@ -215,6 +214,9 @@ class ActiveField extends \yii\widgets\ActiveField
             }
             Html::removeCssClass($this->labelOptions, $this->horizontalCssClasses['label']);
             Html::addCssClass($this->wrapperOptions, $this->horizontalCssClasses['offset']);
+        }
+        if (isset($options['template'])) {
+            unset($options['template']);
         }
 
         if ($enclosedByLabel) {
@@ -239,7 +241,6 @@ class ActiveField extends \yii\widgets\ActiveField
             $this->template = ($enclosedByLabel) ? $this->checkEnclosedTemplate : $this->checkTemplate;
         } else {
             $this->template = $options['template'];
-            unset($options['template']);
         }
         if ($this->form->layout === ActiveForm::LAYOUT_HORIZONTAL) {
             if (!isset($options['template'])) {
@@ -247,6 +248,9 @@ class ActiveField extends \yii\widgets\ActiveField
             }
             Html::removeCssClass($this->labelOptions, $this->horizontalCssClasses['label']);
             Html::addCssClass($this->wrapperOptions, $this->horizontalCssClasses['offset']);
+        }
+        if (isset($options['template'])) {
+            unset($options['template']);
         }
 
         if ($enclosedByLabel) {
