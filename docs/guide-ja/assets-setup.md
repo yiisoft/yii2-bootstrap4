@@ -103,7 +103,7 @@ Bower または NPM のクライアントを直接に使って Bootstrap のア�
 return [
     'components' => [
         'assetManager' => [
-            // バンドルをオーバーライドして CDN を使う
+            // CDN を使うようにバンドルをオーバーライド 
             'bundles' => [
                 'yii\bootstrap4\BootstrapAsset' => [
                     'sourcePath' => null,
