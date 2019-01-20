@@ -203,19 +203,20 @@ class ActiveField extends \yii\widgets\ActiveField
         Html::addCssClass($options, 'form-check-input');
         Html::addCssClass($this->labelOptions, 'form-check-label');
 
+        if (!isset($options['template'])) {
+            $this->template = ($enclosedByLabel) ? $this->checkEnclosedTemplate : $this->checkTemplate;
+        } else {
+            $this->template = $options['template'];
+        }
         if ($this->form->layout === ActiveForm::LAYOUT_HORIZONTAL) {
             if (!isset($options['template'])) {
                 $this->template = $this->checkHorizontalTemplate;
             }
             Html::removeCssClass($this->labelOptions, $this->horizontalCssClasses['label']);
             Html::addCssClass($this->wrapperOptions, $this->horizontalCssClasses['offset']);
-        } else {
-            if (!isset($options['template'])) {
-                $this->template = ($enclosedByLabel) ? $this->checkEnclosedTemplate : $this->checkTemplate;
-            } else {
-                $this->template = $options['template'];
-                unset($options['template']);
-            }
+        }
+        if (isset($options['template'])) {
+            unset($options['template']);
         }
 
         if ($enclosedByLabel) {
@@ -236,19 +237,20 @@ class ActiveField extends \yii\widgets\ActiveField
         Html::addCssClass($options, 'form-check-input');
         Html::addCssClass($this->labelOptions, 'form-check-label');
 
+        if (!isset($options['template'])) {
+            $this->template = ($enclosedByLabel) ? $this->checkEnclosedTemplate : $this->checkTemplate;
+        } else {
+            $this->template = $options['template'];
+        }
         if ($this->form->layout === ActiveForm::LAYOUT_HORIZONTAL) {
             if (!isset($options['template'])) {
                 $this->template = $this->checkHorizontalTemplate;
             }
             Html::removeCssClass($this->labelOptions, $this->horizontalCssClasses['label']);
             Html::addCssClass($this->wrapperOptions, $this->horizontalCssClasses['offset']);
-        } else {
-            if (!isset($options['template'])) {
-                $this->template = ($enclosedByLabel) ? $this->checkEnclosedTemplate : $this->checkTemplate;
-            } else {
-                $this->template = $options['template'];
-                unset($options['template']);
-            }
+        }
+        if (isset($options['template'])) {
+            unset($options['template']);
         }
 
         if ($enclosedByLabel) {

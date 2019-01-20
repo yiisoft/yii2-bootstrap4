@@ -123,6 +123,34 @@ HTML;
         $this->assertContains($expected3, $out);
     }
 
+    /**
+     * @depends testHorizontalLayout
+     */
+    public function testHorizontalLayoutTemplateOverride()
+    {
+        ActiveForm::$counter = 0;
+        ob_start();
+        $model = new DynamicModel(['checkboxName']);
+        $form = ActiveForm::begin([
+            'action' => '/some-action',
+            'layout' => ActiveForm::LAYOUT_HORIZONTAL
+        ]);
+        echo $form->field($model, 'checkboxName')->checkbox(['template' => "<div class=\"offset-lg-1 col-lg-3\">\n{input}\n{label}\n</div>\n<div class=\"col-lg-8\">{error}</div>"]);
+        ActiveForm::end();
+        $out = ob_get_clean();
+
+        $expected = <<<HTML
+<div class="offset-lg-1 col-lg-3">
+<input type="hidden" name="DynamicModel[checkboxName]" value="0"><input type="checkbox" id="dynamicmodel-checkboxname" class="form-check-input" name="DynamicModel[checkboxName]" value="1">
+<label class="form-check-label" for="dynamicmodel-checkboxname">Checkbox Name</label>
+</div>
+<div class="col-lg-8"><div class="invalid-feedback "></div></div>
+HTML;
+
+
+        $this->assertContains($expected, $out);
+    }
+
     public function testInlineLayout()
     {
         ActiveForm::$counter = 0;
