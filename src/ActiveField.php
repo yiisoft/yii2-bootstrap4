@@ -215,9 +215,7 @@ class ActiveField extends \yii\widgets\ActiveField
             Html::removeCssClass($this->labelOptions, $this->horizontalCssClasses['label']);
             Html::addCssClass($this->wrapperOptions, $this->horizontalCssClasses['offset']);
         }
-        if (isset($options['template'])) {
-            unset($options['template']);
-        }
+        unset($options['template']);
 
         if ($enclosedByLabel) {
             if (isset($options['label'])) {
@@ -249,9 +247,7 @@ class ActiveField extends \yii\widgets\ActiveField
             Html::removeCssClass($this->labelOptions, $this->horizontalCssClasses['label']);
             Html::addCssClass($this->wrapperOptions, $this->horizontalCssClasses['offset']);
         }
-        if (isset($options['template'])) {
-            unset($options['template']);
-        }
+        unset($options['template']);
 
         if ($enclosedByLabel) {
             if (isset($options['label'])) {
