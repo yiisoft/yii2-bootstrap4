@@ -62,6 +62,7 @@ class Dropdown extends Widget
      */
     public $submenuOptions = [];
 
+
     /**
      * {@inheritdoc}
      */

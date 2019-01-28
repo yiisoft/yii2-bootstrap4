@@ -84,6 +84,7 @@ class Progress extends Widget
      */
     public $bars;
 
+
     /**
      * {@inheritdoc}
      */

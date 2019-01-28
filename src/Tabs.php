@@ -133,6 +133,7 @@ class Tabs extends Widget
      */
     protected $panes = [];
 
+
     /**
      * {@inheritdoc}
      */

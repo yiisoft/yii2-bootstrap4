@@ -18,7 +18,6 @@ use yii\helpers\ArrayHelper;
  */
 class BaseHtml extends \yii\helpers\Html
 {
-
     /**
      * @var int a counter used to generate [[id]] for widgets.
      * @internal
@@ -36,6 +35,7 @@ class BaseHtml extends \yii\helpers\Html
      * @since 2.0.3
      */
     public static $dataAttributes = ['data', 'data-ng', 'ng', 'aria'];
+
 
     /**
      * Renders Bootstrap static form control.
