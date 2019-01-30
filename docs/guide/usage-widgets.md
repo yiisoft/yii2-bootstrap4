@@ -64,6 +64,7 @@ style of navbar (color scheme).
 
 You can change the color scheme and the collapse breakpoint with css classes. If not defined, the scheme defaults to 
 `navbar-light bg-light` and the breakpoint to `navbar-expand-lg`. For more information, see [Bootstrap documentation](https://getbootstrap.com/docs/4.2/components/navbar/):
+
 ```php
 Navbar::begin([
     'options' => [
@@ -75,6 +76,7 @@ Navbar::end();
 ``` 
 
 If you'd like to flip the brand (icon) and toggle button positions in mobile navigation, you can do this like this:
+
 ```php
 Navbar::begin([
 	'brandOptions' => [
