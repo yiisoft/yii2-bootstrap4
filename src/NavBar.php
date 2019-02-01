@@ -119,9 +119,6 @@ class NavBar extends Widget
         } else {
             Html::addCssClass($this->options, ['widget' => 'navbar']);
         }
-        if (!isset($this->options['role']) || empty($this->options['role'])) {
-            $this->options['role'] = 'navigation';
-        }
         $navOptions = $this->options;
         $navTag = ArrayHelper::remove($navOptions, 'tag', 'nav');
         $brand = '';
