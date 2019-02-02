@@ -53,7 +53,7 @@ class ActiveFieldTest extends TestCase
         $expectedHtml = <<<HTML
 <div class="form-group field-dynamicmodel-attributename">
 <label>Attribute Name</label>
-<input type="hidden" name="DynamicModel[attributeName]" value=""><div id="dynamicmodel-attributename"><div class="form-check">
+<input type="hidden" name="DynamicModel[attributeName]" value=""><div id="dynamicmodel-attributename" role="radiogroup"><div class="form-check">
 <input type="radio" id="i0" class="form-check-input" name="DynamicModel[attributeName]" value="1">
 <label class="form-check-label" for="i0">name1</label>
 </div>
@@ -104,7 +104,7 @@ HTML;
         $expectedHtml = <<<HTML
 <div class="form-group field-dynamicmodel-attributename">
 <label>Attribute Name</label>
-<input type="hidden" name="DynamicModel[attributeName]" value=""><div id="dynamicmodel-attributename"><div class="form-check form-check-inline">
+<input type="hidden" name="DynamicModel[attributeName]" value=""><div id="dynamicmodel-attributename" role="radiogroup"><div class="form-check form-check-inline">
 <input type="radio" id="i0" class="form-check-input" name="DynamicModel[attributeName]" value="1">
 <label class="form-check-label" for="i0">name1</label>
 </div>

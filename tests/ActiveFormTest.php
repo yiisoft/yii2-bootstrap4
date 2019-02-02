@@ -96,7 +96,7 @@ HTML;
 <div class="form-group row field-dynamicmodel-gridradios">
 <label class="col-sm-2 col-form-label">Grid Radios</label>
 <div class="col-sm-10">
-<input type="hidden" name="DynamicModel[gridRadios]" value=""><div id="dynamicmodel-gridradios"><div class="form-check">
+<input type="hidden" name="DynamicModel[gridRadios]" value=""><div id="dynamicmodel-gridradios" role="radiogroup"><div class="form-check">
 <input type="radio" id="i0" class="form-check-input" name="DynamicModel[gridRadios]" value="option1">
 <label class="form-check-label" for="i0">First radio</label>
 </div>
