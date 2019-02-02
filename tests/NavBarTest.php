@@ -24,7 +24,7 @@ class NavBarTest extends TestCase
         ]);
 
         $expected = <<<EXPECTED
-<nav id="w0" class="navbar-inverse navbar-static-top navbar-frontend navbar" role="navigation">
+<nav id="w0" class="navbar-inverse navbar-static-top navbar-frontend navbar">
 <div class="container">
 <a class="navbar-brand" href="/">My Company</a>
 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#w0-collapse" aria-controls="w0-collapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -106,7 +106,7 @@ HTML;
         $out = ob_get_clean();
 
         $expected = <<<EXPECTED
-<nav id="w0" class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
+<nav id="w0" class="navbar navbar-expand-lg navbar-light bg-light">
 <div class="container">
 <a class="navbar-brand" href="/">My Company</a>
 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#w0-collapse" aria-controls="w0-collapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
