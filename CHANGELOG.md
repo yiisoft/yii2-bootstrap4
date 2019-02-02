@@ -7,7 +7,7 @@ Yii Framework 2 bootstrap4 extension Change Log
 - Bug #137: Remove role="navigation" from yii\bootstrap4\NavBar according to aria specification (Thoulah)
 
 
-2.0.0 under development
------------------------
+2.0.0 January 28, 2019
+----------------------
 
 - Initial release (forked from yii2-bootstrap and adjusted to fit bootstrap 4)
