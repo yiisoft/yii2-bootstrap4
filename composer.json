@@ -37,7 +37,7 @@
     ],
     "require": {
         "yiisoft/yii2": "~2.0",
-        "npm-asset/bootstrap": "~4.2"
+        "npm-asset/bootstrap": "^4.2"
     },
     "require-dev": {
         "yiisoft/yii2-coding-standards": "~2.0",
