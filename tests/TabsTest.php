@@ -230,4 +230,34 @@ class TabsTest extends TestCase
         $this->assertContains('<li class="nav-item active"><a class="nav-link active" href="#mytab-tab2" data-toggle="tab" role="tab" aria-controls="mytab-tab2" aria-selected="true">Tab 3</a></li>',
             $html);
     }
+
+    /**
+     * @see https://github.com/yiisoft/yii2-bootstrap4/issues/108#issuecomment-465219339
+     */
+    public function testIdRendering()
+    {
+        Tabs::$counter = 0;
+        $html = Tabs::widget([
+            'items' => [
+                [
+                    'options' => ['id' => 'pane1'],
+                    'label' => 'Tab 1',
+                    'content' => '<div>Content 1</div>',
+                ],
+                [
+                    'label' => 'Tab 2',
+                    'content' => '<div>Content 2</div>',
+                ],
+            ],
+        ]);
+
+        $expected = <<<HTML
+<ul id="w0" class="nav nav-tabs"><li class="nav-item active"><a class="nav-link active" href="#pane1" data-toggle="tab" role="tab" aria-controls="pane1" aria-selected="true">Tab 1</a></li>
+<li class="nav-item"><a class="nav-link" href="#w0-tab1" data-toggle="tab" role="tab" aria-controls="w0-tab1" aria-selected="false">Tab 2</a></li></ul>
+<div class="tab-content"><div id="pane1" class="tab-pane active"><div>Content 1</div></div>
+<div id="w0-tab1" class="tab-pane"><div>Content 2</div></div></div>
+HTML;
+
+        $this->assertEquals($expected, $html);
+    }
 }
