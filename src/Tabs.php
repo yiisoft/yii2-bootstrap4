@@ -156,7 +156,8 @@ class Tabs extends Widget
         return Nav::widget([
                 'dropdownClass' => $this->dropdownClass,
                 'options' => $this->options,
-                'items' => $this->items
+                'items' => $this->items,
+                'encodeLabels' => $this->encodeLabels,
             ]) . $this->renderPanes($this->panes);
     }
 
