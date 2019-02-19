@@ -230,4 +230,30 @@ class TabsTest extends TestCase
         $this->assertContains('<li class="nav-item active"><a class="nav-link active" href="#mytab-tab2" data-toggle="tab" role="tab" aria-controls="mytab-tab2" aria-selected="true">Tab 3</a></li>',
             $html);
     }
+
+    public function testTabLabelEncoding()
+    {
+        $html = Tabs::widget([
+            'encodeLabels' => false,
+            'id' => 'mytab',
+            'items' => [
+                [
+                    'label' => 'Tab 1<span>encoded</span>',
+                    'content' => 'some content',
+                    'encode' => true,
+                ],
+                [
+                    'label' => 'Tab 2<span>not encoded</span>',
+                    'content' => 'some content',
+                ],
+                [
+                    'label' => 'Tab 3<span>not encoded too</span>',
+                    'content' => 'some content',
+                ],
+            ]
+        ]);
+        $this->assertContains('&lt;span&gt;encoded&lt;/span&gt;', $html);
+        $this->assertContains('<span>not encoded</span>', $html);
+        $this->assertContains('<span>not encoded too</span>', $html);
+    }
 }
