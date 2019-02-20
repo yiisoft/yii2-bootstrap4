@@ -3,7 +3,7 @@ Yii Framework 2 bootstrap4 extension Change Log
 
 2.0.1 under development
 -----------------------
-- Bug #108#issuecomment-465219339: Fixed rendering with custom id: prevent double id rendering (simialbi)
+- Bug #108: Fixed rendering with custom id: prevent double id rendering (simialbi)
 - Bug #137: Remove role="navigation" from yii\bootstrap4\NavBar according to aria specification (Thoulah)
 
 
