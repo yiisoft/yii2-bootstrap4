@@ -177,6 +177,7 @@ class Tabs extends Widget
         foreach ($items as $n => $item) {
             $options = array_merge($this->itemOptions, ArrayHelper::getValue($item, 'options', []));
             $options['id'] = ArrayHelper::getValue($options, 'id', $this->options['id'] . $prefix . '-tab' . $n);
+            unset($items[$n]['options']['id']); // @see https://github.com/yiisoft/yii2-bootstrap4/issues/108#issuecomment-465219339
 
             if (!ArrayHelper::remove($item, 'visible', true)) {
                 continue;

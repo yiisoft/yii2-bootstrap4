@@ -5,6 +5,7 @@ Yii Framework 2 bootstrap4 extension Change Log
 -----------------------
 
 - Bug #108: Tabs::$encodeLabels was not considered when encoding labels (machour)
+- Bug #108: Fixed rendering with custom id: prevent double id rendering (simialbi)
 - Bug #137: Remove role="navigation" from yii\bootstrap4\NavBar according to aria specification (Thoulah)
 
 
