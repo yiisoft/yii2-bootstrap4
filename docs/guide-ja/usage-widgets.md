@@ -56,3 +56,36 @@ echo ButtonGroup::widget([
     ]
 ]);
 ```
+
+## Navbar ウィジェット <span id="navbar-widget"></span>
+
+Navbar ウィジェットには独特の癖があります。あなたは Navbar が折り畳まれるブレークポイントと
+Navbar の全体的なスタイル (カラー・スキーム) を指定しなければなりません。
+
+カラー・スキームと折り畳みのブレークポイントは CSS のクラスで変更することが出来ます。指定されない場合は、カラー・スキームは `navbar-light bg-light`、
+ブレークポイントは`navbar-expand-lg` がデフォルトとして採用されます。詳細な情報は、[Bootstrap documentation](https://getbootstrap.com/docs/4.2/components/navbar/) を参照して下さい。
+
+```php
+Navbar::begin([
+    'options' => [
+        'class' => ['navbar-dark', 'bg-dark', 'navbar-expand-md']
+    ]
+]);
+    [...]
+Navbar::end();
+``` 
+
+モバイル向けナビゲーションでブランド (アイコン) とトグル・ボタンの位置を入れ替えたい場合は、次のようにすることが出来ます。
+
+```php
+Navbar::begin([
+	'brandOptions' => [
+		'class' => ['order-1']
+	],
+	'togglerOptions' => [
+		'class' => ['order-0']
+	]
+]);
+    [...]
+Navbar::end();
+```
