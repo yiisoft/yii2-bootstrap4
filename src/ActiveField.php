@@ -454,6 +454,15 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function fileInput($options = [])
+    {
+        Html::addCssClass($options, ['widget' => 'form-control-file']);
+        return parent::fileInput($options);
+    }
+
+    /**
      * @param string|null $label the label or null to use model label
      * @param array $options the tag options
      */

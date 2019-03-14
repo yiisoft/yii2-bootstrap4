@@ -4,6 +4,7 @@ Yii Framework 2 bootstrap4 extension Change Log
 2.0.1 under development
 -----------------------
 
+- Bug #117: Fixed missing validation error message at fileInput field (simialbi)
 - Bug #115: Wrong class in Toggle Button Group (simialbi)
 - Bug #108: Tabs::$encodeLabels was not considered when encoding labels (machour)
 - Bug #108: Fixed rendering with custom id: prevent double id rendering (simialbi)

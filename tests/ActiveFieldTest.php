@@ -44,6 +44,22 @@ class ActiveFieldTest extends TestCase
         $this->activeField->attribute = $this->attributeName;
     }
 
+    public function testFileInput()
+    {
+        $html = $this->activeField->fileInput()->render();
+
+        $expectedHtml = <<<HTML
+<div class="form-group field-dynamicmodel-attributename">
+<label for="dynamicmodel-attributename">Attribute Name</label>
+<input type="hidden" name="DynamicModel[attributeName]" value=""><input type="file" id="dynamicmodel-attributename" class="form-control-file" name="DynamicModel[attributeName]">
+
+<div class="invalid-feedback"></div>
+</div>
+HTML;
+
+        $this->assertEqualsWithoutLE($expectedHtml, $html);
+    }
+
     // Tests :
 
     public function testRadioList()
