@@ -76,7 +76,10 @@ class ButtonGroup extends Widget
      */
     public function run()
     {
-        BootstrapAsset::register($this->getView());
+        if ($this->registerWidget) {
+            BootstrapAsset::register($this->getView());
+        }
+
         return Html::tag('div', $this->renderButtons(), $this->options);
     }
 

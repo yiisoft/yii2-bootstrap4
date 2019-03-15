@@ -47,6 +47,12 @@ trait BootstrapWidgetTrait
      */
     public $clientEvents = [];
 
+    /**
+     * Option to disable the css and js of the specific plugin to allow the use of custom bundled assets from other files.
+     *
+     * @var bool
+     */
+    public $registerWidget = true;
 
     /**
      * Initializes the widget.

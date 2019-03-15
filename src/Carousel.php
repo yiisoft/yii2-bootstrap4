@@ -95,7 +95,10 @@ class Carousel extends Widget
      */
     public function run()
     {
-        $this->registerPlugin('carousel');
+        if ($this->registerWidget) {
+            $this->registerPlugin('carousel');
+        }
+
         return implode("\n", [
                 Html::beginTag('div', $this->options),
                 $this->renderIndicators(),

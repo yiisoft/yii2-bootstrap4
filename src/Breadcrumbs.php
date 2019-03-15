@@ -93,7 +93,9 @@ class Breadcrumbs extends Widget
      */
     public function run()
     {
-        $this->registerPlugin('breadcrumb');
+        if ($this->registerWidget) {
+            $this->registerPlugin('breadcrumb');
+        }
 
         if (empty($this->links)) {
             return '';

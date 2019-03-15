@@ -130,7 +130,10 @@ class ButtonDropdown extends Widget
         // Set options id to button options id to ensure correct css selector in plugin initialisation
         $this->options['id'] = $this->buttonOptions['id'];
 
-        $this->registerPlugin('dropdown');
+        if ($this->registerWidget) {
+            $this->registerPlugin('dropdown');
+        }
+
         return $html;
     }
 

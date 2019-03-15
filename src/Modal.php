@@ -139,7 +139,9 @@ class Modal extends Widget
         echo "\n" . Html::endTag('div'); // modal-dialog
         echo "\n" . Html::endTag('div');
 
-        $this->registerPlugin('modal');
+        if ($this->registerWidget) {
+            $this->registerPlugin('modal');
+        }
     }
 
     /**

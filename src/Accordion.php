@@ -116,7 +116,10 @@ class Accordion extends Widget
      */
     public function run()
     {
-        $this->registerPlugin('collapse');
+        if ($this->registerWidget) {
+            $this->registerPlugin('collapse');
+        }
+
         Html::addCssClass($this->options, 'accordion');
         return implode("\n", [
                 Html::beginTag('div', $this->options),

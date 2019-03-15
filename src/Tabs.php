@@ -151,7 +151,10 @@ class Tabs extends Widget
      */
     public function run()
     {
-        $this->registerPlugin('tab');
+        if ($this->registerWidget) {
+            $this->registerPlugin('tab');
+        }
+
         $this->prepareItems($this->items);
         return Nav::widget([
                 'dropdownClass' => $this->dropdownClass,

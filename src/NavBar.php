@@ -168,7 +168,9 @@ class NavBar extends Widget
         }
         $tag = ArrayHelper::remove($this->options, 'tag', 'nav');
         echo Html::endTag($tag);
-        BootstrapPluginAsset::register($this->getView());
+        if ($this->registerWidget) {
+            BootstrapPluginAsset::register($this->getView());
+        }
     }
 
     /**
