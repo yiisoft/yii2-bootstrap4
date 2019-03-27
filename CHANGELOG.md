@@ -4,7 +4,7 @@ Yii Framework 2 bootstrap4 extension Change Log
 2.0.2 under development
 -----------------------
 
-- no changes in this release.
+- Enh #120: Added Pagination bs4 (simialbi)
 
 
 2.0.1 March 17, 2019
