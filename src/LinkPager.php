@@ -10,7 +10,6 @@ use yii\base\InvalidConfigException;
 use yii\data\Pagination;
 use yii\helpers\ArrayHelper;
 
-
 /**
  * LinkPager represents a bootstrap 4 version of [[\yii\widgets\LinkPager]]. It displays a list of hyperlinks
  * that lead to different pages of target.

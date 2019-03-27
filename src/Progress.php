@@ -142,6 +142,7 @@ class Progress extends Widget
      */
     protected function renderBar($percent, $label = '', $options = [])
     {
+        $percent = floatval(trim(rtrim($percent, '%')));
         $options = array_merge($options, [
             'role' => 'progressbar',
             'aria-valuenow' => $percent,
@@ -149,7 +150,7 @@ class Progress extends Widget
             'aria-valuemax' => 100
         ]);
         Html::addCssClass($options, ['widget' => 'progress-bar']);
-        Html::addCssStyle($options, ['width' => Yii::$app->formatter->asPercent($percent / 100)], true);
+        Html::addCssStyle($options, ['width' => $percent . '%'], true);
 
         return Html::tag('div', $label, $options);
     }

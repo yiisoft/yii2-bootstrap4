@@ -51,4 +51,30 @@ HTML;
 
         $this->assertEqualsWithoutLE($expected, $out);
     }
+
+    /**
+     * @see https://github.com/yiisoft/yii2-bootstrap4/issues/121
+     */
+    public function testRussianLocaleRendering()
+    {
+        $this->mockWebApplication([
+            'language'       => 'ru-RU',
+            'sourceLanguage' => 'en-US',
+        ]);
+
+        Progress::$counter = 0;
+        $out = Progress::widget([
+            'bars' => [
+                ['label' => 'Progress', 'percent' => 25]
+            ]
+        ]);
+
+        $expected = <<<HTML
+<div id="w0" class="progress">
+<div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">Progress</div>
+</div>
+HTML;
+
+        $this->assertEqualsWithoutLE($expected, $out);
+    }
 }
