@@ -280,9 +280,6 @@ class LinkPager extends Widget
             $disabledItemOptions = $this->disabledListItemSubTagOptions;
             $linkOptions = ArrayHelper::merge($linkOptions, $disabledItemOptions);
             $linkOptions['tabindex'] = '-1';
-//            $tag = ArrayHelper::remove($disabledItemOptions, 'tag', 'span');
-
-//            return Html::tag($linkWrapTag, Html::tag($tag, $label, $disabledItemOptions), $options);
         }
 
         return Html::tag($linkWrapTag, Html::a($label, $this->pagination->createUrl($page), $linkOptions), $options);
