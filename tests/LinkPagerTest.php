@@ -7,7 +7,6 @@
 
 namespace yiiunit\extensions\bootstrap4;
 
-
 use yii\bootstrap4\LinkPager;
 use yii\data\Pagination;
 use yii\helpers\ReplaceArrayValue;
