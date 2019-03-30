@@ -142,7 +142,7 @@ class Progress extends Widget
      */
     protected function renderBar($percent, $label = '', $options = [])
     {
-        $percent = floatval(trim(rtrim($percent, '%')));
+        $percent = (float)trim(rtrim($percent, '%'));
         $options = array_merge($options, [
             'role' => 'progressbar',
             'aria-valuenow' => $percent,
