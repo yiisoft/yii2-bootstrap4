@@ -81,7 +81,7 @@ class Tabs extends Widget
      *   configuration array. Each item can hold three extra keys, besides the above ones:
      *     * active: bool, optional, whether the item tab header and pane should be visible or not.
      *     * content: string, required if `items` is not set. The content (HTML) of the tab pane.
-     *     * contentOptions: optional, array, the HTML attributes of the tab content container.
+     *     * options: optional, array, the HTML attributes of the tab content container.
      */
     public $items = [];
     /**
