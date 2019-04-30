@@ -1,8 +1,8 @@
 Yii Framework 2 bootstrap4 extension Change Log
 ==============================================
 
-2.0.2 under development
------------------------
+2.0.2 April 30, 2019
+--------------------
 
 - Bug #121: Fixed Progress widget with Russian locale (simialbi)
 - Enh #120: Added Pagination (simialbi)
