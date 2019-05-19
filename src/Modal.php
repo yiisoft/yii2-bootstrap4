@@ -35,6 +35,10 @@ use yii\helpers\ArrayHelper;
 class Modal extends Widget
 {
     /**
+     * The additional css class of extra large modal
+     */
+    const SIZE_EXTRA_LARGE = "modal-xl";
+    /**
      * The additional css class of large modal
      */
     const SIZE_LARGE = "modal-lg";
