@@ -36,6 +36,7 @@ class Modal extends Widget
 {
     /**
      * The additional css class of extra large modal
+     * @since 2.0.3
      */
     const SIZE_EXTRA_LARGE = "modal-xl";
     /**
