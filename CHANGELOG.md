@@ -4,7 +4,7 @@ Yii Framework 2 bootstrap4 extension Change Log
 2.0.3 under development
 -----------------------
 
-- no changes in this release.
+- Enh #129: Added `Modal::SIZE_EXTRA_LARGE` constant (shoomlix)
 
 
 2.0.2 April 30, 2019
