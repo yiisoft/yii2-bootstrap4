@@ -155,7 +155,7 @@ class Tabs extends Widget
         $this->prepareItems($this->items);
         return Nav::widget([
                 'dropdownClass' => $this->dropdownClass,
-                'options' => $this->options,
+                'options' => ArrayHelper::merge(['role' => 'tablist'], $this->options),
                 'items' => $this->items,
                 'encodeLabels' => $this->encodeLabels,
             ]) . $this->renderPanes($this->panes);
