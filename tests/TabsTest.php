@@ -12,6 +12,25 @@ use yii\helpers\Html;
  */
 class TabsTest extends TestCase
 {
+    public function testRoleTablist()
+    {
+        Tabs::$counter = 0;
+        $out = Tabs::widget([
+            'items' => [
+                [
+                    'label' => 'Page1',
+                    'content' => 'Page1',
+                ],
+                [
+                    'label' => 'Page2',
+                    'content' => 'Page2',
+                ],
+            ]
+        ]);
+
+        $this->assertContains('<ul id="w0" class="nav nav-tabs" role="tablist">', $out);
+    }
+
     /**
      * Each tab should have a corresponding unique ID
      *
@@ -196,10 +215,14 @@ class TabsTest extends TestCase
             ]
         ]);
 
-        $this->assertNotContains('<li class="nav-item active"><a class="nav-link active" href="#mytab-tab0" data-toggle="tab" role="tab" aria-controls="mytab-tab0" aria-selected="true">Tab 1</a></li>',
-            $html);
-        $this->assertContains('<li class="nav-item active"><a class="nav-link active" href="#mytab-tab1" data-toggle="tab" role="tab" aria-controls="mytab-tab1" aria-selected="true">Tab 2</a></li>',
-            $html);
+        $this->assertNotContains(
+            '<li class="nav-item active"><a class="nav-link active" href="#mytab-tab0" data-toggle="tab" role="tab" aria-controls="mytab-tab0" aria-selected="true">Tab 1</a></li>',
+            $html
+        );
+        $this->assertContains(
+            '<li class="nav-item active"><a class="nav-link active" href="#mytab-tab1" data-toggle="tab" role="tab" aria-controls="mytab-tab1" aria-selected="true">Tab 2</a></li>',
+            $html
+        );
     }
 
     public function testActivateTab()
@@ -227,8 +250,10 @@ class TabsTest extends TestCase
                 ]
             ]
         ]);
-        $this->assertContains('<li class="nav-item active"><a class="nav-link active" href="#mytab-tab2" data-toggle="tab" role="tab" aria-controls="mytab-tab2" aria-selected="true">Tab 3</a></li>',
-            $html);
+        $this->assertContains(
+            '<li class="nav-item active"><a class="nav-link active" href="#mytab-tab2" data-toggle="tab" role="tab" aria-controls="mytab-tab2" aria-selected="true">Tab 3</a></li>',
+            $html
+        );
     }
 
     public function testTabLabelEncoding()
@@ -278,7 +303,7 @@ class TabsTest extends TestCase
         ]);
 
         $expected = <<<HTML
-<ul id="w0" class="nav nav-tabs"><li class="nav-item active"><a class="nav-link active" href="#pane1" data-toggle="tab" role="tab" aria-controls="pane1" aria-selected="true">Tab 1</a></li>
+<ul id="w0" class="nav nav-tabs" role="tablist"><li class="nav-item active"><a class="nav-link active" href="#pane1" data-toggle="tab" role="tab" aria-controls="pane1" aria-selected="true">Tab 1</a></li>
 <li class="nav-item"><a class="nav-link" href="#w0-tab1" data-toggle="tab" role="tab" aria-controls="w0-tab1" aria-selected="false">Tab 2</a></li></ul>
 <div class="tab-content"><div id="pane1" class="tab-pane active"><div>Content 1</div></div>
 <div id="w0-tab1" class="tab-pane"><div>Content 2</div></div></div>
