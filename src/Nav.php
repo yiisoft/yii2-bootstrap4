@@ -197,7 +197,7 @@ class Nav extends Widget
 
         if ($this->activateItems && $active) {
             if ($this->activateContainer) {
-               Html::addCssClass($options, 'active'); // In NavBar the "nav-item" get's activated
+               Html::addCssClass($options, 'active'); // In NavBar the "nav-item" gets activated
             }
             Html::addCssClass($linkOptions, 'active');
         }
