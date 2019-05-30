@@ -83,6 +83,7 @@ class Nav extends Widget
     public $activateItems = true;
     /**
      * @var bool whether to activate the container when the menu item is active.
+     * @since 2.0.3
      */
     public $activateContainer = true;
     /**
