@@ -6,6 +6,7 @@ Yii Framework 2 bootstrap4 extension Change Log
 
 - Bug #131: Fixed element with role tab must be inside role tablist (simialbi)
 - Enh #129: Added `Modal::SIZE_EXTRA_LARGE` constant (shoomlix)
+- Enh: Added disabled option for Tabs (Thoulah)
 
 
 2.0.2 April 30, 2019

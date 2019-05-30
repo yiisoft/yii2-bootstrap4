@@ -147,6 +147,76 @@ class TabsTest extends TestCase
         $this->assertNotContains('Invisible External Link', $html);
     }
 
+    public function testDisabled()
+    {
+        Tabs::$counter = 0;
+        $html = Tabs::widget([
+            'items' => [
+                 [
+                    'label' => 'Page1',
+                    'content' => 'Page1',
+                    'disabled' => true,
+                    'linkOptions' => [
+                    ]
+               ],
+               [
+                    'label' => 'Page2',
+                    'content' => 'Page2',
+                    'disabled' => true,
+                    'linkOptions' => [
+                        'class' => 'testClass'
+                    ]
+               ],
+               [
+                    'label' => 'Page3',
+                    'content' => 'Page3',
+                ],
+                [
+                    'label' => 'DisabledPage',
+                    'content' => 'Disabled Page Content',
+                    'disabled' => true
+                ],
+                [
+                    'label' => 'Dropdown1',
+                    'items' => [
+                        ['label' => 'Page2', 'content' => 'Page2'],
+                        ['label' => 'DisabledItem', 'content' => 'Disabled Item Content', 'disabled' => true],
+                        ['label' => 'Page3', 'content' => 'Page3'],
+                        ['label' => 'External Link', 'url' => ['//other/dropdown/route']],
+                        ['label' => 'Disabled External Link', 'url' => ['//other/dropdown/route'], 'disabled' => true],
+                    ]
+                ],
+            ]
+        ]);
+
+        $this->assertContains(
+            '<li class="nav-item"><a class="disabled nav-link" href="#w0-tab0" tabindex="-1" aria-disabled="true" role="tab">Page1</a></li>',
+            $html
+        );
+        $this->assertContains(
+            '<a class="testClass disabled nav-link" href="#w0-tab1" tabindex="-1" aria-disabled="true" role="tab">Page2</a></li>',
+            $html
+        );
+        $this->assertContains(
+            '<li class="nav-item active"><a class="nav-link active" href="#w0-tab2" role="tab" data-toggle="tab" aria-controls="w0-tab2" aria-selected="true">Page3</a></li>',
+            $html
+        );
+        $this->assertContains(
+            '<li class="nav-item"><a class="disabled nav-link" href="#w0-tab3" tabindex="-1" aria-disabled="true" role="tab">DisabledPage</a></li>',
+            $html
+        );
+        $this->assertNotContains('Disabled Page Content', $html);
+        $this->assertContains(
+            '<a class="disabled dropdown-item" href="#w0-dd4-tab1" tabindex="-1" aria-disabled="true" role="tab">DisabledItem</a>',
+            $html
+        );
+        $this->assertNotContains('Disabled Item Content', $html);
+        $this->assertContains(
+            '<a class="disabled dropdown-item" href="/index.php?r=other%2Fdropdown%2Froute" tabindex="-1" aria-disabled="true">Disabled External Link</a>',
+            $html
+        );
+    }
+
     public function testItem()
     {
         $checkTag = 'article';
@@ -216,11 +286,11 @@ class TabsTest extends TestCase
         ]);
 
         $this->assertNotContains(
-            '<li class="nav-item active"><a class="nav-link active" href="#mytab-tab0" data-toggle="tab" role="tab" aria-controls="mytab-tab0" aria-selected="true">Tab 1</a></li>',
+            '<li class="nav-item active"><a class="nav-link active" href="#mytab-tab0" role="tab" data-toggle="tab" aria-controls="mytab-tab0" aria-selected="true">Tab 1</a></li>',
             $html
         );
         $this->assertContains(
-            '<li class="nav-item active"><a class="nav-link active" href="#mytab-tab1" data-toggle="tab" role="tab" aria-controls="mytab-tab1" aria-selected="true">Tab 2</a></li>',
+            '<li class="nav-item active"><a class="nav-link active" href="#mytab-tab1" role="tab" data-toggle="tab" aria-controls="mytab-tab1" aria-selected="true">Tab 2</a></li>',
             $html
         );
     }
@@ -251,7 +321,7 @@ class TabsTest extends TestCase
             ]
         ]);
         $this->assertContains(
-            '<li class="nav-item active"><a class="nav-link active" href="#mytab-tab2" data-toggle="tab" role="tab" aria-controls="mytab-tab2" aria-selected="true">Tab 3</a></li>',
+            '<li class="nav-item active"><a class="nav-link active" href="#mytab-tab2" role="tab" data-toggle="tab" aria-controls="mytab-tab2" aria-selected="true">Tab 3</a></li>',
             $html
         );
     }
@@ -303,8 +373,8 @@ class TabsTest extends TestCase
         ]);
 
         $expected = <<<HTML
-<ul id="w0" class="nav nav-tabs" role="tablist"><li class="nav-item active"><a class="nav-link active" href="#pane1" data-toggle="tab" role="tab" aria-controls="pane1" aria-selected="true">Tab 1</a></li>
-<li class="nav-item"><a class="nav-link" href="#w0-tab1" data-toggle="tab" role="tab" aria-controls="w0-tab1" aria-selected="false">Tab 2</a></li></ul>
+<ul id="w0" class="nav nav-tabs" role="tablist"><li class="nav-item active"><a class="nav-link active" href="#pane1" role="tab" data-toggle="tab" aria-controls="pane1" aria-selected="true">Tab 1</a></li>
+<li class="nav-item"><a class="nav-link" href="#w0-tab1" role="tab" data-toggle="tab" aria-controls="w0-tab1" aria-selected="false">Tab 2</a></li></ul>
 <div class="tab-content"><div id="pane1" class="tab-pane active"><div>Content 1</div></div>
 <div id="w0-tab1" class="tab-pane"><div>Content 2</div></div></div>
 HTML;
