@@ -84,6 +84,10 @@ class Nav extends Widget
     /**
      * @var bool whether to activate parent menu items when one of the corresponding child menu items is active.
      */
+    public $activateContainer = true;
+    /**
+     * @var bool whether to activate the container when the menu item is active.
+     */
     public $activateParents = false;
     /**
      * @var string the route used to determine if a menu item is active or not.
@@ -192,7 +196,9 @@ class Nav extends Widget
         Html::addCssClass($linkOptions, 'nav-link');
 
         if ($this->activateItems && $active) {
-            Html::addCssClass($options, 'active'); // In NavBar the "nav-item" get's activated
+            if ($this->activateContainer) {
+               Html::addCssClass($options, 'active'); // In NavBar the "nav-item" get's activated
+            }
             Html::addCssClass($linkOptions, 'active');
         }
 
