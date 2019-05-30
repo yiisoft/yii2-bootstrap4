@@ -43,6 +43,7 @@ class Dropdown extends Widget
      * - url: string|array, optional, the URL of the item link. This will be processed by [[\yii\helpers\Url::to()]].
      *   If not set, the item will be treated as a menu header when the item has no sub-menu.
      * - visible: bool, optional, whether this menu item is visible. Defaults to true.
+     * - disabled: bool, optional, whether this menu item is disabled. Defaults to false.
      * - linkOptions: array, optional, the HTML attributes of the item link.
      * - options: array, optional, the HTML attributes of the item.
      * - items: array, optional, the submenu items. The structure is the same as this property.
@@ -112,7 +113,15 @@ class Dropdown extends Widget
             $itemOptions = ArrayHelper::getValue($item, 'options', []);
             $linkOptions = ArrayHelper::getValue($item, 'linkOptions', []);
 //            $linkOptions['tabindex'] = '-1';
+            $disabled = ArrayHelper::getValue($item, 'disabled', false);
+
             Html::addCssClass($linkOptions, 'dropdown-item');
+            if ($disabled) {
+                ArrayHelper::setValue($linkOptions, 'tabindex', '-1');
+                ArrayHelper::setValue($linkOptions, 'aria-disabled', 'true');
+                Html::addCssClass($linkOptions, 'disabled');
+            }
+
             $url = array_key_exists('url', $item) ? $item['url'] : null;
             if (empty($item['items'])) {
                 if ($url === null) {

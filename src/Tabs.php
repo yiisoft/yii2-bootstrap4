@@ -77,6 +77,7 @@ class Tabs extends Widget
      * - active: bool, optional, whether this item tab header and pane should be active. If no item is marked as
      *   'active' explicitly - the first one will be activated.
      * - visible: bool, optional, whether the item tab header and pane should be visible or not. Defaults to true.
+     * - disabled: bool, optional, whether the item tab header and pane should be disabled or not. Defaults to false.
      * - items: array, optional, can be used instead of `content` to specify a dropdown items
      *   configuration array. Each item can hold three extra keys, besides the above ones:
      *     * active: bool, optional, whether the item tab header and pane should be visible or not.
@@ -187,6 +188,7 @@ class Tabs extends Widget
             }
 
             $selected = ArrayHelper::getValue($item, 'active', false);
+            $disabled = ArrayHelper::getValue($item, 'disabled', false);
             if (isset($item['items'])) {
                 $this->prepareItems($items[$n]['items'], '-dd' . $n);
                 continue;
@@ -196,7 +198,9 @@ class Tabs extends Widget
                     ArrayHelper::setValue($items[$n], 'linkOptions.data.toggle', 'tab');
                     ArrayHelper::setValue($items[$n], 'linkOptions.role', 'tab');
                     ArrayHelper::setValue($items[$n], 'linkOptions.aria-controls', $options['id']);
-                    ArrayHelper::setValue($items[$n], 'linkOptions.aria-selected', $selected ? 'true' : 'false');
+                    if (!$disabled) {
+                        ArrayHelper::setValue($items[$n], 'linkOptions.aria-selected', $selected ? 'true' : 'false');
+                    }
                 } else {
                     continue;
                 }
@@ -239,7 +243,8 @@ class Tabs extends Widget
         foreach ($this->items as $i => $item) {
             $active = ArrayHelper::getValue($item, 'active', null);
             $visible = ArrayHelper::getValue($item, 'visible', true);
-            if ($visible && $active !== false) {
+            $disabled = ArrayHelper::getValue($item, 'disabled', false);
+            if ($visible && $active !== false && $disabled !== true) {
                 $this->items[$i]['active'] = true;
                 return;
             }
