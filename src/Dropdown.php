@@ -110,6 +110,7 @@ class Dropdown extends Widget
             }
             $encodeLabel = isset($item['encode']) ? $item['encode'] : $this->encodeLabels;
             $label = $encodeLabel ? Html::encode($item['label']) : $item['label'];
+            $itemOptions = ArrayHelper::getValue($item, 'options', []);
             $linkOptions = ArrayHelper::getValue($item, 'linkOptions', []);
             $disabled = ArrayHelper::getValue($item, 'disabled', false);
 
@@ -136,7 +137,7 @@ class Dropdown extends Widget
                 Html::addCssClass($submenuOptions, ['dropdown-submenu']);
                 Html::addCssClass($linkOptions, ['dropdown-toggle']);
 
-                $lines[] = Html::beginTag('div', ['class' => ['dropdown'], 'aria-expanded' => 'false']);
+                $lines[] = Html::beginTag('div', array_merge_recursive(['class' => ['dropdown'], 'aria-expanded' => 'false'], $itemOptions));
                 $lines[] = Html::a($label, $url, array_merge([
                     'data-toggle' => 'dropdown',
                     'aria-haspopup' => 'true',
