@@ -155,6 +155,7 @@ class Tabs extends Widget
         $this->registerPlugin('tab');
         $this->prepareItems($this->items);
         return Nav::widget([
+                'activateContainer' => false,
                 'dropdownClass' => $this->dropdownClass,
                 'options' => ArrayHelper::merge(['role' => 'tablist'], $this->options),
                 'items' => $this->items,
