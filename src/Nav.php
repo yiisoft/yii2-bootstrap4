@@ -82,11 +82,11 @@ class Nav extends Widget
      */
     public $activateItems = true;
     /**
-     * @var bool whether to activate parent menu items when one of the corresponding child menu items is active.
+     * @var bool whether to activate the container when the menu item is active.
      */
     public $activateContainer = true;
     /**
-     * @var bool whether to activate the container when the menu item is active.
+     * @var bool whether to activate parent menu items when one of the corresponding child menu items is active.
      */
     public $activateParents = false;
     /**
