@@ -110,9 +110,7 @@ class Dropdown extends Widget
             }
             $encodeLabel = isset($item['encode']) ? $item['encode'] : $this->encodeLabels;
             $label = $encodeLabel ? Html::encode($item['label']) : $item['label'];
-            $itemOptions = ArrayHelper::getValue($item, 'options', []);
             $linkOptions = ArrayHelper::getValue($item, 'linkOptions', []);
-//            $linkOptions['tabindex'] = '-1';
             $disabled = ArrayHelper::getValue($item, 'disabled', false);
 
             Html::addCssClass($linkOptions, 'dropdown-item');
