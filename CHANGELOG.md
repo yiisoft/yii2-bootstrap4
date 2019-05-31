@@ -9,6 +9,7 @@ Yii Framework 2 bootstrap4 extension Change Log
 - Bug #135: Parent `li` should not contain active class (Thoulah)
 - Enh #137: Added disabled option for Nav, Dropdown and Tabs (Thoulah)
 - Bug #138: Restored functional itemOptions in Dropdown (Thoulah)
+- Bug #140: `aria-expanded` should not be set with boolean in yii\bootstrap4\Accordion (Thoulah)
 
 
 2.0.2 April 30, 2019
