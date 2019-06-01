@@ -187,7 +187,7 @@ class Accordion extends Widget
                 'type' => 'button',
                 'data-toggle' => 'collapse',
                 'data-target' => '#' . $options['id'],
-                'aria-expanded' => ($index === 0),
+                'aria-expanded' => ($index === 0) ? 'true' : 'false',
                 'aria-controls' => $options['id']
             ], $this->itemToggleOptions);
 
