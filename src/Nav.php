@@ -191,14 +191,12 @@ class Nav extends Widget
         Html::addCssClass($options, 'nav-item');
         Html::addCssClass($linkOptions, 'nav-link');
 
-        if ($this->activateItems && $active) {
-            Html::addCssClass($linkOptions, 'active');
-        }
-
         if ($disabled) {
             ArrayHelper::setValue($linkOptions, 'tabindex', '-1');
             ArrayHelper::setValue($linkOptions, 'aria-disabled', 'true');
             Html::addCssClass($linkOptions, 'disabled');
+        } elseif ($this->activateItems && $active) {
+            Html::addCssClass($linkOptions, 'active');
         }
 
         return Html::tag('li', Html::a($label, $url, $linkOptions) . $items, $options);

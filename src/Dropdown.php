@@ -121,7 +121,7 @@ class Dropdown extends Widget
                 ArrayHelper::setValue($linkOptions, 'aria-disabled', 'true');
                 Html::addCssClass($linkOptions, 'disabled');
             } elseif ($active) {
-                Html::addCssClass($linkOptions, ['active']);
+                Html::addCssClass($linkOptions, 'active');
             }
 
             $url = array_key_exists('url', $item) ? $item['url'] : null;
