@@ -46,6 +46,7 @@ class Dropdown extends Widget
      * - disabled: bool, optional, whether this menu item is disabled. Defaults to false.
      * - linkOptions: array, optional, the HTML attributes of the item link.
      * - options: array, optional, the HTML attributes of the item.
+     * - active: bool, optional, whether the item should be on active state or not.
      * - items: array, optional, the submenu items. The structure is the same as this property.
      *   Note that Bootstrap doesn't support dropdown submenu. You have to add your own CSS styles to support it.
      * - submenuOptions: array, optional, the HTML attributes for sub-menu container tag. If specified it will be
@@ -112,6 +113,7 @@ class Dropdown extends Widget
             $label = $encodeLabel ? Html::encode($item['label']) : $item['label'];
             $itemOptions = ArrayHelper::getValue($item, 'options', []);
             $linkOptions = ArrayHelper::getValue($item, 'linkOptions', []);
+            $active = ArrayHelper::getValue($item, 'active', false);
             $disabled = ArrayHelper::getValue($item, 'disabled', false);
 
             Html::addCssClass($linkOptions, 'dropdown-item');
@@ -119,6 +121,8 @@ class Dropdown extends Widget
                 ArrayHelper::setValue($linkOptions, 'tabindex', '-1');
                 ArrayHelper::setValue($linkOptions, 'aria-disabled', 'true');
                 Html::addCssClass($linkOptions, 'disabled');
+            } elseif ($active) {
+                Html::addCssClass($linkOptions, 'active');
             }
 
             $url = array_key_exists('url', $item) ? $item['url'] : null;
