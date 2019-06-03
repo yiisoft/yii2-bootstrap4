@@ -112,6 +112,7 @@ class Dropdown extends Widget
             $label = $encodeLabel ? Html::encode($item['label']) : $item['label'];
             $itemOptions = ArrayHelper::getValue($item, 'options', []);
             $linkOptions = ArrayHelper::getValue($item, 'linkOptions', []);
+            $active = ArrayHelper::getValue($item, 'active', false);
             $disabled = ArrayHelper::getValue($item, 'disabled', false);
 
             Html::addCssClass($linkOptions, 'dropdown-item');
@@ -119,6 +120,8 @@ class Dropdown extends Widget
                 ArrayHelper::setValue($linkOptions, 'tabindex', '-1');
                 ArrayHelper::setValue($linkOptions, 'aria-disabled', 'true');
                 Html::addCssClass($linkOptions, 'disabled');
+            } elseif ($active) {
+                Html::addCssClass($linkOptions, ['active']);
             }
 
             $url = array_key_exists('url', $item) ? $item['url'] : null;
