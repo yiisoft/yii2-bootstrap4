@@ -82,11 +82,6 @@ class Nav extends Widget
      */
     public $activateItems = true;
     /**
-     * @var bool whether to activate the container when the menu item is active.
-     * @since 2.0.3
-     */
-    public $activateContainer = true;
-    /**
      * @var bool whether to activate parent menu items when one of the corresponding child menu items is active.
      */
     public $activateParents = false;
@@ -176,7 +171,7 @@ class Nav extends Widget
         $disabled = ArrayHelper::getValue($item, 'disabled', false);
 
         if (isset($item['active'])) {
-            $active = ArrayHelper::remove($item, 'active', false);
+            $active = ArrayHelper::getValue($item, 'active', false);
         } else {
             $active = $this->isItemActive($item);
         }
@@ -196,17 +191,12 @@ class Nav extends Widget
         Html::addCssClass($options, 'nav-item');
         Html::addCssClass($linkOptions, 'nav-link');
 
-        if ($this->activateItems && $active) {
-            if ($this->activateContainer) {
-               Html::addCssClass($options, 'active'); // In NavBar the "nav-item" gets activated
-            }
-            Html::addCssClass($linkOptions, 'active');
-        }
-
         if ($disabled) {
             ArrayHelper::setValue($linkOptions, 'tabindex', '-1');
             ArrayHelper::setValue($linkOptions, 'aria-disabled', 'true');
             Html::addCssClass($linkOptions, 'disabled');
+        } elseif ($this->activateItems && $active) {
+            Html::addCssClass($linkOptions, 'active');
         }
 
         return Html::tag('li', Html::a($label, $url, $linkOptions) . $items, $options);
