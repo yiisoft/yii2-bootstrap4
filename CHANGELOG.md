@@ -1,15 +1,15 @@
 Yii Framework 2 bootstrap4 extension Change Log
 ==============================================
 
-2.0.3 under development
------------------------
+2.0.3 June 04, 2019
+-------------------
 
 - Bug #131: Fixed element with role tab must be inside role tablist (simialbi)
-- Enh #129: Added `Modal::SIZE_EXTRA_LARGE` constant (shoomlix)
 - Bug #135: Parent `li` should not contain active class (Thoulah)
-- Enh #137: Added disabled option for Nav, Dropdown and Tabs (Thoulah)
 - Bug #138: Restored functional itemOptions in Dropdown (Thoulah)
 - Bug #140: `aria-expanded` should not be set with boolean in yii\bootstrap4\Accordion (Thoulah)
+- Enh #129: Added `Modal::SIZE_EXTRA_LARGE` constant (shoomlix)
+- Enh #137: Added disabled option for Nav, Dropdown and Tabs (Thoulah)
 
 
 2.0.2 April 30, 2019
