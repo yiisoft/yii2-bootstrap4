@@ -99,51 +99,6 @@ EXPECTED;
         $this->assertEqualsWithoutLE($expected, $out);
     }
 
-    public function testActive()
-    {
-        Dropdown::$counter = 0;
-        $out = Dropdown::widget(
-            [
-                'submenuOptions' => [
-                    'class' => 'submenu-list',
-                ],
-                'items' => [
-                    [
-                        'label' => 'Dropdown1',
-                        'items' => [
-                            ['label' => 'Page1', 'content' => 'Page2'],
-                            ['label' => 'Page2', 'content' => 'Page3'],
-                        ]
-                    ],
-                    '-',
-                    [
-                        'label' => 'Dropdown2',
-                        'items' => [
-                            ['label' => 'Page3', 'content' => 'Page3', 'url' => '/', 'active' => true],
-                            ['label' => 'Page4', 'content' => 'Page4'],
-                        ],
-                    ]
-                ]
-            ]
-        );
-
-        $expected = <<<HTML
-<div id="w0" class="dropdown-menu"><div class="dropdown" aria-expanded="false">
-<a class="dropdown-item dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">Dropdown1</a>
-<div id="w1" class="submenu-list dropdown-submenu dropdown-menu"><h6 class="dropdown-header">Page1</h6>
-<h6 class="dropdown-header">Page2</h6></div>
-</div>
-<div class="dropdown-divider"></div>
-<div class="dropdown" aria-expanded="false">
-<a class="dropdown-item dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">Dropdown2</a>
-<div id="w2" class="submenu-list dropdown-submenu dropdown-menu"><a class="dropdown-item active" href="/">Page3</a>
-<h6 class="dropdown-header">Page4</h6></div>
-</div></div>
-HTML;
-
-        $this->assertEqualsWithoutLE($expected, $out);
-    }
-
     public function testDisabled()
     {
         Dropdown::$counter = 0;
