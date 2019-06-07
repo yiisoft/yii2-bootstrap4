@@ -4,7 +4,7 @@ Yii Framework 2 bootstrap4 extension Change Log
 2.0.4 under development
 -----------------------
 
-- Bug #133: Menu items were never activated (Thoulah & simialbi)
+- Bug #133: Menu items were never activated (Thoulah, simialbi)
 
 
 2.0.3 June 04, 2019
