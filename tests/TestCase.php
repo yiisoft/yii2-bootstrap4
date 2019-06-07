@@ -2,9 +2,12 @@
 
 namespace yiiunit\extensions\bootstrap4;
 
+use Yii;
+use yii\base\Action;
+use yii\base\Module;
 use yii\di\Container;
 use yii\helpers\ArrayHelper;
-use Yii;
+use yii\web\Controller;
 
 /**
  * This is the base class for all yii framework unit tests.
@@ -49,6 +52,33 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
                 ],
             ]
         ], $config));
+    }
+
+    /**
+     * Mocks controller action with parameters
+     *
+     * @param string $controllerId
+     * @param string $actionID
+     * @param string $moduleID
+     * @param array $params
+     */
+    protected function mockAction($controllerId, $actionID, $moduleID = null, $params = [])
+    {
+        Yii::$app->controller = $controller = new Controller($controllerId, Yii::$app);
+        $controller->actionParams = $params;
+        $controller->action = new Action($actionID, $controller);
+
+        if ($moduleID !== null) {
+            $controller->module = new Module($moduleID);
+        }
+    }
+
+    /**
+     * Removes controller
+     */
+    protected function removeMockedAction()
+    {
+        Yii::$app->controller = null;
     }
 
     /**

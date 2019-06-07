@@ -1,0 +1,21 @@
+Upgrading Instructions for Yii2 Bootstrap 4
+===========================================
+
+This file contains the upgrade notes for yii2-bootstrap4. These notes highlight changes
+that could break your application when you upgrade from one version to another.
+Even though we try to ensure backwards compatibility (BC) as much as possible, sometimes
+it is not possible or very complicated to avoid it and still create a good solution to
+a problem. You may also want to check out the [versioning policy](https://github.com/yiisoft/yii2/blob/master/docs/internals/versions.md)
+for further details.
+
+> Note: The following upgrading instructions are cumulative. That is,
+if you want to upgrade from version A to version C and there is
+version B between A and C, you need to follow the instructions
+for both A and B.
+
+Upgrade from version 2.0.3
+--------------------------
+
+* Version 2.0.3 introduced the `activateContainer` option for `Nav`. Recent changes have
+  made this option obsolete and it has therefore has been deleted. Please make sure you
+  are not using it. If you are, remove it from your code.

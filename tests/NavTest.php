@@ -1,10 +1,7 @@
 <?php
 namespace yiiunit\extensions\bootstrap4;
 
-use yii\base\Action;
-use yii\base\Module;
 use yii\bootstrap4\Nav;
-use yii\web\Controller;
 
 /**
  * Tests for Nav widget
@@ -143,6 +140,39 @@ EXPECTED;
         $this->assertEqualsWithoutLE($expected, $out);
     }
 
+    public function testActive()
+    {
+        $this->mockAction('site', 'users');
+
+        Nav::$counter = 0;
+        $out = Nav::widget([
+            'items' => [
+                [
+                    'label' => 'Main',
+                    'url' => ['site/index'],
+                ],
+                [
+                    'label' => 'Admin',
+                    'items' => [
+                        ['label' => 'Users', 'url' => ['site/users']],
+                        ['label' => 'Roles', 'url' => ['site/roles']],
+                        ['label' => 'Statuses', 'url' => ['site/statuses']]
+                    ],
+                ],
+            ],
+        ]);
+
+        $expected = <<<EXPECTED
+<ul id="w0" class="nav"><li class="nav-item"><a class="nav-link" href="/base/index.php?r=site%2Findex">Main</a></li>
+<li class="dropdown nav-item"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Admin</a><div id="w1" class="dropdown-menu"><a class="dropdown-item active" href="/base/index.php?r=site%2Fusers">Users</a>
+<a class="dropdown-item" href="/base/index.php?r=site%2Froles">Roles</a>
+<a class="dropdown-item" href="/base/index.php?r=site%2Fstatuses">Statuses</a></div></li></ul>
+EXPECTED;
+
+        $this->assertEqualsWithoutLE($expected, $out);
+        $this->removeMockedAction();
+    }
+
     /**
      * @see https://github.com/yiisoft/yii2-bootstrap/issues/162
      */
@@ -196,8 +226,8 @@ EXPECTED;
         ]);
 
         $expected = <<<EXPECTED
-<ul id="w0" class="nav"><li class="nav-item active"><a class="nav-link active" href="#">Item1</a></li>
-<li class="nav-item active"><a class="nav-link active" href="/base/index.php?r=site%2Findex">Item2</a></li></ul>
+<ul id="w0" class="nav"><li class="nav-item"><a class="nav-link active" href="#">Item1</a></li>
+<li class="nav-item"><a class="nav-link active" href="/base/index.php?r=site%2Findex">Item2</a></li></ul>
 EXPECTED;
 
         $this->assertEqualsWithoutLE($expected, $out);
@@ -263,7 +293,7 @@ EXPECTED;
 
         $expected = <<<EXPECTED
 <ul id="w0" class="nav"><li class="nav-item"><a class="nav-link" href="#">Item1</a></li>
-<li class="dropdown nav-item"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Item2</a><div id="w1" class="dropdown-menu"><a class="dropdown-item" href="/base/index.php?r=site%2Findex">Page2</a>
+<li class="dropdown nav-item"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Item2</a><div id="w1" class="dropdown-menu"><a class="dropdown-item active" href="/base/index.php?r=site%2Findex">Page2</a>
 <h6 class="dropdown-header">Page3</h6></div></li></ul>
 EXPECTED;
 
@@ -327,7 +357,7 @@ EXPECTED;
         ]);
 
         $expected = <<<EXPECTED
-<ul id="w0" class="nav"><li class="dropdown nav-item active"><a class="dropdown-toggle nav-link active" href="#" data-toggle="dropdown">Dropdown</a><div id="w1" class="dropdown-menu"><div class="dropdown active" aria-expanded="false">
+<ul id="w0" class="nav"><li class="dropdown nav-item"><a class="dropdown-toggle nav-link active" href="#" data-toggle="dropdown">Dropdown</a><div id="w1" class="dropdown-menu"><div class="dropdown active" aria-expanded="false">
 <a class="dropdown-item dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">Sub-dropdown</a>
 <div id="w2" class="dropdown-submenu dropdown-menu"><h6 class="dropdown-header">Page</h6></div>
 </div></div></li></ul>
@@ -335,28 +365,4 @@ EXPECTED;
 
         $this->assertEqualsWithoutLE($expected, $out);
     }
-
-    /**
-    * Mocks controller action with parameters
-    *
-    * @param string $controllerId
-    * @param string $actionID
-    * @param string $moduleID
-    * @param array  $params
-    */
-   protected function mockAction($controllerId, $actionID, $moduleID = null, $params = [])
-   {
-       \Yii::$app->controller = $controller = new Controller($controllerId, \Yii::$app);
-       $controller->actionParams = $params;
-       $controller->action = new Action($actionID, $controller);
-
-       if ($moduleID !== null) {
-           $controller->module = new Module($moduleID);
-       }
-   }
-
-   protected function removeMockedAction()
-   {
-       \Yii::$app->controller = null;
-   }
 }
