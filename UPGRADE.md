@@ -17,4 +17,5 @@ Upgrade from version 2.0.3
 --------------------------
 
 * Version 2.0.3 introduced the `activateContainer` option for `Nav`. Recent changes have
-  made this option obsolete and it has therefor been deleted.
+  made this option obsolete and it has therefore has been deleted. Please make sure you
+  are not using it. If you are, remove it from your code.
