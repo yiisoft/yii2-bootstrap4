@@ -72,7 +72,9 @@ use yii\helpers\ArrayHelper;
  *
  * // Input group
  * echo $form->field($model, 'demo', [
- *     'inputTemplate' => '<div class="input-group"><span class="input-group-addon">@</span>{input}</div>',
+ *     'inputTemplate' => '<div class="input-group"><div class="input-group-prepend">
+ *         <span class="input-group-text">@</span>
+ *     </div>{input}</div>',
  * ]);
  *
  * ActiveForm::end();
