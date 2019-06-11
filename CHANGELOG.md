@@ -10,7 +10,7 @@ Yii Framework 2 bootstrap4 extension Change Log
 2.0.4 June 11, 2019
 -------------------
 
-- Bug #128: Fixed Input group invalid-feedback (simialbi)
+- Bug #128: Fixed inputTemplate invalid-feedback (simialbi)
 - Bug #133: Menu items were never activated (Thoulah, simialbi)
 
 
