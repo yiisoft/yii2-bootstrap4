@@ -187,9 +187,16 @@ class ActiveField extends \yii\widgets\ActiveField
                 $this->parts['{error}'] = '';
             }
             if ($this->inputTemplate) {
+                $options = $this->inputOptions;
+
+                if ($this->form->validationStateOn === ActiveForm::VALIDATION_STATE_ON_INPUT) {
+                    $this->addErrorClassIfNeeded($options);
+                }
+                $this->addAriaAttributes($options);
+
                 $input = isset($this->parts['{input}'])
                     ? $this->parts['{input}']
-                    : Html::activeTextInput($this->model, $this->attribute, $this->inputOptions);
+                    : Html::activeTextInput($this->model, $this->attribute, $options);
                 $this->parts['{input}'] = strtr($this->inputTemplate, ['{input}' => $input]);
             }
         }
