@@ -264,6 +264,34 @@ HTML;
     }
 
     /**
+     * Fixes #128
+     * @see https://github.com/yiisoft/yii2-bootstrap4/issues/128
+     */
+    public function testInputTemplate()
+    {
+        $model = new User();
+        $model->validate();
+
+        ActiveForm::$counter = 0;
+        ob_start();
+        $form = ActiveForm::begin();
+        echo $form->field($model, 'username', ['inputTemplate' => '{input}']);
+        ActiveForm::end();
+        $out = ob_get_clean();
+
+        $expected = <<<HTML
+<div class="form-group field-user-username required">
+<label for="user-username">Username</label>
+<input type="text" id="user-username" class="form-control is-invalid" name="User[username]" aria-required="true" aria-invalid="true">
+<small class="form-text text-muted">Your username must be at least 4 characters long</small>
+<div class="invalid-feedback">Username cannot be blank.</div>
+</div>
+HTML;
+
+        $this->assertContains($expected, $out);
+    }
+
+    /**
      * Fixes #196
      */
     public function testFormNoRoleAttribute()
