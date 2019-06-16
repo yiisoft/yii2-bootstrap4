@@ -18,7 +18,7 @@ class BootstrapPluginAsset extends AssetBundle
 {
     public $sourcePath = '@npm/bootstrap/dist';
     public $js = [
-        'js/bootstrap.bundle.js',
+        YII_DEBUG ? 'js/bootstrap.bundle.js' : 'js/bootstrap.bundle.min.js',
     ];
     public $depends = [
         'yii\web\JqueryAsset',

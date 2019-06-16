@@ -18,6 +18,6 @@ class BootstrapAsset extends AssetBundle
 {
     public $sourcePath = '@npm/bootstrap/dist';
     public $css = [
-        'css/bootstrap.css',
+        YII_DEBUG ? 'css/bootstrap.css' : 'css/bootstrap.min.css',
     ];
 }
