@@ -19,24 +19,24 @@ namespace yii\bootstrap4;
  *     'buttonGroups' => [
  *         [
  *             'buttons' => [
- *                 ['label' => '1', 'class' => ['btn-secondary']],
- *                 ['label' => '2', 'class' => ['btn-secondary']],
- *                 ['label' => '3', 'class' => ['btn-secondary']],
- *                 ['label' => '4', 'class' => ['btn-secondary']]
+ *                 ['label' => '1', 'options' => ['class' => ['btn-secondary']]],
+ *                 ['label' => '2', 'options' => ['class' => ['btn-secondary']]],
+ *                 ['label' => '3', 'options' => ['class' => ['btn-secondary']]],
+ *                 ['label' => '4', 'options' => ['class' => ['btn-secondary']]]
  *             ],
  *              'class' => ['mr-2']
  *         ],
  *         [
  *             'buttons' => [
- *                 ['label' => '5', 'class' => ['btn-secondary']],
- *                 ['label' => '6', 'class' => ['btn-secondary']],
- *                 ['label' => '7', 'class' => ['btn-secondary']]
+ *                 ['label' => '5', 'options' => ['class' => ['btn-secondary']]],
+ *                 ['label' => '6', 'options' => ['class' => ['btn-secondary']]],
+ *                 ['label' => '7', 'options' => ['class' => ['btn-secondary']]]
  *             ],
  *             'class' => ['mr-2']
  *         ],
  *         [
  *             'buttons' => [
- *                 ['label' => '8', 'class' => ['btn-secondary']]
+ *                 ['label' => '8', 'options' => ['class' => ['btn-secondary']]]
  *             ]
  *         ]
  *     ]
