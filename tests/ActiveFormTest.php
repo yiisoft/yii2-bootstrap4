@@ -83,9 +83,9 @@ HTML;
         $expected2 = <<<HTML
 <div class="form-group row field-dynamicmodel-checkbox">
 <div class="col-sm-10 offset-sm-2">
-<div class="form-check">
-<input type="hidden" name="DynamicModel[checkbox]" value="0"><input type="checkbox" id="dynamicmodel-checkbox" class="form-check-input" name="DynamicModel[checkbox]" value="1">
-<label class="form-check-label" for="dynamicmodel-checkbox">Checkbox</label>
+<div class="custom-control custom-checkbox">
+<input type="hidden" name="DynamicModel[checkbox]" value="0"><input type="checkbox" id="dynamicmodel-checkbox" class="custom-control-input" name="DynamicModel[checkbox]" value="1">
+<label class="custom-control-label" for="dynamicmodel-checkbox">Checkbox</label>
 <div class="invalid-feedback "></div>
 
 </div>
@@ -96,19 +96,19 @@ HTML;
 <div class="form-group row field-dynamicmodel-gridradios">
 <label class="col-sm-2 col-form-label">Grid Radios</label>
 <div class="col-sm-10">
-<input type="hidden" name="DynamicModel[gridRadios]" value=""><div id="dynamicmodel-gridradios" role="radiogroup"><div class="form-check">
-<input type="radio" id="i0" class="form-check-input" name="DynamicModel[gridRadios]" value="option1">
-<label class="form-check-label" for="i0">First radio</label>
+<input type="hidden" name="DynamicModel[gridRadios]" value=""><div id="dynamicmodel-gridradios" role="radiogroup"><div class="custom-control custom-radio">
+<input type="radio" id="i0" class="custom-control-input" name="DynamicModel[gridRadios]" value="option1">
+<label class="custom-control-label" for="i0">First radio</label>
 </div>
 
-<div class="form-check">
-<input type="radio" id="i1" class="form-check-input" name="DynamicModel[gridRadios]" value="option2">
-<label class="form-check-label" for="i1">Second radio</label>
+<div class="custom-control custom-radio">
+<input type="radio" id="i1" class="custom-control-input" name="DynamicModel[gridRadios]" value="option2">
+<label class="custom-control-label" for="i1">Second radio</label>
 </div>
 
-<div class="form-check">
-<input type="radio" id="i2" class="form-check-input" name="DynamicModel[gridRadios]" value="option3">
-<label class="form-check-label" for="i2">Third radio</label>
+<div class="custom-control custom-radio">
+<input type="radio" id="i2" class="custom-control-input" name="DynamicModel[gridRadios]" value="option3">
+<label class="custom-control-label" for="i2">Third radio</label>
 </div>
 </div>
 <div class="invalid-feedback "></div>
@@ -141,8 +141,8 @@ HTML;
 
         $expected = <<<HTML
 <div class="offset-lg-1 col-lg-3">
-<input type="hidden" name="DynamicModel[checkboxName]" value="0"><input type="checkbox" id="dynamicmodel-checkboxname" class="form-check-input" name="DynamicModel[checkboxName]" value="1">
-<label class="form-check-label" for="dynamicmodel-checkboxname">Checkbox Name</label>
+<input type="hidden" name="DynamicModel[checkboxName]" value="0"><input type="checkbox" id="dynamicmodel-checkboxname" class="custom-control-input" name="DynamicModel[checkboxName]" value="1">
+<label class="custom-control-label" for="dynamicmodel-checkboxname">Checkbox Name</label>
 </div>
 <div class="col-lg-8"><div class="invalid-feedback "></div></div>
 HTML;
@@ -192,9 +192,9 @@ HTML;
 HTML;
         $expected3 = <<<HTML
 <div class="form-group field-dynamicmodel-checkboxname">
-<div class="form-check">
-<input type="hidden" name="DynamicModel[checkboxName]" value="0"><input type="checkbox" id="dynamicmodel-checkboxname" class="form-check-input" name="DynamicModel[checkboxName]" value="1">
-<label class="sr-only form-check-label" for="dynamicmodel-checkboxname">Checkbox Name</label>
+<div class="custom-control custom-checkbox">
+<input type="hidden" name="DynamicModel[checkboxName]" value="0"><input type="checkbox" id="dynamicmodel-checkboxname" class="custom-control-input" name="DynamicModel[checkboxName]" value="1">
+<label class="sr-only custom-control-label" for="dynamicmodel-checkboxname">Checkbox Name</label>
 
 
 </div>
