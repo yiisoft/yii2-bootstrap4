@@ -1,8 +1,8 @@
 Yii Framework 2 bootstrap4 extension Change Log
 ==============================================
 
-2.0.5 under development
------------------------
+2.0.5 July 02, 2019
+-------------------
 
 - Enh #150: Set custom checks and radios as default behaviour (simialbi)
 
