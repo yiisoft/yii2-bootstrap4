@@ -137,6 +137,7 @@ class ActiveField extends \yii\widgets\ActiveField
     public $checkTemplate = "<div class=\"custom-control custom-checkbox\">\n{input}\n{label}\n{error}\n{hint}\n</div>";
     /**
      * @var string the template for radios in default layout
+     * @since 2.0.5
      */
     public $radioTemplate = "<div class=\"custom-control custom-radio\">\n{input}\n{label}\n{error}\n{hint}\n</div>";
     /**
@@ -145,6 +146,7 @@ class ActiveField extends \yii\widgets\ActiveField
     public $checkHorizontalTemplate = "{beginWrapper}\n<div class=\"custom-control custom-checkbox\">\n{input}\n{label}\n{error}\n{hint}\n</div>\n{endWrapper}";
     /**
      * @var string the template for checkboxes and radios in horizontal layout
+     * @since 2.0.5
      */
     public $radioHorizontalTemplate = "{beginWrapper}\n<div class=\"custom-control custom-radio\">\n{input}\n{label}\n{error}\n{hint}\n</div>\n{endWrapper}";
     /**
@@ -253,7 +255,7 @@ class ActiveField extends \yii\widgets\ActiveField
         Html::addCssClass($this->labelOptions, 'custom-control-label');
 
         if (!isset($options['template'])) {
-            $this->template = ($enclosedByLabel) ? $this->checkEnclosedTemplate : $this->radioTemplate;
+            $this->template = $enclosedByLabel ? $this->checkEnclosedTemplate : $this->radioTemplate;
         } else {
             $this->template = $options['template'];
         }
@@ -266,10 +268,8 @@ class ActiveField extends \yii\widgets\ActiveField
         }
         unset($options['template']);
 
-        if ($enclosedByLabel) {
-            if (isset($options['label'])) {
-                $this->parts['{labelTitle}'] = $options['label'];
-            }
+        if ($enclosedByLabel && isset($options['label'])) {
+            $this->parts['{labelTitle}'] = $options['label'];
         }
 
         return parent::radio($options, false);
