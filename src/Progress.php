@@ -20,7 +20,13 @@ use yii\helpers\ArrayHelper;
  * // default with label
  * echo Progress::widget([
  *     'percent' => 60,
- *     'label' => 'test',
+ *     'label' => 'test'
+ * ]);
+ * // or
+ * echo Progress::widget([
+ *     'bars' => [
+ *         ['percent' => 60, 'label' => 'test']
+ *     ]
  * ]);
  *
  * // styled
@@ -28,17 +34,35 @@ use yii\helpers\ArrayHelper;
  *     'percent' => 65,
  *     'barOptions' => ['class' => 'bg-danger']
  * ]);
+ * // or
+ * echo Progress::widget([
+ *     'bars' => [
+ *         ['percent' => 65, 'options' => ['class' => 'bg-danger']]
+ *     ]
+ * ]);
  *
  * // striped
  * echo Progress::widget([
  *     'percent' => 70,
  *     'barOptions' => ['class' => ['bg-warning', 'progress-bar-striped']]
  * ]);
+ * // or
+ * echo Progress::widget([
+ *     'bars' => [
+ *         ['percent' => 70, 'options' => ['class' => ['bg-warning', 'progress-bar-striped']]]
+ *     ]
+ * ]);
  *
  * // striped animated
  * echo Progress::widget([
  *     'percent' => 70,
  *     'barOptions' => ['class' => ['bg-success', 'progress-bar-animated', 'progress-bar-striped']]
+ * ]);
+ * // or
+ * echo Progress::widget([
+ *     'bars' => [
+ *         ['percent' => 70, 'options' => ['class' => ['bg-success', 'progress-bar-animated', 'progress-bar-striped']]]
+ *     ]
  * ]);
  *
  * // stacked bars
@@ -58,16 +82,17 @@ use yii\helpers\ArrayHelper;
 class Progress extends Widget
 {
     /**
-     * @var string the button label.
+     * @var string the button label. This property will only be considered if [[bars]] is empty
      */
     public $label;
     /**
-     * @var int the amount of progress as a percentage.
+     * @var int the amount of progress as a percentage. This property will only be considered if [[bars]] is empty
      */
     public $percent = 0;
     /**
-     * @var array the HTML attributes of the bar.
+     * @var array the HTML attributes of the bar. This property will only be considered if [[bars]] is empty
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @since 2.0.6
      */
     public $barOptions = [];
     /**
