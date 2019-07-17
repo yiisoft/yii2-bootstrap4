@@ -73,9 +73,12 @@ https://getbootstrap.com/docs/4.3/components/pagination/ for more information.
 
 ### Modal
 
-The Modal has no `$header` property any more. It was renamed to `$title`. It isn't necessary to write the 
-`<h2 class="modal-title></h2>` any more. It will be rendered automatically. Like the `$header` property, the 
-`$headerOptions` property was renamed to `$titleOptions`.
+
+Following properties were renamed:
+* `$header` became `$title`,
+* `$headerOptions` became `$titleOptions`
+
+It isn't necessary to write the `<h2 class="modal-title></h2>` any more. It will be rendered automatically.
 
 ### Nav
 
@@ -84,9 +87,11 @@ https://getbootstrap.com/docs/4.3/getting-started/theming/#sass-options
 
 ### NavBar
 
-Removed property `$headerContent`. There is no navbar header any more. Property `$containerOptions` became 
-`$collapseOptions`. The toggler is now customizable so the properties `$togglerContent` and `$togglerOptions` were
-introduced.
+Following properties were renamed:
+* `$containerOptions` became `$collapseOptions`
+
+Removed property `$headerContent`. There is no navbar header any more. The toggler is now customizable so the properties 
+`$togglerContent` and `$togglerOptions` were introduced.
 
 ### Tabs
 
