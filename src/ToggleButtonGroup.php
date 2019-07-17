@@ -28,7 +28,7 @@ use yii\base\InvalidConfigException;
  * @see http://getbootstrap.com/javascript/#buttons-checkbox-radio
  *
  * @author Paul Klimov <klimov.paul@gmail.com>
- * @author Simon Karlen <simi.albi@gmail.com>
+ * @author Simon Karlen <simi.albi@outlook.com>
  */
 class ToggleButtonGroup extends InputWidget
 {

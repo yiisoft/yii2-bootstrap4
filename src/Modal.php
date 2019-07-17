@@ -30,7 +30,7 @@ use yii\helpers\ArrayHelper;
  * @see https://getbootstrap.com/docs/4.2/components/modal/
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  * @author Qiang Xue <qiang.xue@gmail.com>
- * @author Simon Karlen <simi.albi@gmail.com>
+ * @author Simon Karlen <simi.albi@outlook.com>
  */
 class Modal extends Widget
 {
@@ -38,19 +38,19 @@ class Modal extends Widget
      * The additional css class of extra large modal
      * @since 2.0.3
      */
-    const SIZE_EXTRA_LARGE = "modal-xl";
+    const SIZE_EXTRA_LARGE = 'modal-xl';
     /**
      * The additional css class of large modal
      */
-    const SIZE_LARGE = "modal-lg";
+    const SIZE_LARGE = 'modal-lg';
     /**
      * The additional css class of small modal
      */
-    const SIZE_SMALL = "modal-sm";
+    const SIZE_SMALL = 'modal-sm';
     /**
      * The additional css class of default modal
      */
-    const SIZE_DEFAULT = "";
+    const SIZE_DEFAULT = '';
 
     /**
      * @var string the tile content in the modal window.

@@ -49,7 +49,7 @@ use yii\helpers\ArrayHelper;
  *
  * @see https://getbootstrap.com/docs/4.2/components/collapse/#accordion-example
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @author Simon Karlen <simi.albi@gmail.com>
+ * @author Simon Karlen <simi.albi@outlook.com>
  */
 class Accordion extends Widget
 {
