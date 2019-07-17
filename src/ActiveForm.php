@@ -60,7 +60,7 @@ use yii\base\InvalidConfigException;
  * @see http://getbootstrap.com/css/#forms
  *
  * @author Michael Härtl <haertl.mike@gmail.com>
- * @author Simon Karlen <simi.albi@gmail.com>
+ * @author Simon Karlen <simi.albi@outlook.com>
  */
 class ActiveForm extends \yii\widgets\ActiveForm
 {

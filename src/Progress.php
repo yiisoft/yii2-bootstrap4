@@ -20,10 +20,21 @@ use yii\helpers\ArrayHelper;
  * // default with label
  * echo Progress::widget([
  *     'percent' => 60,
- *     'label' => 'test',
+ *     'label' => 'test'
+ * ]);
+ * // or
+ * echo Progress::widget([
+ *     'bars' => [
+ *         ['percent' => 60, 'label' => 'test']
+ *     ]
  * ]);
  *
  * // styled
+ * echo Progress::widget([
+ *     'percent' => 65,
+ *     'barOptions' => ['class' => 'bg-danger']
+ * ]);
+ * // or
  * echo Progress::widget([
  *     'bars' => [
  *         ['percent' => 65, 'options' => ['class' => 'bg-danger']]
@@ -32,15 +43,26 @@ use yii\helpers\ArrayHelper;
  *
  * // striped
  * echo Progress::widget([
+ *     'percent' => 70,
+ *     'barOptions' => ['class' => ['bg-warning', 'progress-bar-striped']]
+ * ]);
+ * // or
+ * echo Progress::widget([
  *     'bars' => [
- *         ['percent' => 70, 'options' => ['class' => 'bg-warning progress-bar-striped']]
+ *         ['percent' => 70, 'options' => ['class' => ['bg-warning', 'progress-bar-striped']]]
  *     ]
  * ]);
  *
  * // striped animated
  * echo Progress::widget([
  *     'percent' => 70,
- *     'options' => ['class' => 'bg-success progress-bar-animated progress-bar-striped']
+ *     'barOptions' => ['class' => ['bg-success', 'progress-bar-animated', 'progress-bar-striped']]
+ * ]);
+ * // or
+ * echo Progress::widget([
+ *     'bars' => [
+ *         ['percent' => 70, 'options' => ['class' => ['bg-success', 'progress-bar-animated', 'progress-bar-striped']]]
+ *     ]
  * ]);
  *
  * // stacked bars
@@ -55,18 +77,24 @@ use yii\helpers\ArrayHelper;
  * @see https://getbootstrap.com/docs/4.2/components/progress/
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  * @author Alexander Makarov <sam@rmcreative.ru>
- * @author Simon Karlen <simi.albi@gmail.com>
+ * @author Simon Karlen <simi.albi@outlook.com>
  */
 class Progress extends Widget
 {
     /**
-     * @var string the button label.
+     * @var string the button label. This property will only be considered if [[bars]] is empty
      */
     public $label;
     /**
-     * @var int the amount of progress as a percentage.
+     * @var int the amount of progress as a percentage. This property will only be considered if [[bars]] is empty
      */
     public $percent = 0;
+    /**
+     * @var array the HTML attributes of the bar. This property will only be considered if [[bars]] is empty
+     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @since 2.0.6
+     */
+    public $barOptions = [];
     /**
      * @var array a set of bars that are stacked together to form a single progress bar.
      * Each bar is an array of the following structure:
@@ -115,7 +143,7 @@ class Progress extends Widget
         $out = Html::beginTag('div', $this->options) . "\n";
         if (empty($this->bars)) {
             $this->bars = [
-                ['label' => $this->label, 'percent' => $this->percent, 'options' => []]
+                ['label' => $this->label, 'percent' => $this->percent, 'options' => $this->barOptions]
             ];
         }
         $bars = [];

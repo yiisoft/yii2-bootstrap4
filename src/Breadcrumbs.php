@@ -25,7 +25,7 @@ use yii\helpers\ArrayHelper;
  * ```
  * @see http://getbootstrap.com/javascript/#buttons
  * @author Alexandr Kozhevnikov <onmotion1@gmail.com>
- * @author Simon Karlen <simi.albi@gmail.com>
+ * @author Simon Karlen <simi.albi@outlook.com>
  */
 class Breadcrumbs extends Widget
 {

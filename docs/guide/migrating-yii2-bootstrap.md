@@ -18,3 +18,9 @@ The most notable changes are summarized below:
 * [[yii\bootstrap4\Breadcrumbs|Breadcrumbs]] was added (Bootstrap 4 implementation of [[yii\widgets\Breadcrumbs]])
 * [[yii\bootstrap4\ButtonToolbar|ButtonToolbar]] was added (https://getbootstrap.com/docs/4.2/components/button-group/#button-toolbar)
 
+## Changes in widgets
+
+### Modal
+
+The Modal has no `$header` property any more. It was renamed to `$title`. It isn't necessary to write the `<h2 class="modal-title>`
+any more. It will be rendered automatically. 

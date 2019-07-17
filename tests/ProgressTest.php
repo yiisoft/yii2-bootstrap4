@@ -9,6 +9,24 @@ use yii\bootstrap4\Progress;
  */
 class ProgressTest extends TestCase
 {
+    public function testSimpleRender()
+    {
+        Progress::$counter = 0;
+        $out = Progress::widget([
+            'label' => 'Progress',
+            'percent' => 25,
+            'barOptions' => ['class' => 'bg-warning']
+        ]);
+
+        $expected = <<<HTML
+<div id="w0" class="progress">
+<div class="bg-warning progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">Progress</div>
+</div>
+HTML;
+
+        $this->assertEqualsWithoutLE($expected, $out);
+    }
+
     public function testRender()
     {
         Progress::$counter = 0;

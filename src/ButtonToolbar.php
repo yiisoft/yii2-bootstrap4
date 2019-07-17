@@ -48,7 +48,7 @@ namespace yii\bootstrap4;
  * @see https://getbootstrap.com/docs/4.2/components/buttons/
  * @see https://getbootstrap.com/docs/4.2/components/button-group/#button-toolbar
  *
- * @author Simon Karlen <simi.albi@gmail.com>
+ * @author Simon Karlen <simi.albi@outlook.com>
  */
 class ButtonToolbar extends Widget
 {
