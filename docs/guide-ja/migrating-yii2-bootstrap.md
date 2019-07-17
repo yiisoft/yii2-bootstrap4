@@ -16,5 +16,5 @@ yii2-bootstrap4 は、Bootstrap 3 から Bootstrap 4 への移行に応じて、
 * [[yii\bootstrap\Collapse|Collapse]] の名前は [[yii\bootstrap4\Accordion|Accordion]] に変更
 * [[yii\bootstrap\BootstrapThemeAsset|BootstrapThemeAsset]] は廃止
 * [[yii\bootstrap4\Breadcrumbs|Breadcrumbs]] を追加 ([[yii\widgets\Breadcrumbs]] の Bootstrap 4 による実装)
-* [[yii\bootstrap4\ButtonToolbar|ButtonToolbar]] を追加 (https://getbootstrap.com/docs/4.2/components/button-group/#button-toolbar)
+* [[yii\bootstrap4\ButtonToolbar|ButtonToolbar]] を追加 (https://getbootstrap.com/docs/4.3/components/button-group/#button-toolbar)
 

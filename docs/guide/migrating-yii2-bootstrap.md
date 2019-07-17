@@ -16,7 +16,7 @@ The most notable changes are summarized below:
 * [[yii\bootstrap\Collapse|Collapse]] was renamed to [[yii\bootstrap4\Accordion|Accordion]]
 * [[yii\bootstrap\BootstrapThemeAsset|BootstrapThemeAsset]] was removed
 * [[yii\bootstrap4\Breadcrumbs|Breadcrumbs]] was added (Bootstrap 4 implementation of [[yii\widgets\Breadcrumbs]])
-* [[yii\bootstrap4\ButtonToolbar|ButtonToolbar]] was added (https://getbootstrap.com/docs/4.2/components/button-group/#button-toolbar)
+* [[yii\bootstrap4\ButtonToolbar|ButtonToolbar]] was added (https://getbootstrap.com/docs/4.3/components/button-group/#button-toolbar)
 
 ### BaseHtml
 

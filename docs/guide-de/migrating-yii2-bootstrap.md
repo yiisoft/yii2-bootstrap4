@@ -16,7 +16,7 @@ Die grössten Änderungen finden Sie hier zusammengefasst:
 * [[yii\bootstrap\Collapse|Collapse]] wurde umbenannt zu [[yii\bootstrap4\Accordion|Accordion]]
 * [[yii\bootstrap\BootstrapThemeAsset|BootstrapThemeAsset]] wurde entfernt
 * [[yii\bootstrap4\Breadcrumbs|Breadcrumbs]] wurde hinzugefügt (Bootstrap 4 Implementation von [[yii\widgets\Breadcrumbs]])
-* [[yii\bootstrap4\ButtonToolbar|ButtonToolbar]] wurde hinzugefügt (https://getbootstrap.com/docs/4.2/components/button-group/#button-toolbar)
+* [[yii\bootstrap4\ButtonToolbar|ButtonToolbar]] wurde hinzugefügt (https://getbootstrap.com/docs/4.3/components/button-group/#button-toolbar)
 
 
 ### BaseHtml
@@ -105,5 +105,5 @@ zu `$panes[0]`.
 ### ToggleButtonGroup
 
 Dieses Widget hat die Konstanten [[yii\bootstrap4\ToggleButtonGroup::TYPE_CHECKBOX]] und
-[[yii\bootstrap4\ToggleButtonGroup::TYPE_RADIO]] erhalten zur vereinfachten Selelktion des Typs und bei allfälligen 
+[[yii\bootstrap4\ToggleButtonGroup::TYPE_RADIO]] erhalten zur vereinfachten Selektion des Typs und bei allfälligen 
 Änderungen der Werte zur Verhinderung von Folgefehlern.
