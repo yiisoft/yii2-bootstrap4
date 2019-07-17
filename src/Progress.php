@@ -92,7 +92,7 @@ class Progress extends Widget
     /**
      * @var array the HTML attributes of the bar. This property will only be considered if [[bars]] is empty
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
-     * @since 2.0.6
+     * @since 2.1.0
      */
     public $barOptions = [];
     /**
