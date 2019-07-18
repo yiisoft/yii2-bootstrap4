@@ -39,6 +39,9 @@ use yii\helpers\ArrayHelper;
  * [[\yii\widgets\ActiveForm]]:
  *
  * - [[checkTemplate]] the default template for checkboxes and radios
+ * - [[radioTemplate]] the template for radio buttons in default layout
+ * - [[checkHorizontalTemplate]] the template for checkboxes in horizontal layout
+ * - [[radioHorizontalTemplate]] the template for radio buttons in horizontal layout
  * - [[checkEnclosedTemplate]] the template for checkboxes and radios enclosed by label
  *
  * Example:

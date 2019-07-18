@@ -122,7 +122,7 @@ class ActiveForm extends \yii\widgets\ActiveForm
             throw new InvalidConfigException('Invalid layout type: ' . $this->layout);
         }
 
-        if ($this->layout === 'inline') {
+        if ($this->layout === self::LAYOUT_INLINE) {
             Html::addCssClass($this->options, 'form-inline');
         }
         parent::init();

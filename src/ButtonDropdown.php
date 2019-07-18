@@ -121,7 +121,7 @@ class ButtonDropdown extends Widget
         $html = $this->renderButton() . "\n" . $this->renderDropdown();
 
         if ($this->renderContainer) {
-            Html::addCssClass($this->options, ['widget' => 'drop'.$this->direction, 'btn-group']);
+            Html::addCssClass($this->options, ['widget' => 'drop' . $this->direction, 'btn-group']);
             $options = $this->options;
             $tag = ArrayHelper::remove($options, 'tag', 'div');
             $html = Html::tag($tag, $html, $options);

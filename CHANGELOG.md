@@ -4,6 +4,7 @@ Yii Framework 2 bootstrap4 extension Change Log
 2.0.6 under development
 -----------------------
 
+- Enh #93: Docs: Migration from yii2-bootstrap (simialbi)
 - Enh #95: Brought back `$barOptions` (simialbi)
 
 2.0.5 July 02, 2019
