@@ -22,7 +22,8 @@ Die grössten Änderungen finden Sie hier zusammengefasst:
 ### BaseHtml
 
 Die Methode `icon` wurde entfernt. Sie macht keinen Sinn mehr, da Bootstrap 4 keine Icons mehr mit sich bringt. Eine
-mögliche Alternative wäre das [Font Awesome Widget](https://github.com/rmrevin/yii2-fontawesome).
+mögliche Alternative wäre das [Font Awesome Widget](https://github.com/rmrevin/yii2-fontawesome) oder aber das
+[Font Awesome Inline Widget](https://github.com/Thoulah/yii2-fontawesome-inline).
 
 ### ActiveField
 

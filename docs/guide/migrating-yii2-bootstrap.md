@@ -20,8 +20,9 @@ The most notable changes are summarized below:
 
 ### BaseHtml
 
-Removed method `icon`. Since there are new glyphicons bundled any more, this method makes no sense. Consider using
-[Font Awesome Widget](https://github.com/rmrevin/yii2-fontawesome) as alternative.
+Removed method `icon`. Since there are no glyphicons bundled any more, this method makes no sense. Consider using
+[Font Awesome Widget](https://github.com/rmrevin/yii2-fontawesome) or 
+[Font Awesome Inline Widget](https://github.com/Thoulah/yii2-fontawesome-inline) as alternative.
 
 ### ActiveField
 
