@@ -75,6 +75,11 @@ class Breadcrumbs extends Widget
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
      */
     public $navOptions = ['aria-label' => 'breadcrumb'];
+    /**
+     * @var string CSS class added to widget container
+     * @since 2.0.7
+     */
+    public $containerClass = 'breadcrumb';
 
 
     /**
@@ -85,7 +90,9 @@ class Breadcrumbs extends Widget
     {
         parent::init();
         $this->clientOptions = false;
-        Html::addCssClass($this->options, ['widget' => 'breadcrumb']);
+        if ($this->containerClass) {
+            Html::addCssClass($this->options, ['widget' => $this->containerClass]);
+        }
     }
 
     /**
