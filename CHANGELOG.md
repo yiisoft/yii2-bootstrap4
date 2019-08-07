@@ -4,7 +4,7 @@ Yii Framework 2 bootstrap4 extension Change Log
 2.0.7 under development
 -----------------------
 
-- no changes in this release.
+- Bug #163: Fixed error messages for checkbox and radio lists (simialbi)
 
 
 2.0.6 July 23, 2019

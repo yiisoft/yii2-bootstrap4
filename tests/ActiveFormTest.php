@@ -109,9 +109,9 @@ HTML;
 <div class="custom-control custom-radio">
 <input type="radio" id="i2" class="custom-control-input" name="DynamicModel[gridRadios]" value="option3">
 <label class="custom-control-label" for="i2">Third radio</label>
-</div>
-</div>
 <div class="invalid-feedback "></div>
+</div>
+</div>
 
 </div>
 </div>

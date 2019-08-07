@@ -284,16 +284,21 @@ class ActiveField extends \yii\widgets\ActiveField
     public function checkboxList($items, $options = [])
     {
         if (!isset($options['item'])) {
+            $this->template = str_replace("\n{error}", '', $this->template);
             $itemOptions = isset($options['itemOptions']) ? $options['itemOptions'] : [];
             $encode = ArrayHelper::getValue($options, 'encode', true);
             $wrapperOptions = ['class' => ['custom-control', 'custom-checkbox']];
+            $itemCount = count($items) - 1;
+            $error = $this->error()->parts['{error}'];
             if ($this->inline) {
                 Html::addCssClass($wrapperOptions, 'custom-control-inline');
             }
             $options['item'] = function ($i, $label, $name, $checked, $value) use (
                 $itemOptions,
                 $encode,
-                $wrapperOptions
+                $wrapperOptions,
+                $itemCount,
+                $error
             ) {
                 $options = array_merge([
                     'class' => 'custom-control-input',
@@ -302,10 +307,14 @@ class ActiveField extends \yii\widgets\ActiveField
                     'value' => $value
                 ], $itemOptions);
 
-                return
-                    Html::beginTag('div', $wrapperOptions) . "\n" .
-                    Html::checkbox($name, $checked, $options) . "\n" .
-                    Html::endTag('div') . "\n";
+                $html = Html::beginTag('div', $wrapperOptions) . "\n" .
+                    Html::checkbox($name, $checked, $options) . "\n";
+                if ($itemCount === $i) {
+                    $html .= $error . "\n";
+                }
+                $html .= Html::endTag('div') . "\n";
+
+                return $html;
             };
         }
 
@@ -319,16 +328,21 @@ class ActiveField extends \yii\widgets\ActiveField
     public function radioList($items, $options = [])
     {
         if (!isset($options['item'])) {
+            $this->template = str_replace("\n{error}", '', $this->template);
             $itemOptions = isset($options['itemOptions']) ? $options['itemOptions'] : [];
             $encode = ArrayHelper::getValue($options, 'encode', true);
             $wrapperOptions = ['class' => ['custom-control', 'custom-radio']];
+            $itemCount = count($items) - 1;
+            $error = $this->error()->parts['{error}'];
             if ($this->inline) {
                 Html::addCssClass($wrapperOptions, 'custom-control-inline');
             }
             $options['item'] = function ($i, $label, $name, $checked, $value) use (
                 $itemOptions,
                 $encode,
-                $wrapperOptions
+                $wrapperOptions,
+                $itemCount,
+                $error
             ) {
                 $options = array_merge([
                     'class' => 'custom-control-input',
@@ -337,10 +351,14 @@ class ActiveField extends \yii\widgets\ActiveField
                     'value' => $value
                 ], $itemOptions);
 
-                return
-                    Html::beginTag('div', $wrapperOptions) . "\n" .
-                    Html::radio($name, $checked, $options) . "\n" .
-                    Html::endTag('div') . "\n";
+                $html = Html::beginTag('div', $wrapperOptions) . "\n" .
+                    Html::radio($name, $checked, $options) . "\n";
+                if ($itemCount === $i) {
+                    $html .= $error . "\n";
+                }
+                $html .= Html::endTag('div') . "\n";
+
+                return $html;
             };
         }
 

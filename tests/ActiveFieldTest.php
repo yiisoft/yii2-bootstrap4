@@ -77,10 +77,10 @@ HTML;
 <div class="custom-control custom-radio">
 <input type="radio" id="i1" class="custom-control-input" name="DynamicModel[attributeName]" value="2">
 <label class="custom-control-label" for="i1">name2</label>
+<div class="invalid-feedback"></div>
 </div>
 </div>
 
-<div class="invalid-feedback"></div>
 </div>
 HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
@@ -102,10 +102,10 @@ HTML;
 <div class="custom-control custom-checkbox">
 <input type="checkbox" id="i1" class="custom-control-input" name="DynamicModel[attributeName][]" value="2">
 <label class="custom-control-label" for="i1">name2</label>
+<div class="invalid-feedback"></div>
 </div>
 </div>
 
-<div class="invalid-feedback"></div>
 </div>
 HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
@@ -128,10 +128,10 @@ HTML;
 <div class="custom-control custom-radio custom-control-inline">
 <input type="radio" id="i1" class="custom-control-input" name="DynamicModel[attributeName]" value="2">
 <label class="custom-control-label" for="i1">name2</label>
+<div class="invalid-feedback"></div>
 </div>
 </div>
 
-<div class="invalid-feedback"></div>
 </div>
 HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
@@ -154,10 +154,10 @@ HTML;
 <div class="custom-control custom-checkbox custom-control-inline">
 <input type="checkbox" id="i1" class="custom-control-input" name="DynamicModel[attributeName][]" value="2">
 <label class="custom-control-label" for="i1">name2</label>
+<div class="invalid-feedback"></div>
 </div>
 </div>
 
-<div class="invalid-feedback"></div>
 </div>
 HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
