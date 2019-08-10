@@ -18,6 +18,16 @@ use yii\helpers\ArrayHelper;
  * LinkPager works with a [[\yii\widget\Pagination]] object which specifies the total number
  * of pages and the current page number.
  *
+ * To apply LinkPager globally e.g. in all GridViews, set in configuration DI:
+ *
+ * ```php
+ * 'container' => [
+ *    'definitions' => [
+ *       \yii\widgets\LinkPager::class => \yii\bootstrap4\LinkPager::class,
+ *    ],
+ * ],
+ * ```
+ *
  * @see https://getbootstrap.com/docs/4.1/components/pagination/
  * @author Simon Karlen <simi.albi@outlook.com>
  * @since 2.0.2
