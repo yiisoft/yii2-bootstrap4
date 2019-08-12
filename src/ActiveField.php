@@ -114,6 +114,21 @@ class ActiveField extends \yii\widgets\ActiveField
      */
     public $inputOptions = ['class' => ['widget' => 'form-control']];
     /**
+     * @var array the default options for the input tags (checkboxes and radios). The parameter passed to individual
+     * input methods (e.g. [[textInput()]]) will be merged with this property when rendering the input tag.
+     *
+     * If you set a custom `id` for the input element, you may need to adjust the [[$selectors]] accordingly.
+     *
+     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @since 2.0.7
+     */
+    public $checkOptions = [
+        'class' => ['widget' => 'custom-control-input'],
+        'labelOptions' => [
+            'class' => ['widget' => 'custom-control-label']
+        ]
+    ];
+    /**
      * {@inheritdoc}
      */
     public $errorOptions = ['class' => 'invalid-feedback'];
@@ -221,9 +236,13 @@ class ActiveField extends \yii\widgets\ActiveField
      */
     public function checkbox($options = [], $enclosedByLabel = false)
     {
+        $checkOptions = $this->checkOptions;
+        $options = ArrayHelper::merge($checkOptions, $options);
         Html::removeCssClass($options, 'form-control');
-        Html::addCssClass($options, 'custom-control-input');
-        Html::addCssClass($this->labelOptions, 'custom-control-label');
+        $labelOptions = ArrayHelper::remove($options, 'labelOptions', []);
+        $wrapperOptions = ArrayHelper::remove($options, 'wrapperOptions', []);
+        $this->labelOptions = ArrayHelper::merge($this->labelOptions, $labelOptions);
+        $this->wrapperOptions = ArrayHelper::merge($this->wrapperOptions, $wrapperOptions);
 
         if (!isset($options['template'])) {
             $this->template = ($enclosedByLabel) ? $this->checkEnclosedTemplate : $this->checkTemplate;
@@ -253,9 +272,13 @@ class ActiveField extends \yii\widgets\ActiveField
      */
     public function radio($options = [], $enclosedByLabel = false)
     {
+        $checkOptions = $this->checkOptions;
+        $options = ArrayHelper::merge($checkOptions, $options);
         Html::removeCssClass($options, 'form-control');
-        Html::addCssClass($options, 'custom-control-input');
-        Html::addCssClass($this->labelOptions, 'custom-control-label');
+        $labelOptions = ArrayHelper::remove($options, 'labelOptions', []);
+        $wrapperOptions = ArrayHelper::remove($options, 'wrapperOptions', []);
+        $this->labelOptions = ArrayHelper::merge($this->labelOptions, $labelOptions);
+        $this->wrapperOptions = ArrayHelper::merge($this->wrapperOptions, $wrapperOptions);
 
         if (!isset($options['template'])) {
             $this->template = $enclosedByLabel ? $this->checkEnclosedTemplate : $this->radioTemplate;
@@ -287,25 +310,22 @@ class ActiveField extends \yii\widgets\ActiveField
             $this->template = str_replace("\n{error}", '', $this->template);
             $itemOptions = isset($options['itemOptions']) ? $options['itemOptions'] : [];
             $encode = ArrayHelper::getValue($options, 'encode', true);
-            $wrapperOptions = ['class' => ['custom-control', 'custom-checkbox']];
             $itemCount = count($items) - 1;
             $error = $this->error()->parts['{error}'];
-            if ($this->inline) {
-                Html::addCssClass($wrapperOptions, 'custom-control-inline');
-            }
             $options['item'] = function ($i, $label, $name, $checked, $value) use (
                 $itemOptions,
                 $encode,
-                $wrapperOptions,
                 $itemCount,
                 $error
             ) {
-                $options = array_merge([
-                    'class' => 'custom-control-input',
+                $options = array_merge($this->checkOptions, [
                     'label' => $encode ? Html::encode($label) : $label,
-                    'labelOptions' => ['class' => 'custom-control-label'],
                     'value' => $value
                 ], $itemOptions);
+                $wrapperOptions = ArrayHelper::remove($options, 'wrapperOptions', ['class' => ['custom-control', 'custom-checkbox']]);
+                if ($this->inline) {
+                    Html::addCssClass($wrapperOptions, 'custom-control-inline');
+                }
 
                 $html = Html::beginTag('div', $wrapperOptions) . "\n" .
                     Html::checkbox($name, $checked, $options) . "\n";
@@ -331,25 +351,22 @@ class ActiveField extends \yii\widgets\ActiveField
             $this->template = str_replace("\n{error}", '', $this->template);
             $itemOptions = isset($options['itemOptions']) ? $options['itemOptions'] : [];
             $encode = ArrayHelper::getValue($options, 'encode', true);
-            $wrapperOptions = ['class' => ['custom-control', 'custom-radio']];
             $itemCount = count($items) - 1;
             $error = $this->error()->parts['{error}'];
-            if ($this->inline) {
-                Html::addCssClass($wrapperOptions, 'custom-control-inline');
-            }
             $options['item'] = function ($i, $label, $name, $checked, $value) use (
                 $itemOptions,
                 $encode,
-                $wrapperOptions,
                 $itemCount,
                 $error
             ) {
-                $options = array_merge([
-                    'class' => 'custom-control-input',
+                $options = array_merge($this->checkOptions, [
                     'label' => $encode ? Html::encode($label) : $label,
-                    'labelOptions' => ['class' => 'custom-control-label'],
                     'value' => $value
                 ], $itemOptions);
+                $wrapperOptions = ArrayHelper::remove($options, 'wrapperOptions', ['class' => ['custom-control', 'custom-radio']]);
+                if ($this->inline) {
+                    Html::addCssClass($wrapperOptions, 'custom-control-inline');
+                }
 
                 $html = Html::beginTag('div', $wrapperOptions) . "\n" .
                     Html::radio($name, $checked, $options) . "\n";
@@ -453,6 +470,9 @@ class ActiveField extends \yii\widgets\ActiveField
             ],
             'inputOptions' => [
                 'class' => 'form-control'
+            ],
+            'labelOptions' => [
+                'class' => []
             ]
         ];
 
