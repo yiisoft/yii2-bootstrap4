@@ -114,7 +114,7 @@ class ActiveField extends \yii\widgets\ActiveField
      */
     public $inputOptions = ['class' => ['widget' => 'form-control']];
     /**
-     * @var array the default options for the input tags (checkboxes and radios). The parameter passed to individual
+     * @var array the default options for the checkboxes. The parameter passed to individual
      * input methods (e.g. [[textInput()]]) will be merged with this property when rendering the input tag.
      *
      * If you set a custom `id` for the input element, you may need to adjust the [[$selectors]] accordingly.
@@ -123,6 +123,21 @@ class ActiveField extends \yii\widgets\ActiveField
      * @since 2.0.7
      */
     public $checkOptions = [
+        'class' => ['widget' => 'custom-control-input'],
+        'labelOptions' => [
+            'class' => ['widget' => 'custom-control-label']
+        ]
+    ];
+    /**
+     * @var array the default options for the input radios. The parameter passed to individual
+     * input methods (e.g. [[textInput()]]) will be merged with this property when rendering the input tag.
+     *
+     * If you set a custom `id` for the input element, you may need to adjust the [[$selectors]] accordingly.
+     *
+     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @since 2.0.7
+     */
+    public $radioOptions = [
         'class' => ['widget' => 'custom-control-input'],
         'labelOptions' => [
             'class' => ['widget' => 'custom-control-label']
@@ -272,7 +287,7 @@ class ActiveField extends \yii\widgets\ActiveField
      */
     public function radio($options = [], $enclosedByLabel = false)
     {
-        $checkOptions = $this->checkOptions;
+        $checkOptions = $this->radioOptions;
         $options = ArrayHelper::merge($checkOptions, $options);
         Html::removeCssClass($options, 'form-control');
         $labelOptions = ArrayHelper::remove($options, 'labelOptions', []);
@@ -359,7 +374,7 @@ class ActiveField extends \yii\widgets\ActiveField
                 $itemCount,
                 $error
             ) {
-                $options = array_merge($this->checkOptions, [
+                $options = array_merge($this->radioOptions, [
                     'label' => $encode ? Html::encode($label) : $label,
                     'value' => $value
                 ], $itemOptions);

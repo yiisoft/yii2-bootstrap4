@@ -55,6 +55,15 @@ class ActiveFieldDefaultFormCheckTest extends TestCase
                             'wrapperOptions' => [
                                 'class' => ['widget' => 'form-check']
                             ]
+                        ],
+                        'radioOptions' => [
+                            'class' => ['widget' => 'form-check-input'],
+                            'labelOptions' => [
+                                'class' => ['widget' => 'form-check-label']
+                            ],
+                            'wrapperOptions' => [
+                                'class' => ['widget' => 'form-check']
+                            ]
                         ]
                     ]
                 ]
