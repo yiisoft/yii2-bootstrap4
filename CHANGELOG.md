@@ -1,11 +1,11 @@
 Yii Framework 2 bootstrap4 extension Change Log
 ==============================================
 
-2.0.7 under development
------------------------
+2.0.7 August 13, 2019
+---------------------
 
-- Enh #165: Allow override all classes via widget factory (simialbi)
 - Bug #163: Fixed error messages for checkbox and radio lists (simialbi)
+- Enh #165: Allow override all classes via widget factory (simialbi)
 
 
 2.0.6 July 23, 2019
