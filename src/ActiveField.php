@@ -114,8 +114,8 @@ class ActiveField extends \yii\widgets\ActiveField
      */
     public $inputOptions = ['class' => ['widget' => 'form-control']];
     /**
-     * @var array the default options for the checkboxes. The parameter passed to individual
-     * input methods (e.g. [[textInput()]]) will be merged with this property when rendering the input tag.
+     * @var array the default options for the input checkboxes. The parameter passed to individual
+     * input methods (e.g. [[checkbox()]]) will be merged with this property when rendering the input tag.
      *
      * If you set a custom `id` for the input element, you may need to adjust the [[$selectors]] accordingly.
      *
@@ -130,7 +130,7 @@ class ActiveField extends \yii\widgets\ActiveField
     ];
     /**
      * @var array the default options for the input radios. The parameter passed to individual
-     * input methods (e.g. [[textInput()]]) will be merged with this property when rendering the input tag.
+     * input methods (e.g. [[radio()]]) will be merged with this property when rendering the input tag.
      *
      * If you set a custom `id` for the input element, you may need to adjust the [[$selectors]] accordingly.
      *
