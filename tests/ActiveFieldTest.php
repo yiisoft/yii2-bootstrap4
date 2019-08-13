@@ -5,6 +5,7 @@ namespace yiiunit\extensions\bootstrap4;
 use yii\base\DynamicModel;
 use yii\bootstrap4\ActiveField;
 use yii\bootstrap4\ActiveForm;
+use yii\bootstrap4\Html;
 
 class ActiveFieldTest extends TestCase
 {
@@ -46,6 +47,7 @@ class ActiveFieldTest extends TestCase
 
     public function testFileInput()
     {
+        Html::$counter = 0;
         $html = $this->activeField->fileInput()->render();
 
         $expectedHtml = <<<HTML
@@ -64,6 +66,7 @@ HTML;
 
     public function testRadioList()
     {
+        Html::$counter = 0;
         $html = $this->activeField->radioList([1 => 'name1', 2 => 'name2'])->render();
 
         $expectedHtml = <<<HTML
@@ -88,7 +91,7 @@ HTML;
 
     public function testCheckboxList()
     {
-        \yii\bootstrap4\Html::$counter = 0;
+        Html::$counter = 0;
         $html = $this->activeField->checkboxList([1 => 'name1', 2 => 'name2'])->render();
 
         $expectedHtml = <<<HTML
@@ -113,7 +116,7 @@ HTML;
 
     public function testRadioListInline()
     {
-        \yii\bootstrap4\Html::$counter = 0;
+        Html::$counter = 0;
         $this->activeField->inline = true;
         $html = $this->activeField->radioList([1 => 'name1', 2 => 'name2'])->render();
 
@@ -139,7 +142,7 @@ HTML;
 
     public function testCheckboxListInline()
     {
-        \yii\bootstrap4\Html::$counter = 0;
+        Html::$counter = 0;
         $this->activeField->inline = true;
         $html = $this->activeField->checkboxList([1 => 'name1', 2 => 'name2'])->render();
 
@@ -170,6 +173,7 @@ HTML;
      */
     public function testRadioListItemOptions()
     {
+        Html::$counter = 0;
         $content = $this->activeField->radioList([1 => 'name1', 2 => 'name2'], [
             'itemOptions' => [
                 'data-attribute' => 'test'
@@ -186,6 +190,7 @@ HTML;
      */
     public function testCheckboxListItemOptions()
     {
+        Html::$counter = 0;
         $content = $this->activeField->checkboxList([1 => 'name1', 2 => 'name2'], [
             'itemOptions' => [
                 'data-attribute' => 'test'
@@ -200,7 +205,7 @@ HTML;
      */
     public function testCustomRadio()
     {
-        \yii\bootstrap4\Html::$counter = 0;
+        Html::$counter = 0;
         $this->activeField->inline = true;
         $html = $this->activeField->radio()->render();
 
@@ -222,7 +227,7 @@ HTML;
      */
     public function testCustomCheckbox()
     {
-        \yii\bootstrap4\Html::$counter = 0;
+        Html::$counter = 0;
         $this->activeField->inline = true;
         $html = $this->activeField->checkbox()->render();
 
