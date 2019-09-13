@@ -97,7 +97,7 @@ Removed property `$headerContent`. There is no navbar header any more. The toggl
 ### Tabs
 
 Introduces property `$panes`. It makes it possible to define pane contents via separate property instead of 
-`$items[0]['content']`. The of the panes array index corresponds to the index of the items. E.g. `$items[0]` belongs
+`$items[0]['content']`. The index of the panes array corresponds to the index of the items. E.g. `$items[0]` belongs
 to `$panes[0]`.
 
 ### ToggleButtonGroup
