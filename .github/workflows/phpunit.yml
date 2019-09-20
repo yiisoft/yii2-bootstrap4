@@ -33,7 +33,7 @@ jobs:
           wget https://scrutinizer-ci.com/ocular.phar
           php ocular.phar code-coverage:upload --format=php-clover coverage.clover
         if: matrix.php == '5.6'
-        continue-in-error: true
+        continue-on-error: true
 
   build:
     runs-on: ${{ matrix.os }}
