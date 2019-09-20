@@ -1,15 +1,15 @@
-name: PHPUnit
+name: PHPUnit tests
 
 on: [push]
 
 jobs:
-  build:
+  build-old:
     runs-on: ${{ matrix.os }}
     strategy:
       max-parallel: 3
       matrix:
         os: [ubuntu-16.04]
-        php: ['5.6', '7.0', '7.1', '7.2', '7.3']
+        php: ['5.6', '7.0']
 
     name: PHP ${{ matrix.php }} on ${{ matrix.os }}
     steps:
@@ -20,8 +20,37 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           extension-csv: curl, mbstring
-      - name: Check PHP Extensions
-        run: php -m
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-interaction
+      - name: PHP Unit tests
+        run: php ./vendor/bin/phpunit --verbose
+        if: matrix.php != '5.6'
+      - name: PHP Unit tests
+        run: php ./vendor/bin/phpunit --verbose --coverage-clover=coverage.clover
+        if: matrix.php == '5.6'
+      - name: Code coverage
+        run: |
+          wget https://scrutinizer-ci.com/ocular.phar
+          php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+        if: matrix.php == '5.6'
+
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      max-parallel: 3
+      matrix:
+        os: [ubuntu-latest]
+        php: ['7.1', '7.2', '7.3']
+
+    name: PHP ${{ matrix.php }} on ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Install PHP
+        uses: shivammathur/setup-php@master
+        with:
+          php-version: ${{ matrix.php }}
+          extension-csv: curl, mbstring
       - name: Install dependencies
         run: composer install --prefer-dist --no-interaction
       - name: PHP Unit tests
