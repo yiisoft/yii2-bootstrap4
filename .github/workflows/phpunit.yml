@@ -1,6 +1,6 @@
 name: PHPUnit tests
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build-old:
@@ -33,7 +33,7 @@ jobs:
           wget https://scrutinizer-ci.com/ocular.phar
           php ocular.phar code-coverage:upload --format=php-clover coverage.clover
         if: matrix.php == '5.6'
-        continue-on-error: true
+        continue-on-error: true # if is fork
 
   build:
     runs-on: ${{ matrix.os }}
