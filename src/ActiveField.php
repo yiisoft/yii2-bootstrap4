@@ -344,10 +344,10 @@ class ActiveField extends \yii\widgets\ActiveField
 
                 $html = Html::beginTag('div', $wrapperOptions) . "\n" .
                     Html::checkbox($name, $checked, $options) . "\n";
+                $html .= Html::endTag('div') . "\n";
                 if ($itemCount === $i) {
                     $html .= $error . "\n";
                 }
-                $html .= Html::endTag('div') . "\n";
 
                 return $html;
             };
@@ -385,10 +385,10 @@ class ActiveField extends \yii\widgets\ActiveField
 
                 $html = Html::beginTag('div', $wrapperOptions) . "\n" .
                     Html::radio($name, $checked, $options) . "\n";
+                $html .= Html::endTag('div') . "\n";
                 if ($itemCount === $i) {
                     $html .= $error . "\n";
                 }
-                $html .= Html::endTag('div') . "\n";
 
                 return $html;
             };
