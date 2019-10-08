@@ -1,8 +1,8 @@
 Yii Framework 2 bootstrap4 extension Change Log
 ==============================================
 
-2.0.8 under development
------------------------
+2.0.8 October 08, 2019
+----------------------
 
 - Bug #177: Fixed non-functional headerOptions in Tabs (Thoulah)
 
