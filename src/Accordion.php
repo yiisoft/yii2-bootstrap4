@@ -96,7 +96,7 @@ class Accordion extends Widget
      */
     public $autoCloseItems = true;
     /**
-     * @var string the HTML options for the item toggle tag. Key 'tag' might be used here for the tag name specification.
+     * @var array the HTML options for the item toggle tag. Key 'tag' might be used here for the tag name specification.
      * For example:
      *
      * ```php
