@@ -129,7 +129,8 @@ class ToggleButtonGroup extends InputWidget
             'label' => $label,
             'labelOptions' => $labelOptions,
             'autocomplete' => 'off',
-            'value' => $value
+            'value' => $value,
+            'id' => Html::getInputIdByName($name) . '-' . $index
         ]);
     }
 }

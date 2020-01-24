@@ -7,6 +7,7 @@
 
 namespace yii\bootstrap4;
 
+use Yii;
 use yii\helpers\ArrayHelper;
 
 /**
@@ -169,6 +170,21 @@ class BaseHtml extends \yii\helpers\Html
             $options['class'] = ['invalid-feedback'];
         }
         return parent::error($model, $attribute, $options);
+    }
+    
+    /**
+     * Generates an appropriate input ID for the specified attribute name or expression.
+     *
+     * This method converts a typical input name into a valid input ID.
+     * For example, if an input of `Post[content]` will return `post-content`.
+     * @param string $name the input name, such as the result from [[getInputName()]]
+     * @return string the generated input ID
+     */
+    public static function getInputIdByName($name)
+    {
+        $charset = Yii::$app ? Yii::$app->charset : 'UTF-8';
+        $name = mb_strtolower($name, $charset);
+        return str_replace(['[]', '][', '[', ']', ' ', '.'], ['', '-', '-', '', '-', '-'], $name);
     }
 
     /**
