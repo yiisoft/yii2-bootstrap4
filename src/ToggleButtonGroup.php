@@ -17,7 +17,7 @@ use yii\base\InvalidConfigException;
  *
  * ```php
  * <?= $form->field($model, 'item_id')->widget(\yii\bootstrap4\ToggleButtonGroup::class, [
- *     'type' => \yii\bootstrap4\ToggleButtonGroup::TYPE_CHECKBOX
+ *     'type' => \yii\bootstrap4\ToggleButtonGroup::TYPE_CHECKBOX,
  *     'items' => [
  *         'fooValue' => 'BarLabel',
  *         'barValue' => 'BazLabel'
