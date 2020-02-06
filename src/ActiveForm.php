@@ -130,7 +130,7 @@ class ActiveForm extends \yii\widgets\ActiveForm
 
     /**
      * {@inheritdoc}
-     * @return \yii\widgets\ActiveField
+     * @return \yii\bootstrap4\ActiveField
      */
     public function field($model, $attribute, $options = [])
     {
