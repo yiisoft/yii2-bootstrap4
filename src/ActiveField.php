@@ -8,6 +8,7 @@
 namespace yii\bootstrap4;
 
 use yii\helpers\ArrayHelper;
+use yii\widgets\ActiveForm;
 
 /**
  * A Bootstrap 4 enhanced version of [[\yii\widgets\ActiveField]].
@@ -279,6 +280,10 @@ class ActiveField extends \yii\widgets\ActiveField
             }
         }
 
+        if ($this->form->validationStateOn === ActiveForm::VALIDATION_STATE_ON_INPUT) {
+            $this->addErrorClassIfNeeded($options);
+        }
+
         return parent::checkbox($options, false);
     }
 
@@ -311,6 +316,10 @@ class ActiveField extends \yii\widgets\ActiveField
 
         if ($enclosedByLabel && isset($options['label'])) {
             $this->parts['{labelTitle}'] = $options['label'];
+        }
+
+        if ($this->form->validationStateOn === ActiveForm::VALIDATION_STATE_ON_INPUT) {
+            $this->addErrorClassIfNeeded($options);
         }
 
         return parent::radio($options, false);
