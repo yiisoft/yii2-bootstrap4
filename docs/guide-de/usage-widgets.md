@@ -14,6 +14,7 @@ von Framework-Funktionen. Alle Widgets gehören zum `\yii\bootstrap4` Namespace:
 - [[yii\bootstrap4\ButtonGroup|ButtonGroup]]
 - [[yii\bootstrap4\ButtonToolbar|ButtonToolbar]]
 - [[yii\bootstrap4\Carousel|Carousel]]
+- [[yii\bootstrap4\Collapse|Collapse]]
 - [[yii\bootstrap4\Dropdown|Dropdown]]
 - [[yii\bootstrap4\Modal|Modal]]
 - [[yii\bootstrap4\Nav|Nav]]
