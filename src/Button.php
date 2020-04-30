@@ -59,7 +59,7 @@ class Button extends Widget
     public function run()
     {
         $this->registerPlugin('button');
-        if(empty($this->icon)){
+        if(!empty($this->icon)){
             $icon = '<span class="glyphicon glyphicon-'.$this->icon.'"></span>';
         }    
         return Html::tag($this->tagName, $this->encodeLabel ? $icon . Html::encode($this->label) : $icon . $this->label,
