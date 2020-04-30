@@ -15,6 +15,7 @@ namespace yii\bootstrap4;
  * ```php
  * echo Button::widget([
  *     'label' => 'Action',
+ *     'icon' => 'play-circle',
  *     'options' => ['class' => 'btn-lg'],
  * ]);
  * ```
@@ -31,6 +32,10 @@ class Button extends Widget
      * @var string the button label
      */
     public $label = 'Button';
+    /**
+    * @var string the button icon
+    */
+    public $icon = '';
     /**
      * @var bool whether the label should be HTML-encoded.
      */
@@ -54,7 +59,10 @@ class Button extends Widget
     public function run()
     {
         $this->registerPlugin('button');
-        return Html::tag($this->tagName, $this->encodeLabel ? Html::encode($this->label) : $this->label,
+        if(empty($this->icon)){
+            $icon = '<span class="glyphicon glyphicon-'.$this->icon.'"></span>';
+        }    
+        return Html::tag($this->tagName, $this->encodeLabel ? $icon . Html::encode($this->label) : $icon . $this->label,
             $this->options);
     }
 }
