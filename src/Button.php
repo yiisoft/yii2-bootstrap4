@@ -59,6 +59,7 @@ class Button extends Widget
     public function run()
     {
         $this->registerPlugin('button');
+        $icon = '';
         if(!empty($this->icon)){
             $icon = '<span class="glyphicon glyphicon-'.$this->icon.'"></span>';
         }    
