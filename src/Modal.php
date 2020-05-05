@@ -115,7 +115,19 @@ class Modal extends Widget
      */
     public $toggleButton = false;
 
+    /**
+     * @var boolean whether to center the modal vertically
+     *
+     * When true the modal-dialog-centered class will be added to the modal-dialog
+     */
+    public $centerVertical = false;
 
+    /**
+     * @var array modal dialog options
+     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     */
+    public $dialogOptions = [];
+    
     /**
      * Initializes the widget.
      */
@@ -125,9 +137,15 @@ class Modal extends Widget
 
         $this->initOptions();
 
+        Html::addCssClass($this->dialogOptions, 'modal-dialog');
+        Html::addCssClass($this->dialogOptions,  $this->size);
+        if ($this->centerVertical) {
+            Html::addCssClass($this->dialogOptions,  'modal-dialog-center');
+        }
+        
         echo $this->renderToggleButton() . "\n";
         echo Html::beginTag('div', $this->options) . "\n";
-        echo Html::beginTag('div', ['class' => 'modal-dialog ' . $this->size]) . "\n";
+        echo Html::beginTag('div', $this->dialogOptions) . "\n";
         echo Html::beginTag('div', ['class' => 'modal-content']) . "\n";
         echo $this->renderHeader() . "\n";
         echo $this->renderBodyBegin() . "\n";
