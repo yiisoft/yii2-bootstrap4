@@ -140,7 +140,7 @@ class Modal extends Widget
         Html::addCssClass($this->dialogOptions, 'modal-dialog');
         Html::addCssClass($this->dialogOptions,  $this->size);
         if ($this->centerVertical) {
-            Html::addCssClass($this->dialogOptions,  'modal-dialog-center');
+            Html::addCssClass($this->dialogOptions,  'modal-dialog-centered');
         }
         
         echo $this->renderToggleButton() . "\n";
