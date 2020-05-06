@@ -298,7 +298,9 @@ class Modal extends Widget
             }
         }
         
-        
+        $this->dialogOptions = array_merge([
+            'role'=>'document'
+        ], $this->dialogOptions);
         Html::addCssClass($this->dialogOptions, 'modal-dialog');
         Html::addCssClass($this->dialogOptions,  $this->size);
         if ($this->centerVertical) {
