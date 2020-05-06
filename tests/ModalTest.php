@@ -22,7 +22,7 @@ class ModalTest extends TestCase
         $expected = <<<HTML
 
 <div id="w0" class="fade modal" role="dialog" tabindex="-1" aria-hidden="true">
-<div class="modal-dialog ">
+<div class="modal-dialog">
 <div class="modal-content">
 
 <div class="modal-body test" style="text-align:center;">
@@ -125,10 +125,10 @@ HTML;
         $expected = <<<HTML
 
 <div id="w0" class="fade modal" role="dialog" tabindex="-1" aria-hidden="true">
-<div class="modal-dialog test" style="text-align:center;">
+<div class="test modal-dialog" style="text-align:center;">
 <div class="modal-content">
 
-<div class="modal-body" >
+<div class="modal-body">
 
 </div>
 
@@ -155,7 +155,7 @@ HTML;
 <div class="modal-dialog modal-dialog-centered">
 <div class="modal-content">
 
-<div class="modal-body" >
+<div class="modal-body">
 
 </div>
 
@@ -181,7 +181,7 @@ HTML;
 <div class="modal-dialog modal-dialog-scrollable">
 <div class="modal-content">
 
-<div class="modal-body" >
+<div class="modal-body">
 
 </div>
 
