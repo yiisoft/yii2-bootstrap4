@@ -121,6 +121,12 @@ class Modal extends Widget
      * When true the modal-dialog-centered class will be added to the modal-dialog
      */
     public $centerVertical = false;
+    /**
+     * @var boolean whether to make the modal body scrollable
+     *
+     * When true the modal-dialog-scrollable class will be added to the modal-dialog
+     */
+    public $scrollable = false;
 
     /**
      * @var array modal dialog options
