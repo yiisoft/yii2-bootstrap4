@@ -148,6 +148,9 @@ class Modal extends Widget
         if ($this->centerVertical) {
             Html::addCssClass($this->dialogOptions,  'modal-dialog-centered');
         }
+        if ($this->scrollable) {
+            Html::addCssClass($this->dialogOptions,  'modal-dialog-scrollable');
+        }
         
         echo $this->renderToggleButton() . "\n";
         echo Html::beginTag('div', $this->options) . "\n";
