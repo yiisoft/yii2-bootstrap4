@@ -65,7 +65,7 @@ HTML;
         $expected = <<<HTML
 
 <div id="w0" class="fade modal" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="w0-label">
-<div class="modal-dialog ">
+<div class="modal-dialog">
 <div class="modal-content">
 <div class="modal-header">
 <h5 id="w0-label" class="modal-title">Modal title</h5>
