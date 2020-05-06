@@ -142,16 +142,7 @@ class Modal extends Widget
         parent::init();
 
         $this->initOptions();
-
-        Html::addCssClass($this->dialogOptions, 'modal-dialog');
-        Html::addCssClass($this->dialogOptions,  $this->size);
-        if ($this->centerVertical) {
-            Html::addCssClass($this->dialogOptions,  'modal-dialog-centered');
-        }
-        if ($this->scrollable) {
-            Html::addCssClass($this->dialogOptions,  'modal-dialog-scrollable');
-        }
-        
+       
         echo $this->renderToggleButton() . "\n";
         echo Html::beginTag('div', $this->options) . "\n";
         echo Html::beginTag('div', $this->dialogOptions) . "\n";
@@ -305,6 +296,16 @@ class Modal extends Widget
             if (!isset($this->toggleButton['data-target']) && !isset($this->toggleButton['href'])) {
                 $this->toggleButton['data-target'] = '#' . $this->options['id'];
             }
+        }
+        
+        
+        Html::addCssClass($this->dialogOptions, 'modal-dialog');
+        Html::addCssClass($this->dialogOptions,  $this->size);
+        if ($this->centerVertical) {
+            Html::addCssClass($this->dialogOptions,  'modal-dialog-centered');
+        }
+        if ($this->scrollable) {
+            Html::addCssClass($this->dialogOptions,  'modal-dialog-scrollable');
         }
     }
 }
