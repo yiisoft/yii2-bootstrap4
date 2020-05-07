@@ -119,18 +119,21 @@ class Modal extends Widget
      * @var boolean whether to center the modal vertically
      *
      * When true the modal-dialog-centered class will be added to the modal-dialog
+     * @since 2.0.9
      */
     public $centerVertical = false;
     /**
      * @var boolean whether to make the modal body scrollable
      *
      * When true the modal-dialog-scrollable class will be added to the modal-dialog
+     * @since 2.0.9
      */
     public $scrollable = false;
 
     /**
      * @var array modal dialog options
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @since 2.0.9
      */
     public $dialogOptions = [];
     
