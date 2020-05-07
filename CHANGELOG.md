@@ -4,8 +4,7 @@ Yii Framework 2 bootstrap4 extension Change Log
 2.0.9 under development
 -----------------------
 
-- Enh #191: Added centerVertical, scrollable and dialogOptions to Modal (adhayward)
-- Chg #191: Added `role="document"` to `modal-dialog` element in Modal (adhayward)
+- Enh #191: Added `centerVertical`, `scrollable`, `dialogOptions` options to Modal and `role="document"` to `modal-dialog` element (adhayward)
 
 
 2.0.8 October 08, 2019
