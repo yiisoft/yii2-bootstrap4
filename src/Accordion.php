@@ -24,6 +24,7 @@ use yii\helpers\ArrayHelper;
  *             'content' => 'Anim pariatur cliche...',
  *             // open its content by default
  *             'contentOptions' => ['class' => 'in']
+ *              'expand' => true
  *         ],
  *         // another group item
  *         [
@@ -186,7 +187,7 @@ class Accordion extends Widget
 
             // check if accordion expanded, if true add show class
             if($this->_isAccordionExpanded($item)) $options['class'] = ' show';
-            
+
             if (!isset($options['aria-label'], $options['aria-labelledby'])) {
                 $options['aria-labelledby'] = $options['id'] . '-heading';
             }
