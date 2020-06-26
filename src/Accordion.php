@@ -155,6 +155,19 @@ class Accordion extends Widget
     }
 
     /**
+     * check wether accordion is expanded
+     * This method will check if expand properties exist and determine value of this properties
+     * 
+     * @return bool
+     */
+    private function _isAccordionExpanded($item){
+        if(isset($item['expand'])){
+            return $item['expand'];
+        }
+        return false;
+    }
+
+    /**
      * Renders a single collapsible item group
      * @param string $header a label of the item group [[items]]
      * @param array $item a single item from [[items]]
@@ -170,6 +183,10 @@ class Accordion extends Widget
             $options = ArrayHelper::getValue($item, 'contentOptions', []);
             $options['id'] = $id;
             Html::addCssClass($options, ['widget' => 'collapse']);
+
+            // check if accordion expanded, if true add show class
+            if($this->_isAccordionExpanded($item)) $options['class'] = ' show';
+            
             if (!isset($options['aria-label'], $options['aria-labelledby'])) {
                 $options['aria-labelledby'] = $options['id'] . '-heading';
             }
