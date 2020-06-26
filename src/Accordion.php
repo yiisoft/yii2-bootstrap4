@@ -170,9 +170,6 @@ class Accordion extends Widget
             $options = ArrayHelper::getValue($item, 'contentOptions', []);
             $options['id'] = $id;
             Html::addCssClass($options, ['widget' => 'collapse']);
-            if ($index === 0) {
-                Html::addCssClass($options, 'show');
-            }
             if (!isset($options['aria-label'], $options['aria-labelledby'])) {
                 $options['aria-labelledby'] = $options['id'] . '-heading';
             }
