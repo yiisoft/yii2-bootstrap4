@@ -169,6 +169,44 @@ HTML
         , $output);
     }
 
+    public function testExpandOptions()
+    {
+        ob_start();
+        $form = ActiveForm::begin(['action' => '/something']);
+        ActiveForm::end();
+        ob_end_clean();
+
+        Accordion::$counter = 0;
+        $output = Accordion::widget([
+            'items' => [
+                'Item1' => 'Content1',
+                'Item2' => [
+                    'content' => 'Content2',
+                    'expand' => true,
+                ],
+            ]
+        ]);
+
+        $this->assertEqualsWithoutLE(<<<HTML
+<div id="w0" class="accordion">
+<div class="card"><div id="w0-collapse0-heading" class="card-header"><h5 class="mb-0"><button type="button" id="w1" class="btn-link btn" data-toggle="collapse" data-target="#w0-collapse0" aria-expanded="false" aria-controls="w0-collapse0">Item1</button>
+</h5></div>
+<div id="w0-collapse0" class="collapse" aria-labelledby="w0-collapse0-heading" data-parent="#w0">
+<div class="card-body">Content1</div>
+
+</div></div>
+<div class="card"><div id="w0-collapse1-heading" class="card-header"><h5 class="mb-0"><button type="button" id="w2" class="btn-link btn" data-toggle="collapse" data-target="#w0-collapse1" aria-expanded="true" aria-controls="w0-collapse1">Item2</button>
+</h5></div>
+<div id="w0-collapse1" class="collapse show" aria-labelledby="w0-collapse1-heading" data-parent="#w0">
+<div class="card-body">Content2</div>
+
+</div></div>
+</div>
+
+HTML
+        , $output);
+    }
+
     public function invalidItemsProvider()
     {
         return [
