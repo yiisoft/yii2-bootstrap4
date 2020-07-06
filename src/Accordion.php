@@ -163,7 +163,7 @@ class Accordion extends Widget
      * @return bool
      */
     private function _isAccordionExpanded($item){
-        if(isset($item['expand'])){
+        if (isset($item['expand'])) {
             return $item['expand'];
         }
         return false;
@@ -187,7 +187,7 @@ class Accordion extends Widget
             Html::addCssClass($options, ['widget' => 'collapse']);
 
             // check if accordion expanded, if true add show class
-            if($this->_isAccordionExpanded($item)){
+            if ($this->_isAccordionExpanded($item)) {
                 Html::addCssClass($options, 'show');
             }
 
