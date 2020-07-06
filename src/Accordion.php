@@ -188,7 +188,7 @@ class Accordion extends Widget
 
             // check if accordion expanded, if true add show class
             if($this->_isAccordionExpanded($item)){
-                $options['class'] = ' show';
+                Html::addCssClass($options, 'show');
             }
 
             if (!isset($options['aria-label'], $options['aria-labelledby'])) {
