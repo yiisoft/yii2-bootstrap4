@@ -32,6 +32,7 @@ class AccordionTest extends TestCase
                         'class' => 'testClass',
                         'id' => 'testId'
                     ],
+                    'expand' => true,
                     'footer' => 'Footer'
                 ],
                 [
@@ -73,7 +74,7 @@ class AccordionTest extends TestCase
 <div id="w0" class="accordion">
 <div class="card"><div id="w0-collapse0-heading" class="card-header"><h5 class="mb-0"><button type="button" id="w1" class="btn-link btn" data-toggle="collapse" data-target="#w0-collapse0" aria-expanded="true" aria-controls="w0-collapse0">Collapsible Group Item #1</button>
 </h5></div>
-<div id="w0-collapse0" class="collapse show" aria-labelledby="w0-collapse0-heading" data-parent="#w0">
+<div id="w0-collapse0" class="collapse" aria-labelledby="w0-collapse0-heading" data-parent="#w0">
 <ul class="list-group">
 <li class="list-group-item">test content1</li>
 <li class="list-group-item">test content2</li>
@@ -82,7 +83,7 @@ class AccordionTest extends TestCase
 </div></div>
 <div id="testId" class="testClass card"><div id="w0-collapse1-heading" class="card-header"><h5 class="mb-0"><button type="button" id="w2" class="btn-link btn" data-toggle="collapse" data-target="#w0-collapse1" aria-expanded="false" aria-controls="w0-collapse1">Collapsible Group Item #2</button>
 </h5></div>
-<div id="w0-collapse1" class="testContentOptions collapse" aria-labelledby="w0-collapse1-heading" data-parent="#w0">
+<div id="w0-collapse1" class="testContentOptions collapse show" aria-labelledby="w0-collapse1-heading" data-parent="#w0">
 <div class="card-body">Das ist das Haus vom Nikolaus</div>
 
 <div class="card-footer">Footer</div>
