@@ -172,11 +172,6 @@ HTML
 
     public function testExpandOptions()
     {
-        ob_start();
-        $form = ActiveForm::begin(['action' => '/something']);
-        ActiveForm::end();
-        ob_end_clean();
-
         Accordion::$counter = 0;
         $output = Accordion::widget([
             'items' => [
