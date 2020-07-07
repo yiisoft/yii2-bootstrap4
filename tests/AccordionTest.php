@@ -32,7 +32,6 @@ class AccordionTest extends TestCase
                         'class' => 'testClass',
                         'id' => 'testId'
                     ],
-                    'expand' => true,
                     'footer' => 'Footer'
                 ],
                 [
