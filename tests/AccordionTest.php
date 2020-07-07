@@ -74,7 +74,7 @@ class AccordionTest extends TestCase
 <div id="w0" class="accordion">
 <div class="card"><div id="w0-collapse0-heading" class="card-header"><h5 class="mb-0"><button type="button" id="w1" class="btn-link btn" data-toggle="collapse" data-target="#w0-collapse0" aria-expanded="true" aria-controls="w0-collapse0">Collapsible Group Item #1</button>
 </h5></div>
-<div id="w0-collapse0" class="collapse" aria-labelledby="w0-collapse0-heading" data-parent="#w0">
+<div id="w0-collapse0" class="collapse show" aria-labelledby="w0-collapse0-heading" data-parent="#w0">
 <ul class="list-group">
 <li class="list-group-item">test content1</li>
 <li class="list-group-item">test content2</li>
