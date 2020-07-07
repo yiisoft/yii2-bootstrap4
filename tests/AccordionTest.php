@@ -83,7 +83,7 @@ class AccordionTest extends TestCase
 </div></div>
 <div id="testId" class="testClass card"><div id="w0-collapse1-heading" class="card-header"><h5 class="mb-0"><button type="button" id="w2" class="btn-link btn" data-toggle="collapse" data-target="#w0-collapse1" aria-expanded="false" aria-controls="w0-collapse1">Collapsible Group Item #2</button>
 </h5></div>
-<div id="w0-collapse1" class="testContentOptions collapse show" aria-labelledby="w0-collapse1-heading" data-parent="#w0">
+<div id="w0-collapse1" class="testContentOptions collapse" aria-labelledby="w0-collapse1-heading" data-parent="#w0">
 <div class="card-body">Das ist das Haus vom Nikolaus</div>
 
 <div class="card-footer">Footer</div>
