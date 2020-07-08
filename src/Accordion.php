@@ -110,7 +110,6 @@ class Accordion extends Widget
      */
     public $itemToggleOptions = [];
 
-
     /**
      * {@inheritdoc}
      * @throws InvalidConfigException
@@ -135,12 +134,7 @@ class Accordion extends Widget
     {
         $items = [];
         $index = 0;
-        $hasExpand = false;
-        foreach ($this->items as $key => $item) {
-            if (is_array($item) && $this->_isAccordionExpanded($item)) {
-                $hasExpand = true;
-            }
-        }
+        $expanded = array_search(true, ArrayHelper::getColumn($this->items, 'expand', true));
         foreach ($this->items as $key => $item) {
             if (!is_array($item)) {
                 $item = ['content' => $item];
@@ -153,30 +147,12 @@ class Accordion extends Widget
                 }
             }
             $header = ArrayHelper::remove($item, 'label');
-            $expand = false;
-            if ($this->_isAccordionExpanded($item) || (!$hasExpand && $index === 0)) {
-                $expand = true;
-            }
             $options = ArrayHelper::getValue($item, 'options', []);
             Html::addCssClass($options, ['panel' => 'card']);
-            $items[] = Html::tag('div', $this->renderItem($header, $item, $index++, $expand), $options);
+            $items[] = Html::tag('div', $this->renderItem($header, $item, $index++, $key === $expanded), $options);
         }
 
         return implode("\n", $items);
-    }
-
-    /**
-     * check wether accordion is expanded
-     * This method will check if expand properties exist and determine value of this properties
-     * 
-     * @param array $item
-     * @return bool
-     */
-    private function _isAccordionExpanded($item) {
-        if (isset($item['expand'])) {
-            return $item['expand'];
-        }
-        return false;
     }
 
     /**
