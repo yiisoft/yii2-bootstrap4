@@ -16,8 +16,7 @@ Documentation is at [docs/guide/README.md](docs/guide/README.md).
 
 [![Latest Stable Version](https://poser.pugx.org/yiisoft/yii2-bootstrap4/v/stable.png)](https://packagist.org/packages/yiisoft/yii2-bootstrap4)
 [![Total Downloads](https://poser.pugx.org/yiisoft/yii2-bootstrap4/downloads.png)](https://packagist.org/packages/yiisoft/yii2-bootstrap4)
-[![Build Status](https://travis-ci.org/yiisoft/yii2-bootstrap4.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-bootstrap4)
-[![Unit Test](https://github.com/simialbi/yii2-bootstrap4/workflows/PHPUnit%20tests/badge.svg)](https://github.com/simialbi/yii2-bootstrap4/actions)
+[![Build Status](https://travis-ci.com/yiisoft/yii2-bootstrap4.svg?branch=master)](https://travis-ci.com/yiisoft/yii2-bootstrap4)
 
 
 Installation

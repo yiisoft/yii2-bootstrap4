@@ -39,11 +39,11 @@ use Yii;
  *             'visible' => Yii::$app->user->isGuest
  *         ],
  *     ],
- *     'options' => ['class' =>'nav-pills'], // set this to nav-tab to get tab-styled navigation
+ *     'options' => ['class' =>'nav-pills'], // set this to nav-tabs to get tab-styled navigation
  * ]);
  * ```
  *
- * Note: Multilevel dropdowns beyond Level 1 are not supported in Bootstrap 3.
+ * Note: Multilevel dropdowns beyond Level 1 are not supported in Bootstrap 4.
  *
  * @see http://getbootstrap.com/components/#dropdowns
  * @see http://getbootstrap.com/components/#nav

@@ -22,7 +22,7 @@ class ModalTest extends TestCase
         $expected = <<<HTML
 
 <div id="w0" class="fade modal" role="dialog" tabindex="-1" aria-hidden="true">
-<div class="modal-dialog ">
+<div class="modal-dialog" role="document">
 <div class="modal-content">
 
 <div class="modal-body test" style="text-align:center;">
@@ -65,7 +65,7 @@ HTML;
         $expected = <<<HTML
 
 <div id="w0" class="fade modal" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="w0-label">
-<div class="modal-dialog ">
+<div class="modal-dialog" role="document">
 <div class="modal-content">
 <div class="modal-header">
 <h5 id="w0-label" class="modal-title">Modal title</h5>
@@ -111,5 +111,85 @@ HTML;
 
         $this->assertContains('<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#w0">Launch demo modal</button>',
             $out);
+    }
+    
+    public function testDialogOptions()
+    {
+        Modal::$counter = 0;
+        $out = Modal::widget([
+            'closeButton' => false,
+            'dialogOptions' => ['class' => 'test', 'style' => 'text-align:center;']
+        ]);
+
+
+        $expected = <<<HTML
+
+<div id="w0" class="fade modal" role="dialog" tabindex="-1" aria-hidden="true">
+<div class="test modal-dialog" role="document" style="text-align:center;">
+<div class="modal-content">
+
+<div class="modal-body">
+
+</div>
+
+</div>
+</div>
+</div>
+HTML;
+
+        $this->assertEqualsWithoutLE($expected, $out);
+    }
+    
+    public function testCenterVertical()
+    {
+        Modal::$counter = 0;
+        $out = Modal::widget([
+            'closeButton' => false,
+            'centerVertical'=>true
+        ]);
+
+
+        $expected = <<<HTML
+
+<div id="w0" class="fade modal" role="dialog" tabindex="-1" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content">
+
+<div class="modal-body">
+
+</div>
+
+</div>
+</div>
+</div>
+HTML;
+
+        $this->assertEqualsWithoutLE($expected, $out);
+    }
+    public function testScrollable()
+    {
+        Modal::$counter = 0;
+        $out = Modal::widget([
+            'closeButton' => false,
+            'scrollable'=>true
+        ]);
+
+
+        $expected = <<<HTML
+
+<div id="w0" class="fade modal" role="dialog" tabindex="-1" aria-hidden="true">
+<div class="modal-dialog modal-dialog-scrollable" role="document">
+<div class="modal-content">
+
+<div class="modal-body">
+
+</div>
+
+</div>
+</div>
+</div>
+HTML;
+
+        $this->assertEqualsWithoutLE($expected, $out);
     }
 }
