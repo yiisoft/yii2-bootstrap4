@@ -31,6 +31,7 @@ use yii\helpers\ArrayHelper;
  *             'content' => 'Anim pariatur cliche...',
  *             'contentOptions' => [...],
  *             'options' => [...],
+ *             'expand' => true,
  *         ],
  *         // if you want to swap out .card-block with .list-group, you may use the following
  *         [
@@ -109,7 +110,6 @@ class Accordion extends Widget
      */
     public $itemToggleOptions = [];
 
-
     /**
      * {@inheritdoc}
      * @throws InvalidConfigException
@@ -134,6 +134,7 @@ class Accordion extends Widget
     {
         $items = [];
         $index = 0;
+        $expanded = array_search(true, ArrayHelper::getColumn($this->items, 'expand', true));
         foreach ($this->items as $key => $item) {
             if (!is_array($item)) {
                 $item = ['content' => $item];
@@ -148,7 +149,7 @@ class Accordion extends Widget
             $header = ArrayHelper::remove($item, 'label');
             $options = ArrayHelper::getValue($item, 'options', []);
             Html::addCssClass($options, ['panel' => 'card']);
-            $items[] = Html::tag('div', $this->renderItem($header, $item, $index++), $options);
+            $items[] = Html::tag('div', $this->renderItem($header, $item, $index++, $key === $expanded), $options);
         }
 
         return implode("\n", $items);
@@ -159,20 +160,24 @@ class Accordion extends Widget
      * @param string $header a label of the item group [[items]]
      * @param array $item a single item from [[items]]
      * @param int $index the item index as each item group content must have an id
+     * @param bool $expand whether or not to expand the item
      * @return string the rendering result
      * @throws InvalidConfigException
      * @throws \Exception
      */
-    public function renderItem($header, $item, $index)
+    public function renderItem($header, $item, $index, $expand)
     {
         if (array_key_exists('content', $item)) {
             $id = $this->options['id'] . '-collapse' . $index;
             $options = ArrayHelper::getValue($item, 'contentOptions', []);
             $options['id'] = $id;
             Html::addCssClass($options, ['widget' => 'collapse']);
-            if ($index === 0) {
+
+            // check if accordion expanded, if true add show class
+            if ($expand) {
                 Html::addCssClass($options, 'show');
             }
+
             if (!isset($options['aria-label'], $options['aria-labelledby'])) {
                 $options['aria-labelledby'] = $options['id'] . '-heading';
             }
@@ -187,7 +192,7 @@ class Accordion extends Widget
                 'type' => 'button',
                 'data-toggle' => 'collapse',
                 'data-target' => '#' . $options['id'],
-                'aria-expanded' => ($index === 0) ? 'true' : 'false',
+                'aria-expanded' => $expand ? 'true' : 'false',
                 'aria-controls' => $options['id']
             ], $this->itemToggleOptions);
 
