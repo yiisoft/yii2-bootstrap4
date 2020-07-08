@@ -134,7 +134,10 @@ class Accordion extends Widget
     {
         $items = [];
         $index = 0;
-        $expanded = array_search(true, ArrayHelper::getColumn($this->items, 'expand', true));
+        $expanded = array_search(true, ArrayHelper::getColumn(ArrayHelper::toArray($this->items), 'expand', true));
+        if ($expanded === false) {
+            $expanded = current(array_keys($this->items));
+        }
         foreach ($this->items as $key => $item) {
             if (!is_array($item)) {
                 $item = ['content' => $item];
