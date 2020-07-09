@@ -116,13 +116,13 @@ class Dropdown extends Widget
             $active = ArrayHelper::getValue($item, 'active', false);
             $disabled = ArrayHelper::getValue($item, 'disabled', false);
 
-            Html::addCssClass($linkOptions, 'dropdown-item');
+            Html::addCssClass($linkOptions, ['widget' => 'dropdown-item']);
             if ($disabled) {
                 ArrayHelper::setValue($linkOptions, 'tabindex', '-1');
                 ArrayHelper::setValue($linkOptions, 'aria-disabled', 'true');
-                Html::addCssClass($linkOptions, 'disabled');
+                Html::addCssClass($linkOptions, ['disable' => 'disabled']);
             } elseif ($active) {
-                Html::addCssClass($linkOptions, 'active');
+                Html::addCssClass($linkOptions, ['activate' => 'active']);
             }
 
             $url = array_key_exists('url', $item) ? $item['url'] : null;
@@ -138,8 +138,8 @@ class Dropdown extends Widget
                 if (isset($item['submenuOptions'])) {
                     $submenuOptions = array_merge($submenuOptions, $item['submenuOptions']);
                 }
-                Html::addCssClass($submenuOptions, ['dropdown-submenu']);
-                Html::addCssClass($linkOptions, ['dropdown-toggle']);
+                Html::addCssClass($submenuOptions, ['widget' => 'dropdown-submenu dropdown-menu']);
+                Html::addCssClass($linkOptions, ['toggle' => 'dropdown-toggle']);
 
                 $lines[] = Html::beginTag('div', array_merge_recursive(['class' => ['dropdown'], 'aria-expanded' => 'false'], $itemOptions));
                 $lines[] = Html::a($label, $url, array_merge([

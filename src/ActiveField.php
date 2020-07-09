@@ -520,7 +520,7 @@ class ActiveField extends \yii\widgets\ActiveField
             $config['inputOptions']['placeholder'] = true;
             $config['enableError'] = false;
 
-            Html::addCssClass($config['labelOptions'], 'sr-only');
+            Html::addCssClass($config['labelOptions'], ['screenreader' => 'sr-only']);
         }
 
         return $config;
