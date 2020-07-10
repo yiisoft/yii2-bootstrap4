@@ -5,7 +5,7 @@ Yii Framework 2 bootstrap4 extension Change Log
 -----------------------
 
 - Enh #191: Added `centerVertical`, `scrollable`, `dialogOptions` options to Modal and `role="document"` to `modal-dialog` element (adhayward)
-
+- Enh #197: Added support to override every class (simialbi)
 
 2.0.8 October 08, 2019
 ----------------------
