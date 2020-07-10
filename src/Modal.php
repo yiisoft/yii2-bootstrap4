@@ -136,7 +136,7 @@ class Modal extends Widget
      * @since 2.0.9
      */
     public $dialogOptions = [];
-    
+
     /**
      * Initializes the widget.
      */
@@ -145,7 +145,7 @@ class Modal extends Widget
         parent::init();
 
         $this->initOptions();
-       
+
         echo $this->renderToggleButton() . "\n";
         echo Html::beginTag('div', $this->options) . "\n";
         echo Html::beginTag('div', $this->dialogOptions) . "\n";
@@ -300,17 +300,19 @@ class Modal extends Widget
                 $this->toggleButton['data-target'] = '#' . $this->options['id'];
             }
         }
-        
+
         $this->dialogOptions = array_merge([
-            'role'=>'document'
+            'role' => 'document'
         ], $this->dialogOptions);
-        Html::addCssClass($this->dialogOptions, 'modal-dialog');
-        Html::addCssClass($this->dialogOptions,  $this->size);
+        Html::addCssClass($this->dialogOptions, ['widget' => 'modal-dialog']);
+        if ($this->size) {
+            Html::addCssClass($this->dialogOptions, ['size' => $this->size]);
+        }
         if ($this->centerVertical) {
-            Html::addCssClass($this->dialogOptions,  'modal-dialog-centered');
+            Html::addCssClass($this->dialogOptions, ['align' => 'modal-dialog-centered']);
         }
         if ($this->scrollable) {
-            Html::addCssClass($this->dialogOptions,  'modal-dialog-scrollable');
+            Html::addCssClass($this->dialogOptions, ['scroll' => 'modal-dialog-scrollable']);
         }
     }
 }

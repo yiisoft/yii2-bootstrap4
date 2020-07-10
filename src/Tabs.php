@@ -142,7 +142,7 @@ class Tabs extends Widget
     {
         parent::init();
         Html::addCssClass($this->options, ['widget' => 'nav', $this->navType]);
-        Html::addCssClass($this->tabContentOptions, 'tab-content');
+        Html::addCssClass($this->tabContentOptions, ['panel' => 'tab-content']);
     }
 
     /**
@@ -210,7 +210,7 @@ class Tabs extends Widget
 
             Html::addCssClass($options, ['widget' => 'tab-pane']);
             if ($selected) {
-                Html::addCssClass($options, 'active');
+                Html::addCssClass($options, ['activate' => 'active']);
             }
 
             if ($this->renderTabContent) {

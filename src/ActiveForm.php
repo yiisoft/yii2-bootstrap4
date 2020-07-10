@@ -123,7 +123,7 @@ class ActiveForm extends \yii\widgets\ActiveForm
         }
 
         if ($this->layout === self::LAYOUT_INLINE) {
-            Html::addCssClass($this->options, 'form-inline');
+            Html::addCssClass($this->options, ['widget' => 'form-inline']);
         }
         parent::init();
     }
