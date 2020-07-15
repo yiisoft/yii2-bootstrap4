@@ -117,7 +117,7 @@ class Accordion extends Widget
     public function run()
     {
         $this->registerPlugin('collapse');
-        Html::addCssClass($this->options, 'accordion');
+        Html::addCssClass($this->options, ['widget' => 'accordion']);
         return implode("\n", [
                 Html::beginTag('div', $this->options),
                 $this->renderItems(),
@@ -178,7 +178,7 @@ class Accordion extends Widget
 
             // check if accordion expanded, if true add show class
             if ($expand) {
-                Html::addCssClass($options, 'show');
+                Html::addCssClass($options, ['visibility' => 'show']);
             }
 
             if (!isset($options['aria-label'], $options['aria-labelledby'])) {
@@ -204,7 +204,7 @@ class Accordion extends Widget
                 ArrayHelper::remove($itemToggleOptions, 'data-target');
                 $headerToggle = Html::a($header, '#' . $id, $itemToggleOptions) . "\n";
             } else {
-                Html::addCssClass($itemToggleOptions, 'btn-link');
+                Html::addCssClass($itemToggleOptions, ['feature' => 'btn-link']);
                 $headerToggle = Button::widget([
                         'label' => $header,
                         'encodeLabel' => false,
