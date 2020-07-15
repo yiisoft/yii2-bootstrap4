@@ -115,7 +115,12 @@ class NavBar extends Widget
     {
         parent::init();
         if (!isset($this->options['class']) || empty($this->options['class'])) {
-            Html::addCssClass($this->options, ['widget' => 'navbar', 'navbar-expand-lg', 'navbar-light', 'bg-light']);
+            Html::addCssClass($this->options, [
+                'widget' => 'navbar',
+                'toggle' => 'navbar-expand-lg',
+                'navbar-light',
+                'bg-light'
+            ]);
         } else {
             Html::addCssClass($this->options, ['widget' => 'navbar']);
         }
@@ -123,7 +128,7 @@ class NavBar extends Widget
         $navTag = ArrayHelper::remove($navOptions, 'tag', 'nav');
         $brand = '';
         if (!isset($this->innerContainerOptions['class'])) {
-            Html::addCssClass($this->innerContainerOptions, 'container');
+            Html::addCssClass($this->innerContainerOptions, ['panel' => 'container']);
         }
         if (!isset($this->collapseOptions['id'])) {
             $this->collapseOptions['id'] = "{$this->options['id']}-collapse";
@@ -149,7 +154,7 @@ class NavBar extends Widget
 
         echo Html::beginTag($navTag, $navOptions) . "\n";
         if ($this->renderInnerContainer) {
-            echo Html::beginTag('div', $this->innerContainerOptions)."\n";
+            echo Html::beginTag('div', $this->innerContainerOptions) . "\n";
         }
         echo $brand . "\n";
         echo $this->renderToggleButton() . "\n";

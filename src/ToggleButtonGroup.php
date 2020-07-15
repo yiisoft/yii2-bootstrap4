@@ -117,9 +117,9 @@ class ToggleButtonGroup extends InputWidget
     {
         $labelOptions = $this->labelOptions;
         $labelOptions['wrapInput'] = true;
-        Html::addCssClass($labelOptions, 'btn');
+        Html::addCssClass($labelOptions, ['widget' => 'btn']);
         if ($checked) {
-            Html::addCssClass($labelOptions, 'active');
+            Html::addCssClass($labelOptions, ['activate' => 'active']);
         }
         $type = $this->type;
         if ($this->encodeLabels) {

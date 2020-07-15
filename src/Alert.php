@@ -135,7 +135,7 @@ class Alert extends Widget
                 'class' => ['widget' => 'close'],
             ], $this->closeButton);
 
-            Html::addCssClass($this->options, ['alert-dismissible']);
+            Html::addCssClass($this->options, ['toggle' => 'alert-dismissible']);
         }
         if (!isset($this->options['role'])) {
             $this->options['role'] = 'alert';
