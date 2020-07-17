@@ -135,12 +135,13 @@ class Accordion extends Widget
         $items = [];
         $index = 0;
         $expanded = array_search(true, ArrayHelper::getColumn(ArrayHelper::toArray($this->items), 'expand', true));
-        if ($expanded === false) {
-            $expanded = current(array_keys($this->items));
-        }
         foreach ($this->items as $key => $item) {
             if (!is_array($item)) {
                 $item = ['content' => $item];
+            }
+            // BC compatibility: expand first item if none is expanded
+            if ($expanded === false && $index === 0) {
+                $item['expand'] = true;
             }
             if (!array_key_exists('label', $item)) {
                 if (is_int($key)) {
@@ -152,7 +153,7 @@ class Accordion extends Widget
             $header = ArrayHelper::remove($item, 'label');
             $options = ArrayHelper::getValue($item, 'options', []);
             Html::addCssClass($options, ['panel' => 'card']);
-            $items[] = Html::tag('div', $this->renderItem($header, $item, $index++, $key === $expanded), $options);
+            $items[] = Html::tag('div', $this->renderItem($header, $item, $index++), $options);
         }
 
         return implode("\n", $items);
@@ -163,15 +164,15 @@ class Accordion extends Widget
      * @param string $header a label of the item group [[items]]
      * @param array $item a single item from [[items]]
      * @param int $index the item index as each item group content must have an id
-     * @param bool $expand whether or not to expand the item
      * @return string the rendering result
      * @throws InvalidConfigException
      * @throws \Exception
      */
-    public function renderItem($header, $item, $index, $expand)
+    public function renderItem($header, $item, $index)
     {
         if (array_key_exists('content', $item)) {
             $id = $this->options['id'] . '-collapse' . $index;
+            $expand = ArrayHelper::remove($item, 'expand', false);
             $options = ArrayHelper::getValue($item, 'contentOptions', []);
             $options['id'] = $id;
             Html::addCssClass($options, ['widget' => 'collapse']);
