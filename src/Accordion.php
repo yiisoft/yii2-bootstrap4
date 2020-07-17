@@ -31,6 +31,7 @@ use yii\helpers\ArrayHelper;
  *             'content' => 'Anim pariatur cliche...',
  *             'contentOptions' => [...],
  *             'options' => [...],
+ *             'expand' => true,
  *         ],
  *         // if you want to swap out .card-block with .list-group, you may use the following
  *         [
@@ -109,7 +110,6 @@ class Accordion extends Widget
      */
     public $itemToggleOptions = [];
 
-
     /**
      * {@inheritdoc}
      * @throws InvalidConfigException
@@ -134,9 +134,14 @@ class Accordion extends Widget
     {
         $items = [];
         $index = 0;
+        $expanded = array_search(true, ArrayHelper::getColumn(ArrayHelper::toArray($this->items), 'expand', true));
         foreach ($this->items as $key => $item) {
             if (!is_array($item)) {
                 $item = ['content' => $item];
+            }
+            // BC compatibility: expand first item if none is expanded
+            if ($expanded === false && $index === 0) {
+                $item['expand'] = true;
             }
             if (!array_key_exists('label', $item)) {
                 if (is_int($key)) {
@@ -167,12 +172,16 @@ class Accordion extends Widget
     {
         if (array_key_exists('content', $item)) {
             $id = $this->options['id'] . '-collapse' . $index;
+            $expand = ArrayHelper::remove($item, 'expand', false);
             $options = ArrayHelper::getValue($item, 'contentOptions', []);
             $options['id'] = $id;
             Html::addCssClass($options, ['widget' => 'collapse']);
-            if ($index === 0) {
+
+            // check if accordion expanded, if true add show class
+            if ($expand) {
                 Html::addCssClass($options, ['visibility' => 'show']);
             }
+
             if (!isset($options['aria-label'], $options['aria-labelledby'])) {
                 $options['aria-labelledby'] = $options['id'] . '-heading';
             }
@@ -187,7 +196,7 @@ class Accordion extends Widget
                 'type' => 'button',
                 'data-toggle' => 'collapse',
                 'data-target' => '#' . $options['id'],
-                'aria-expanded' => ($index === 0) ? 'true' : 'false',
+                'aria-expanded' => $expand ? 'true' : 'false',
                 'aria-controls' => $options['id']
             ], $this->itemToggleOptions);
 
