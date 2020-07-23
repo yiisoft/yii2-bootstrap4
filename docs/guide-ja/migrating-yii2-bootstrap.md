@@ -22,7 +22,7 @@ yii2-bootstrap4 は、Bootstrap 3 から Bootstrap 4 への移行ガイドに従
 
 `icon` メソッドは削除されました。グリフアイコンがもうバンドルされておらず、このメソッドが無意味になったためです。
 代りに、[Font Awesome Widget](https://github.com/rmrevin/yii2-fontawesome) または
-[Font Awesome Inline Widget](https://github.com/Thoulah/yii2-fontawesome-inline) を使うことを検討して下さい。
+[Font Awesome Inline Widget](https://github.com/YiiRocks/yii2-fontawesome-inline) を使うことを検討して下さい。
 
 ### ActiveField
 
