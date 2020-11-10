@@ -110,6 +110,7 @@ class Accordion extends Widget
      */
     public $itemToggleOptions = [];
 
+
     /**
      * {@inheritdoc}
      * @throws InvalidConfigException

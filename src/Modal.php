@@ -114,7 +114,6 @@ class Modal extends Widget
      * for the supported HTML attributes.
      */
     public $toggleButton = false;
-
     /**
      * @var boolean whether to center the modal vertically
      *
@@ -129,13 +128,13 @@ class Modal extends Widget
      * @since 2.0.9
      */
     public $scrollable = false;
-
     /**
      * @var array modal dialog options
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
      * @since 2.0.9
      */
     public $dialogOptions = [];
+
 
     /**
      * Initializes the widget.

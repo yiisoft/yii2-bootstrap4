@@ -1,12 +1,13 @@
 Yii Framework 2 bootstrap4 extension Change Log
 ==============================================
 
-2.0.9 under development
+2.0.9 November 10, 2020
 -----------------------
 
 - Enh #191: Added `centerVertical`, `scrollable`, `dialogOptions` options to Modal and `role="document"` to `modal-dialog` element (adhayward)
 - Enh #196: Added ability for `Accordion` to expand a certain card (hoaaah, Mister-42, simialbi)
 - Enh #197: Added support to override every class (simialbi)
+
 
 2.0.8 October 08, 2019
 ----------------------
