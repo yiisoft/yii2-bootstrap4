@@ -1,6 +1,12 @@
 Yii Framework 2 bootstrap4 extension Change Log
 ==============================================
 
+2.0.10 under development
+------------------------
+
+- no changes in this release.
+
+
 2.0.9 November 10, 2020
 -----------------------
 
