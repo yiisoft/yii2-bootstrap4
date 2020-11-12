@@ -111,7 +111,7 @@ HTML;
 <a class="navbar-brand" href="/">My Company</a>
 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#w0-collapse" aria-controls="w0-collapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 <div id="w0-collapse" class="collapse navbar-collapse">
-<ul id="w1" class="mr-auto nav"><li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+<ul id="w1" class="mr-auto navbar-nav"><li class="nav-item"><a class="nav-link" href="#">Home</a></li>
 <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
 <li class="dropdown nav-item"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Dropdown</a><div id="w2" class="dropdown-menu"><a class="dropdown-item" href="#">Action</a>
 <a class="dropdown-item" href="#">Another action</a>
