@@ -28,7 +28,7 @@ class TabsTest extends TestCase
             ]
         ]);
 
-        $this->assertContains('<ul id="w0" class="nav nav-tabs" role="tablist">', $out);
+        $this->assertContains('<ul id="w0" class="navbar-nav nav-tabs" role="tablist">', $out);
     }
 
     /**
@@ -362,7 +362,7 @@ class TabsTest extends TestCase
         ]);
 
         $expected = <<<HTML
-<ul id="w0" class="nav nav-tabs" role="tablist"><li class="nav-item"><a class="nav-link active" href="#pane1" data-toggle="tab" role="tab" aria-controls="pane1" aria-selected="true">Tab 1</a></li>
+<ul id="w0" class="navbar-nav nav-tabs" role="tablist"><li class="nav-item"><a class="nav-link active" href="#pane1" data-toggle="tab" role="tab" aria-controls="pane1" aria-selected="true">Tab 1</a></li>
 <li class="nav-item"><a class="nav-link" href="#w0-tab1" data-toggle="tab" role="tab" aria-controls="w0-tab1" aria-selected="false">Tab 2</a></li></ul>
 <div class="tab-content"><div id="pane1" class="tab-pane active"><div>Content 1</div></div>
 <div id="w0-tab1" class="tab-pane"><div>Content 2</div></div></div>
