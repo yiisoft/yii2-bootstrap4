@@ -141,7 +141,7 @@ class Tabs extends Widget
     public function init()
     {
         parent::init();
-        Html::addCssClass($this->options, ['widget' => 'nav', $this->navType]);
+        Html::addCssClass($this->options, ['widget' => 'navbar-nav', $this->navType]);
         Html::addCssClass($this->tabContentOptions, ['panel' => 'tab-content']);
     }
 
