@@ -396,7 +396,7 @@ HTML;
         ]);
 
         $expected = <<<HTML
-<ul id="w0" class="row nav nav-tabs" role="tablist"><li class="col nav-item"><a class="nav-link active" href="#w0-tab0" data-toggle="tab" role="tab" aria-controls="w0-tab0" aria-selected="true">Tab 1</a></li>
+<ul id="w0" class="row navbar-nav nav-tabs" role="tablist"><li class="col nav-item"><a class="nav-link active" href="#w0-tab0" data-toggle="tab" role="tab" aria-controls="w0-tab0" aria-selected="true">Tab 1</a></li>
 <li class="col-6 nav-item"><a class="nav-link" href="#w0-tab1" data-toggle="tab" role="tab" aria-controls="w0-tab1" aria-selected="false">Tab 2</a></li>
 <li class="col-3 nav-item"><a class="nav-link" href="http://www.example.com/">Link</a></li></ul>
 <div class="tab-content"><div id="w0-tab0" class="tab-pane active"><div>Content 1</div></div>
