@@ -321,7 +321,7 @@ class ActiveField extends \yii\widgets\ActiveField
      */
     public function checkboxList($items, $options = [])
     {
-        if (!isset($options['item'])) {
+        if (!isset($options['item']) && !empty($items)) {
             $this->template = str_replace("\n{error}", '', $this->template);
             $itemOptions = isset($options['itemOptions']) ? $options['itemOptions'] : [];
             $encode = ArrayHelper::getValue($options, 'encode', true);
@@ -362,7 +362,7 @@ class ActiveField extends \yii\widgets\ActiveField
      */
     public function radioList($items, $options = [])
     {
-        if (!isset($options['item'])) {
+        if (!isset($options['item']) && !empty($items)) {
             $this->template = str_replace("\n{error}", '', $this->template);
             $itemOptions = isset($options['itemOptions']) ? $options['itemOptions'] : [];
             $encode = ArrayHelper::getValue($options, 'encode', true);
