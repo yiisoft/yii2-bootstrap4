@@ -43,18 +43,19 @@ use yii\helpers\ArrayHelper;
 class Toast extends Widget
 {
     /**
-     * @var string the body content in the alert component. Note that anything between
+     * @var string|null the body content in the alert component. Note that anything between
      * the [[begin()]] and [[end()]] calls of the Toast widget will also be treated
      * as the body content, and will be rendered before this.
      */
     public $body;
     /**
-     * @var string The tile content in the toast.
+     * @var string|null The title content in the toast.
      */
     public $title;
     /**
      * @var int|string|\DateTime|\DateTimeInterface|\DateInterval|false The date time the toast message references to.
-     * This will be formatted as relative time (via formatter component). This will be omitted if `false` (default).
+     * This will be formatted as relative time (via formatter component). It will be omitted if
+     * set to `false` (default).
      */
     public $dateTime = false;
     /**
@@ -137,7 +138,7 @@ class Toast extends Widget
         $button = $this->renderCloseButton();
         $tag = ArrayHelper::remove($this->titleOptions, 'tag', 'strong');
         Html::addCssClass($this->titleOptions, ['widget' => 'mr-auto']);
-        $title = Html::tag($tag, ($this->title === null) ? '' : $this->title, $this->titleOptions);
+        $title = Html::tag($tag, $this->title === null ? '' : $this->title, $this->titleOptions);
 
         if ($this->dateTime !== false) {
             $tag = ArrayHelper::remove($this->dateTimeOptions, 'tag', 'small');

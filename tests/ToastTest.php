@@ -16,7 +16,6 @@ class ToastTest extends TestCase
             'bodyOptions' => ['class' => 'toast-body test', 'style' => ['text-align' => 'center']]
         ]);
 
-
         $expected = <<<HTML
 <div id="w0" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
 <div class="toast-header">
@@ -105,7 +104,6 @@ HTML;
             'title' => 'Toast title',
             'titleOptions' => ['tag' => 'h5', 'style' => ['text-align' => 'left']]
         ]);
-
 
         $expected = <<<HTML
 <div id="w0" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
