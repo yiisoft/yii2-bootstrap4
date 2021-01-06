@@ -57,7 +57,7 @@ use yii\base\InvalidConfigException;
  * ```
  *
  * @see ActiveField for details on the [[fieldConfig]] options
- * @see http://getbootstrap.com/css/#forms
+ * @see https://getbootstrap.com/docs/4.5/components/forms/
  *
  * @author Michael Härtl <haertl.mike@gmail.com>
  * @author Simon Karlen <simi.albi@outlook.com>

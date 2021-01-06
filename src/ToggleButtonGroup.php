@@ -25,7 +25,7 @@ use yii\base\InvalidConfigException;
  * ]) ?>
  * ```
  *
- * @see http://getbootstrap.com/javascript/#buttons-checkbox-radio
+ * @see https://getbootstrap.com/docs/4.5/components/buttons/#checkbox-and-radio-buttons
  *
  * @author Paul Klimov <klimov.paul@gmail.com>
  * @author Simon Karlen <simi.albi@outlook.com>

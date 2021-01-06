@@ -45,8 +45,8 @@ use Yii;
  *
  * Note: Multilevel dropdowns beyond Level 1 are not supported in Bootstrap 4.
  *
- * @see http://getbootstrap.com/components/#dropdowns
- * @see http://getbootstrap.com/components/#nav
+ * @see https://getbootstrap.com/docs/4.5/components/navs/
+ * @see https://getbootstrap.com/docs/4.5/components/dropdowns/
  *
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  */

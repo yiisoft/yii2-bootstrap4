@@ -34,7 +34,7 @@ use yii\helpers\ArrayHelper;
  *
  * @property-write array $containerOptions
  *
- * @see https://getbootstrap.com/docs/4.2/components/navbar/
+ * @see https://getbootstrap.com/docs/4.5/components/navbar/
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  * @author Alexander Kochetov <creocoder@gmail.com>
  */
@@ -58,12 +58,12 @@ class NavBar extends Widget
     public $collapseOptions = [];
     /**
      * @var string|bool the text of the brand or false if it's not used. Note that this is not HTML-encoded.
-     * @see https://getbootstrap.com/docs/4.2/components/navbar/
+     * @see https://getbootstrap.com/docs/4.5/components/navbar/
      */
     public $brandLabel = false;
     /**
      * @var string|bool src of the brand image or false if it's not used. Note that this param will override `$this->brandLabel` param.
-     * @see https://getbootstrap.com/docs/4.2/components/navbar/
+     * @see https://getbootstrap.com/docs/4.5/components/navbar/
      * @since 2.0.8
      */
     public $brandImage = false;

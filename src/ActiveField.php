@@ -86,7 +86,7 @@ use yii\helpers\ArrayHelper;
  * @property-read \yii\bootstrap4\ActiveForm $form
  *
  * @see \yii\bootstrap4\ActiveForm
- * @see http://getbootstrap.com/css/#forms
+ * @see https://getbootstrap.com/docs/4.5/components/forms/
  *
  * @author Michael Härtl <haertl.mike@gmail.com>
  * @author Simon Karlen <simi.albi@outlook.com>
@@ -430,7 +430,7 @@ class ActiveField extends \yii\widgets\ActiveField
      * - encode: bool, whether value should be HTML-encoded or not.
      *
      * @return $this the field object itself
-     * @see https://getbootstrap.com/docs/4.2/components/forms/#readonly-plain-text
+     * @see https://getbootstrap.com/docs/4.5/components/forms/#readonly-plain-text
      */
     public function staticControl($options = [])
     {
