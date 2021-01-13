@@ -28,7 +28,7 @@ use yii\helpers\ArrayHelper;
  * ],
  * ```
  *
- * @see https://getbootstrap.com/docs/4.1/components/pagination/
+ * @see https://getbootstrap.com/docs/4.5/components/pagination/
  * @author Simon Karlen <simi.albi@outlook.com>
  * @since 2.0.2
  */

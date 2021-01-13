@@ -54,8 +54,8 @@ use yii\helpers\ArrayHelper;
  * ]);
  * ```
  *
- * @see https://getbootstrap.com/docs/4.2/components/navs/#tabs
- * @see https://getbootstrap.com/docs/4.2/components/card/#navigation
+ * @see https://getbootstrap.com/docs/4.5/components/navs/#tabs
+ * @see https://getbootstrap.com/docs/4.5/components/card/#navigation
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  * @author Simon Karlen <simi.albi@outlook.com>
  */
