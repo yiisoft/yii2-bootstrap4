@@ -279,6 +279,7 @@ class ActiveField extends \yii\widgets\ActiveField
             }
         }
 
+        $this->addErrorClassIfNeeded($options);
         return parent::checkbox($options, false);
     }
 
@@ -313,6 +314,7 @@ class ActiveField extends \yii\widgets\ActiveField
             $this->parts['{labelTitle}'] = $options['label'];
         }
 
+        $this->addErrorClassIfNeeded($options);
         return parent::radio($options, false);
     }
 
@@ -342,6 +344,7 @@ class ActiveField extends \yii\widgets\ActiveField
                     Html::addCssClass($wrapperOptions, 'custom-control-inline');
                 }
 
+                $this->addErrorClassIfNeeded($options);
                 $html = Html::beginTag('div', $wrapperOptions) . "\n" .
                     Html::checkbox($name, $checked, $options) . "\n";
                 if ($itemCount === $i) {
@@ -383,6 +386,7 @@ class ActiveField extends \yii\widgets\ActiveField
                     Html::addCssClass($wrapperOptions, 'custom-control-inline');
                 }
 
+                $this->addErrorClassIfNeeded($options);
                 $html = Html::beginTag('div', $wrapperOptions) . "\n" .
                     Html::radio($name, $checked, $options) . "\n";
                 if ($itemCount === $i) {
