@@ -28,7 +28,7 @@ class TabsTest extends TestCase
             ]
         ]);
 
-        $this->assertContains('<ul id="w0" class="nav nav-tabs" role="tablist">', $out);
+        $this->assertContainsWithoutLE('<ul id="w0" class="nav nav-tabs" role="tablist">', $out);
     }
 
     /**
@@ -109,7 +109,7 @@ class TabsTest extends TestCase
         ];
 
         foreach ($shouldContain as $string) {
-            $this->assertContains($string, $out);
+            $this->assertContainsWithoutLE($string, $out);
         }
     }
 
@@ -340,7 +340,7 @@ class TabsTest extends TestCase
         $this->assertContains('<span>not encoded</span>', $html);
         $this->assertContains('<span>not encoded too</span>', $html);
     }
-  
+
     /**
      * @see https://github.com/yiisoft/yii2-bootstrap4/issues/108#issuecomment-465219339
      */

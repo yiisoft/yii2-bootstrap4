@@ -240,8 +240,8 @@ HTML;
 HTML;
 
 
-        $this->assertContains($expected, $out);
-        $this->assertContains($expected2, $out);
-        $this->assertContains($expected3, $out);
+        $this->assertContainsWithoutLE($expected, $out);
+        $this->assertContainsWithoutLE($expected2, $out);
+        $this->assertContainsWithoutLE($expected3, $out);
     }
 }

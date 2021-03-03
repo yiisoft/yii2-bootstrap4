@@ -103,4 +103,18 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals($expected, $actual);
     }
+
+    /**
+     * Asserting two strings equality ignoring line endings
+     *
+     * @param string $needle
+     * @param string $haystack
+     */
+    public function assertContainsWithoutLE($needle, $haystack)
+    {
+        $needle = str_replace("\r\n", "\n", $needle);
+        $haystack = str_replace("\r\n", "\n", $haystack);
+
+        $this->assertContains($needle, $haystack);
+    }
 }

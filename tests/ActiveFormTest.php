@@ -47,7 +47,7 @@ class ActiveFormTest extends TestCase
 HTML;
 
 
-        $this->assertContains($expected, $out);
+        $this->assertContainsWithoutLE($expected, $out);
     }
 
     public function testHorizontalLayout()
@@ -118,9 +118,9 @@ HTML;
 HTML;
 
 
-        $this->assertContains($expected, $out);
-        $this->assertContains($expected2, $out);
-        $this->assertContains($expected3, $out);
+        $this->assertContainsWithoutLE($expected, $out);
+        $this->assertContainsWithoutLE($expected2, $out);
+        $this->assertContainsWithoutLE($expected3, $out);
     }
 
     /**
@@ -148,7 +148,7 @@ HTML;
 HTML;
 
 
-        $this->assertContains($expected, $out);
+        $this->assertContainsWithoutLE($expected, $out);
     }
 
     public function testInlineLayout()
@@ -202,10 +202,10 @@ HTML;
 HTML;
 
 
-        $this->assertContains('<form id="w0" class="form-inline"', $out);
-        $this->assertContains($expected, $out);
-        $this->assertContains($expected2, $out);
-        $this->assertContains($expected3, $out);
+        $this->assertContainsWithoutLE('<form id="w0" class="form-inline"', $out);
+        $this->assertContainsWithoutLE($expected, $out);
+        $this->assertContainsWithoutLE($expected2, $out);
+        $this->assertContainsWithoutLE($expected3, $out);
     }
 
     public function testHintRendering()
@@ -257,10 +257,10 @@ HTML;
 </div>
 HTML;
 
-        $this->assertContains($expected, $out);
-        $this->assertContains($expected2, $out);
-        $this->assertContains($expected3, $out);
-        $this->assertContains($expected4, $out);
+        $this->assertContainsWithoutLE($expected, $out);
+        $this->assertContainsWithoutLE($expected2, $out);
+        $this->assertContainsWithoutLE($expected3, $out);
+        $this->assertContainsWithoutLE($expected4, $out);
     }
 
     /**
@@ -288,7 +288,7 @@ HTML;
 </div>
 HTML;
 
-        $this->assertContains($expected, $out);
+        $this->assertContainsWithoutLE($expected, $out);
     }
 
     /**
@@ -316,6 +316,6 @@ HTML;
         $out = ob_get_clean();
 
 
-        $this->assertContains('<div class="alert alert-danger"', $out);
+        $this->assertContainsWithoutLE('<div class="alert alert-danger"', $out);
     }
 }
