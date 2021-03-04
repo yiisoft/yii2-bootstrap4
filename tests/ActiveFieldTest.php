@@ -98,7 +98,7 @@ HTML;
         $expectedHtml = <<<HTML
 <div class="form-group field-dynamicmodel-attributename">
 <div class="custom-control custom-radio">
-<input type="hidden" name="DynamicModel[attributeName]" value="0"><input type="radio" id="dynamicmodel-attributename" class="custom-control-input is-invalid" name="DynamicModel[attributeName]" value="1">
+<input type="hidden" name="DynamicModel[attributeName]" value="0"><input type="radio" id="dynamicmodel-attributename" class="custom-control-input is-invalid" name="DynamicModel[attributeName]" value="1" aria-invalid="true">
 <label class="custom-control-label" for="dynamicmodel-attributename">Attribute Name</label>
 <div class="invalid-feedback">Test print error message</div>
 
@@ -118,13 +118,13 @@ HTML;
 <div class="form-group field-dynamicmodel-attributename">
 <label>Attribute Name</label>
 <input type="hidden" name="DynamicModel[attributeName]" value=""><div id="dynamicmodel-attributename" class="is-invalid" role="radiogroup" aria-invalid="true"><div class="custom-control custom-radio">
-<input type="radio" id="i5" class="custom-control-input is-invalid" name="DynamicModel[attributeName]" value="0">
-<label class="custom-control-label" for="i5">name1</label>
+<input type="radio" id="i0" class="custom-control-input is-invalid" name="DynamicModel[attributeName]" value="1">
+<label class="custom-control-label" for="i0">name1</label>
 </div>
 
 <div class="custom-control custom-radio">
-<input type="radio" id="i6" class="custom-control-input is-invalid" name="DynamicModel[attributeName]" value="1">
-<label class="custom-control-label" for="i6">name2</label>
+<input type="radio" id="i1" class="custom-control-input is-invalid" name="DynamicModel[attributeName]" value="2">
+<label class="custom-control-label" for="i1">name2</label>
 <div class="invalid-feedback">Test print error message</div>
 </div>
 </div>
@@ -168,7 +168,7 @@ HTML;
         $expectedHtml = <<<HTML
 <div class="form-group field-dynamicmodel-attributename">
 <div class="custom-control custom-checkbox">
-<input type="hidden" name="DynamicModel[attributeName]" value="0"><input type="checkbox" id="dynamicmodel-attributename" class="custom-control-input is-invalid" name="DynamicModel[attributeName]" value="1">
+<input type="hidden" name="DynamicModel[attributeName]" value="0"><input type="checkbox" id="dynamicmodel-attributename" class="custom-control-input is-invalid" name="DynamicModel[attributeName]" value="1" aria-invalid="true">
 <label class="custom-control-label" for="dynamicmodel-attributename">Attribute Name</label>
 <div class="invalid-feedback">Test print error message</div>
 
@@ -188,13 +188,13 @@ HTML;
 <div class="form-group field-dynamicmodel-attributename">
 <label>Attribute Name</label>
 <input type="hidden" name="DynamicModel[attributeName]" value=""><div id="dynamicmodel-attributename" class="is-invalid" aria-invalid="true"><div class="custom-control custom-checkbox">
-<input type="checkbox" id="i5" class="custom-control-input is-invalid" name="DynamicModel[attributeName][]" value="0">
-<label class="custom-control-label" for="i5">name1</label>
+<input type="checkbox" id="i0" class="custom-control-input is-invalid" name="DynamicModel[attributeName][]" value="1">
+<label class="custom-control-label" for="i0">name1</label>
 </div>
 
 <div class="custom-control custom-checkbox">
-<input type="checkbox" id="i6" class="custom-control-input is-invalid" name="DynamicModel[attributeName][]" value="1">
-<label class="custom-control-label" for="i6">name2</label>
+<input type="checkbox" id="i1" class="custom-control-input is-invalid" name="DynamicModel[attributeName][]" value="2">
+<label class="custom-control-label" for="i1">name2</label>
 <div class="invalid-feedback">Test print error message</div>
 </div>
 </div>
