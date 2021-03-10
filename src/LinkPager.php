@@ -15,7 +15,7 @@ use yii\helpers\ArrayHelper;
  * LinkPager represents a bootstrap 4 version of [[\yii\widgets\LinkPager]]. It displays a list of hyperlinks
  * that lead to different pages of target.
  *
- * LinkPager works with a [[\yii\widget\Pagination]] object which specifies the total number
+ * LinkPager works with a [[\yii\data\Pagination]] object which specifies the total number
  * of pages and the current page number.
  *
  * To apply LinkPager globally e.g. in all GridViews, set in configuration DI:
@@ -28,7 +28,7 @@ use yii\helpers\ArrayHelper;
  * ],
  * ```
  *
- * @see https://getbootstrap.com/docs/4.5/components/pagination/
+ * @see https://getbootstrap.com/docs/4.6/components/pagination/
  * @author Simon Karlen <simi.albi@outlook.com>
  * @since 2.0.2
  */
