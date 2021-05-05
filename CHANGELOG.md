@@ -1,11 +1,12 @@
 Yii Framework 2 bootstrap4 extension Change Log
 ==============================================
 
-2.0.10 under development
-------------------------
+2.0.10 May 05, 2021
+-------------------
 
-- Enh #205: Added `Toast` widget (simialbi)
 - Bug #173: Fix bug with error messages not being displayed for checkbox, radio, checkboxList, and radioList (egrekov)
+- Enh #205: Added `Toast` widget (simialbi)
+
 
 2.0.9 November 10, 2020
 -----------------------

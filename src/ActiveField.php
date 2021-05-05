@@ -83,8 +83,6 @@ use yii\helpers\ArrayHelper;
  * ActiveForm::end();
  * ```
  *
- * @property-read \yii\bootstrap4\ActiveForm $form
- *
  * @see \yii\bootstrap4\ActiveForm
  * @see https://getbootstrap.com/docs/4.5/components/forms/
  *
