@@ -18,7 +18,7 @@ namespace yii\bootstrap4;
  *     'options' => ['class' => 'btn-lg'],
  * ]);
  * ```
- * @see http://getbootstrap.com/javascript/#buttons
+ * @see https://getbootstrap.com/docs/4.5/components/buttons/
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  */
 class Button extends Widget

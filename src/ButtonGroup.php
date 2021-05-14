@@ -35,8 +35,8 @@ use yii\helpers\ArrayHelper;
  *
  * Pressing on the button should be handled via JavaScript. See the following for details:
  *
- * @see https://getbootstrap.com/docs/4.2/components/buttons/
- * @see https://getbootstrap.com/docs/4.2/components/button-group/
+ * @see https://getbootstrap.com/docs/4.5/components/buttons/
+ * @see https://getbootstrap.com/docs/4.5/components/button-group/
  *
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  * @author Simon Karlen <simi.albi@outlook.com>

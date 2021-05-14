@@ -39,7 +39,7 @@ use yii\helpers\ArrayHelper;
  * Alert::end();
  * ```
  *
- * @see https://getbootstrap.com/docs/4.2/components/alerts/
+ * @see https://getbootstrap.com/docs/4.5/components/alerts/
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  * @author Simon Karlen <simi.albi@outlook.com>
  */
@@ -62,7 +62,7 @@ class Alert extends Widget
      * - label: string, the label of the button. Defaults to '&times;'.
      *
      * The rest of the options will be rendered as the HTML attributes of the button tag.
-     * Please refer to the [Alert documentation](http://getbootstrap.com/components/#alerts)
+     * Please refer to the [Alert documentation](https://getbootstrap.com/docs/4.5/components/alerts/)
      * for the supported HTML attributes.
      */
     public $closeButton = [];
@@ -135,7 +135,7 @@ class Alert extends Widget
                 'class' => ['widget' => 'close'],
             ], $this->closeButton);
 
-            Html::addCssClass($this->options, ['alert-dismissible']);
+            Html::addCssClass($this->options, ['toggle' => 'alert-dismissible']);
         }
         if (!isset($this->options['role'])) {
             $this->options['role'] = 'alert';

@@ -22,7 +22,7 @@ The most notable changes are summarized below:
 
 Removed method `icon`. Since there are no glyphicons bundled any more, this method makes no sense. Consider using
 [Font Awesome Widget](https://github.com/rmrevin/yii2-fontawesome) or 
-[Font Awesome Inline Widget](https://github.com/Thoulah/yii2-fontawesome-inline) as alternative.
+[Font Awesome Inline Widget](https://github.com/YiiRocks/yii2-fontawesome-inline) as alternative.
 
 ### ActiveField
 

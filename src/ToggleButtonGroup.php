@@ -25,7 +25,7 @@ use yii\base\InvalidConfigException;
  * ]) ?>
  * ```
  *
- * @see http://getbootstrap.com/javascript/#buttons-checkbox-radio
+ * @see https://getbootstrap.com/docs/4.5/components/buttons/#checkbox-and-radio-buttons
  *
  * @author Paul Klimov <klimov.paul@gmail.com>
  * @author Simon Karlen <simi.albi@outlook.com>
@@ -117,9 +117,9 @@ class ToggleButtonGroup extends InputWidget
     {
         $labelOptions = $this->labelOptions;
         $labelOptions['wrapInput'] = true;
-        Html::addCssClass($labelOptions, 'btn');
+        Html::addCssClass($labelOptions, ['widget' => 'btn']);
         if ($checked) {
-            Html::addCssClass($labelOptions, 'active');
+            Html::addCssClass($labelOptions, ['activate' => 'active']);
         }
         $type = $this->type;
         if ($this->encodeLabels) {

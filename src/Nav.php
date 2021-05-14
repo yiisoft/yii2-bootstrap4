@@ -39,14 +39,14 @@ use Yii;
  *             'visible' => Yii::$app->user->isGuest
  *         ],
  *     ],
- *     'options' => ['class' =>'nav-pills'], // set this to nav-tab to get tab-styled navigation
+ *     'options' => ['class' =>'nav-pills'], // set this to nav-tabs to get tab-styled navigation
  * ]);
  * ```
  *
- * Note: Multilevel dropdowns beyond Level 1 are not supported in Bootstrap 3.
+ * Note: Multilevel dropdowns beyond Level 1 are not supported in Bootstrap 4.
  *
- * @see http://getbootstrap.com/components/#dropdowns
- * @see http://getbootstrap.com/components/#nav
+ * @see https://getbootstrap.com/docs/4.5/components/navs/
+ * @see https://getbootstrap.com/docs/4.5/components/dropdowns/
  *
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  */
@@ -173,25 +173,24 @@ class Nav extends Widget
 
         if (empty($items)) {
             $items = '';
+            Html::addCssClass($options, ['widget' => 'nav-item']);
+            Html::addCssClass($linkOptions, ['widget' => 'nav-link']);
         } else {
             $linkOptions['data-toggle'] = 'dropdown';
-            Html::addCssClass($options, ['widget' => 'dropdown']);
-            Html::addCssClass($linkOptions, ['widget' => 'dropdown-toggle']);
+            Html::addCssClass($options, ['widget' => 'dropdown nav-item']);
+            Html::addCssClass($linkOptions, ['widget' => 'dropdown-toggle nav-link']);
             if (is_array($items)) {
                 $items = $this->isChildActive($items, $active);
                 $items = $this->renderDropdown($items, $item);
             }
         }
 
-        Html::addCssClass($options, 'nav-item');
-        Html::addCssClass($linkOptions, 'nav-link');
-
         if ($disabled) {
             ArrayHelper::setValue($linkOptions, 'tabindex', '-1');
             ArrayHelper::setValue($linkOptions, 'aria-disabled', 'true');
-            Html::addCssClass($linkOptions, 'disabled');
+            Html::addCssClass($linkOptions, ['disable' => 'disabled']);
         } elseif ($this->activateItems && $active) {
-            Html::addCssClass($linkOptions, 'active');
+            Html::addCssClass($linkOptions, ['activate' => 'active']);
         }
 
         return Html::tag('li', Html::a($label, $url, $linkOptions) . $items, $options);
@@ -241,7 +240,7 @@ class Nav extends Widget
                 $activeParent = false;
                 $items[$i]['items'] = $this->isChildActive($childItems, $activeParent);
                 if ($activeParent) {
-                    Html::addCssClass($items[$i]['options'], 'active');
+                    Html::addCssClass($items[$i]['options'], ['activate' => 'active']);
                     $active = true;
                 }
             }

@@ -33,7 +33,7 @@ use yii\helpers\ArrayHelper;
  * ]);
  * ```
  *
- * @see https://getbootstrap.com/docs/4.2/components/carousel/
+ * @see https://getbootstrap.com/docs/4.5/components/carousel/
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  * @author Simon Karlen <simi.albi@outlook.com>
  */
@@ -83,9 +83,9 @@ class Carousel extends Widget
     public function init()
     {
         parent::init();
-        Html::addCssClass($this->options, ['widget' => 'carousel', 'slide']);
+        Html::addCssClass($this->options, ['widget' => 'carousel slide']);
         if ($this->crossfade) {
-            Html::addCssClass($this->options, 'carousel-fade');
+            Html::addCssClass($this->options, ['animation' => 'carousel-fade']);
         }
     }
 
@@ -118,7 +118,7 @@ class Carousel extends Widget
         for ($i = 0, $count = count($this->items); $i < $count; $i++) {
             $options = ['data-target' => '#' . $this->options['id'], 'data-slide-to' => $i];
             if ($i === 0) {
-                Html::addCssClass($options, 'active');
+                Html::addCssClass($options, ['activate' => 'active']);
             }
             $indicators[] = Html::tag('li', '', $options);
         }
@@ -170,7 +170,7 @@ class Carousel extends Widget
 
         Html::addCssClass($options, ['widget' => 'carousel-item']);
         if ($index === 0) {
-            Html::addCssClass($options, 'active');
+            Html::addCssClass($options, ['activate' => 'active']);
         }
 
         return Html::tag('div', $content . "\n" . $caption, $options);

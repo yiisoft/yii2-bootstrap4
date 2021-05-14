@@ -54,8 +54,8 @@ use yii\helpers\ArrayHelper;
  * ]);
  * ```
  *
- * @see https://getbootstrap.com/docs/4.2/components/navs/#tabs
- * @see https://getbootstrap.com/docs/4.2/components/card/#navigation
+ * @see https://getbootstrap.com/docs/4.5/components/navs/#tabs
+ * @see https://getbootstrap.com/docs/4.5/components/card/#navigation
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  * @author Simon Karlen <simi.albi@outlook.com>
  */
@@ -142,7 +142,7 @@ class Tabs extends Widget
     {
         parent::init();
         Html::addCssClass($this->options, ['widget' => 'nav', $this->navType]);
-        Html::addCssClass($this->tabContentOptions, 'tab-content');
+        Html::addCssClass($this->tabContentOptions, ['panel' => 'tab-content']);
     }
 
     /**
@@ -210,7 +210,7 @@ class Tabs extends Widget
 
             Html::addCssClass($options, ['widget' => 'tab-pane']);
             if ($selected) {
-                Html::addCssClass($options, 'active');
+                Html::addCssClass($options, ['activate' => 'active']);
             }
 
             if ($this->renderTabContent) {

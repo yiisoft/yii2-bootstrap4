@@ -83,10 +83,8 @@ use yii\helpers\ArrayHelper;
  * ActiveForm::end();
  * ```
  *
- * @property-read \yii\bootstrap4\ActiveForm $form
- *
  * @see \yii\bootstrap4\ActiveForm
- * @see http://getbootstrap.com/css/#forms
+ * @see https://getbootstrap.com/docs/4.5/components/forms/
  *
  * @author Michael Härtl <haertl.mike@gmail.com>
  * @author Simon Karlen <simi.albi@outlook.com>
@@ -279,6 +277,7 @@ class ActiveField extends \yii\widgets\ActiveField
             }
         }
 
+        $this->addErrorClassIfNeeded($options);
         return parent::checkbox($options, false);
     }
 
@@ -313,6 +312,7 @@ class ActiveField extends \yii\widgets\ActiveField
             $this->parts['{labelTitle}'] = $options['label'];
         }
 
+        $this->addErrorClassIfNeeded($options);
         return parent::radio($options, false);
     }
 
@@ -342,6 +342,7 @@ class ActiveField extends \yii\widgets\ActiveField
                     Html::addCssClass($wrapperOptions, 'custom-control-inline');
                 }
 
+                $this->addErrorClassIfNeeded($options);
                 $html = Html::beginTag('div', $wrapperOptions) . "\n" .
                     Html::checkbox($name, $checked, $options) . "\n";
                 if ($itemCount === $i) {
@@ -383,6 +384,7 @@ class ActiveField extends \yii\widgets\ActiveField
                     Html::addCssClass($wrapperOptions, 'custom-control-inline');
                 }
 
+                $this->addErrorClassIfNeeded($options);
                 $html = Html::beginTag('div', $wrapperOptions) . "\n" .
                     Html::radio($name, $checked, $options) . "\n";
                 if ($itemCount === $i) {
@@ -430,7 +432,7 @@ class ActiveField extends \yii\widgets\ActiveField
      * - encode: bool, whether value should be HTML-encoded or not.
      *
      * @return $this the field object itself
-     * @see https://getbootstrap.com/docs/4.2/components/forms/#readonly-plain-text
+     * @see https://getbootstrap.com/docs/4.5/components/forms/#readonly-plain-text
      */
     public function staticControl($options = [])
     {
@@ -520,7 +522,7 @@ class ActiveField extends \yii\widgets\ActiveField
             $config['inputOptions']['placeholder'] = true;
             $config['enableError'] = false;
 
-            Html::addCssClass($config['labelOptions'], 'sr-only');
+            Html::addCssClass($config['labelOptions'], ['screenreader' => 'sr-only']);
         }
 
         return $config;

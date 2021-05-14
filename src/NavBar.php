@@ -32,9 +32,7 @@ use yii\helpers\ArrayHelper;
  * NavBar::end();
  * ```
  *
- * @property-write array $containerOptions
- *
- * @see https://getbootstrap.com/docs/4.2/components/navbar/
+ * @see https://getbootstrap.com/docs/4.5/components/navbar/
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  * @author Alexander Kochetov <creocoder@gmail.com>
  */
@@ -58,12 +56,12 @@ class NavBar extends Widget
     public $collapseOptions = [];
     /**
      * @var string|bool the text of the brand or false if it's not used. Note that this is not HTML-encoded.
-     * @see https://getbootstrap.com/docs/4.2/components/navbar/
+     * @see https://getbootstrap.com/docs/4.5/components/navbar/
      */
     public $brandLabel = false;
     /**
      * @var string|bool src of the brand image or false if it's not used. Note that this param will override `$this->brandLabel` param.
-     * @see https://getbootstrap.com/docs/4.2/components/navbar/
+     * @see https://getbootstrap.com/docs/4.5/components/navbar/
      * @since 2.0.8
      */
     public $brandImage = false;
@@ -115,7 +113,12 @@ class NavBar extends Widget
     {
         parent::init();
         if (!isset($this->options['class']) || empty($this->options['class'])) {
-            Html::addCssClass($this->options, ['widget' => 'navbar', 'navbar-expand-lg', 'navbar-light', 'bg-light']);
+            Html::addCssClass($this->options, [
+                'widget' => 'navbar',
+                'toggle' => 'navbar-expand-lg',
+                'navbar-light',
+                'bg-light'
+            ]);
         } else {
             Html::addCssClass($this->options, ['widget' => 'navbar']);
         }
@@ -123,7 +126,7 @@ class NavBar extends Widget
         $navTag = ArrayHelper::remove($navOptions, 'tag', 'nav');
         $brand = '';
         if (!isset($this->innerContainerOptions['class'])) {
-            Html::addCssClass($this->innerContainerOptions, 'container');
+            Html::addCssClass($this->innerContainerOptions, ['panel' => 'container']);
         }
         if (!isset($this->collapseOptions['id'])) {
             $this->collapseOptions['id'] = "{$this->options['id']}-collapse";
@@ -149,7 +152,7 @@ class NavBar extends Widget
 
         echo Html::beginTag($navTag, $navOptions) . "\n";
         if ($this->renderInnerContainer) {
-            echo Html::beginTag('div', $this->innerContainerOptions)."\n";
+            echo Html::beginTag('div', $this->innerContainerOptions) . "\n";
         }
         echo $brand . "\n";
         echo $this->renderToggleButton() . "\n";

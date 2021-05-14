@@ -74,7 +74,7 @@ use yii\helpers\ArrayHelper;
  *     ]
  * ]);
  * ```
- * @see https://getbootstrap.com/docs/4.2/components/progress/
+ * @see https://getbootstrap.com/docs/4.5/components/progress/
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  * @author Alexander Makarov <sam@rmcreative.ru>
  * @author Simon Karlen <simi.albi@outlook.com>
