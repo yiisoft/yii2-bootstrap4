@@ -4,7 +4,7 @@ Yii Framework 2 bootstrap4 extension Change Log
 2.0.11 under development
 ------------------------
 
-- no changes in this release.
+- Bug #181: Fix bug to avoid collisions with automatically generated IDs in ToggleButtonGroup (marcovtwout)
 
 
 2.0.10 May 05, 2021
