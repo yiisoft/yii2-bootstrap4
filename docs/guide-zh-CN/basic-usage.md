@@ -1,7 +1,7 @@
 使用
 ===========
 
-Yii不会将 bootstrap 合并到PHP代码中，因为HTML本身是非常简单的。猛击 [bootstrap 文档页](http://getbootstrap.com/css/) 查看如何使用 bootstrap. 但是 Yii 还是提供了在框架中更为方便的管理和使用 bootstrap的方式，在 `@app/assets` 路径下的 `AppAsset.php` 文件中，添加如下代码即可：
+Yii不会将 bootstrap 合并到PHP代码中，因为HTML本身是非常简单的。猛击 [bootstrap 文档页](https://getbootstrap.com/docs/4.0/getting-started/introduction/) 查看如何使用 bootstrap. 但是 Yii 还是提供了在框架中更为方便的管理和使用 bootstrap的方式，在 `@app/assets` 路径下的 `AppAsset.php` 文件中，添加如下代码即可：
 
 ```php
 public $depends = [
