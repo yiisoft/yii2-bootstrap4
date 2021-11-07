@@ -2,7 +2,7 @@ Basic Usage
 ===========
 
 Yii doesn't wrap the bootstrap basics into PHP code since HTML is very simple by itself in this case. You can find details
-about using the basics at [bootstrap documentation website](http://getbootstrap.com/css/). Still Yii provides a
+about using the basics at [bootstrap documentation website](https://getbootstrap.com/docs/4.0/getting-started/introduction/). Still Yii provides a
 convenient way to include bootstrap assets in your pages with a single line added to `AppAsset.php` located in your
 `@app/assets` directory:
 
