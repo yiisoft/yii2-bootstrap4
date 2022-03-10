@@ -4,7 +4,7 @@ Bootstrap introduz construções HTML mais consistentes e esqueletos, que permit
 
 [[\yii\bootstrap4\Html]] herda toda funcionalidade disponível em [[\yii\helpers\Html]] e pode ser usado como um substituto , para que você não precisa de ambos dentro de seus arquivos de views . Por exemplo:
 
-
+```php
 <?php
 use yii\bootstrap4\Html;
 ?>
@@ -13,5 +13,6 @@ use yii\bootstrap4\Html;
     'encodeLabel' => false,
     'options' => ['class' => 'btn-primary'],
 ]); ?>
+```
 
-    Atenção: Não confunda [[\yii\bootstrap4\Html]] e [[\yii\helpers\Html]], tenha o cuidado de que classe você está usando dentro de seus arquivos de views.
+>Atenção: Não confunda [[\yii\bootstrap4\Html]] e [[\yii\helpers\Html]], tenha o cuidado de que classe você está usando dentro de seus arquivos de views.
