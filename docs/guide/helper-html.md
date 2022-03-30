@@ -20,7 +20,7 @@ For example:
 use yii\bootstrap4\Html;
 ?>
 <?= Button::widget([
-    'label' => Html::icon('approve') . Html::encode('Save & apply'),
+    'label' => Html::encode('Save & apply'),
     'encodeLabel' => false,
     'options' => ['class' => 'btn-primary'],
 ]); ?>
