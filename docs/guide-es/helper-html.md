@@ -8,7 +8,6 @@ Sin embargo, algunas marcas especiales de Bootstrap son cubiertas por el helper 
 [[\yii\bootstrap4\Html]] es una versión mejorada de la regular [[\yii\helpers\Html]] dedicada a las necesidades de Bootstrap.
 Proporciona varios métodos útiles:
 
- - `icon()` - permite renderizar iconos de Glyphicon
  - `staticControl()` - permite renderizar formularios "static controls"
 
 [[\yii\bootstrap4\Html]] hereda todas las funcionalidades disponibles en [[\yii\helpers\Html]] y puede usarse como sustituto,
@@ -20,7 +19,7 @@ Por ejemplo:
 use yii\bootstrap4\Html;
 ?>
 <?= Button::widget([
-    'label' => Html::icon('approve') . Html::encode('Save & apply'),
+    'label' => Html::encode('Save & apply'),
     'encodeLabel' => false,
     'options' => ['class' => 'btn-primary'],
 ]); ?>

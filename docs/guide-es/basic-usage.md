@@ -2,7 +2,7 @@ Uso Básico
 ==========
 
 Yii no se ajusta a los conceptos básicos de bootstrap dentro del código PHP, desde el HTML es muy simple en si mismo
-en este caso. Puedes encontrar los detalles sobre el uso de los conceptos básicos en la [web de bootstrap](http://getbootstrap.com/css/). Yii proporciona una manera de incluir los assets de bootstrap en tus páginas añadiendo una única linea a `AppAsset.php` localizado en tu
+en este caso. Puedes encontrar los detalles sobre el uso de los conceptos básicos en la [web de bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/). Yii proporciona una manera de incluir los assets de bootstrap en tus páginas añadiendo una única linea a `AppAsset.php` localizado en tu
 directorio `@app/assets`:
 
 ```php
