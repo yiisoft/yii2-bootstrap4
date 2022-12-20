@@ -3,7 +3,7 @@
 
 ## 获取 Composer 包
 
-安装此扩展的首选方式是通过 [composer](http://getcomposer.org/download/).
+安装此扩展的首选方式是通过 [composer](https://getcomposer.org/download/).
 
 直接运行
 
