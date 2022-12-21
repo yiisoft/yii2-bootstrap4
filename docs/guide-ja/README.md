@@ -1,7 +1,7 @@
 Yii 2 Twitter Bootstrap エクステンション
 ========================================
 
-このエクステンションは、マークアップとコンポーネントのフレームワーク [Bootstrap 4](http://getbootstrap.com/) ("Twitter Bootstrap" としても知られています)
+このエクステンションは、マークアップとコンポーネントのフレームワーク [Bootstrap 4](https://getbootstrap.com/) ("Twitter Bootstrap" としても知られています)
 に対するサポートを提供します。
 Bootstrap は優れた、レスポンシブなフレームワークであり、クライアント・サイドの開発プロセスを大いにスピードアップすることが出来るものです。
 

@@ -1,7 +1,7 @@
 Twitter Bootstrap Extension for Yii 2
 =====================================
 
-The extension includes support for the [Bootstrap 4](http://getbootstrap.com/) markup and components framework
+The extension includes support for the [Bootstrap 4](https://getbootstrap.com/) markup and components framework
 (also known as "Twitter Bootstrap"). Bootstrap is an excellent, responsive framework that can greatly speed up the
 client-side of your development process.
 

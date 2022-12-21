@@ -1,7 +1,7 @@
 Assets Setup
 ============
 
-This extensions relies on [Bower](http://bower.io/) and/or [NPM](https://www.npmjs.org/) packages for the asset installation.
+This extensions relies on [Bower](https://bower.io/) and/or [NPM](https://www.npmjs.org/) packages for the asset installation.
 Before using this package you should decide in which way you will install those packages in your project.
 
 

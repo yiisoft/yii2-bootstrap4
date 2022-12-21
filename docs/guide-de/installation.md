@@ -3,7 +3,7 @@ Installation
 
 ## Mittels Composer Package
 
-Der empfohlene Weg zur Installation dieser Erweiterung ist mittels [composer](http://getcomposer.org/download/).
+Der empfohlene Weg zur Installation dieser Erweiterung ist mittels [composer](https://getcomposer.org/download/).
 
 Führen Sie entweder folgenden Befehlt aus
 
