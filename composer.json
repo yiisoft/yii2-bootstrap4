@@ -6,8 +6,8 @@
     "license": "BSD-3-Clause",
     "support": {
         "issues": "https://github.com/yiisoft/yii2-bootstrap4/issues",
-        "forum": "http://www.yiiframework.com/forum/",
-        "wiki": "http://www.yiiframework.com/wiki/",
+        "forum": "https://www.yiiframework.com/forum/",
+        "wiki": "https://www.yiiframework.com/wiki/",
         "irc": "irc://irc.freenode.net/yii",
         "source": "https://github.com/yiisoft/yii2-bootstrap4"
     },
@@ -15,7 +15,7 @@
         {
             "name": "Qiang Xue",
             "email": "qiang.xue@gmail.com",
-            "homepage": "http://www.yiiframework.com/"
+            "homepage": "https://www.yiiframework.com/"
         },
         {
             "name": "Alexander Makarov",
