@@ -35,6 +35,13 @@ class BaseHtml extends \yii\helpers\Html
      * @since 2.0.3
      */
     public static $dataAttributes = ['data', 'data-ng', 'ng', 'aria'];
+    /**
+     * @var bool whether to removes duplicate class names in tag attribute `class`
+     * @see mergeCssClasses()
+     * @see renderTagAttributes()
+     * @since 2.0.44
+     */
+    public static $normalizeClassAttribute = true;
 
 
     /**
