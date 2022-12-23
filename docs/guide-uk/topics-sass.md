@@ -1,7 +1,7 @@
 Використання .sass файлів в Bootstrap
 =====================================
 
-Якщо ви хочете включити [CSS Bootstrap напряму до ваших sass файлів](http://getbootstrap.com/getting-started/#customizing)
+Якщо ви хочете включити [CSS Bootstrap напряму до ваших sass файлів](https://getbootstrap.com/getting-started/#customizing)
 вам необхідно відключити завантаження оригінальних css файлів bootstrap.
 Ви можете зробити це, встановивши CSS властивість [[yii\bootstrap4\BootstrapAsset|BootstrapAsset]] порожньою.
 Для цього вам необхідно налаштувати [компонент додатка](https://github.com/yiisoft/yii2/blob/master/docs/guide/structure-application-components.md)

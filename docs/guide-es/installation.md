@@ -3,7 +3,7 @@ Instalación
 
 ## Obteniendo el Paquete de Composer
 
-La mejor manera para instalar esta extensión es a través de [composer](http://getcomposer.org/download/).
+La mejor manera para instalar esta extensión es a través de [composer](https://getcomposer.org/download/).
 
 Ejecuta
 

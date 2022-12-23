@@ -1,7 +1,7 @@
 Usando arquivos .sass diretamente do Bootstrap
 ===========================================
 
-Se você quiser incluir o [css do Bootstrap diretamente em seus arquivos sass] (http://getbootstrap.com/getting-started/#customizing)
+Se você quiser incluir o [css do Bootstrap diretamente em seus arquivos sass] (https://getbootstrap.com/getting-started/#customizing)
 talvez você precise desativar os arquivos css do Bootstrap originais que são carregados.
 Você pode fazer isso definindo a propriedade css do [[yii \ inicialização \ BootstrapAsset | BootstrapAsset]] e deixe estar vazio.
 Para isso, você precisa configurar o `assetManager` [application component](https://github.com/yiisoft/yii2/blob/master/docs/guide/structure-application-components.md) 
