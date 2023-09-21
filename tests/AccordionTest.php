@@ -283,7 +283,7 @@ HTML
         ]);
         $this->assertNotContains('data-parent="', $output);
     }
-
+    
     /**
      * @depends testRender
      */
@@ -321,5 +321,42 @@ HTML
         ]);
         $this->assertContains('<h5 class="mb-0"><a type="button" class="custom-toggle" href="#w1-collapse0" ', $output);
         $this->assertNotContains('collapse-toggle', $output);
+    }
+
+    /**
+     * @depends testRender
+     */
+    public function testHeaderToggleTag()
+    {
+        $items = [
+            [
+                'label' => 'Item 1',
+                'content' => 'Content 1',
+            ],
+            [
+                'label' => 'Item 2',
+                'content' => 'Content 2',
+            ],
+        ];
+
+        Accordion::$counter = 0;
+
+        // Default settings
+        $output = Accordion::widget([
+            'items' => $items,
+        ]);
+        $this->assertContains('class="card-header"><h5 class="mb-0">', $output);
+
+        // Custom settings
+        $output = Accordion::widget([
+            'items' => $items,
+            'headerToggleOptions' => [
+                'tag' => 'h3',
+                'class' => 'm-0',
+            ],
+        ]);
+        $this->assertContains('class="card-header"><h3 class="m-0">', $output);
+        $this->assertNotContains('<h5 ', $output);
+        $this->assertNotContains('class="mb-0"', $output);
     }
 }
