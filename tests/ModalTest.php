@@ -40,6 +40,47 @@ HTML;
     /**
      * @depends testBodyOptions
      */
+    public function testTitleOptions()
+    {
+        Modal::$counter = 0;
+
+        ob_start();
+        Modal::begin([
+            'title' => 'Modal title',
+            'titleOptions' => [
+                'tag' => 'h4',
+                'class' => 'my-class',
+                'data-test' => 'string'
+            ]
+        ]);
+        echo '<p>Woohoo, you\'re reading this text in a modal!</p>';
+        Modal::end();
+        $out = ob_get_clean();
+
+        $expected = <<<HTML
+
+<div id="w0" class="fade modal" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="w0-label">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h4 id="w0-label" class="my-class modal-title" data-test="string">Modal title</h4>
+<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+</div>
+<div class="modal-body">
+<p>Woohoo, you're reading this text in a modal!</p>
+</div>
+
+</div>
+</div>
+</div>
+HTML;
+
+        $this->assertEqualsWithoutLE($expected, $out);
+    }
+
+    /**
+     * @depends testBodyOptions
+     */
     public function testContainerOptions()
     {
         Modal::$counter = 0;

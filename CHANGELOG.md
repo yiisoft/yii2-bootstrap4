@@ -4,7 +4,7 @@ Yii Framework 2 bootstrap4 extension Change Log
 2.0.12 under development
 ------------------------
 
-- Enh #237: `Accordion::headerToggleOptions` implemented (nagyt234)
+- Enh #237: `Accordion::headerToggleOptions` implemented, `Modal::titleOptions` handles key tag (nagyt234)
 
 2.0.11 May 22, 2023
 -------------------
