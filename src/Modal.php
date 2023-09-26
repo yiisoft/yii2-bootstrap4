@@ -58,7 +58,7 @@ class Modal extends Widget
     public $title;
     /**
      * @var array additional title options
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
+     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered. Key 'tag' might be used here for the tag name specification.
      */
     public $titleOptions = [];
     /**
@@ -176,7 +176,8 @@ class Modal extends Widget
         $button = $this->renderCloseButton();
         if ($this->title !== null) {
             Html::addCssClass($this->titleOptions, ['widget' => 'modal-title']);
-            $header = Html::tag('h5', $this->title, $this->titleOptions);
+            $titleTag = ArrayHelper::remove($this->titleOptions, 'tag', 'h5');
+            $header = Html::tag($titleTag, $this->title, $this->titleOptions);
         } else {
             $header = '';
         }

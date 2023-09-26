@@ -4,8 +4,7 @@ Yii Framework 2 bootstrap4 extension Change Log
 2.0.12 under development
 ------------------------
 
-- no changes in this release.
-
+- Enh #237: Added `Accordion::headerToggleOptions` (nagyt234)
 
 2.0.11 May 22, 2023
 -------------------
