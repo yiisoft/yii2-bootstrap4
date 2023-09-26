@@ -283,7 +283,7 @@ HTML
         ]);
         $this->assertNotContains('data-parent="', $output);
     }
-    
+
     /**
      * @depends testRender
      */
