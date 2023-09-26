@@ -90,6 +90,6 @@ HTML;
             ]
         ]);
 
-        $this->assertContains('class="carousel slide carousel-fade"', $out);
+        $this->assertStringContainsString('class="carousel slide carousel-fade"', $out);
     }
 }

@@ -44,7 +44,7 @@ EXPECTED;
             'brandUrl' => '/',
         ]);
 
-        $this->assertContains('<a class="navbar-brand" href="/"><img src="/images/test.jpg" alt=""></a>', $out);
+        $this->assertStringContainsString('<a class="navbar-brand" href="/"><img src="/images/test.jpg" alt=""></a>', $out);
     }
 
     public function testBrandLink()
@@ -54,7 +54,7 @@ EXPECTED;
             'brandUrl' => false,
         ]);
 
-        $this->assertContains('<a class="navbar-brand" href="/index.php">Yii Framework</a>', $out);
+        $this->assertStringContainsString('<a class="navbar-brand" href="/index.php">Yii Framework</a>', $out);
     }
 
     public function testBrandSpan()
@@ -64,7 +64,7 @@ EXPECTED;
             'brandUrl' => null,
         ]);
 
-        $this->assertContains('<span class="navbar-brand">Yii Framework</span>', $out);
+        $this->assertStringContainsString('<span class="navbar-brand">Yii Framework</span>', $out);
     }
 
     /**
