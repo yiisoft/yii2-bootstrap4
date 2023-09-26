@@ -28,7 +28,7 @@ jobs:
             - name: Cache composer dependencies
               uses: actions/cache@v3
               with:
-                  path: ${{ steps.composer-cache.outputs.dir }}
+                  path: ${{ env.COMPOSER_CACHE_DIR }}
                   key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
                   restore-keys: ${{ runner.os }}-composer-
             - name: Install dependencies
