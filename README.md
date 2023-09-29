@@ -17,7 +17,12 @@ Documentation is at [docs/guide/README.md](docs/guide/README.md).
 [![Latest Stable Version](https://poser.pugx.org/yiisoft/yii2-bootstrap4/v/stable.png)](https://packagist.org/packages/yiisoft/yii2-bootstrap4)
 [![Total Downloads](https://poser.pugx.org/yiisoft/yii2-bootstrap4/downloads.png)](https://packagist.org/packages/yiisoft/yii2-bootstrap4)
 [![Build Status](https://github.com/yiisoft/yii2-bootstrap4/workflows/build/badge.svg)](https://github.com/yiisoft/yii2-bootstrap4/actions)
+[![codecov](https://codecov.io/gh/yiisoft/yii2-bootstrap4/graph/badge.svg?token=aO1p64RgFG)](https://codecov.io/gh/yiisoft/yii2-bootstrap4)
 
+Requirements
+------------
+
+- PHP 7.3 or higher.
 
 Installation
 ------------
