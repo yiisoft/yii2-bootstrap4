@@ -45,7 +45,7 @@ HTML;
             ],
         ]);
 
-        $this->assertContains('<input type="checkbox" id="togglebuttongrouptestmodel-value-1" name="ToggleButtonGroupTestModel[value][]" value="2" checked autocomplete="off">', $html);
+        $this->assertStringContainsString('<input type="checkbox" id="togglebuttongrouptestmodel-value-1" name="ToggleButtonGroupTestModel[value][]" value="2" checked autocomplete="off">', $html);
     }
 
     public function testRadio()
@@ -83,7 +83,7 @@ HTML;
             ],
         ]);
 
-        $this->assertContains('<input type="radio" id="togglebuttongrouptestmodel-value-1" name="ToggleButtonGroupTestModel[value]" value="2" checked autocomplete="off">', $html);
+        $this->assertStringContainsString('<input type="radio" id="togglebuttongrouptestmodel-value-1" name="ToggleButtonGroupTestModel[value]" value="2" checked autocomplete="off">', $html);
     }
 }
 

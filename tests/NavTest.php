@@ -10,7 +10,7 @@ use yii\bootstrap4\Nav;
  */
 class NavTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->mockWebApplication([
             'components' => [

@@ -28,7 +28,7 @@ class ButtonDropdownTest extends TestCase
             ],
         ]);
 
-        $this->assertContains("$containerClass dropup btn-group", $out);
+        $this->assertStringContainsString("$containerClass dropup btn-group", $out);
     }
 
     public function testDirection()
