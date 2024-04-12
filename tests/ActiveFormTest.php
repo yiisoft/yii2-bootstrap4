@@ -194,7 +194,7 @@ HTML;
 <div class="form-group field-dynamicmodel-checkboxname">
 <div class="custom-control custom-checkbox">
 <input type="hidden" name="DynamicModel[checkboxName]" value="0"><input type="checkbox" id="dynamicmodel-checkboxname" class="custom-control-input" name="DynamicModel[checkboxName]" value="1">
-<label class="sr-only custom-control-label" for="dynamicmodel-checkboxname">Checkbox Name</label>
+<label class="custom-control-label" for="dynamicmodel-checkboxname">Checkbox Name</label>
 
 
 </div>
