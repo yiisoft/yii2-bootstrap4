@@ -1,11 +1,12 @@
 Yii Framework 2 bootstrap4 extension Change Log
 ==============================================
 
-2.0.12 under development
+2.0.12 February 13, 2025
 ------------------------
 
-- Enh #237: Added `Accordion::headerToggleOptions` (nagyt234)
 - Bug #243: Checkbox labels in inline forms are no longer hidden (BBoom)
+- Enh #237: Added `Accordion::headerToggleOptions` (nagyt234)
+
 
 2.0.11 May 22, 2023
 -------------------

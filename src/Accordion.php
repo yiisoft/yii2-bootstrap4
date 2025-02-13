@@ -96,7 +96,6 @@ class Accordion extends Widget
      * accordion effect. Set this to `false` to allow keeping multiple items open at once.
      */
     public $autoCloseItems = true;
-
     /**
      * @var array the HTML options for the item toggle tag. Key 'tag' might be used here for the tag name specification.
      * For example:
@@ -110,7 +109,6 @@ class Accordion extends Widget
      *
      */
     public $itemToggleOptions = [];
-
     /**
      * @var array the HTML options for the header toggle tag. Key 'tag' might be used here for the tag name specification.
      * Merged to:
@@ -124,6 +122,7 @@ class Accordion extends Widget
      *
      */
     public $headerToggleOptions = [];
+
 
     /**
      * {@inheritdoc}
