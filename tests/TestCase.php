@@ -14,7 +14,7 @@ use yii\web\Controller;
  */
 abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->mockWebApplication();
@@ -24,7 +24,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
      * Clean up after test.
      * By default the application created with [[mockApplication]] will be destroyed.
      */
-    protected function tearDown()
+    protected function tearDown(): void
     {
         parent::tearDown();
         $this->destroyApplication();
@@ -41,8 +41,8 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
             'basePath' => __DIR__,
             'vendorPath' => dirname(__DIR__) . '/vendor',
             'aliases' => [
-                '@bower' => '@vendor/bower-asset',
-                '@npm' => '@vendor/npm-asset',
+                '@root' => dirname(__DIR__),
+                '@npm' => '@root/node_modules',
             ],
             'components' => [
                 'request' => [
@@ -115,6 +115,20 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
         $needle = str_replace("\r\n", "\n", $needle);
         $haystack = str_replace("\r\n", "\n", $haystack);
 
-        $this->assertContains($needle, $haystack);
+        $this->assertStringContainsString($needle, $haystack);
+    }
+
+    /**
+     * Asserting two strings equality ignoring line endings
+     *
+     * @param string $needle
+     * @param string $haystack
+     */
+    public function assertStringContainsStringWithoutLE($needle, $haystack)
+    {
+        $needle = str_replace("\r\n", "\n", $needle);
+        $haystack = str_replace("\r\n", "\n", $haystack);
+
+        $this->assertStringContainsString($needle, $haystack);
     }
 }

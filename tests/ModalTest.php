@@ -150,10 +150,10 @@ HTML;
         Modal::end();
         $out = ob_get_clean();
 
-        $this->assertContains('<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#w0">Launch demo modal</button>',
+        $this->assertStringContainsString('<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#w0">Launch demo modal</button>',
             $out);
     }
-    
+
     public function testDialogOptions()
     {
         Modal::$counter = 0;
@@ -180,7 +180,7 @@ HTML;
 
         $this->assertEqualsWithoutLE($expected, $out);
     }
-    
+
     public function testCenterVertical()
     {
         Modal::$counter = 0;

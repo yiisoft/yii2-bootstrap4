@@ -1,0 +1,5 @@
+{
+    "dependencies": {
+        "bootstrap4": "npm:bootstrap@^4.6.2"
+    }
+}
