@@ -1,7 +1,11 @@
 {
     "name": "yiisoft/yii2-bootstrap4",
     "description": "The Twitter Bootstrap extension for the Yii framework",
-    "keywords": ["yii2", "bootstrap", "bootstrap4"],
+    "keywords": [
+        "yii2",
+        "bootstrap",
+        "bootstrap4"
+    ],
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
     "support": {
@@ -36,20 +40,14 @@
         }
     ],
     "require": {
-        "yiisoft/yii2": "^2.0.43",
-        "npm-asset/bootstrap": "^4.3"
+        "php": ">=8.1",
+        "yiisoft/yii2": "22.0.x-dev"
     },
     "require-dev": {
-        "yiisoft/yii2-coding-standards": "~2.0",
-        "cweagans/composer-patches": "^1.7",
-        "phpunit/phpunit": "4.8.34"
+        "php-forge/foxy": "^0.1",
+        "phpunit/phpunit": "^9.6",
+        "yiisoft/yii2-coding-standards": "~2.0"
     },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://asset-packagist.org"
-        }
-    ],
     "autoload": {
         "psr-4": {
             "yii\\bootstrap4\\": "src"
@@ -60,24 +58,13 @@
             "yiiunit\\extensions\\bootstrap4\\": "tests"
         }
     },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0.x-dev"
-        },
-        "patches": {
-            "phpunit/phpunit-mock-objects": {
-                "Fix PHP 7 and 8 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_mock_objects.patch"
-            },
-            "phpunit/phpunit": {
-                "Fix PHP 7 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_php7.patch",
-                "Fix PHP 8 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_php8.patch"
-            }
-        }
-    },
     "config": {
         "allow-plugins": {
-            "cweagans/composer-patches": true,
-            "yiisoft/yii2-composer": true
+            "yiisoft/yii2-composer": true,
+            "php-forge/foxy": true
         }
+    },
+    "extra": {
+        "foxy": true
     }
 }
