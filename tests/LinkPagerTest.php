@@ -153,7 +153,7 @@ class LinkPagerTest extends TestCase
             <li class="page-item next"><a class="page-link" href="/?r=test&amp;page=2" data-page="1"><span aria-hidden="true">&raquo;</span>
             <span class="sr-only">Next</span></a></li></ul>
             HTML,
-            $output,
+            $output
         );
 
         $output = LinkPager::widget([
@@ -170,7 +170,7 @@ class LinkPagerTest extends TestCase
             <li class="page-item next"><a class="page-link" href="/?r=test&amp;page=3" data-page="2"><span aria-hidden="true">&raquo;</span>
             <span class="sr-only">Next</span></a></li></ul>
             HTML,
-            $output,
+            $output
         );
     }
 
@@ -189,7 +189,7 @@ class LinkPagerTest extends TestCase
             <li class="page-item next"><a class="page-link" href="/?r=test&amp;page=2" data-page="1"><span aria-hidden="true">&raquo;</span>
             <span class="sr-only">Next</span></a></li></ul>
             HTML,
-            $output,
+            $output
         );
 
         $output = LinkPager::widget([
@@ -205,7 +205,7 @@ class LinkPagerTest extends TestCase
             <li class="page-item next"><a class="page-link" href="/?r=test&amp;page=3" data-page="2"><span aria-hidden="true">&raquo;</span>
             <span class="sr-only">Next</span></a></li></ul>
             HTML,
-            $output,
+            $output
         );
     }
 
@@ -223,7 +223,7 @@ class LinkPagerTest extends TestCase
             <li class="page-item next"><a class="page-link" href="/?r=test&amp;page=2" data-page="1"><span aria-hidden="true">&raquo;</span>
             <span class="sr-only">Next</span></a></li></ul>
             HTML,
-            $output,
+            $output
         );
 
         $output = LinkPager::widget([
@@ -238,7 +238,7 @@ class LinkPagerTest extends TestCase
             <li class="page-item next"><a class="page-link" href="/?r=test&amp;page=3" data-page="2"><span aria-hidden="true">&raquo;</span>
             <span class="sr-only">Next</span></a></li></ul>
             HTML,
-            $output,
+            $output
         );
     }
 
