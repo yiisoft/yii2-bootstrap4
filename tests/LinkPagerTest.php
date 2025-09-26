@@ -144,34 +144,32 @@ class LinkPagerTest extends TestCase
             'maxButtonCount' => 2,
         ]);
 
-        $this->assertContainsWithoutLE(
-            <<<HTML
-            <ul class="pagination"><li class="page-item prev disabled"><a class="page-link" href="/?r=test&amp;page=1" data-page="0" tabindex="-1"><span aria-hidden="true">&laquo;</span>
-            <span class="sr-only">Previous</span></a></li>
-            <li class="page-item active"><a class="page-link" href="/?r=test&amp;page=1" data-page="0">1</a></li>
-            <li class="page-item"><a class="page-link" href="/?r=test&amp;page=2" data-page="1">2</a></li>
-            <li class="page-item next"><a class="page-link" href="/?r=test&amp;page=2" data-page="1"><span aria-hidden="true">&raquo;</span>
-            <span class="sr-only">Next</span></a></li></ul>
-            HTML,
-            $output
-        );
+        $expected = <<<HTML
+<ul class="pagination"><li class="page-item prev disabled"><a class="page-link" href="/?r=test&amp;page=1" data-page="0" tabindex="-1"><span aria-hidden="true">&laquo;</span>
+<span class="sr-only">Previous</span></a></li>
+<li class="page-item active"><a class="page-link" href="/?r=test&amp;page=1" data-page="0">1</a></li>
+<li class="page-item"><a class="page-link" href="/?r=test&amp;page=2" data-page="1">2</a></li>
+<li class="page-item next"><a class="page-link" href="/?r=test&amp;page=2" data-page="1"><span aria-hidden="true">&raquo;</span>
+<span class="sr-only">Next</span></a></li></ul>
+HTML;
+
+        $this->assertContainsWithoutLE($expected, $output);
 
         $output = LinkPager::widget([
             'pagination' => $this->getPagination(1),
             'maxButtonCount' => 2,
         ]);
 
-        $this->assertContainsWithoutLE(
-            <<<HTML
-            <ul class="pagination"><li class="page-item prev"><a class="page-link" href="/?r=test&amp;page=1" data-page="0"><span aria-hidden="true">&laquo;</span>
-            <span class="sr-only">Previous</span></a></li>
-            <li class="page-item active"><a class="page-link" href="/?r=test&amp;page=2" data-page="1">2</a></li>
-            <li class="page-item"><a class="page-link" href="/?r=test&amp;page=3" data-page="2">3</a></li>
-            <li class="page-item next"><a class="page-link" href="/?r=test&amp;page=3" data-page="2"><span aria-hidden="true">&raquo;</span>
-            <span class="sr-only">Next</span></a></li></ul>
-            HTML,
-            $output
-        );
+        $expected = <<<HTML
+<ul class="pagination"><li class="page-item prev"><a class="page-link" href="/?r=test&amp;page=1" data-page="0"><span aria-hidden="true">&laquo;</span>
+<span class="sr-only">Previous</span></a></li>
+<li class="page-item active"><a class="page-link" href="/?r=test&amp;page=2" data-page="1">2</a></li>
+<li class="page-item"><a class="page-link" href="/?r=test&amp;page=3" data-page="2">3</a></li>
+<li class="page-item next"><a class="page-link" href="/?r=test&amp;page=3" data-page="2"><span aria-hidden="true">&raquo;</span>
+<span class="sr-only">Next</span></a></li></ul>
+HTML;
+
+        $this->assertContainsWithoutLE($expected, $output);
     }
 
     public function testWithOneButton()
@@ -181,32 +179,30 @@ class LinkPagerTest extends TestCase
             'maxButtonCount' => 1,
         ]);
 
-        $this->assertContainsWithoutLE(
-            <<<HTML
-            <ul class="pagination"><li class="page-item prev disabled"><a class="page-link" href="/?r=test&amp;page=1" data-page="0" tabindex="-1"><span aria-hidden="true">&laquo;</span>
-            <span class="sr-only">Previous</span></a></li>
-            <li class="page-item active"><a class="page-link" href="/?r=test&amp;page=1" data-page="0">1</a></li>
-            <li class="page-item next"><a class="page-link" href="/?r=test&amp;page=2" data-page="1"><span aria-hidden="true">&raquo;</span>
-            <span class="sr-only">Next</span></a></li></ul>
-            HTML,
-            $output
-        );
+        $expected = <<<HTML
+<ul class="pagination"><li class="page-item prev disabled"><a class="page-link" href="/?r=test&amp;page=1" data-page="0" tabindex="-1"><span aria-hidden="true">&laquo;</span>
+<span class="sr-only">Previous</span></a></li>
+<li class="page-item active"><a class="page-link" href="/?r=test&amp;page=1" data-page="0">1</a></li>
+<li class="page-item next"><a class="page-link" href="/?r=test&amp;page=2" data-page="1"><span aria-hidden="true">&raquo;</span>
+<span class="sr-only">Next</span></a></li></ul>
+HTML;
+
+        $this->assertContainsWithoutLE($expected, $output);
 
         $output = LinkPager::widget([
             'pagination' => $this->getPagination(1),
             'maxButtonCount' => 1,
         ]);
 
-        $this->assertContainsWithoutLE(
-            <<<HTML
-            <ul class="pagination"><li class="page-item prev"><a class="page-link" href="/?r=test&amp;page=1" data-page="0"><span aria-hidden="true">&laquo;</span>
-            <span class="sr-only">Previous</span></a></li>
-            <li class="page-item active"><a class="page-link" href="/?r=test&amp;page=2" data-page="1">2</a></li>
-            <li class="page-item next"><a class="page-link" href="/?r=test&amp;page=3" data-page="2"><span aria-hidden="true">&raquo;</span>
-            <span class="sr-only">Next</span></a></li></ul>
-            HTML,
-            $output
-        );
+        $expected = <<<HTML
+<ul class="pagination"><li class="page-item prev"><a class="page-link" href="/?r=test&amp;page=1" data-page="0"><span aria-hidden="true">&laquo;</span>
+<span class="sr-only">Previous</span></a></li>
+<li class="page-item active"><a class="page-link" href="/?r=test&amp;page=2" data-page="1">2</a></li>
+<li class="page-item next"><a class="page-link" href="/?r=test&amp;page=3" data-page="2"><span aria-hidden="true">&raquo;</span>
+<span class="sr-only">Next</span></a></li></ul>
+HTML;
+
+        $this->assertContainsWithoutLE($expected, $output);
     }
 
     public function testWithNoButtons()
@@ -216,30 +212,28 @@ class LinkPagerTest extends TestCase
             'maxButtonCount' => 0,
         ]);
 
-        $this->assertContainsWithoutLE(
-            <<<HTML
-            <ul class="pagination"><li class="page-item prev disabled"><a class="page-link" href="/?r=test&amp;page=1" data-page="0" tabindex="-1"><span aria-hidden="true">&laquo;</span>
-            <span class="sr-only">Previous</span></a></li>
-            <li class="page-item next"><a class="page-link" href="/?r=test&amp;page=2" data-page="1"><span aria-hidden="true">&raquo;</span>
-            <span class="sr-only">Next</span></a></li></ul>
-            HTML,
-            $output
-        );
+        $expected = <<<HTML
+<ul class="pagination"><li class="page-item prev disabled"><a class="page-link" href="/?r=test&amp;page=1" data-page="0" tabindex="-1"><span aria-hidden="true">&laquo;</span>
+<span class="sr-only">Previous</span></a></li>
+<li class="page-item next"><a class="page-link" href="/?r=test&amp;page=2" data-page="1"><span aria-hidden="true">&raquo;</span>
+<span class="sr-only">Next</span></a></li></ul>
+HTML;
+
+        $this->assertContainsWithoutLE($expected, $output);
 
         $output = LinkPager::widget([
             'pagination' => $this->getPagination(1),
             'maxButtonCount' => 0,
         ]);
 
-        $this->assertContainsWithoutLE(
-            <<<HTML
-            <ul class="pagination"><li class="page-item prev"><a class="page-link" href="/?r=test&amp;page=1" data-page="0"><span aria-hidden="true">&laquo;</span>
-            <span class="sr-only">Previous</span></a></li>
-            <li class="page-item next"><a class="page-link" href="/?r=test&amp;page=3" data-page="2"><span aria-hidden="true">&raquo;</span>
-            <span class="sr-only">Next</span></a></li></ul>
-            HTML,
-            $output
-        );
+        $expected = <<<HTML
+<ul class="pagination"><li class="page-item prev"><a class="page-link" href="/?r=test&amp;page=1" data-page="0"><span aria-hidden="true">&laquo;</span>
+<span class="sr-only">Previous</span></a></li>
+<li class="page-item next"><a class="page-link" href="/?r=test&amp;page=3" data-page="2"><span aria-hidden="true">&raquo;</span>
+<span class="sr-only">Next</span></a></li></ul>
+HTML;
+
+        $this->assertContainsWithoutLE($expected, $output);
     }
 
     /**
