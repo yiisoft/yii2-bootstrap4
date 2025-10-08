@@ -7,7 +7,6 @@
 
 namespace yii\bootstrap4;
 
-use Yii;
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 
