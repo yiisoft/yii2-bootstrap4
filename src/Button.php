@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://www.yiiframework.com/
  * @copyright Copyright (c) 2008 Yii Software LLC
@@ -54,7 +55,6 @@ class Button extends Widget
     public function run()
     {
         $this->registerPlugin('button');
-        return Html::tag($this->tagName, $this->encodeLabel ? Html::encode($this->label) : $this->label,
-            $this->options);
+        return Html::tag($this->tagName, $this->encodeLabel ? Html::encode($this->label) : $this->label, $this->options);
     }
 }

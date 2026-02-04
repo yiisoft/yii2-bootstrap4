@@ -1,6 +1,6 @@
 <?php
-namespace yiiunit\extensions\bootstrap4;
 
+namespace yiiunit\extensions\bootstrap4;
 
 use yii\bootstrap4\Carousel;
 
@@ -9,7 +9,7 @@ use yii\bootstrap4\Carousel;
  */
 class CarouselTest extends TestCase
 {
-    function testContainerOptions()
+    public function testContainerOptions(): void
     {
         Carousel::$counter = 0;
         $out = Carousel::widget([
@@ -60,7 +60,7 @@ HTML;
     /**
      * @depends testContainerOptions
      */
-    public function testCrossfade()
+    public function testCrossfade(): void
     {
         Carousel::$counter = 0;
         $out = Carousel::widget([
@@ -90,6 +90,6 @@ HTML;
             ]
         ]);
 
-        $this->assertContains('class="carousel slide carousel-fade"', $out);
+        $this->assertStringContainsString('class="carousel slide carousel-fade"', $out);
     }
 }

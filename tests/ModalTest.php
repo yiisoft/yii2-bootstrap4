@@ -10,14 +10,13 @@ use yii\bootstrap4\Modal;
  */
 class ModalTest extends TestCase
 {
-    public function testBodyOptions()
+    public function testBodyOptions(): void
     {
         Modal::$counter = 0;
         $out = Modal::widget([
             'closeButton' => false,
             'bodyOptions' => ['class' => 'modal-body test', 'style' => 'text-align:center;']
         ]);
-
 
         $expected = <<<HTML
 
@@ -40,7 +39,7 @@ HTML;
     /**
      * @depends testBodyOptions
      */
-    public function testTitleOptions()
+    public function testTitleOptions(): void
     {
         Modal::$counter = 0;
 
@@ -81,7 +80,7 @@ HTML;
     /**
      * @depends testBodyOptions
      */
-    public function testContainerOptions()
+    public function testContainerOptions(): void
     {
         Modal::$counter = 0;
 
@@ -127,7 +126,7 @@ HTML;
         $this->assertEqualsWithoutLE($expected, $out);
     }
 
-    public function testTriggerButton()
+    public function testTriggerButton(): void
     {
         Modal::$counter = 0;
 
@@ -150,11 +149,10 @@ HTML;
         Modal::end();
         $out = ob_get_clean();
 
-        $this->assertContains('<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#w0">Launch demo modal</button>',
-            $out);
+        $this->assertStringContainsString('<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#w0">Launch demo modal</button>', $out);
     }
-    
-    public function testDialogOptions()
+
+    public function testDialogOptions(): void
     {
         Modal::$counter = 0;
         $out = Modal::widget([
@@ -180,13 +178,13 @@ HTML;
 
         $this->assertEqualsWithoutLE($expected, $out);
     }
-    
-    public function testCenterVertical()
+
+    public function testCenterVertical(): void
     {
         Modal::$counter = 0;
         $out = Modal::widget([
             'closeButton' => false,
-            'centerVertical'=>true
+            'centerVertical' => true
         ]);
 
 
@@ -207,14 +205,14 @@ HTML;
 
         $this->assertEqualsWithoutLE($expected, $out);
     }
-    public function testScrollable()
+
+    public function testScrollable(): void
     {
         Modal::$counter = 0;
         $out = Modal::widget([
             'closeButton' => false,
-            'scrollable'=>true
+            'scrollable' => true
         ]);
-
 
         $expected = <<<HTML
 

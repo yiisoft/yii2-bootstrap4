@@ -1,4 +1,5 @@
 <?php
+
 namespace yiiunit\extensions\bootstrap4;
 
 use yii\bootstrap4\Nav;
@@ -10,7 +11,7 @@ use yii\bootstrap4\Nav;
  */
 class NavTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->mockWebApplication([
             'components' => [
@@ -30,7 +31,7 @@ class NavTest extends TestCase
         ]);
     }
 
-    public function testIds()
+    public function testIds(): void
     {
         Nav::$counter = 0;
         $out = Nav::widget(
@@ -68,7 +69,7 @@ EXPECTED;
         $this->assertEqualsWithoutLE($expected, $out);
     }
 
-    public function testRenderDropdownWithDropdownOptions()
+    public function testRenderDropdownWithDropdownOptions(): void
     {
         Nav::$counter = 0;
         $out = Nav::widget(
@@ -107,7 +108,7 @@ EXPECTED;
         $this->assertEqualsWithoutLE($expected, $out);
     }
 
-    public function testEmptyItems()
+    public function testEmptyItems(): void
     {
         Nav::$counter = 0;
         $out = Nav::widget([
@@ -140,7 +141,7 @@ EXPECTED;
         $this->assertEqualsWithoutLE($expected, $out);
     }
 
-    public function testActive()
+    public function testActive(): void
     {
         $this->mockAction('site', 'users');
 
@@ -176,7 +177,7 @@ EXPECTED;
     /**
      * @see https://github.com/yiisoft/yii2-bootstrap/issues/162
      */
-    public function testExplicitActive()
+    public function testExplicitActive(): void
     {
         $this->mockAction('site', 'index');
 
@@ -207,7 +208,7 @@ EXPECTED;
     /**
      * @see https://github.com/yiisoft/yii2-bootstrap/issues/162
      */
-    public function testImplicitActive()
+    public function testImplicitActive(): void
     {
         $this->mockAction('site', 'index');
 
@@ -237,7 +238,7 @@ EXPECTED;
     /**
      * @see https://github.com/yiisoft/yii2-bootstrap/issues/162
      */
-    public function testExplicitActiveSubitems()
+    public function testExplicitActiveSubitems(): void
     {
         $this->mockAction('site', 'index');
 
@@ -271,7 +272,7 @@ EXPECTED;
     /**
      * @see https://github.com/yiisoft/yii2-bootstrap/issues/162
      */
-    public function testImplicitActiveSubitems()
+    public function testImplicitActiveSubitems(): void
     {
         $this->mockAction('site', 'index');
 
@@ -301,7 +302,7 @@ EXPECTED;
         $this->removeMockedAction();
     }
 
-    public function testDisabled()
+    public function testDisabled(): void
     {
         $this->mockAction('site', 'index');
 
@@ -336,7 +337,7 @@ EXPECTED;
      * @see https://github.com/yiisoft/yii2-bootstrap/issues/96
      * @see https://github.com/yiisoft/yii2-bootstrap/issues/157
      */
-    public function testDeepActivateParents()
+    public function testDeepActivateParents(): void
     {
         Nav::$counter = 0;
         $out = Nav::widget([

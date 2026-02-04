@@ -24,10 +24,8 @@ composer.phar
 phpunit.phar
 # local phpunit config
 /phpunit.xml
+.phpunit.result.cache
 
 /tests/bootstrap.local.php
 /tests/runtime
 /tests/data/config.local.php
-/tests/docker
-/tests/dockerids
-

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://www.yiiframework.com/
  * @copyright Copyright (c) 2008 Yii Software LLC
@@ -37,19 +38,19 @@ class Modal extends Widget
      * The additional css class of extra large modal
      * @since 2.0.3
      */
-    const SIZE_EXTRA_LARGE = 'modal-xl';
+    public const SIZE_EXTRA_LARGE = 'modal-xl';
     /**
      * The additional css class of large modal
      */
-    const SIZE_LARGE = 'modal-lg';
+    public const SIZE_LARGE = 'modal-lg';
     /**
      * The additional css class of small modal
      */
-    const SIZE_SMALL = 'modal-sm';
+    public const SIZE_SMALL = 'modal-sm';
     /**
      * The additional css class of default modal
      */
-    const SIZE_DEFAULT = '';
+    public const SIZE_DEFAULT = '';
 
     /**
      * @var string the tile content in the modal window.

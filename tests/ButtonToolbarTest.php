@@ -1,6 +1,6 @@
 <?php
-namespace yiiunit\extensions\bootstrap4;
 
+namespace yiiunit\extensions\bootstrap4;
 
 use yii\bootstrap4\ButtonGroup;
 use yii\bootstrap4\ButtonToolbar;
@@ -10,7 +10,7 @@ use yii\bootstrap4\ButtonToolbar;
  */
 class ButtonToolbarTest extends TestCase
 {
-    public function testContainerOptions()
+    public function testContainerOptions(): void
     {
         ButtonToolbar::$counter = 0;
         $out = ButtonToolbar::widget([
@@ -56,7 +56,7 @@ HTML;
         $this->assertEqualsWithoutLE($expected, $out);
     }
 
-    public function testAdditionalContent()
+    public function testAdditionalContent(): void
     {
         ButtonToolbar::$counter = 0;
         $addHtml = <<<HTML

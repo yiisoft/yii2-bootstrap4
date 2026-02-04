@@ -1,6 +1,8 @@
 # Ignore all test and documentation for archive
 .*                  export-ignore
 *.dist              export-ignore
+*.neon              export-ignore
+*.yml               export-ignore
 /tests              export-ignore
 /docs               export-ignore
 /Makefile           export-ignore

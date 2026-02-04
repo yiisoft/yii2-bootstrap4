@@ -1,7 +1,9 @@
 <?php
+
 namespace yiiunit\extensions\bootstrap4;
 
 use yii\base\DynamicModel;
+use yii\base\InvalidConfigException;
 use yii\bootstrap4\Accordion;
 use yii\widgets\ActiveForm;
 
@@ -10,7 +12,7 @@ use yii\widgets\ActiveForm;
  */
 class AccordionTest extends TestCase
 {
-    public function testRender()
+    public function testRender(): void
     {
         Accordion::$counter = 0;
         $output = Accordion::widget([
@@ -113,7 +115,7 @@ HTML
         , $output);
     }
 
-    public function testLabelKeys()
+    public function testLabelKeys(): void
     {
         ob_start();
         $form = ActiveForm::begin(['action' => '/something']);
@@ -131,7 +133,7 @@ HTML
                     'label' => 'Item3',
                     'content' => 'Content3',
                 ],
-                'FormField' => $form->field(new DynamicModel(['test']), 'test',['template' => '{input}']),
+                'FormField' => $form->field(new DynamicModel(['test']), 'test', ['template' => '{input}']),
             ]
         ]);
 
@@ -169,7 +171,7 @@ HTML
         , $output);
     }
 
-    public function testExpandOptions()
+    public function testExpandOptions(): void
     {
         Accordion::$counter = 0;
         $output = Accordion::widget([
@@ -202,7 +204,7 @@ HTML
         , $output);
     }
 
-    public function invalidItemsProvider()
+    public function invalidItemsProvider(): array
     {
         return [
             [ ['content'] ], // only content without label key
@@ -213,10 +215,11 @@ HTML
 
     /**
      * @dataProvider invalidItemsProvider
-     * @expectedException \yii\base\InvalidConfigException
      */
-    public function testMissingLabel($items)
+    public function testMissingLabel($items): void
     {
+        $this->expectException(InvalidConfigException::class);
+        $this->expectExceptionMessage("The 'label' option is required.");
         Accordion::widget([
             'items' => $items,
         ]);
@@ -225,14 +228,14 @@ HTML
     /**
      * @see https://github.com/yiisoft/yii2/issues/8357
      */
-    public function testRenderObject()
+    public function testRenderObject(): void
     {
         $template = ['template' => '{input}'];
         ob_start();
         $form = ActiveForm::begin(['action' => '/something']);
         ActiveForm::end();
         ob_end_clean();
-        $model = new data\Singer;
+        $model = new data\Singer();
 
         Accordion::$counter = 0;
         $output = Accordion::widget([
@@ -260,7 +263,7 @@ HTML
         , $output);
     }
 
-    public function testAutoCloseItems()
+    public function testAutoCloseItems(): void
     {
         $items = [
             [
@@ -276,18 +279,18 @@ HTML
         $output = Accordion::widget([
             'items' => $items
         ]);
-        $this->assertContains('data-parent="', $output);
+        $this->assertStringContainsString('data-parent="', $output);
         $output = Accordion::widget([
             'autoCloseItems' => false,
             'items' => $items
         ]);
-        $this->assertNotContains('data-parent="', $output);
+        $this->assertStringNotContainsString('data-parent="', $output);
     }
 
     /**
      * @depends testRender
      */
-    public function testItemToggleTag()
+    public function testItemToggleTag(): void
     {
         $items = [
             [
@@ -309,8 +312,8 @@ HTML
                 'class' => 'custom-toggle',
             ],
         ]);
-        $this->assertContains('<h5 class="mb-0"><a type="button" class="custom-toggle" href="#w0-collapse0" ', $output);
-        $this->assertNotContains('<button', $output);
+        $this->assertStringContainsString('<h5 class="mb-0"><a type="button" class="custom-toggle" href="#w0-collapse0" ', $output);
+        $this->assertStringNotContainsString('<button', $output);
 
         $output = Accordion::widget([
             'items' => $items,
@@ -319,14 +322,14 @@ HTML
                 'class' => ['widget' => 'custom-toggle'],
             ],
         ]);
-        $this->assertContains('<h5 class="mb-0"><a type="button" class="custom-toggle" href="#w1-collapse0" ', $output);
-        $this->assertNotContains('collapse-toggle', $output);
+        $this->assertStringContainsString('<h5 class="mb-0"><a type="button" class="custom-toggle" href="#w1-collapse0" ', $output);
+        $this->assertStringNotContainsString('collapse-toggle', $output);
     }
 
     /**
      * @depends testRender
      */
-    public function testHeaderToggleTag()
+    public function testHeaderToggleTag(): void
     {
         $items = [
             [
@@ -345,7 +348,7 @@ HTML
         $output = Accordion::widget([
             'items' => $items,
         ]);
-        $this->assertContains('class="card-header"><h5 class="mb-0">', $output);
+        $this->assertStringContainsString('class="card-header"><h5 class="mb-0">', $output);
 
         // Custom settings
         $output = Accordion::widget([
@@ -355,8 +358,8 @@ HTML
                 'class' => 'm-0',
             ],
         ]);
-        $this->assertContains('class="card-header"><h3 class="m-0">', $output);
-        $this->assertNotContains('<h5 ', $output);
-        $this->assertNotContains('class="mb-0"', $output);
+        $this->assertStringContainsString('class="card-header"><h3 class="m-0">', $output);
+        $this->assertStringNotContainsString('<h5 ', $output);
+        $this->assertStringNotContainsString('class="mb-0"', $output);
     }
 }

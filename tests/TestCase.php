@@ -14,7 +14,7 @@ use yii\web\Controller;
  */
 abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->mockWebApplication();
@@ -24,7 +24,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
      * Clean up after test.
      * By default the application created with [[mockApplication]] will be destroyed.
      */
-    protected function tearDown()
+    protected function tearDown(): void
     {
         parent::tearDown();
         $this->destroyApplication();
@@ -96,7 +96,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
      * @param string $expected
      * @param string $actual
      */
-    public function assertEqualsWithoutLE($expected, $actual)
+    public function assertEqualsWithoutLE($expected, $actual): void
     {
         $expected = str_replace("\r\n", "\n", $expected);
         $actual = str_replace("\r\n", "\n", $actual);
@@ -110,11 +110,11 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
      * @param string $needle
      * @param string $haystack
      */
-    public function assertContainsWithoutLE($needle, $haystack)
+    public function assertContainsWithoutLE($needle, $haystack): void
     {
         $needle = str_replace("\r\n", "\n", $needle);
         $haystack = str_replace("\r\n", "\n", $haystack);
 
-        $this->assertContains($needle, $haystack);
+        $this->assertStringContainsString($needle, $haystack);
     }
 }
