@@ -9,7 +9,7 @@ use yii\bootstrap4\ButtonDropdown;
  */
 class ButtonDropdownTest extends TestCase
 {
-    public function testContainerOptions()
+    public function testContainerOptions(): void
     {
         $containerClass = 'testClass';
 
@@ -28,10 +28,10 @@ class ButtonDropdownTest extends TestCase
             ],
         ]);
 
-        $this->assertContains("$containerClass dropup btn-group", $out);
+        $this->assertStringContainsString("$containerClass dropup btn-group", $out);
     }
 
-    public function testDirection()
+    public function testDirection(): void
     {
         ButtonDropdown::$counter = 0;
         $out = ButtonDropdown::widget([
@@ -55,7 +55,7 @@ EXPECTED;
         $this->assertEqualsWithoutLE($expected, $out);
     }
 
-    public function testSplit()
+    public function testSplit(): void
     {
         ButtonDropdown::$counter = 0;
         $out = ButtonDropdown::widget([

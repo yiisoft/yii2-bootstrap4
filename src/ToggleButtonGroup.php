@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://www.yiiframework.com/
  * @copyright Copyright (c) 2008 Yii Software LLC
@@ -35,11 +36,11 @@ class ToggleButtonGroup extends InputWidget
     /**
      * Checkbox type
      */
-    const TYPE_CHECKBOX = 'checkbox';
+    public const TYPE_CHECKBOX = 'checkbox';
     /**
      * Radio type
      */
-    const TYPE_RADIO = 'radio';
+    public const TYPE_RADIO = 'radio';
 
     /**
      * @var string input type, can be [[TYPE_CHECKBOX]] or [[TYPE_RADIO]]

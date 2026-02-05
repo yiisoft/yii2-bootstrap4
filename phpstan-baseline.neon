@@ -1,0 +1,1267 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Method yii\\bootstrap4\\Accordion\:\:renderItem\(\) has parameter \$item with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Accordion.php
+
+		-
+			message: '#^Parameter \#2 \$content of static method yii\\helpers\\BaseHtml\:\:tag\(\) expects string, float\|int\|object\|string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Accordion.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Accordion\:\:\$headerToggleOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Accordion.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Accordion\:\:\$itemToggleOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Accordion.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Accordion\:\:\$items type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Accordion.php
+
+		-
+			message: '#^Access to an undefined property yii\\widgets\\ActiveForm\:\:\$layout\.$#'
+			identifier: property.notFound
+			count: 5
+			path: src/ActiveField.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\ActiveField\:\:checkbox\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ActiveField.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\ActiveField\:\:checkboxList\(\) has parameter \$items with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ActiveField.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\ActiveField\:\:checkboxList\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ActiveField.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\ActiveField\:\:createLayoutConfig\(\) has parameter \$instanceConfig with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ActiveField.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\ActiveField\:\:createLayoutConfig\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ActiveField.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\ActiveField\:\:dropDownList\(\) has parameter \$items with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ActiveField.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\ActiveField\:\:dropDownList\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ActiveField.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\ActiveField\:\:fileInput\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ActiveField.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\ActiveField\:\:label\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ActiveField.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\ActiveField\:\:listBox\(\) has parameter \$items with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ActiveField.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\ActiveField\:\:listBox\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ActiveField.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\ActiveField\:\:radio\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ActiveField.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\ActiveField\:\:radioList\(\) has parameter \$items with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ActiveField.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\ActiveField\:\:radioList\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ActiveField.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\ActiveField\:\:renderLabelParts\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/ActiveField.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\ActiveField\:\:renderLabelParts\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ActiveField.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\ActiveField\:\:staticControl\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ActiveField.php
+
+		-
+			message: '#^Offset ''label'' might not exist on array\|null\.$#'
+			identifier: offsetAccess.notFound
+			count: 2
+			path: src/ActiveField.php
+
+		-
+			message: '#^Offset ''offset'' might not exist on array\|null\.$#'
+			identifier: offsetAccess.notFound
+			count: 3
+			path: src/ActiveField.php
+
+		-
+			message: '#^Parameter \#2 \$options of method yii\\bootstrap4\\ActiveField\:\:renderLabelParts\(\) expects array, array\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/ActiveField.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\ActiveField\:\:\$checkOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ActiveField.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\ActiveField\:\:\$errorOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ActiveField.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\ActiveField\:\:\$hintOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ActiveField.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\ActiveField\:\:\$horizontalCssClasses type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ActiveField.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\ActiveField\:\:\$inputOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ActiveField.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\ActiveField\:\:\$labelOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ActiveField.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\ActiveField\:\:\$options type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ActiveField.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\ActiveField\:\:\$radioOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ActiveField.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\ActiveField\:\:\$wrapperOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ActiveField.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between false and false will always evaluate to true\.$#'
+			identifier: identical.alwaysTrue
+			count: 1
+			path: src/ActiveField.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\ActiveForm\:\:field\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ActiveForm.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\ActiveForm\:\:field\(\) should return yii\\bootstrap4\\ActiveField but returns yii\\widgets\\ActiveField\.$#'
+			identifier: return.type
+			count: 1
+			path: src/ActiveForm.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\ActiveForm\:\:init\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/ActiveForm.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\ActiveForm\:\:\$options type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ActiveForm.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Alert\:\:init\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Alert.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Alert\:\:initOptions\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Alert.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Alert\:\:renderCloseButton\(\) should return string but returns null\.$#'
+			identifier: return.type
+			count: 1
+			path: src/Alert.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Alert\:\:\$closeButton type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Alert.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\BaseHtml\:\:activeStaticControl\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/BaseHtml.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\BaseHtml\:\:booleanInput\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/BaseHtml.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\BaseHtml\:\:checkboxList\(\) has parameter \$items with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/BaseHtml.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\BaseHtml\:\:checkboxList\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/BaseHtml.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\BaseHtml\:\:checkboxList\(\) has parameter \$selection with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/BaseHtml.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\BaseHtml\:\:error\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/BaseHtml.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\BaseHtml\:\:radioList\(\) has parameter \$items with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/BaseHtml.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\BaseHtml\:\:radioList\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/BaseHtml.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\BaseHtml\:\:radioList\(\) has parameter \$selection with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/BaseHtml.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\BaseHtml\:\:staticControl\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/BaseHtml.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\BaseHtml\:\:\$dataAttributes type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/BaseHtml.php
+
+		-
+			message: '#^Access to an undefined property yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\:\:\$homeUrl\.$#'
+			identifier: property.notFound
+			count: 1
+			path: src/Breadcrumbs.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Breadcrumbs\:\:init\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Breadcrumbs.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Breadcrumbs\:\:renderItem\(\) has parameter \$link with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Breadcrumbs.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Breadcrumbs\:\:\$homeLink type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Breadcrumbs.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Breadcrumbs\:\:\$links type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Breadcrumbs.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Breadcrumbs\:\:\$navOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Breadcrumbs.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Widget\:\:\$clientOptions \(array\) does not accept false\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: src/Breadcrumbs.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Button\:\:init\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Button.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Widget\:\:\$clientOptions \(array\) does not accept false\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: src/Button.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\ButtonDropdown\:\:init\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/ButtonDropdown.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\ButtonDropdown\:\:\$buttonOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ButtonDropdown.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\ButtonDropdown\:\:\$dropdown type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ButtonDropdown.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\ButtonDropdown\:\:\$options type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ButtonDropdown.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\ButtonGroup\:\:init\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/ButtonGroup.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\ButtonGroup\:\:\$buttons type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ButtonGroup.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\ButtonToolbar\:\:init\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/ButtonToolbar.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\ButtonToolbar\:\:\$buttonGroups type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ButtonToolbar.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Carousel\:\:init\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Carousel.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Carousel\:\:renderControls\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Carousel.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Carousel\:\:renderItem\(\) has parameter \$item with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Carousel.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Carousel\:\:\$controls type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Carousel.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Carousel\:\:\$items type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Carousel.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Carousel\:\:\$options type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Carousel.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Dropdown\:\:init\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Dropdown.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Dropdown\:\:renderItems\(\) has parameter \$items with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Dropdown.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Dropdown\:\:renderItems\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Dropdown.php
+
+		-
+			message: '#^Parameter \#1 \$arr1 of function array_merge expects array, array\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Dropdown.php
+
+		-
+			message: '#^Parameter \#1 \$options of static method yii\\helpers\\BaseHtml\:\:addCssClass\(\) expects array, array\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Dropdown.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Dropdown\:\:\$items type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Dropdown.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Dropdown\:\:\$submenuOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Dropdown.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\InputWidget\:\:init\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/InputWidget.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\InputWidget\:\:registerClientEvents\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/InputWidget.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\InputWidget\:\:registerPlugin\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/InputWidget.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\InputWidget\:\:\$clientEvents type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/InputWidget.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\InputWidget\:\:\$clientOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/InputWidget.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between array and false will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: src/InputWidget.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\LinkPager\:\:getPageRange\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/LinkPager.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\LinkPager\:\:init\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/LinkPager.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\LinkPager\:\:registerLinkTags\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/LinkPager.php
+
+		-
+			message: '#^Parameter \#1 \$label of method yii\\bootstrap4\\LinkPager\:\:renderPageButton\(\) expects string, \(float\|int\) given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/LinkPager.php
+
+		-
+			message: '#^Parameter \#1 \$label of method yii\\bootstrap4\\LinkPager\:\:renderPageButton\(\) expects string, int\|string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/LinkPager.php
+
+		-
+			message: '#^Parameter \#1 \$label of method yii\\bootstrap4\\LinkPager\:\:renderPageButton\(\) expects string, string\|true given\.$#'
+			identifier: argument.type
+			count: 2
+			path: src/LinkPager.php
+
+		-
+			message: '#^Parameter \#3 \$class of method yii\\bootstrap4\\LinkPager\:\:renderPageButton\(\) expects string, null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/LinkPager.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\LinkPager\:\:\$disabledListItemSubTagOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/LinkPager.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\LinkPager\:\:\$linkContainerOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/LinkPager.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\LinkPager\:\:\$linkOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/LinkPager.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\LinkPager\:\:\$listOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/LinkPager.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\LinkPager\:\:\$options type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/LinkPager.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Modal\:\:init\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Modal.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Modal\:\:initOptions\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Modal.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Modal\:\:renderCloseButton\(\) should return string but returns null\.$#'
+			identifier: return.type
+			count: 1
+			path: src/Modal.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Modal\:\:renderFooter\(\) should return string but returns null\.$#'
+			identifier: return.type
+			count: 1
+			path: src/Modal.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Modal\:\:renderToggleButton\(\) should return string but returns null\.$#'
+			identifier: return.type
+			count: 1
+			path: src/Modal.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Modal\:\:\$bodyOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Modal.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Modal\:\:\$closeButton type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Modal.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Modal\:\:\$dialogOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Modal.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Modal\:\:\$footerOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Modal.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Modal\:\:\$headerOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Modal.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Modal\:\:\$titleOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Modal.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Modal\:\:\$toggleButton type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Modal.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between array and false will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: src/Modal.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and null will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: src/Modal.php
+
+		-
+			message: '#^Call to an undefined method yii\\console\\Request\|yii\\web\\Request\:\:getQueryParams\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/Nav.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Nav\:\:init\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Nav.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Nav\:\:isChildActive\(\) has parameter \$items with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Nav.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Nav\:\:isChildActive\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Nav.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Nav\:\:isItemActive\(\) has parameter \$item with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Nav.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Nav\:\:renderDropdown\(\) has parameter \$items with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Nav.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Nav\:\:renderDropdown\(\) has parameter \$parentItem with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Nav.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Nav\:\:renderItem\(\) has parameter \$item with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Nav.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Nav\:\:renderItems\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Nav.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Nav\:\:\$items type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Nav.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Nav\:\:\$params type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Nav.php
+
+		-
+			message: '#^Access to an undefined property yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\:\:\$homeUrl\.$#'
+			identifier: property.notFound
+			count: 1
+			path: src/NavBar.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\NavBar\:\:init\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/NavBar.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\NavBar\:\:setContainerOptions\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/NavBar.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\NavBar\:\:setContainerOptions\(\) has parameter \$collapseOptions with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/NavBar.php
+
+		-
+			message: '#^Parameter \#1 \$src of static method yii\\helpers\\BaseHtml\:\:img\(\) expects array\|string, string\|true given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/NavBar.php
+
+		-
+			message: '#^Parameter \#1 \$text of static method yii\\helpers\\BaseHtml\:\:a\(\) expects string, string\|true given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/NavBar.php
+
+		-
+			message: '#^Parameter \#2 \$content of static method yii\\helpers\\BaseHtml\:\:tag\(\) expects string, string\|true given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/NavBar.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\NavBar\:\:\$brandOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/NavBar.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\NavBar\:\:\$brandUrl has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/NavBar.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\NavBar\:\:\$clientOptions \(array\) does not accept default value of type false\.$#'
+			identifier: property.defaultValue
+			count: 1
+			path: src/NavBar.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\NavBar\:\:\$clientOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/NavBar.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\NavBar\:\:\$collapseOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/NavBar.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\NavBar\:\:\$innerContainerOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/NavBar.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\NavBar\:\:\$options type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/NavBar.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\NavBar\:\:\$togglerOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/NavBar.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Progress\:\:init\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Progress.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Progress\:\:renderBar\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Progress.php
+
+		-
+			message: '#^Parameter \#1 \$str of function rtrim expects string, int given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Progress.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Progress\:\:\$barOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Progress.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Progress\:\:\$bars type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Progress.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Tabs\:\:activateFirstVisibleTab\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Tabs.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Tabs\:\:init\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Tabs.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Tabs\:\:prepareItems\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Tabs.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Tabs\:\:prepareItems\(\) has parameter \$items with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Tabs.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Tabs\:\:renderPanes\(\) has parameter \$panes with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Tabs.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Tabs\:\:\$headerOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Tabs.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Tabs\:\:\$itemOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Tabs.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Tabs\:\:\$items type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Tabs.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Tabs\:\:\$linkOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Tabs.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Tabs\:\:\$panes type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Tabs.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Tabs\:\:\$tabContentOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Tabs.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Toast\:\:init\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Toast.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Toast\:\:initOptions\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Toast.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Toast\:\:\$bodyOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Toast.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Toast\:\:\$closeButton type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Toast.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Toast\:\:\$dateTimeOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Toast.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Toast\:\:\$headerOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Toast.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Toast\:\:\$titleOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Toast.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\ToggleButtonGroup\:\:init\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/ToggleButtonGroup.php
+
+		-
+			message: '#^PHPDoc tag @var has invalid value \(array, the HTML attributes for the label \(button\) tag\.\)\: Unexpected token ",", expected TOKEN_HORIZONTAL_WS at offset 21 on line 2$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: src/ToggleButtonGroup.php
+
+		-
+			message: '#^Parameter \#1 \$model of static method yii\\helpers\\BaseHtml\:\:activeCheckboxList\(\) expects yii\\base\\Model, yii\\base\\Model\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/ToggleButtonGroup.php
+
+		-
+			message: '#^Parameter \#1 \$model of static method yii\\helpers\\BaseHtml\:\:activeRadioList\(\) expects yii\\base\\Model, yii\\base\\Model\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/ToggleButtonGroup.php
+
+		-
+			message: '#^Parameter \#1 \$name of static method yii\\bootstrap4\\BaseHtml\:\:checkboxList\(\) expects string, string\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/ToggleButtonGroup.php
+
+		-
+			message: '#^Parameter \#1 \$name of static method yii\\bootstrap4\\BaseHtml\:\:radioList\(\) expects string, string\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/ToggleButtonGroup.php
+
+		-
+			message: '#^Parameter \#2 \$attribute of static method yii\\helpers\\BaseHtml\:\:activeCheckboxList\(\) expects string, string\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/ToggleButtonGroup.php
+
+		-
+			message: '#^Parameter \#2 \$attribute of static method yii\\helpers\\BaseHtml\:\:activeRadioList\(\) expects string, string\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/ToggleButtonGroup.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\ToggleButtonGroup\:\:\$items type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ToggleButtonGroup.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\ToggleButtonGroup\:\:\$labelOptions has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: src/ToggleButtonGroup.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Widget\:\:init\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Widget.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Widget\:\:registerClientEvents\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Widget.php
+
+		-
+			message: '#^Method yii\\bootstrap4\\Widget\:\:registerPlugin\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: src/Widget.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Widget\:\:\$clientEvents type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Widget.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Widget\:\:\$clientOptions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Widget.php
+
+		-
+			message: '#^Property yii\\bootstrap4\\Widget\:\:\$options type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Widget.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between array and false will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: src/Widget.php
+
+		-
+			message: '#^Method yiiunit\\extensions\\bootstrap4\\AccordionTest\:\:invalidItemsProvider\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/AccordionTest.php
+
+		-
+			message: '#^Method yiiunit\\extensions\\bootstrap4\\AccordionTest\:\:testMissingLabel\(\) has parameter \$items with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: tests/AccordionTest.php
+
+		-
+			message: '#^Parameter \#2 \$haystack of method yiiunit\\extensions\\bootstrap4\\TestCase\:\:assertContainsWithoutLE\(\) expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 3
+			path: tests/ActiveFieldDefaultFormCheckTest.php
+
+		-
+			message: '#^Parameter \#2 \$haystack of method yiiunit\\extensions\\bootstrap4\\TestCase\:\:assertContainsWithoutLE\(\) expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 15
+			path: tests/ActiveFormTest.php
+
+		-
+			message: '#^Method yiiunit\\extensions\\bootstrap4\\HtmlTest\:\:dataProviderStaticControl\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/HtmlTest.php
+
+		-
+			message: '#^Method yiiunit\\extensions\\bootstrap4\\HtmlTest\:\:testStaticControl\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/HtmlTest.php
+
+		-
+			message: '#^Parameter \#2 \$actual of method yiiunit\\extensions\\bootstrap4\\TestCase\:\:assertEqualsWithoutLE\(\) expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 2
+			path: tests/ModalTest.php
+
+		-
+			message: '#^Parameter \#2 \$haystack of method PHPUnit\\Framework\\Assert\:\:assertStringContainsString\(\) expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: tests/ModalTest.php
+
+		-
+			message: '#^Parameter \#2 \$actual of method yiiunit\\extensions\\bootstrap4\\TestCase\:\:assertEqualsWithoutLE\(\) expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: tests/NavBarTest.php
+
+		-
+			message: '#^Method yiiunit\\extensions\\bootstrap4\\TestCase\:\:destroyApplication\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/TestCase.php
+
+		-
+			message: '#^Method yiiunit\\extensions\\bootstrap4\\TestCase\:\:mockAction\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/TestCase.php
+
+		-
+			message: '#^Method yiiunit\\extensions\\bootstrap4\\TestCase\:\:mockAction\(\) has parameter \$params with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/TestCase.php
+
+		-
+			message: '#^Method yiiunit\\extensions\\bootstrap4\\TestCase\:\:mockWebApplication\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/TestCase.php
+
+		-
+			message: '#^Method yiiunit\\extensions\\bootstrap4\\TestCase\:\:mockWebApplication\(\) has parameter \$config with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/TestCase.php
+
+		-
+			message: '#^Method yiiunit\\extensions\\bootstrap4\\TestCase\:\:removeMockedAction\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: tests/TestCase.php
+
+		-
+			message: '#^Property yii\\base\\Controller\<yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\>\:\:\$module \(yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\) does not accept yii\\base\\Module\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: tests/TestCase.php
+
+		-
+			message: '#^Property yii\\console\\Application\:\:\$controller \(yii\\console\\Controller\<yii\\base\\Module\>\|yii\\web\\Controller\<yii\\base\\Module\>\|null\) does not accept yii\\web\\Controller\<yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\>\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: tests/TestCase.php
+
+		-
+			message: '#^Static property yii\\BaseYii\<yii\\web\\IdentityInterface\>\:\:\$app \(yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\) does not accept null\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: tests/TestCase.php
+
+		-
+			message: '#^Parameter \#2 \$actual of method yiiunit\\extensions\\bootstrap4\\TestCase\:\:assertEqualsWithoutLE\(\) expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: tests/ToastTest.php
+
+		-
+			message: '#^Property yiiunit\\extensions\\bootstrap4\\ToggleButtonGroupTestModel\:\:\$value has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: tests/ToggleButtonGroupTest.php
+
+		-
+			message: '#^Property yiiunit\\extensions\\bootstrap4\\data\\ExtendedActiveField\:\:\$horizontalCssClasses type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/data/ExtendedActiveField.php
+
+		-
+			message: '#^Property yiiunit\\extensions\\bootstrap4\\data\\Singer\:\:\$firstName has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: tests/data/Singer.php
+
+		-
+			message: '#^Property yiiunit\\extensions\\bootstrap4\\data\\Singer\:\:\$lastName has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: tests/data/Singer.php
+
+		-
+			message: '#^Property yiiunit\\extensions\\bootstrap4\\data\\Singer\:\:\$test has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: tests/data/Singer.php
+
+		-
+			message: '#^Property yiiunit\\extensions\\bootstrap4\\data\\User\:\:\$firstName has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: tests/data/User.php
+
+		-
+			message: '#^Property yiiunit\\extensions\\bootstrap4\\data\\User\:\:\$lastName has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: tests/data/User.php
+
+		-
+			message: '#^Property yiiunit\\extensions\\bootstrap4\\data\\User\:\:\$password has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: tests/data/User.php
+
+		-
+			message: '#^Property yiiunit\\extensions\\bootstrap4\\data\\User\:\:\$username has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: tests/data/User.php

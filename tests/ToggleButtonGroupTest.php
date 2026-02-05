@@ -10,7 +10,7 @@ use yii\bootstrap4\ToggleButtonGroup;
  */
 class ToggleButtonGroupTest extends TestCase
 {
-    public function testCheckbox()
+    public function testCheckbox(): void
     {
         \yii\bootstrap4\Html::$counter = 0;
         $html = ToggleButtonGroup::widget([
@@ -33,7 +33,8 @@ HTML;
     /**
      * @depends testCheckbox
      */
-    public function testCheckboxChecked() {
+    public function testCheckboxChecked(): void
+    {
         \yii\bootstrap4\Html::$counter = 0;
         $html = ToggleButtonGroup::widget([
             'type' => ToggleButtonGroup::TYPE_CHECKBOX,
@@ -45,10 +46,10 @@ HTML;
             ],
         ]);
 
-        $this->assertContains('<input type="checkbox" id="togglebuttongrouptestmodel-value-1" name="ToggleButtonGroupTestModel[value][]" value="2" checked autocomplete="off">', $html);
+        $this->assertStringContainsString('<input type="checkbox" id="togglebuttongrouptestmodel-value-1" name="ToggleButtonGroupTestModel[value][]" value="2" checked autocomplete="off">', $html);
     }
 
-    public function testRadio()
+    public function testRadio(): void
     {
         \yii\bootstrap4\Html::$counter = 0;
         $html = ToggleButtonGroup::widget([
@@ -71,7 +72,8 @@ HTML;
     /**
      * @depends testRadio
      */
-    public function testRadioChecked() {
+    public function testRadioChecked(): void
+    {
         \yii\bootstrap4\Html::$counter = 0;
         $html = ToggleButtonGroup::widget([
             'type' => ToggleButtonGroup::TYPE_RADIO,
@@ -83,7 +85,7 @@ HTML;
             ],
         ]);
 
-        $this->assertContains('<input type="radio" id="togglebuttongrouptestmodel-value-1" name="ToggleButtonGroupTestModel[value]" value="2" checked autocomplete="off">', $html);
+        $this->assertStringContainsString('<input type="radio" id="togglebuttongrouptestmodel-value-1" name="ToggleButtonGroupTestModel[value]" value="2" checked autocomplete="off">', $html);
     }
 }
 

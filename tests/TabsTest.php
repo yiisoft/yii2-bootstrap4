@@ -12,7 +12,7 @@ use yii\helpers\Html;
  */
 class TabsTest extends TestCase
 {
-    public function testRoleTablist()
+    public function testRoleTablist(): void
     {
         Tabs::$counter = 0;
         $out = Tabs::widget([
@@ -36,7 +36,7 @@ class TabsTest extends TestCase
      *
      * @see https://github.com/yiisoft/yii2/issues/6150
      */
-    public function testIds()
+    public function testIds(): void
     {
         Tabs::$counter = 0;
         $out = Tabs::widget([
@@ -113,7 +113,7 @@ class TabsTest extends TestCase
         }
     }
 
-    public function testVisible()
+    public function testVisible(): void
     {
         Tabs::$counter = 0;
         $html = Tabs::widget([
@@ -140,14 +140,14 @@ class TabsTest extends TestCase
             ]
         ]);
 
-        $this->assertNotContains('InvisiblePage', $html);
-        $this->assertNotContains('Invisible Page Content', $html);
-        $this->assertNotContains('InvisibleItem', $html);
-        $this->assertNotContains('Invisible Item Content', $html);
-        $this->assertNotContains('Invisible External Link', $html);
+        $this->assertStringNotContainsString('InvisiblePage', $html);
+        $this->assertStringNotContainsString('Invisible Page Content', $html);
+        $this->assertStringNotContainsString('InvisibleItem', $html);
+        $this->assertStringNotContainsString('Invisible Item Content', $html);
+        $this->assertStringNotContainsString('Invisible External Link', $html);
     }
 
-    public function testDisabled()
+    public function testDisabled(): void
     {
         Tabs::$counter = 0;
         $html = Tabs::widget([
@@ -156,8 +156,8 @@ class TabsTest extends TestCase
                     'label' => 'Page1',
                     'content' => 'Page1',
                     'disabled' => true
-               ],
-               [
+                ],
+                [
                     'label' => 'Page2',
                     'content' => 'Page2',
                 ],
@@ -179,29 +179,29 @@ class TabsTest extends TestCase
             ]
         ]);
 
-        $this->assertContains(
+        $this->assertStringContainsString(
             '<li class="nav-item"><a class="nav-link disabled" href="#w0-tab0" data-toggle="tab" role="tab" aria-controls="w0-tab0" tabindex="-1" aria-disabled="true">Page1</a></li>',
             $html
         );
-        $this->assertContains(
+        $this->assertStringContainsString(
             '<li class="nav-item"><a class="nav-link active" href="#w0-tab1" data-toggle="tab" role="tab" aria-controls="w0-tab1" aria-selected="true">Page2</a></li>',
             $html
         );
-        $this->assertContains(
+        $this->assertStringContainsString(
             '<li class="nav-item"><a class="nav-link disabled" href="#w0-tab2" data-toggle="tab" role="tab" aria-controls="w0-tab2" tabindex="-1" aria-disabled="true">DisabledPage</a></li>',
             $html
         );
-        $this->assertContains(
+        $this->assertStringContainsString(
             '<a class="dropdown-item disabled" href="#w0-dd3-tab1" data-toggle="tab" role="tab" aria-controls="w0-dd3-tab1" tabindex="-1" aria-disabled="true">DisabledItem</a>',
             $html
         );
-        $this->assertContains(
+        $this->assertStringContainsString(
             '<a class="dropdown-item disabled" href="/index.php?r=other%2Fdropdown%2Froute" tabindex="-1" aria-disabled="true">Disabled External Link</a>',
             $html
         );
     }
 
-    public function testItem()
+    public function testItem(): void
     {
         $checkTag = 'article';
 
@@ -220,13 +220,13 @@ class TabsTest extends TestCase
             'renderTabContent' => true,
         ]);
 
-        $this->assertContains('<' . $checkTag, $out);
+        $this->assertStringContainsString('<' . $checkTag, $out);
     }
 
-    public function testTabContentOptions()
+    public function testTabContentOptions(): void
     {
-        $checkAttribute = "test_attribute";
-        $checkValue = "check_attribute";
+        $checkAttribute = 'test_attribute';
+        $checkValue = 'check_attribute';
 
         $out = Tabs::widget([
             'items' => [
@@ -240,11 +240,11 @@ class TabsTest extends TestCase
             ]
         ]);
 
-        $this->assertContains($checkAttribute . '=', $out);
-        $this->assertContains($checkValue, $out);
+        $this->assertStringContainsString($checkAttribute . '=', $out);
+        $this->assertStringContainsString($checkValue, $out);
     }
 
-    public function testActivateFirstVisibleTab()
+    public function testActivateFirstVisibleTab(): void
     {
         $html = Tabs::widget([
             'id' => 'mytab',
@@ -270,21 +270,21 @@ class TabsTest extends TestCase
             ]
         ]);
 
-        $this->assertNotContains(
+        $this->assertStringNotContainsString(
             '<li class="nav-item"><a class="nav-link active" href="#mytab-tab0" data-toggle="tab" role="tab" aria-controls="mytab-tab0" aria-selected="true">Tab 1</a></li>',
             $html
         );
-        $this->assertNotContains(
+        $this->assertStringNotContainsString(
             '<li class="nav-item"><a class="nav-link active" href="#mytab-tab1" data-toggle="tab" role="tab" aria-controls="mytab-tab1" aria-selected="true">Tab 2</a></li>',
             $html
         );
-        $this->assertContains(
+        $this->assertStringContainsString(
             '<li class="nav-item"><a class="nav-link active" href="#mytab-tab2" data-toggle="tab" role="tab" aria-controls="mytab-tab2" aria-selected="true">Tab 3</a></li>',
             $html
         );
     }
 
-    public function testActivateTab()
+    public function testActivateTab(): void
     {
         $html = Tabs::widget([
             'id' => 'mytab',
@@ -309,13 +309,13 @@ class TabsTest extends TestCase
                 ]
             ]
         ]);
-        $this->assertContains(
+        $this->assertStringContainsString(
             '<li class="nav-item"><a class="nav-link active" href="#mytab-tab2" data-toggle="tab" role="tab" aria-controls="mytab-tab2" aria-selected="true">Tab 3</a></li>',
             $html
         );
     }
 
-    public function testTabLabelEncoding()
+    public function testTabLabelEncoding(): void
     {
         $html = Tabs::widget([
             'encodeLabels' => false,
@@ -336,15 +336,15 @@ class TabsTest extends TestCase
                 ],
             ]
         ]);
-        $this->assertContains('&lt;span&gt;encoded&lt;/span&gt;', $html);
-        $this->assertContains('<span>not encoded</span>', $html);
-        $this->assertContains('<span>not encoded too</span>', $html);
+        $this->assertStringContainsString('&lt;span&gt;encoded&lt;/span&gt;', $html);
+        $this->assertStringContainsString('<span>not encoded</span>', $html);
+        $this->assertStringContainsString('<span>not encoded too</span>', $html);
     }
 
     /**
      * @see https://github.com/yiisoft/yii2-bootstrap4/issues/108#issuecomment-465219339
      */
-    public function testIdRendering()
+    public function testIdRendering(): void
     {
         Tabs::$counter = 0;
         $html = Tabs::widget([
@@ -368,10 +368,10 @@ class TabsTest extends TestCase
 <div id="w0-tab1" class="tab-pane"><div>Content 2</div></div></div>
 HTML;
 
-        $this->assertEquals($expected, $html);
+        $this->assertEqualsWithoutLE($expected, $html);
     }
 
-        public function testHeaderOptions()
+    public function testHeaderOptions(): void
     {
         Tabs::$counter = 0;
         $html = Tabs::widget([
@@ -403,6 +403,6 @@ HTML;
 <div id="w0-tab1" class="tab-pane"><div>Content 2</div></div></div>
 HTML;
 
-        $this->assertEquals($expected, $html);
+        $this->assertEqualsWithoutLE($expected, $html);
     }
 }

@@ -1,12 +1,13 @@
 Yii Framework 2 bootstrap4 extension Change Log
 ==============================================
 
-2.0.13 under development
+3.0.0 under development
 ------------------------
 
 - Enh #246: Remove unnecessary files from Composer package (@s1lver)
 - Bug #247: Fix `LinkPager::getPageRange` when `maxButtons` is 2 (mspirkov)
-
+- Enh #249: Applying Yii2 coding standards (@s1lver)
+- Enh #249: Raise min version to PHP 7.4 (@s1lver)
 
 2.0.12 February 13, 2025
 ------------------------

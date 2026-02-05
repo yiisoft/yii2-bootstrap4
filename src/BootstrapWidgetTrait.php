@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://www.yiiframework.com/
  * @copyright Copyright (c) 2008 Yii Software LLC
@@ -100,5 +101,5 @@ trait BootstrapWidgetTrait
      * @return \yii\web\View the view object that can be used to render views or view files.
      * @see \yii\base\Widget::getView()
      */
-    abstract function getView();
+    abstract public function getView();
 }

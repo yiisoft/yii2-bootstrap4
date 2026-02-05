@@ -26,11 +26,11 @@ class ActiveFieldTest extends TestCase
      */
     private $attributeName = 'attributeName';
 
-    protected function setUp()
+    protected function setUp(): void
     {
         // dirty way to have Request object not throwing exception when running testHomeLinkNull()
-        $_SERVER['SCRIPT_FILENAME'] = "index.php";
-        $_SERVER['SCRIPT_NAME'] = "index.php";
+        $_SERVER['SCRIPT_FILENAME'] = 'index.php';
+        $_SERVER['SCRIPT_NAME'] = 'index.php';
 
         parent::setUp();
 
@@ -45,7 +45,7 @@ class ActiveFieldTest extends TestCase
         $this->activeField->attribute = $this->attributeName;
     }
 
-    public function testFileInput()
+    public function testFileInput(): void
     {
         Html::$counter = 0;
         $html = $this->activeField->fileInput()->render();
@@ -64,7 +64,7 @@ HTML;
 
     // Tests :
 
-    public function testRadioList()
+    public function testRadioList(): void
     {
         Html::$counter = 0;
         $html = $this->activeField->radioList([1 => 'name1', 2 => 'name2'])->render();
@@ -89,7 +89,7 @@ HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
     }
 
-    public function testRadioError()
+    public function testRadioError(): void
     {
         Html::$counter = 0;
         $this->helperModel->addError($this->attributeName, 'Test print error message');
@@ -108,7 +108,7 @@ HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
     }
 
-    public function testRadioListError()
+    public function testRadioListError(): void
     {
         Html::$counter = 0;
         $this->helperModel->addError($this->attributeName, 'Test print error message');
@@ -134,7 +134,7 @@ HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
     }
 
-    public function testCheckboxList()
+    public function testCheckboxList(): void
     {
         Html::$counter = 0;
         $html = $this->activeField->checkboxList([1 => 'name1', 2 => 'name2'])->render();
@@ -159,7 +159,7 @@ HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
     }
 
-    public function testCheckboxError()
+    public function testCheckboxError(): void
     {
         Html::$counter = 0;
         $this->helperModel->addError($this->attributeName, 'Test print error message');
@@ -178,7 +178,7 @@ HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
     }
 
-    public function testCheckboxListError()
+    public function testCheckboxListError(): void
     {
         Html::$counter = 0;
         $this->helperModel->addError($this->attributeName, 'Test print error message');
@@ -204,7 +204,7 @@ HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
     }
 
-    public function testRadioListInline()
+    public function testRadioListInline(): void
     {
         Html::$counter = 0;
         $this->activeField->inline = true;
@@ -230,7 +230,7 @@ HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
     }
 
-    public function testCheckboxListInline()
+    public function testCheckboxListInline(): void
     {
         Html::$counter = 0;
         $this->activeField->inline = true;
@@ -261,7 +261,7 @@ HTML;
      *
      * @see https://github.com/yiisoft/yii2-bootstrap/issues/81
      */
-    public function testRadioListItemOptions()
+    public function testRadioListItemOptions(): void
     {
         Html::$counter = 0;
         $content = $this->activeField->radioList([1 => 'name1', 2 => 'name2'], [
@@ -270,7 +270,7 @@ HTML;
             ]
         ])->render();
 
-        $this->assertContains('data-attribute="test"', $content);
+        $this->assertStringContainsString('data-attribute="test"', $content);
     }
 
     /**
@@ -278,7 +278,7 @@ HTML;
      *
      * @see https://github.com/yiisoft/yii2-bootstrap/issues/81
      */
-    public function testCheckboxListItemOptions()
+    public function testCheckboxListItemOptions(): void
     {
         Html::$counter = 0;
         $content = $this->activeField->checkboxList([1 => 'name1', 2 => 'name2'], [
@@ -287,13 +287,10 @@ HTML;
             ]
         ])->render();
 
-        $this->assertContains('data-attribute="test"', $content);
+        $this->assertStringContainsString('data-attribute="test"', $content);
     }
 
-    /**
-     *
-     */
-    public function testCustomRadio()
+    public function testCustomRadio(): void
     {
         Html::$counter = 0;
         $this->activeField->inline = true;
@@ -312,10 +309,7 @@ HTML;
         $this->assertEqualsWithoutLE($expectedHtml, $html);
     }
 
-    /**
-     *
-     */
-    public function testCustomCheckbox()
+    public function testCustomCheckbox(): void
     {
         Html::$counter = 0;
         $this->activeField->inline = true;
