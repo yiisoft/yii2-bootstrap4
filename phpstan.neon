@@ -11,8 +11,6 @@ parameters:
     - YII_DEBUG
   bootstrapFiles:
     - tests/bootstrap.php
-  excludePaths:
-    - vendor
   paths:
     - src
     - tests
