@@ -331,12 +331,6 @@ parameters:
 			path: src/BaseHtml.php
 
 		-
-			message: '#^Access to an undefined property yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\:\:\$homeUrl\.$#'
-			identifier: property.notFound
-			count: 1
-			path: src/Breadcrumbs.php
-
-		-
 			message: '#^Method yii\\bootstrap4\\Breadcrumbs\:\:init\(\) has no return type specified\.$#'
 			identifier: missingType.return
 			count: 1
@@ -541,12 +535,6 @@ parameters:
 			path: src/InputWidget.php
 
 		-
-			message: '#^Strict comparison using \!\=\= between array and false will always evaluate to true\.$#'
-			identifier: notIdentical.alwaysTrue
-			count: 1
-			path: src/InputWidget.php
-
-		-
 			message: '#^Method yii\\bootstrap4\\LinkPager\:\:getPageRange\(\) return type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
@@ -703,12 +691,6 @@ parameters:
 			path: src/Modal.php
 
 		-
-			message: '#^Call to an undefined method yii\\console\\Request\|yii\\web\\Request\:\:getQueryParams\(\)\.$#'
-			identifier: method.notFound
-			count: 1
-			path: src/Nav.php
-
-		-
 			message: '#^Method yii\\bootstrap4\\Nav\:\:init\(\) has no return type specified\.$#'
 			identifier: missingType.return
 			count: 1
@@ -767,12 +749,6 @@ parameters:
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/Nav.php
-
-		-
-			message: '#^Access to an undefined property yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\:\:\$homeUrl\.$#'
-			identifier: property.notFound
-			count: 1
-			path: src/NavBar.php
 
 		-
 			message: '#^Method yii\\bootstrap4\\NavBar\:\:init\(\) has no return type specified\.$#'
@@ -1185,24 +1161,6 @@ parameters:
 		-
 			message: '#^Method yiiunit\\extensions\\bootstrap4\\TestCase\:\:removeMockedAction\(\) has no return type specified\.$#'
 			identifier: missingType.return
-			count: 1
-			path: tests/TestCase.php
-
-		-
-			message: '#^Property yii\\base\\Controller\<yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\>\:\:\$module \(yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\) does not accept yii\\base\\Module\.$#'
-			identifier: assign.propertyType
-			count: 1
-			path: tests/TestCase.php
-
-		-
-			message: '#^Property yii\\console\\Application\:\:\$controller \(yii\\console\\Controller\<yii\\base\\Module\>\|yii\\web\\Controller\<yii\\base\\Module\>\|null\) does not accept yii\\web\\Controller\<yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\>\.$#'
-			identifier: assign.propertyType
-			count: 1
-			path: tests/TestCase.php
-
-		-
-			message: '#^Static property yii\\BaseYii\<yii\\web\\IdentityInterface\>\:\:\$app \(yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\) does not accept null\.$#'
-			identifier: assign.propertyType
 			count: 1
 			path: tests/TestCase.php
 

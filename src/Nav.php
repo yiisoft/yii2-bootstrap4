@@ -112,11 +112,12 @@ class Nav extends Widget
     public function init()
     {
         parent::init();
-        if ($this->route === null && Yii::$app->controller !== null) {
-            $this->route = Yii::$app->controller->getRoute();
+        $app = $this->getApp();
+        if ($this->route === null && $app->controller !== null) {
+            $this->route = $app->controller->getRoute();
         }
         if ($this->params === null) {
-            $this->params = Yii::$app->request->getQueryParams();
+            $this->params = $app->request->getQueryParams();
         }
         Html::addCssClass($this->options, ['widget' => 'nav']);
     }
@@ -269,8 +270,9 @@ class Nav extends Widget
         }
         if (isset($item['url']) && is_array($item['url']) && isset($item['url'][0])) {
             $route = $item['url'][0];
-            if ($route[0] !== '/' && Yii::$app->controller) {
-                $route = Yii::$app->controller->module->getUniqueId() . '/' . $route;
+            $app = $this->getApp();
+            if ($route[0] !== '/' && $app->controller) {
+                $route = $app->controller->module->getUniqueId() . '/' . $route;
             }
             if (ltrim($route, '/') !== $this->route) {
                 return false;

@@ -144,7 +144,7 @@ class Toast extends Widget
         if ($this->dateTime !== false) {
             $tag = ArrayHelper::remove($this->dateTimeOptions, 'tag', 'small');
             Html::addCssClass($this->dateTimeOptions, ['widget' => 'text-muted']);
-            $title .= "\n" . Html::tag($tag, Yii::$app->formatter->asRelativeTime($this->dateTime), $this->dateTimeOptions);
+            $title .= "\n" . Html::tag($tag, $this->getApp()->formatter->asRelativeTime($this->dateTime), $this->dateTimeOptions);
         }
 
         $title .= "\n" . $button;
