@@ -8,10 +8,6 @@
 
 namespace yii\bootstrap4;
 
-use Yii;
-use yii\base\InvalidConfigException;
-use yii\web\Application;
-
 /**
  * \yii\bootstrap4\Widget is the base class for all bootstrap widgets.
  *
@@ -27,19 +23,4 @@ class Widget extends \yii\base\Widget
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
      */
     public $options = [];
-
-    /**
-     * @return Application
-     * @throws InvalidConfigException
-     */
-    protected function getApp()
-    {
-        $app = Yii::$app;
-
-        if (!$app instanceof Application) {
-            throw new InvalidConfigException('Bootstrap widgets require Yii::$app to be an instance of yii\web\Application.');
-        }
-
-        return $app;
-    }
 }

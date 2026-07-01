@@ -140,10 +140,9 @@ class NavBar extends Widget
             if ($this->brandUrl === null) {
                 $brand = Html::tag('span', $this->brandLabel, $this->brandOptions);
             } else {
-                $app = $this->getApp();
                 $brand = Html::a(
                     $this->brandLabel,
-                    $this->brandUrl === false ? $app->homeUrl : $this->brandUrl,
+                    $this->brandUrl === false ? Yii::$app->homeUrl : $this->brandUrl,
                     $this->brandOptions
                 );
             }

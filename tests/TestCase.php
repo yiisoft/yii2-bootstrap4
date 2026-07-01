@@ -7,7 +7,6 @@ use yii\base\Action;
 use yii\base\Module;
 use yii\di\Container;
 use yii\helpers\ArrayHelper;
-use yii\web\Application;
 use yii\web\Controller;
 
 /**
@@ -65,11 +64,13 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
      */
     protected function mockAction($controllerId, $actionID, $moduleID = null, $params = [])
     {
-        $app = $this->getApplication();
-        $module = $moduleID === null ? $app : new Module($moduleID, $app);
-        $app->controller = $controller = new Controller($controllerId, $module);
+        Yii::$app->controller = $controller = new Controller($controllerId, Yii::$app);
         $controller->actionParams = $params;
         $controller->action = new Action($actionID, $controller);
+
+        if ($moduleID !== null) {
+            $controller->module = new Module($moduleID);
+        }
     }
 
     /**
@@ -77,7 +78,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
      */
     protected function removeMockedAction()
     {
-        $this->getApplication()->controller = null;
+        Yii::$app->controller = null;
     }
 
     /**
@@ -87,18 +88,6 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
     {
         Yii::$app = null;
         Yii::$container = new Container();
-    }
-
-    /**
-     * @return Application
-     */
-    private function getApplication()
-    {
-        if (!Yii::$app instanceof Application) {
-            throw new \RuntimeException('Test application is not configured.');
-        }
-
-        return Yii::$app;
     }
 
     /**
