@@ -331,8 +331,8 @@ parameters:
 			path: src/BaseHtml.php
 
 		-
-			message: '#^Access to an undefined property yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\:\:\$homeUrl\.$#'
-			identifier: property.notFound
+			message: '#^Cannot access property \$homeUrl on yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\|null\.$#'
+			identifier: property.nonObject
 			count: 1
 			path: src/Breadcrumbs.php
 
@@ -709,6 +709,18 @@ parameters:
 			path: src/Nav.php
 
 		-
+			message: '#^Cannot access property \$controller on yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\|null\.$#'
+			identifier: property.nonObject
+			count: 4
+			path: src/Nav.php
+
+		-
+			message: '#^Cannot access property \$request on yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: src/Nav.php
+
+		-
 			message: '#^Method yii\\bootstrap4\\Nav\:\:init\(\) has no return type specified\.$#'
 			identifier: missingType.return
 			count: 1
@@ -769,8 +781,14 @@ parameters:
 			path: src/Nav.php
 
 		-
-			message: '#^Access to an undefined property yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\:\:\$homeUrl\.$#'
-			identifier: property.notFound
+			message: '#^Cannot access property \$homeUrl on yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: src/NavBar.php
+
+		-
+			message: '#^Class yii\\bootstrap4\\NavBar has PHPDoc tag @property\-write for property \$containerOptions with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/NavBar.php
 
@@ -955,6 +973,12 @@ parameters:
 			path: src/Tabs.php
 
 		-
+			message: '#^Cannot access property \$formatter on yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: src/Toast.php
+
+		-
 			message: '#^Method yii\\bootstrap4\\Toast\:\:init\(\) has no return type specified\.$#'
 			identifier: missingType.return
 			count: 1
@@ -1093,12 +1117,6 @@ parameters:
 			path: src/Widget.php
 
 		-
-			message: '#^Strict comparison using \!\=\= between array and false will always evaluate to true\.$#'
-			identifier: notIdentical.alwaysTrue
-			count: 1
-			path: src/Widget.php
-
-		-
 			message: '#^Method yiiunit\\extensions\\bootstrap4\\AccordionTest\:\:invalidItemsProvider\(\) return type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
@@ -1153,6 +1171,12 @@ parameters:
 			path: tests/NavBarTest.php
 
 		-
+			message: '#^Cannot access property \$controller on yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\|null\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: tests/TestCase.php
+
+		-
 			message: '#^Method yiiunit\\extensions\\bootstrap4\\TestCase\:\:destroyApplication\(\) has no return type specified\.$#'
 			identifier: missingType.return
 			count: 1
@@ -1189,19 +1213,13 @@ parameters:
 			path: tests/TestCase.php
 
 		-
+			message: '#^Parameter \#2 \$module of class yii\\web\\Controller constructor expects yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>, yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: tests/TestCase.php
+
+		-
 			message: '#^Property yii\\base\\Controller\<yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\>\:\:\$module \(yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\) does not accept yii\\base\\Module\.$#'
-			identifier: assign.propertyType
-			count: 1
-			path: tests/TestCase.php
-
-		-
-			message: '#^Property yii\\console\\Application\:\:\$controller \(yii\\console\\Controller\<yii\\base\\Module\>\|yii\\web\\Controller\<yii\\base\\Module\>\|null\) does not accept yii\\web\\Controller\<yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\>\.$#'
-			identifier: assign.propertyType
-			count: 1
-			path: tests/TestCase.php
-
-		-
-			message: '#^Static property yii\\BaseYii\<yii\\web\\IdentityInterface\>\:\:\$app \(yii\\console\\Application\|yii\\web\\Application\<yii\\web\\IdentityInterface\>\) does not accept null\.$#'
 			identifier: assign.propertyType
 			count: 1
 			path: tests/TestCase.php
