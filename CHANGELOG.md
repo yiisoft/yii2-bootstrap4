@@ -8,6 +8,7 @@ Yii Framework 2 bootstrap4 extension Change Log
 - Bug #247: Fix `LinkPager::getPageRange` when `maxButtons` is 2 (mspirkov)
 - Enh #249: Applying Yii2 coding standards (@s1lver)
 - Enh #249: Raise min version to PHP 7.4 (@s1lver)
+- Bug #255: Add missing `@property` annotation for `NavBar` (mspirkov)
 
 2.0.12 February 13, 2025
 ------------------------
