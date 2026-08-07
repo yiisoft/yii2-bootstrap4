@@ -1,5 +1,6 @@
 {
     "dependencies": {
         "bootstrap4": "npm:bootstrap@^4.6.2"
-    }
+    },
+    "license": "BSD-3-Clause"
 }

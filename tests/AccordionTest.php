@@ -1,17 +1,18 @@
 <?php
+
 namespace yiiunit\extensions\bootstrap4;
 
 use yii\base\DynamicModel;
 use yii\base\InvalidConfigException;
 use yii\bootstrap4\Accordion;
-use yii\widgets\ActiveForm;
+use yii\bootstrap4\ActiveForm;
 
 /**
  * @group bootstrap4
  */
 class AccordionTest extends TestCase
 {
-    public function testRender()
+    public function testRender(): void
     {
         Accordion::$counter = 0;
         $output = Accordion::widget([
@@ -114,7 +115,7 @@ HTML
         , $output);
     }
 
-    public function testLabelKeys()
+    public function testLabelKeys(): void
     {
         ob_start();
         $form = ActiveForm::begin(['action' => '/something']);
@@ -132,7 +133,7 @@ HTML
                     'label' => 'Item3',
                     'content' => 'Content3',
                 ],
-                'FormField' => $form->field(new DynamicModel(['test']), 'test',['template' => '{input}']),
+                'FormField' => $form->field(new DynamicModel(['test']), 'test', ['template' => '{input}']),
             ]
         ]);
 
@@ -170,7 +171,7 @@ HTML
         , $output);
     }
 
-    public function testExpandOptions()
+    public function testExpandOptions(): void
     {
         Accordion::$counter = 0;
         $output = Accordion::widget([
@@ -203,7 +204,7 @@ HTML
         , $output);
     }
 
-    public function invalidItemsProvider()
+    public function invalidItemsProvider(): array
     {
         return [
             [ ['content'] ], // only content without label key
@@ -215,7 +216,7 @@ HTML
     /**
      * @dataProvider invalidItemsProvider
      */
-    public function testMissingLabel($items)
+    public function testMissingLabel($items): void
     {
         $this->expectException(InvalidConfigException::class);
         $this->expectExceptionMessage("The 'label' option is required.");
@@ -227,14 +228,14 @@ HTML
     /**
      * @see https://github.com/yiisoft/yii2/issues/8357
      */
-    public function testRenderObject()
+    public function testRenderObject(): void
     {
         $template = ['template' => '{input}'];
         ob_start();
         $form = ActiveForm::begin(['action' => '/something']);
         ActiveForm::end();
         ob_end_clean();
-        $model = new data\Singer;
+        $model = new data\Singer();
 
         Accordion::$counter = 0;
         $output = Accordion::widget([
@@ -262,7 +263,7 @@ HTML
         , $output);
     }
 
-    public function testAutoCloseItems()
+    public function testAutoCloseItems(): void
     {
         $items = [
             [
@@ -289,7 +290,7 @@ HTML
     /**
      * @depends testRender
      */
-    public function testItemToggleTag()
+    public function testItemToggleTag(): void
     {
         $items = [
             [
@@ -328,7 +329,7 @@ HTML
     /**
      * @depends testRender
      */
-    public function testHeaderToggleTag()
+    public function testHeaderToggleTag(): void
     {
         $items = [
             [

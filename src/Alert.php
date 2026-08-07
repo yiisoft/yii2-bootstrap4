@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://www.yiiframework.com/
  * @copyright Copyright (c) 2008 Yii Software LLC
@@ -7,7 +8,6 @@
 
 namespace yii\bootstrap4;
 
-use Yii;
 use yii\helpers\ArrayHelper;
 
 /**
@@ -97,7 +97,7 @@ class Alert extends Widget
      */
     protected function renderBodyEnd()
     {
-        return $this->body . "\n" .  $this->renderCloseButton() . "\n";
+        return $this->body . "\n" . $this->renderCloseButton() . "\n";
     }
 
     /**

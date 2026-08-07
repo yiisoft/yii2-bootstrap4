@@ -1,11 +1,11 @@
 <?php
+
 /**
  * @package yii2-bootstrap4
  * @author Simon Karlen <simi.albi@outlook.com>
  */
 
 namespace yiiunit\extensions\bootstrap4\data;
-
 
 use yii\base\Model;
 

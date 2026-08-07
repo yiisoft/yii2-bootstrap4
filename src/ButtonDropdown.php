@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://www.yiiframework.com/
  * @copyright Copyright (c) 2008 Yii Software LLC
@@ -36,19 +37,19 @@ class ButtonDropdown extends Widget
     /**
      * The css class part of dropdown
      */
-    const DIRECTION_DOWN = 'down';
+    public const DIRECTION_DOWN = 'down';
     /**
      * The css class part of dropleft
      */
-    const DIRECTION_LEFT = 'left';
+    public const DIRECTION_LEFT = 'left';
     /**
      * The css class part of dropright
      */
-    const DIRECTION_RIGHT = 'right';
+    public const DIRECTION_RIGHT = 'right';
     /**
      * The css class part of dropup
      */
-    const DIRECTION_UP = 'up';
+    public const DIRECTION_UP = 'up';
 
     /**
      * @var string the button label

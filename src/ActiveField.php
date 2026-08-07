@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://www.yiiframework.com/
  * @copyright Copyright (c) 2008 Yii Software LLC
@@ -330,12 +331,7 @@ class ActiveField extends \yii\widgets\ActiveField
             $encode = ArrayHelper::getValue($options, 'encode', true);
             $itemCount = count($items) - 1;
             $error = $this->error()->parts['{error}'];
-            $options['item'] = function ($i, $label, $name, $checked, $value) use (
-                $itemOptions,
-                $encode,
-                $itemCount,
-                $error
-            ) {
+            $options['item'] = function ($i, $label, $name, $checked, $value) use ($itemOptions, $encode, $itemCount, $error) {
                 $options = array_merge($this->checkOptions, [
                     'label' => $encode ? Html::encode($label) : $label,
                     'value' => $value
@@ -372,12 +368,7 @@ class ActiveField extends \yii\widgets\ActiveField
             $encode = ArrayHelper::getValue($options, 'encode', true);
             $itemCount = count($items) - 1;
             $error = $this->error()->parts['{error}'];
-            $options['item'] = function ($i, $label, $name, $checked, $value) use (
-                $itemOptions,
-                $encode,
-                $itemCount,
-                $error
-            ) {
+            $options['item'] = function ($i, $label, $name, $checked, $value) use ($itemOptions, $encode, $itemCount, $error) {
                 $options = array_merge($this->radioOptions, [
                     'label' => $encode ? Html::encode($label) : $label,
                     'value' => $value

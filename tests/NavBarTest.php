@@ -1,4 +1,5 @@
 <?php
+
 namespace yiiunit\extensions\bootstrap4;
 
 use yii\bootstrap4\Nav;
@@ -11,7 +12,7 @@ use yii\bootstrap4\NavBar;
  */
 class NavBarTest extends TestCase
 {
-    public function testRender()
+    public function testRender(): void
     {
         NavBar::$counter = 0;
 
@@ -37,7 +38,7 @@ EXPECTED;
         $this->assertEqualsWithoutLE($expected, $out);
     }
 
-    public function testBrandImage()
+    public function testBrandImage(): void
     {
         $out = NavBar::widget([
             'brandImage' => '/images/test.jpg',
@@ -47,7 +48,7 @@ EXPECTED;
         $this->assertStringContainsString('<a class="navbar-brand" href="/"><img src="/images/test.jpg" alt=""></a>', $out);
     }
 
-    public function testBrandLink()
+    public function testBrandLink(): void
     {
         $out = NavBar::widget([
             'brandLabel' => 'Yii Framework',
@@ -57,7 +58,7 @@ EXPECTED;
         $this->assertStringContainsString('<a class="navbar-brand" href="/index.php">Yii Framework</a>', $out);
     }
 
-    public function testBrandSpan()
+    public function testBrandSpan(): void
     {
         $out = NavBar::widget([
             'brandLabel' => 'Yii Framework',
@@ -70,8 +71,8 @@ EXPECTED;
     /**
      * @depends testRender
      */
-    public function testNavAndForm() {
-
+    public function testNavAndForm(): void
+    {
         NavBar::$counter = 0;
 
         ob_start();
