@@ -33,10 +33,8 @@ use yii\helpers\Json;
 trait BootstrapWidgetTrait
 {
     /**
-     * @var array the options for the underlying Bootstrap JS plugin.
+     * @var array|false the options for the underlying Bootstrap JS plugin, or `false` to disable plugin initialization.
      * Please refer to the corresponding Bootstrap plugin Web page for possible options.
-     * For example, [this page](https://getbootstrap.com/javascript/#modals) shows
-     * how to use the "Modal" plugin and the supported options (e.g. "remote").
      */
     public $clientOptions = [];
     /**

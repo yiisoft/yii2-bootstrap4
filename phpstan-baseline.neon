@@ -367,20 +367,8 @@ parameters:
 			path: src/Breadcrumbs.php
 
 		-
-			message: '#^Property yii\\bootstrap4\\Widget\:\:\$clientOptions \(array\) does not accept false\.$#'
-			identifier: assign.propertyType
-			count: 1
-			path: src/Breadcrumbs.php
-
-		-
 			message: '#^Method yii\\bootstrap4\\Button\:\:init\(\) has no return type specified\.$#'
 			identifier: missingType.return
-			count: 1
-			path: src/Button.php
-
-		-
-			message: '#^Property yii\\bootstrap4\\Widget\:\:\$clientOptions \(array\) does not accept false\.$#'
-			identifier: assign.propertyType
 			count: 1
 			path: src/Button.php
 
@@ -685,12 +673,6 @@ parameters:
 			path: src/Modal.php
 
 		-
-			message: '#^Strict comparison using \!\=\= between array and false will always evaluate to true\.$#'
-			identifier: notIdentical.alwaysTrue
-			count: 1
-			path: src/Modal.php
-
-		-
 			message: '#^Strict comparison using \!\=\= between string and null will always evaluate to true\.$#'
 			identifier: notIdentical.alwaysTrue
 			count: 1
@@ -831,12 +813,6 @@ parameters:
 		-
 			message: '#^Property yii\\bootstrap4\\NavBar\:\:\$brandUrl has no type specified\.$#'
 			identifier: missingType.property
-			count: 1
-			path: src/NavBar.php
-
-		-
-			message: '#^Property yii\\bootstrap4\\NavBar\:\:\$clientOptions \(array\) does not accept default value of type false\.$#'
-			identifier: property.defaultValue
 			count: 1
 			path: src/NavBar.php
 
@@ -1107,12 +1083,6 @@ parameters:
 		-
 			message: '#^Property yii\\bootstrap4\\Widget\:\:\$options type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
-			count: 1
-			path: src/Widget.php
-
-		-
-			message: '#^Strict comparison using \!\=\= between array and false will always evaluate to true\.$#'
-			identifier: notIdentical.alwaysTrue
 			count: 1
 			path: src/Widget.php
 
