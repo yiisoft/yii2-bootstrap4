@@ -11,7 +11,7 @@ use yii\bootstrap4\Alert;
  */
 class AlertTest extends TestCase
 {
-    public function testNormalAlert()
+    public function testNormalAlert(): void
     {
         Alert::$counter = 0;
         $html = Alert::widget([
@@ -36,11 +36,11 @@ HTML;
     /**
      * @depends testNormalAlert
      */
-    public function testDismissibleAlert()
+    public function testDismissibleAlert(): void
     {
         Alert::$counter = 0;
         $html = Alert::widget([
-            'body' => "Message1",
+            'body' => 'Message1',
         ]);
 
         $expectedHtml = <<<HTML

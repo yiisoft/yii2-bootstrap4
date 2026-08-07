@@ -40,13 +40,15 @@
         }
     ],
     "require": {
-        "php": ">=8.1",
-        "yiisoft/yii2": "22.0.x-dev"
+        "php": ">=8.3",
+        "yiisoft/yii2": "^22.0@dev"
     },
     "require-dev": {
-        "php-forge/foxy": "^0.1",
+        "php-forge/foxy": "^0.2",
+        "phpstan/phpstan": "^2.1",
+        "phpstan/phpstan-phpunit": "^2.0",
         "phpunit/phpunit": "^9.6",
-        "yiisoft/yii2-coding-standards": "~2.0"
+        "yiisoft/yii2-coding-standards": "~3.0"
     },
     "autoload": {
         "psr-4": {
@@ -66,5 +68,11 @@
     },
     "extra": {
         "foxy": true
+    },
+    "scripts": {
+        "cs": "./vendor/bin/phpcs",
+        "cs-fix": "./vendor/bin/phpcbf",
+        "static": "./vendor/bin/phpstan --memory-limit=-1",
+        "tests": "./vendor/bin/phpunit"
     }
 }

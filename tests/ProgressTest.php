@@ -1,6 +1,6 @@
 <?php
-namespace yiiunit\extensions\bootstrap4;
 
+namespace yiiunit\extensions\bootstrap4;
 
 use yii\bootstrap4\Progress;
 
@@ -9,7 +9,7 @@ use yii\bootstrap4\Progress;
  */
 class ProgressTest extends TestCase
 {
-    public function testSimpleRender()
+    public function testSimpleRender(): void
     {
         Progress::$counter = 0;
         $out = Progress::widget([
@@ -27,7 +27,7 @@ HTML;
         $this->assertEqualsWithoutLE($expected, $out);
     }
 
-    public function testRender()
+    public function testRender(): void
     {
         Progress::$counter = 0;
         $out = Progress::widget([
@@ -48,7 +48,7 @@ HTML;
     /**
      * @depends testRender
      */
-    public function testMultiple()
+    public function testMultiple(): void
     {
         Progress::$counter = 0;
         $out = Progress::widget([
@@ -73,7 +73,7 @@ HTML;
     /**
      * @see https://github.com/yiisoft/yii2-bootstrap4/issues/121
      */
-    public function testRussianLocaleRendering()
+    public function testRussianLocaleRendering(): void
     {
         $this->mockWebApplication([
             'language'       => 'ru-RU',

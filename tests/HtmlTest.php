@@ -13,7 +13,7 @@ class HtmlTest extends TestCase
     /**
      * @return array
      */
-    public function dataProviderStaticControl()
+    public function dataProviderStaticControl(): array
     {
         return [
             [
@@ -36,12 +36,12 @@ class HtmlTest extends TestCase
      * @param array $options
      * @param string $expectedHtml
      */
-    public function testStaticControl($value, array $options, $expectedHtml)
+    public function testStaticControl($value, array $options, $expectedHtml): void
     {
         $this->assertEquals($expectedHtml, Html::staticControl($value, $options));
     }
 
-    public function testRadioList()
+    public function testRadioList(): void
     {
         $this->assertEquals('<div></div>', Html::radioList('test'));
 
@@ -86,7 +86,7 @@ EOD;
         $this->assertEqualsWithoutLE($expected, Html::radioList('test', [], ['value' => 'label&'], ['encode' => false]));
     }
 
-    public function testCheckboxList()
+    public function testCheckboxList(): void
     {
         $this->assertEquals('<div></div>', Html::checkboxList('test'));
 
@@ -132,7 +132,7 @@ EOD;
         $this->assertEqualsWithoutLE($expected, Html::checkboxList('test', 'value', ['value' => 'label&'], ['encode' => false]));
     }
 
-    public function testError()
+    public function testError(): void
     {
         $model = new DynamicModel();
         $model->addError('foo', 'Some error message.');

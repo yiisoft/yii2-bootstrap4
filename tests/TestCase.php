@@ -96,7 +96,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
      * @param string $expected
      * @param string $actual
      */
-    public function assertEqualsWithoutLE($expected, $actual)
+    public function assertEqualsWithoutLE($expected, $actual): void
     {
         $expected = str_replace("\r\n", "\n", $expected);
         $actual = str_replace("\r\n", "\n", $actual);
@@ -110,7 +110,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
      * @param string $needle
      * @param string $haystack
      */
-    public function assertContainsWithoutLE($needle, $haystack)
+    public function assertContainsWithoutLE($needle, $haystack): void
     {
         $needle = str_replace("\r\n", "\n", $needle);
         $haystack = str_replace("\r\n", "\n", $haystack);

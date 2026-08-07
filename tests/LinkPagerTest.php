@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://www.yiiframework.com/
  * @copyright Copyright (c) 2008 Yii Software LLC
@@ -43,7 +44,7 @@ class LinkPagerTest extends TestCase
         return $pagination;
     }
 
-    public function testFirstLastPageLabels()
+    public function testFirstLastPageLabels(): void
     {
         $pagination = $this->getPagination(5);
         $output = LinkPager::widget([
@@ -69,7 +70,7 @@ class LinkPagerTest extends TestCase
         $this->assertStringNotContainsString('<li class="page-item last">', $output);
     }
 
-    public function testDisabledPageElementOptions()
+    public function testDisabledPageElementOptions(): void
     {
         $output = LinkPager::widget([
             'pagination' => $this->getPagination(0),
@@ -81,7 +82,7 @@ class LinkPagerTest extends TestCase
     /**
      * @depends testDisabledPageElementOptions
      */
-    public function testOverrideDisabledPageElementOptions()
+    public function testOverrideDisabledPageElementOptions(): void
     {
         $output = LinkPager::widget([
             'pagination' => $this->getPagination(0),
@@ -90,7 +91,7 @@ class LinkPagerTest extends TestCase
         $this->assertStringContainsString('<li class="page-item prev disabled"><a class="foo-bar"', $output);
     }
 
-    public function testDisableCurrentPageButton()
+    public function testDisableCurrentPageButton(): void
     {
         $pagination = $this->getPagination(5);
         $output = LinkPager::widget([
@@ -105,7 +106,7 @@ class LinkPagerTest extends TestCase
         $this->assertStringContainsString('<li class="page-item active disabled"><a class="page-link" href="/?r=test&amp;page=6" data-page="5" tabindex="-1">6</a></li>', $output);
     }
 
-    public function testOptionsWithTagOption()
+    public function testOptionsWithTagOption(): void
     {
         LinkPager::$counter = 0;
         $output = LinkPager::widget([
@@ -118,7 +119,7 @@ class LinkPagerTest extends TestCase
         $this->assertTrue(StringHelper::endsWith($output, '</div>'));
     }
 
-    public function testLinkWrapOptions()
+    public function testLinkWrapOptions(): void
     {
         $output = LinkPager::widget([
             'pagination' => $this->getPagination(1),
@@ -137,10 +138,109 @@ class LinkPagerTest extends TestCase
         );
     }
 
+    public function testWithTwoButtons(): void
+    {
+        $output = LinkPager::widget([
+            'pagination' => $this->getPagination(0),
+            'maxButtonCount' => 2,
+        ]);
+
+        $expected = <<<HTML
+<ul class="pagination"><li class="page-item prev disabled"><a class="page-link" href="/?r=test&amp;page=1" data-page="0" tabindex="-1"><span aria-hidden="true">&laquo;</span>
+<span class="sr-only">Previous</span></a></li>
+<li class="page-item active"><a class="page-link" href="/?r=test&amp;page=1" data-page="0">1</a></li>
+<li class="page-item"><a class="page-link" href="/?r=test&amp;page=2" data-page="1">2</a></li>
+<li class="page-item next"><a class="page-link" href="/?r=test&amp;page=2" data-page="1"><span aria-hidden="true">&raquo;</span>
+<span class="sr-only">Next</span></a></li></ul>
+HTML;
+
+        $this->assertContainsWithoutLE($expected, $output);
+
+        $output = LinkPager::widget([
+            'pagination' => $this->getPagination(1),
+            'maxButtonCount' => 2,
+        ]);
+
+        $expected = <<<HTML
+<ul class="pagination"><li class="page-item prev"><a class="page-link" href="/?r=test&amp;page=1" data-page="0"><span aria-hidden="true">&laquo;</span>
+<span class="sr-only">Previous</span></a></li>
+<li class="page-item active"><a class="page-link" href="/?r=test&amp;page=2" data-page="1">2</a></li>
+<li class="page-item"><a class="page-link" href="/?r=test&amp;page=3" data-page="2">3</a></li>
+<li class="page-item next"><a class="page-link" href="/?r=test&amp;page=3" data-page="2"><span aria-hidden="true">&raquo;</span>
+<span class="sr-only">Next</span></a></li></ul>
+HTML;
+
+        $this->assertContainsWithoutLE($expected, $output);
+    }
+
+    public function testWithOneButton(): void
+    {
+        $output = LinkPager::widget([
+            'pagination' => $this->getPagination(0),
+            'maxButtonCount' => 1,
+        ]);
+
+        $expected = <<<HTML
+<ul class="pagination"><li class="page-item prev disabled"><a class="page-link" href="/?r=test&amp;page=1" data-page="0" tabindex="-1"><span aria-hidden="true">&laquo;</span>
+<span class="sr-only">Previous</span></a></li>
+<li class="page-item active"><a class="page-link" href="/?r=test&amp;page=1" data-page="0">1</a></li>
+<li class="page-item next"><a class="page-link" href="/?r=test&amp;page=2" data-page="1"><span aria-hidden="true">&raquo;</span>
+<span class="sr-only">Next</span></a></li></ul>
+HTML;
+
+        $this->assertContainsWithoutLE($expected, $output);
+
+        $output = LinkPager::widget([
+            'pagination' => $this->getPagination(1),
+            'maxButtonCount' => 1,
+        ]);
+
+        $expected = <<<HTML
+<ul class="pagination"><li class="page-item prev"><a class="page-link" href="/?r=test&amp;page=1" data-page="0"><span aria-hidden="true">&laquo;</span>
+<span class="sr-only">Previous</span></a></li>
+<li class="page-item active"><a class="page-link" href="/?r=test&amp;page=2" data-page="1">2</a></li>
+<li class="page-item next"><a class="page-link" href="/?r=test&amp;page=3" data-page="2"><span aria-hidden="true">&raquo;</span>
+<span class="sr-only">Next</span></a></li></ul>
+HTML;
+
+        $this->assertContainsWithoutLE($expected, $output);
+    }
+
+    public function testWithNoButtons(): void
+    {
+        $output = LinkPager::widget([
+            'pagination' => $this->getPagination(0),
+            'maxButtonCount' => 0,
+        ]);
+
+        $expected = <<<HTML
+<ul class="pagination"><li class="page-item prev disabled"><a class="page-link" href="/?r=test&amp;page=1" data-page="0" tabindex="-1"><span aria-hidden="true">&laquo;</span>
+<span class="sr-only">Previous</span></a></li>
+<li class="page-item next"><a class="page-link" href="/?r=test&amp;page=2" data-page="1"><span aria-hidden="true">&raquo;</span>
+<span class="sr-only">Next</span></a></li></ul>
+HTML;
+
+        $this->assertContainsWithoutLE($expected, $output);
+
+        $output = LinkPager::widget([
+            'pagination' => $this->getPagination(1),
+            'maxButtonCount' => 0,
+        ]);
+
+        $expected = <<<HTML
+<ul class="pagination"><li class="page-item prev"><a class="page-link" href="/?r=test&amp;page=1" data-page="0"><span aria-hidden="true">&laquo;</span>
+<span class="sr-only">Previous</span></a></li>
+<li class="page-item next"><a class="page-link" href="/?r=test&amp;page=3" data-page="2"><span aria-hidden="true">&raquo;</span>
+<span class="sr-only">Next</span></a></li></ul>
+HTML;
+
+        $this->assertContainsWithoutLE($expected, $output);
+    }
+
     /**
      * @see https://github.com/yiisoft/yii2/issues/15536
      */
-    public function testShouldTriggerInitEvent()
+    public function testShouldTriggerInitEvent(): void
     {
         $initTriggered = false;
         $output = LinkPager::widget([

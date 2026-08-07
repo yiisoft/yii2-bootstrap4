@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://www.yiiframework.com/
  * @copyright Copyright (c) 2008 Yii Software LLC
@@ -67,15 +68,15 @@ class ActiveForm extends \yii\widgets\ActiveForm
     /**
      * Default form layout
      */
-    const LAYOUT_DEFAULT = 'default';
+    public const LAYOUT_DEFAULT = 'default';
     /**
      * Horizontal form layout
      */
-    const LAYOUT_HORIZONTAL = 'horizontal';
+    public const LAYOUT_HORIZONTAL = 'horizontal';
     /**
      * Inline form layout
      */
-    const LAYOUT_INLINE = 'inline';
+    public const LAYOUT_INLINE = 'inline';
 
     /**
      * @var string the default field class name when calling [[field()]] to create a new field.

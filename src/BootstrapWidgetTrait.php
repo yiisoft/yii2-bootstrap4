@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://www.yiiframework.com/
  * @copyright Copyright (c) 2008 Yii Software LLC
@@ -7,7 +8,6 @@
 
 namespace yii\bootstrap4;
 
-use Yii;
 use yii\helpers\Json;
 
 /**
@@ -33,10 +33,8 @@ use yii\helpers\Json;
 trait BootstrapWidgetTrait
 {
     /**
-     * @var array the options for the underlying Bootstrap JS plugin.
+     * @var array|false the options for the underlying Bootstrap JS plugin, or `false` to disable plugin initialization.
      * Please refer to the corresponding Bootstrap plugin Web page for possible options.
-     * For example, [this page](https://getbootstrap.com/javascript/#modals) shows
-     * how to use the "Modal" plugin and the supported options (e.g. "remote").
      */
     public $clientOptions = [];
     /**
@@ -101,5 +99,5 @@ trait BootstrapWidgetTrait
      * @return \yii\web\View the view object that can be used to render views or view files.
      * @see \yii\base\Widget::getView()
      */
-    abstract function getView();
+    abstract public function getView();
 }

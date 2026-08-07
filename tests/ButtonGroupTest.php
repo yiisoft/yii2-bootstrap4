@@ -1,4 +1,5 @@
 <?php
+
 namespace yiiunit\extensions\bootstrap4;
 
 use yii\bootstrap4\Button;
@@ -9,7 +10,7 @@ use yii\bootstrap4\ButtonGroup;
  */
 class ButtonGroupTest extends TestCase
 {
-    public function testContainerOptions()
+    public function testContainerOptions(): void
     {
         ButtonGroup::$counter = 0;
         $out = ButtonGroup::widget([

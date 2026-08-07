@@ -9,7 +9,7 @@ use yii\bootstrap4\Toast;
  */
 class ToastTest extends TestCase
 {
-    public function testBodyOptions()
+    public function testBodyOptions(): void
     {
         Toast::$counter = 0;
         $out = Toast::widget([
@@ -37,7 +37,7 @@ HTML;
     /**
      * @depends testBodyOptions
      */
-    public function testContainerOptions()
+    public function testContainerOptions(): void
     {
         Toast::$counter = 0;
 
@@ -69,7 +69,7 @@ HTML;
         $this->assertEqualsWithoutLE($expected, $out);
     }
 
-    public function testDateTimeOptions()
+    public function testDateTimeOptions(): void
     {
         Toast::$counter = 0;
         $out = Toast::widget([
@@ -97,7 +97,7 @@ HTML;
         $this->assertEqualsWithoutLE($expected, $out);
     }
 
-    public function testTitleOptions()
+    public function testTitleOptions(): void
     {
         Toast::$counter = 0;
         $out = Toast::widget([

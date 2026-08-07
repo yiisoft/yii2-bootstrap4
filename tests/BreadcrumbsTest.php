@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package yii2-bootstrap4
  * @author Simon Karlen <simi.albi@outlook.com>
@@ -13,7 +14,7 @@ use yii\bootstrap4\Breadcrumbs;
  */
 class BreadcrumbsTest extends TestCase
 {
-    public function testRender()
+    public function testRender(): void
     {
         Breadcrumbs::$counter = 0;
         $out = Breadcrumbs::widget([
