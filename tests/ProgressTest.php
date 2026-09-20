@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * @link https://www.yiiframework.com/
+ * @copyright Copyright (c) 2008 Yii Software LLC
+ * @license https://www.yiiframework.com/license/
+ */
+
 namespace yiiunit\extensions\bootstrap4;
 
 use yii\bootstrap4\Progress;
