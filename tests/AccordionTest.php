@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * @link https://www.yiiframework.com/
+ * @copyright Copyright (c) 2008 Yii Software LLC
+ * @license https://www.yiiframework.com/license/
+ */
+
 namespace yiiunit\extensions\bootstrap4;
 
 use yii\base\DynamicModel;
@@ -112,7 +118,7 @@ class AccordionTest extends TestCase
 </div>
 
 HTML
-        , $output);
+            , $output);
     }
 
     public function testLabelKeys(): void
@@ -168,7 +174,7 @@ HTML
 </div>
 
 HTML
-        , $output);
+            , $output);
     }
 
     public function testExpandOptions(): void
@@ -201,7 +207,7 @@ HTML
 </div>
 
 HTML
-        , $output);
+            , $output);
     }
 
     public function invalidItemsProvider(): array
@@ -260,7 +266,7 @@ HTML
 </div>
 
 HTML
-        , $output);
+            , $output);
     }
 
     public function testAutoCloseItems(): void
